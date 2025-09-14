@@ -193,7 +193,7 @@ The AI system analyzes these requests and produces executable workflows with:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is proprietary and All Rights Reserved - see the [LICENSE](LICENSE) file for details.
 
 ## 🆘 Support (Coming soon)
 - **Documentation**: [Full documentation](docs/)
