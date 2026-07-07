@@ -71,6 +71,28 @@ for model in "${LLM_MODELS[@]}"; do
   done
 done
 
+echo "== 3c. proposed method: Koan-Safe (rules / LLM / hybrid) =="
+# rules is offline + free; run it and its enforcement-off ablation.
+RUN_PLAIN python "$CODE/benchmark/run_evaluation.py" \
+  --data-root "$DATA" --results-root "$RESULTS" --split "$SPLIT" \
+  --baseline koan_safe_rules
+KOAN_SAFE_ENFORCE=0 RUN_PLAIN python "$CODE/benchmark/run_evaluation.py" \
+  --data-root "$DATA" --results-root "$RESULTS" --split "$SPLIT" \
+  --baseline koan_safe_rules --tag noenforce
+# LLM + hybrid wrappers, per model, plus enforcement-off ablations.
+for model in "${LLM_MODELS[@]}"; do
+  tag="$(tag_of "$model")"
+  for baseline in koan_safe_llm koan_safe_hybrid; do
+    KOAN_LLM_MODEL="$model" RUN_LLM python "$CODE/benchmark/run_evaluation.py" \
+      --data-root "$DATA" --results-root "$RESULTS" \
+      --split "$SPLIT" --baseline "$baseline" --tag "$tag"
+    KOAN_SAFE_ENFORCE=0 KOAN_LLM_MODEL="$model" RUN_LLM \
+      python "$CODE/benchmark/run_evaluation.py" \
+      --data-root "$DATA" --results-root "$RESULTS" \
+      --split "$SPLIT" --baseline "$baseline" --tag "${tag}__noenforce"
+  done
+done
+
 echo "== 4. fork execution pass (local py-EVM) =="
 RUN_PLAIN "${FORK_DEPS[@]}" python \
   "$CODE/safety/fork_simulation.py" --results-root "$RESULTS" --split "$SPLIT" || true

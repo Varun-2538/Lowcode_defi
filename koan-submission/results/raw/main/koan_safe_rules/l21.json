@@ -1,0 +1,45 @@
+{
+  "id": "l21",
+  "baseline": "koan_safe_rules",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "limitOrder",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "WBTC",
+      "toToken": "USDC",
+      "amount": "5",
+      "expiry": "7d"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "expiry_set"
+    ]
+  },
+  "run_id": "koan_safe_rules"
+}

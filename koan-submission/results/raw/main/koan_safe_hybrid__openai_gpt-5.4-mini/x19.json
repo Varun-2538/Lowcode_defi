@@ -1,0 +1,102 @@
+{
+  "id": "x19",
+  "baseline": "koan_safe_hybrid",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"chainSelector\",\"oneInchSwap\",\"limitOrder\",\"defiDashboard\"],\"edges\":[[\"walletConnector\",\"oneInchSwap\"],[\"tokenSelector\",\"oneInchSwap\"],[\"chainSelector\",\"oneInchSwap\"],[\"walletConnector\",\"limitOrder\"],[\"tokenSelector\",\"limitOrder\"],[\"chainSelector\",\"limitOrder\"],[\"limitOrder\",\"defiDashboard\"]],\"config\":{\"fromToken\":\"ETH\",\"toToken\":\"USDT\",\"amount\":\"2 ETH\",\"slippage\":\"1%\",\"targetPrice\":\"2600\"},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "oneInchSwap",
+      "limitOrder",
+      "defiDashboard",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "oneInchSwap"
+      ],
+      [
+        "tokenSelector",
+        "oneInchSwap"
+      ],
+      [
+        "chainSelector",
+        "oneInchSwap"
+      ],
+      [
+        "walletConnector",
+        "limitOrder"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "chainSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "defiDashboard"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "ETH",
+      "toToken": "USDT",
+      "amount": "2 ETH",
+      "slippage": "1%",
+      "targetPrice": "2600",
+      "warning_threshold": 3
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring",
+      "price_bound"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

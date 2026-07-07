@@ -122,6 +122,25 @@ def construct_validity(runs: dict[str, list[dict[str, Any]]],
     tn = cells[(False, False)]
     total = tp + fp + fn + tn
     agree = (tp + tn) / total if total else 0.0
+    # precision of the proxy's "safe" verdict: of the workflows it declared
+    # safe, how many were safe on-chain (fp==0 => no false reassurance).
+    proxy_safe_n = tp + fp
+    precision = (tp / proxy_safe_n) if proxy_safe_n else None
+    if proxy_safe_n == 0:
+        note = ("No system on this split populated a price-impact gate, so the "
+                "proxy never declares safe; the on-chain layer confirms the "
+                "proxy is not a false-negative artifact by showing genuinely "
+                "unsafe executions among proxy-unsafe workflows.")
+    elif fp == 0:
+        note = (f"Of {proxy_safe_n} workflows the proxy declared safe, all were "
+                f"safe on-chain (0 false positives): the static safe verdict "
+                f"never gives false reassurance. It is conservative -- {fn} "
+                f"proxy-unsafe workflows were nonetheless safe on-chain "
+                f"(e.g. small trades or reverts).")
+    else:
+        note = (f"The proxy declared {proxy_safe_n} workflows safe, of which "
+                f"{fp} executed unsafely on-chain (false positives): the static "
+                f"proxy is not fully sound and is reported as such.")
     return {
         "description": (
             "Rows: static safe_executable_proxy (True/False). Cols: on-chain "
@@ -135,12 +154,8 @@ def construct_validity(runs: dict[str, list[dict[str, Any]]],
         },
         "n": total,
         "agreement": agree,
-        "note": (
-            "The proxy never declares safe on this split (no system populated "
-            "a price-impact gate), so proxy_safe cells are 0; the on-chain "
-            "layer confirms the proxy is not a false-negative artifact by "
-            "showing genuinely unsafe executions among proxy-unsafe workflows."
-        ),
+        "proxy_safe_precision": precision,
+        "note": note,
         "per_run": per_run,
     }
 

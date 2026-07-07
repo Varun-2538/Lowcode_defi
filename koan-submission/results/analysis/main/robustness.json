@@ -750,6 +750,862 @@
         }
       }
     },
+    "koan_safe_hybrid__google_gemini-3.1-flash-lite__noenforce": {
+      "paraphrase_cluster_consistency": 1.0,
+      "n_clusters": 5,
+      "difficulty_rates": {
+        "easy": {
+          "n": 38,
+          "graph_valid": 0.2894736842105263,
+          "safe_executable": 0.05263157894736842
+        },
+        "medium": {
+          "n": 62,
+          "graph_valid": 0.20967741935483872,
+          "safe_executable": 0.016129032258064516
+        },
+        "hard": {
+          "n": 5,
+          "graph_valid": 0.0,
+          "safe_executable": 0.0
+        }
+      },
+      "phenomenon_rates": {
+        "adversarial_waiver": {
+          "n": 2,
+          "graph_valid": 0.0
+        },
+        "amount_unspecified": {
+          "n": 26,
+          "graph_valid": 0.15384615384615385
+        },
+        "confirmation_pref": {
+          "n": 1,
+          "graph_valid": 0.0
+        },
+        "cross_chain_swap": {
+          "n": 1,
+          "graph_valid": 0.0
+        },
+        "dashboard": {
+          "n": 6,
+          "graph_valid": 0.0
+        },
+        "expiry_specified": {
+          "n": 13,
+          "graph_valid": 0.23076923076923078
+        },
+        "expiry_unspecified": {
+          "n": 13,
+          "graph_valid": 0.07692307692307693
+        },
+        "fully_specified": {
+          "n": 41,
+          "graph_valid": 0.2682926829268293
+        },
+        "mev_protection": {
+          "n": 3,
+          "graph_valid": 0.0
+        },
+        "multi_intent": {
+          "n": 18,
+          "graph_valid": 0.0
+        },
+        "paraphrase": {
+          "n": 8,
+          "graph_valid": 0.375
+        },
+        "price_impact_explicit": {
+          "n": 11,
+          "graph_valid": 0.5454545454545454
+        },
+        "price_relative": {
+          "n": 1,
+          "graph_valid": 0.0
+        },
+        "price_unspecified": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "slippage_explicit": {
+          "n": 18,
+          "graph_valid": 0.6666666666666666
+        },
+        "slippage_implicit": {
+          "n": 6,
+          "graph_valid": 0.8333333333333334
+        },
+        "stop_order": {
+          "n": 6,
+          "graph_valid": 0.0
+        },
+        "terse": {
+          "n": 2,
+          "graph_valid": 0.0
+        },
+        "token_implicit": {
+          "n": 1,
+          "graph_valid": 0.0
+        },
+        "typo_noise": {
+          "n": 3,
+          "graph_valid": 0.3333333333333333
+        },
+        "verbose": {
+          "n": 3,
+          "graph_valid": 0.3333333333333333
+        }
+      }
+    },
+    "koan_safe_hybrid__google_gemini-3.1-flash-lite": {
+      "paraphrase_cluster_consistency": 1.0,
+      "n_clusters": 5,
+      "difficulty_rates": {
+        "easy": {
+          "n": 38,
+          "graph_valid": 1.0,
+          "safe_executable": 1.0
+        },
+        "medium": {
+          "n": 62,
+          "graph_valid": 1.0,
+          "safe_executable": 0.3225806451612903
+        },
+        "hard": {
+          "n": 5,
+          "graph_valid": 1.0,
+          "safe_executable": 0.6
+        }
+      },
+      "phenomenon_rates": {
+        "adversarial_waiver": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "amount_unspecified": {
+          "n": 26,
+          "graph_valid": 1.0
+        },
+        "confirmation_pref": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "cross_chain_swap": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "dashboard": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "expiry_specified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "expiry_unspecified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "fully_specified": {
+          "n": 41,
+          "graph_valid": 1.0
+        },
+        "mev_protection": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "multi_intent": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "paraphrase": {
+          "n": 8,
+          "graph_valid": 1.0
+        },
+        "price_impact_explicit": {
+          "n": 11,
+          "graph_valid": 1.0
+        },
+        "price_relative": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "price_unspecified": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "slippage_explicit": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "slippage_implicit": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "stop_order": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "terse": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "token_implicit": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "typo_noise": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "verbose": {
+          "n": 3,
+          "graph_valid": 1.0
+        }
+      }
+    },
+    "koan_safe_hybrid__openai_gpt-5.4-mini": {
+      "paraphrase_cluster_consistency": 1.0,
+      "n_clusters": 5,
+      "difficulty_rates": {
+        "easy": {
+          "n": 38,
+          "graph_valid": 1.0,
+          "safe_executable": 1.0
+        },
+        "medium": {
+          "n": 62,
+          "graph_valid": 1.0,
+          "safe_executable": 0.2903225806451613
+        },
+        "hard": {
+          "n": 5,
+          "graph_valid": 1.0,
+          "safe_executable": 0.6
+        }
+      },
+      "phenomenon_rates": {
+        "adversarial_waiver": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "amount_unspecified": {
+          "n": 26,
+          "graph_valid": 1.0
+        },
+        "confirmation_pref": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "cross_chain_swap": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "dashboard": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "expiry_specified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "expiry_unspecified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "fully_specified": {
+          "n": 41,
+          "graph_valid": 1.0
+        },
+        "mev_protection": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "multi_intent": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "paraphrase": {
+          "n": 8,
+          "graph_valid": 1.0
+        },
+        "price_impact_explicit": {
+          "n": 11,
+          "graph_valid": 1.0
+        },
+        "price_relative": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "price_unspecified": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "slippage_explicit": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "slippage_implicit": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "stop_order": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "terse": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "token_implicit": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "typo_noise": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "verbose": {
+          "n": 3,
+          "graph_valid": 1.0
+        }
+      }
+    },
+    "koan_safe_llm__google_gemini-3.1-flash-lite__noenforce": {
+      "paraphrase_cluster_consistency": 1.0,
+      "n_clusters": 5,
+      "difficulty_rates": {
+        "easy": {
+          "n": 38,
+          "graph_valid": 0.2631578947368421,
+          "safe_executable": 0.05263157894736842
+        },
+        "medium": {
+          "n": 62,
+          "graph_valid": 0.1935483870967742,
+          "safe_executable": 0.016129032258064516
+        },
+        "hard": {
+          "n": 5,
+          "graph_valid": 0.0,
+          "safe_executable": 0.0
+        }
+      },
+      "phenomenon_rates": {
+        "adversarial_waiver": {
+          "n": 2,
+          "graph_valid": 0.0
+        },
+        "amount_unspecified": {
+          "n": 26,
+          "graph_valid": 0.11538461538461539
+        },
+        "confirmation_pref": {
+          "n": 1,
+          "graph_valid": 0.0
+        },
+        "cross_chain_swap": {
+          "n": 1,
+          "graph_valid": 0.0
+        },
+        "dashboard": {
+          "n": 6,
+          "graph_valid": 0.0
+        },
+        "expiry_specified": {
+          "n": 13,
+          "graph_valid": 0.23076923076923078
+        },
+        "expiry_unspecified": {
+          "n": 13,
+          "graph_valid": 0.07692307692307693
+        },
+        "fully_specified": {
+          "n": 41,
+          "graph_valid": 0.24390243902439024
+        },
+        "mev_protection": {
+          "n": 3,
+          "graph_valid": 0.0
+        },
+        "multi_intent": {
+          "n": 18,
+          "graph_valid": 0.0
+        },
+        "paraphrase": {
+          "n": 8,
+          "graph_valid": 0.375
+        },
+        "price_impact_explicit": {
+          "n": 11,
+          "graph_valid": 0.45454545454545453
+        },
+        "price_relative": {
+          "n": 1,
+          "graph_valid": 0.0
+        },
+        "price_unspecified": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "slippage_explicit": {
+          "n": 18,
+          "graph_valid": 0.6111111111111112
+        },
+        "slippage_implicit": {
+          "n": 6,
+          "graph_valid": 0.8333333333333334
+        },
+        "stop_order": {
+          "n": 6,
+          "graph_valid": 0.0
+        },
+        "terse": {
+          "n": 2,
+          "graph_valid": 0.0
+        },
+        "token_implicit": {
+          "n": 1,
+          "graph_valid": 0.0
+        },
+        "typo_noise": {
+          "n": 3,
+          "graph_valid": 0.3333333333333333
+        },
+        "verbose": {
+          "n": 3,
+          "graph_valid": 0.3333333333333333
+        }
+      }
+    },
+    "koan_safe_llm__google_gemini-3.1-flash-lite": {
+      "paraphrase_cluster_consistency": 1.0,
+      "n_clusters": 5,
+      "difficulty_rates": {
+        "easy": {
+          "n": 38,
+          "graph_valid": 1.0,
+          "safe_executable": 0.9473684210526315
+        },
+        "medium": {
+          "n": 62,
+          "graph_valid": 1.0,
+          "safe_executable": 0.3064516129032258
+        },
+        "hard": {
+          "n": 5,
+          "graph_valid": 1.0,
+          "safe_executable": 0.6
+        }
+      },
+      "phenomenon_rates": {
+        "adversarial_waiver": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "amount_unspecified": {
+          "n": 26,
+          "graph_valid": 1.0
+        },
+        "confirmation_pref": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "cross_chain_swap": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "dashboard": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "expiry_specified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "expiry_unspecified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "fully_specified": {
+          "n": 41,
+          "graph_valid": 1.0
+        },
+        "mev_protection": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "multi_intent": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "paraphrase": {
+          "n": 8,
+          "graph_valid": 1.0
+        },
+        "price_impact_explicit": {
+          "n": 11,
+          "graph_valid": 1.0
+        },
+        "price_relative": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "price_unspecified": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "slippage_explicit": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "slippage_implicit": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "stop_order": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "terse": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "token_implicit": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "typo_noise": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "verbose": {
+          "n": 3,
+          "graph_valid": 1.0
+        }
+      }
+    },
+    "koan_safe_llm__openai_gpt-5.4-mini": {
+      "paraphrase_cluster_consistency": 1.0,
+      "n_clusters": 5,
+      "difficulty_rates": {
+        "easy": {
+          "n": 38,
+          "graph_valid": 1.0,
+          "safe_executable": 0.9473684210526315
+        },
+        "medium": {
+          "n": 62,
+          "graph_valid": 1.0,
+          "safe_executable": 0.20967741935483872
+        },
+        "hard": {
+          "n": 5,
+          "graph_valid": 1.0,
+          "safe_executable": 0.6
+        }
+      },
+      "phenomenon_rates": {
+        "adversarial_waiver": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "amount_unspecified": {
+          "n": 26,
+          "graph_valid": 1.0
+        },
+        "confirmation_pref": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "cross_chain_swap": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "dashboard": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "expiry_specified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "expiry_unspecified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "fully_specified": {
+          "n": 41,
+          "graph_valid": 1.0
+        },
+        "mev_protection": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "multi_intent": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "paraphrase": {
+          "n": 8,
+          "graph_valid": 1.0
+        },
+        "price_impact_explicit": {
+          "n": 11,
+          "graph_valid": 1.0
+        },
+        "price_relative": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "price_unspecified": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "slippage_explicit": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "slippage_implicit": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "stop_order": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "terse": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "token_implicit": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "typo_noise": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "verbose": {
+          "n": 3,
+          "graph_valid": 1.0
+        }
+      }
+    },
+    "koan_safe_rules__noenforce": {
+      "paraphrase_cluster_consistency": 1.0,
+      "n_clusters": 5,
+      "difficulty_rates": {
+        "easy": {
+          "n": 38,
+          "graph_valid": 1.0,
+          "safe_executable": 0.2894736842105263
+        },
+        "medium": {
+          "n": 62,
+          "graph_valid": 1.0,
+          "safe_executable": 0.03225806451612903
+        },
+        "hard": {
+          "n": 5,
+          "graph_valid": 1.0,
+          "safe_executable": 0.0
+        }
+      },
+      "phenomenon_rates": {
+        "adversarial_waiver": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "amount_unspecified": {
+          "n": 26,
+          "graph_valid": 1.0
+        },
+        "confirmation_pref": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "cross_chain_swap": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "dashboard": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "expiry_specified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "expiry_unspecified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "fully_specified": {
+          "n": 41,
+          "graph_valid": 1.0
+        },
+        "mev_protection": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "multi_intent": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "paraphrase": {
+          "n": 8,
+          "graph_valid": 1.0
+        },
+        "price_impact_explicit": {
+          "n": 11,
+          "graph_valid": 1.0
+        },
+        "price_relative": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "price_unspecified": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "slippage_explicit": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "slippage_implicit": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "stop_order": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "terse": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "token_implicit": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "typo_noise": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "verbose": {
+          "n": 3,
+          "graph_valid": 1.0
+        }
+      }
+    },
+    "koan_safe_rules": {
+      "paraphrase_cluster_consistency": 1.0,
+      "n_clusters": 5,
+      "difficulty_rates": {
+        "easy": {
+          "n": 38,
+          "graph_valid": 1.0,
+          "safe_executable": 1.0
+        },
+        "medium": {
+          "n": 62,
+          "graph_valid": 1.0,
+          "safe_executable": 0.2903225806451613
+        },
+        "hard": {
+          "n": 5,
+          "graph_valid": 1.0,
+          "safe_executable": 0.6
+        }
+      },
+      "phenomenon_rates": {
+        "adversarial_waiver": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "amount_unspecified": {
+          "n": 26,
+          "graph_valid": 1.0
+        },
+        "confirmation_pref": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "cross_chain_swap": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "dashboard": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "expiry_specified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "expiry_unspecified": {
+          "n": 13,
+          "graph_valid": 1.0
+        },
+        "fully_specified": {
+          "n": 41,
+          "graph_valid": 1.0
+        },
+        "mev_protection": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "multi_intent": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "paraphrase": {
+          "n": 8,
+          "graph_valid": 1.0
+        },
+        "price_impact_explicit": {
+          "n": 11,
+          "graph_valid": 1.0
+        },
+        "price_relative": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "price_unspecified": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "slippage_explicit": {
+          "n": 18,
+          "graph_valid": 1.0
+        },
+        "slippage_implicit": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "stop_order": {
+          "n": 6,
+          "graph_valid": 1.0
+        },
+        "terse": {
+          "n": 2,
+          "graph_valid": 1.0
+        },
+        "token_implicit": {
+          "n": 1,
+          "graph_valid": 1.0
+        },
+        "typo_noise": {
+          "n": 3,
+          "graph_valid": 1.0
+        },
+        "verbose": {
+          "n": 3,
+          "graph_valid": 1.0
+        }
+      }
+    },
     "null": {
       "paraphrase_cluster_consistency": 1.0,
       "n_clusters": 5,

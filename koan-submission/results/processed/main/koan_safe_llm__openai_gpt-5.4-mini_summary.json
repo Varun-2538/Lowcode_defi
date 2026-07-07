@@ -1,0 +1,22 @@
+{
+  "baseline": "koan_safe_llm",
+  "n_total": 120,
+  "n_workflow": 105,
+  "n_clarification": 15,
+  "graph_valid_rate": 1.0,
+  "executable_rate": 0.49523809523809526,
+  "safe_executable_rate": 0.49523809523809526,
+  "mean_node_recall": 1.0,
+  "mean_edge_recall": 1.0,
+  "mean_config_completeness": 0.7357142857142858,
+  "mean_safety_recall": 0.9317460317460317,
+  "mean_extra_nodes": 0.09523809523809523,
+  "clarification_correct_rate": 1.0,
+  "run_id": "koan_safe_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini",
+  "split": "main",
+  "n_ok": 120,
+  "n_error": 0,
+  "n_skipped": 0,
+  "generated_at": "2026-07-07T21:56:29.388233+00:00"
+}

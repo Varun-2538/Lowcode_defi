@@ -1,0 +1,1419 @@
+[
+  {
+    "id": "c01",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c02",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c03",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c04",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c05",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c06",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c07",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c08",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c09",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c10",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c11",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c12",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c13",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c14",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c15",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c16",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c17",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c18",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c19",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c20",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c21",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c22",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c23",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c24",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c25",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c26",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c27",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c28",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c29",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c30",
+    "baseline": "koan_safe_llm",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l01",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "pending_not_filled",
+    "safe_execution": true,
+    "notes": "mid 3000.00 < target 70000.00; correctly not executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 70000.0,
+      "action": "not_filled"
+    }
+  },
+  {
+    "id": "l02",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l03",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l04",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l05",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l06",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l07",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l08",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "limit fillable at target and executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 2800.0,
+      "amount_in": "2000000000000000000",
+      "min_out": "5600000000000000000000",
+      "tx_status": 1,
+      "gas_used": 71465,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "l09",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "limit fillable at target and executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 12.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "1200000000000000000000",
+      "tx_status": 1,
+      "gas_used": 71465,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "l10",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "pending_not_filled",
+    "safe_execution": true,
+    "notes": "mid 3000.00 < target 68000.00; correctly not executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 68000.0,
+      "action": "not_filled"
+    }
+  },
+  {
+    "id": "l11",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l12",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l13",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "limit fillable at target and executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 22.0,
+      "amount_in": "500000000000000000000",
+      "min_out": "11000000000000000000000",
+      "tx_status": 1,
+      "gas_used": 71477,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "l14",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l15",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "pending_not_filled",
+    "safe_execution": true,
+    "notes": "mid 3000.00 < target 71000.00; correctly not executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 71000.0,
+      "action": "not_filled"
+    }
+  },
+  {
+    "id": "l16",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "pending_not_filled",
+    "safe_execution": true,
+    "notes": "mid 3000.00 < target 70000.00; correctly not executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 70000.0,
+      "action": "not_filled"
+    }
+  },
+  {
+    "id": "l17",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "pending_not_filled",
+    "safe_execution": true,
+    "notes": "mid 3000.00 < target 70000.00; correctly not executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 70000.0,
+      "action": "not_filled"
+    }
+  },
+  {
+    "id": "l18",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "limit fillable at target and executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 2900.0,
+      "amount_in": "3000000000000000000",
+      "min_out": "8700000000000000000000",
+      "tx_status": 1,
+      "gas_used": 71465,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "l19",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l20",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "limit fillable at target and executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 15.0,
+      "amount_in": "200000000000000000000",
+      "min_out": "3000000000000000000000",
+      "tx_status": 1,
+      "gas_used": 71465,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "l21",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l22",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l23",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "pending_not_filled",
+    "safe_execution": true,
+    "notes": "mid 3000.00 < target 65000.00; correctly not executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 65000.0,
+      "action": "not_filled"
+    }
+  },
+  {
+    "id": "l24",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l25",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "limit fillable at target and executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 0.05,
+      "amount_in": "50000000000000000000",
+      "min_out": "2500000000000000000",
+      "tx_status": 1,
+      "gas_used": 71453,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "l26",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "pending_not_filled",
+    "safe_execution": true,
+    "notes": "mid 3000.00 < target 3500.00; correctly not executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3500.0,
+      "action": "not_filled"
+    }
+  },
+  {
+    "id": "l27",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "limit fillable at target and executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 20.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "2000000000000000000000",
+      "tx_status": 1,
+      "gas_used": 71465,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "l28",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "pending_not_filled",
+    "safe_execution": true,
+    "notes": "mid 3000.00 < target 69000.00; correctly not executed",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 69000.0,
+      "action": "not_filled"
+    }
+  },
+  {
+    "id": "l29",
+    "baseline": "koan_safe_llm",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l30",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s01",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 0.40% impact",
+    "onchain": {
+      "amount_in": "1000000000000000000",
+      "quote_out": "2988020943119709649479",
+      "min_out": "2958140733688512512000",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 0.3993,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71453,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "s02",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 20.19% > gate 3.00%",
+    "onchain": {
+      "amount_in": "250000000000000000000",
+      "quote_out": "598559135481288773263958",
+      "min_out": "299279567740644385357824",
+      "slippage_frac": 0.5,
+      "price_impact_pct": 20.1921,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s03",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 33.47% > gate 3.00%",
+    "onchain": {
+      "amount_in": "500000000000000000000",
+      "quote_out": "997997997997997997997997",
+      "min_out": "988018018018017983594496",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 33.4668,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s04",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 0.50% impact",
+    "onchain": {
+      "amount_in": "2000000000000000000",
+      "quote_out": "5970095629315145599674",
+      "min_out": "5910394673021993353216",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 0.4984,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71453,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "s05",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s06",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s07",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s08",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 50.08% > gate 3.00%",
+    "onchain": {
+      "amount_in": "1000000000000000000000",
+      "quote_out": "1497746619929894842263395",
+      "min_out": "1482769153730595809918976",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 50.0751,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s09",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s10",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s11",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s12",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 0.37% impact",
+    "onchain": {
+      "amount_in": "750000000000000000",
+      "quote_out": "2241573863143834197978",
+      "min_out": "2207950255196676554752",
+      "slippage_frac": 0.015,
+      "price_impact_pct": 0.3745,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71453,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "s13",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 23.25% > gate 3.00%",
+    "onchain": {
+      "amount_in": "300000000000000000000",
+      "quote_out": "690708952351628050188592",
+      "min_out": "683801862828111819702272",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 23.2546,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s14",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s15",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 0.79% impact",
+    "onchain": {
+      "amount_in": "5000000000000000000",
+      "quote_out": "14880819116703234376632",
+      "min_out": "14583202734369169997824",
+      "slippage_frac": 0.02,
+      "price_impact_pct": 0.7945,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71465,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "s16",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s17",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s18",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s19",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s20",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 0.40% impact",
+    "onchain": {
+      "amount_in": "1000000000000000000",
+      "quote_out": "2988020943119709649479",
+      "min_out": "2958140733688512512000",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 0.3993,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71453,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "s21",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 0.40% impact",
+    "onchain": {
+      "amount_in": "1000000000000000000",
+      "quote_out": "2988020943119709649479",
+      "min_out": "2958140733688512512000",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 0.3993,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71453,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "s22",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 66.70% > gate 3.00%",
+    "onchain": {
+      "amount_in": "2000000000000000000000",
+      "quote_out": "1997995991983967935871743",
+      "min_out": "1978016032064128168230912",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 66.7001,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s23",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s24",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 0.60% impact",
+    "onchain": {
+      "amount_in": "3000000000000000000",
+      "quote_out": "8946241790803706115010",
+      "min_out": "4473120895401852928000",
+      "slippage_frac": 0.5,
+      "price_impact_pct": 0.5973,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71453,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "s25",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s26",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 28.72% > gate 3.00%",
+    "onchain": {
+      "amount_in": "400000000000000000000",
+      "quote_out": "855304546754360880754932",
+      "min_out": "846751501286817184874496",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 28.7246,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s27",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 5.03% > gate 3.00%",
+    "onchain": {
+      "amount_in": "50000000000000000000",
+      "quote_out": "142448921274467781111587",
+      "min_out": "141024432061723101364224",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 5.0341,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s28",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s29",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s30",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s31",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 0.45% impact",
+    "onchain": {
+      "amount_in": "1500000000000000000",
+      "quote_out": "4479800458414441203180",
+      "min_out": "4435002453830296666112",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 0.4489,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71453,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "s32",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s33",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 42.96% > gate 3.00%",
+    "onchain": {
+      "amount_in": "750000000000000000000",
+      "quote_out": "1283507366614218280646545",
+      "min_out": "1279656844514375751434240",
+      "slippage_frac": 0.003,
+      "price_impact_pct": 42.9552,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s34",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s35",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 33.47% > gate 3.00%",
+    "onchain": {
+      "amount_in": "500000000000000000000",
+      "quote_out": "997997997997997997997997",
+      "min_out": "988018018018017983594496",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 33.4668,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s36",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 1.28% impact",
+    "onchain": {
+      "amount_in": "10000000000000000000",
+      "quote_out": "29614741031911838965513",
+      "min_out": "29318593621592717131776",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 1.2842,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71465,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "s37",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s38",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 0.32% impact",
+    "onchain": {
+      "amount_in": "200000000000000000",
+      "quote_out": "598080742699905638815",
+      "min_out": "592099935272906522624",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 0.3199,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71453,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "s39",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 37.62% > gate 3.00%",
+    "onchain": {
+      "amount_in": "600000000000000000000",
+      "quote_out": "1122888249280440495557502",
+      "min_out": "561444124640220270297088",
+      "slippage_frac": 0.5,
+      "price_impact_pct": 37.6173,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "s40",
+    "baseline": "koan_safe_llm",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "x01",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x02",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x03",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x04",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x05",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x06",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x07",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x08",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 0.40% impact (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "1000000000000000000",
+      "quote_out": "2988020943119709649479",
+      "min_out": "2958140733688512512000",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 0.3993,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71453,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "x09",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x10",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x11",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 33.47% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "500000000000000000000",
+      "quote_out": "997997997997997997997997",
+      "min_out": "988018018018017983594496",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 33.4668,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "x12",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x13",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x14",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x15",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x16",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x17",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x18",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x19",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "executed_safe",
+    "safe_execution": true,
+    "notes": "executed at 0.50% impact (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "2000000000000000000",
+      "quote_out": "5970095629315145599674",
+      "min_out": "5910394673021993353216",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 0.4984,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "tx_status": 1,
+      "gas_used": 71453,
+      "revert_reason": null
+    }
+  },
+  {
+    "id": "x20",
+    "baseline": "koan_safe_llm",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  }
+]

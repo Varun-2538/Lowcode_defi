@@ -1,0 +1,65 @@
+{
+  "id": "c17",
+  "baseline": "koan_safe_hybrid",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"tokenSelector\",\"chainSelector\",\"fusionPlus\",\"transactionMonitor\"],\"edges\":[[\"tokenSelector\",\"fusionPlus\"],[\"chainSelector\",\"fusionPlus\"],[\"fusionPlus\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"USDC\",\"amount\":\"100\",\"sourceChain\":\"Ethereum\",\"destinationChain\":\"Polygon\"},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "chainSelector",
+      "fusionPlus",
+      "transactionMonitor",
+      "walletConnector"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "chainSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ],
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "amount": "100",
+      "sourceChain": "Ethereum",
+      "destinationChain": "Polygon",
+      "default_confirmations": 12,
+      "destinationAddress": "self"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

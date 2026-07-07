@@ -1,0 +1,16 @@
+{
+  "baseline": "koan_safe_llm__openai_gpt-5.4-mini",
+  "split": "main",
+  "n_total": 120,
+  "n_attempted_definite": 27,
+  "n_safe": 27,
+  "n_unsafe_executed": 0,
+  "fork_safe_execution_rate": 1.0,
+  "outcome_counts": {
+    "not_simulated": 25,
+    "not_executable": 68,
+    "pending_not_filled": 6,
+    "executed_safe": 10,
+    "aborted_price_impact": 11
+  }
+}

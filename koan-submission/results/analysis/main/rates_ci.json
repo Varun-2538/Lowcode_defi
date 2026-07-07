@@ -308,6 +308,358 @@
     }
   },
   {
+    "run_id": "koan_safe_hybrid__google_gemini-3.1-flash-lite__noenforce",
+    "n_workflow": 105,
+    "graph_valid": {
+      "rate": 0.22857142857142856,
+      "n": 105,
+      "successes": 24,
+      "ci_low": 0.1586828389252159,
+      "ci_high": 0.3176203392713559
+    },
+    "executable": {
+      "rate": 0.13333333333333333,
+      "n": 105,
+      "successes": 14,
+      "ci_low": 0.0811131796023099,
+      "ci_high": 0.21143672778604156
+    },
+    "safe_executable": {
+      "rate": 0.02857142857142857,
+      "n": 105,
+      "successes": 3,
+      "ci_low": 0.009763662138955603,
+      "ci_high": 0.08065764736035347
+    },
+    "config_completeness": {
+      "mean": 0.7333333333333333,
+      "n": 105,
+      "ci_low": 0.689047619047619,
+      "ci_high": 0.7757142857142857
+    },
+    "safety_recall": {
+      "mean": 0.46507936507936504,
+      "n": 105,
+      "ci_low": 0.41904761904761906,
+      "ci_high": 0.5111111111111111
+    },
+    "clarification": {
+      "rate": 1.0,
+      "n": 15,
+      "successes": 15,
+      "ci_low": 0.7961107336956521,
+      "ci_high": 1.0
+    }
+  },
+  {
+    "run_id": "koan_safe_hybrid__google_gemini-3.1-flash-lite",
+    "n_workflow": 105,
+    "graph_valid": {
+      "rate": 1.0,
+      "n": 105,
+      "successes": 105,
+      "ci_low": 0.9647046717431569,
+      "ci_high": 0.9999999999999998
+    },
+    "executable": {
+      "rate": 0.580952380952381,
+      "n": 105,
+      "successes": 61,
+      "ci_low": 0.4853552056582404,
+      "ci_high": 0.670835074528747
+    },
+    "safe_executable": {
+      "rate": 0.580952380952381,
+      "n": 105,
+      "successes": 61,
+      "ci_low": 0.4853552056582404,
+      "ci_high": 0.670835074528747
+    },
+    "config_completeness": {
+      "mean": 0.879047619047619,
+      "n": 105,
+      "ci_low": 0.8471428571428572,
+      "ci_high": 0.9090476190476191
+    },
+    "safety_recall": {
+      "mean": 0.9634920634920635,
+      "n": 105,
+      "ci_low": 0.9452380952380952,
+      "ci_high": 0.9801587301587302
+    },
+    "clarification": {
+      "rate": 1.0,
+      "n": 15,
+      "successes": 15,
+      "ci_low": 0.7961107336956521,
+      "ci_high": 1.0
+    }
+  },
+  {
+    "run_id": "koan_safe_hybrid__openai_gpt-5.4-mini",
+    "n_workflow": 105,
+    "graph_valid": {
+      "rate": 1.0,
+      "n": 105,
+      "successes": 105,
+      "ci_low": 0.9647046717431569,
+      "ci_high": 0.9999999999999998
+    },
+    "executable": {
+      "rate": 0.5619047619047619,
+      "n": 105,
+      "successes": 59,
+      "ci_low": 0.46648169138351786,
+      "ci_high": 0.6529579346418253
+    },
+    "safe_executable": {
+      "rate": 0.5619047619047619,
+      "n": 105,
+      "successes": 59,
+      "ci_low": 0.46648169138351786,
+      "ci_high": 0.6529579346418253
+    },
+    "config_completeness": {
+      "mean": 0.8752380952380953,
+      "n": 105,
+      "ci_low": 0.8433333333333333,
+      "ci_high": 0.9052380952380952
+    },
+    "safety_recall": {
+      "mean": 0.9603174603174602,
+      "n": 105,
+      "ci_low": 0.9420634920634922,
+      "ci_high": 0.9777777777777779
+    },
+    "clarification": {
+      "rate": 1.0,
+      "n": 15,
+      "successes": 15,
+      "ci_low": 0.7961107336956521,
+      "ci_high": 1.0
+    }
+  },
+  {
+    "run_id": "koan_safe_llm__google_gemini-3.1-flash-lite__noenforce",
+    "n_workflow": 105,
+    "graph_valid": {
+      "rate": 0.20952380952380953,
+      "n": 105,
+      "successes": 22,
+      "ci_low": 0.1426344996383833,
+      "ci_high": 0.29691802439654447
+    },
+    "executable": {
+      "rate": 0.12380952380952381,
+      "n": 105,
+      "successes": 13,
+      "ci_low": 0.07380094170864485,
+      "ci_high": 0.2003736385988846
+    },
+    "safe_executable": {
+      "rate": 0.02857142857142857,
+      "n": 105,
+      "successes": 3,
+      "ci_low": 0.009763662138955603,
+      "ci_high": 0.08065764736035347
+    },
+    "config_completeness": {
+      "mean": 0.7238095238095238,
+      "n": 105,
+      "ci_low": 0.6795238095238094,
+      "ci_high": 0.7657142857142858
+    },
+    "safety_recall": {
+      "mean": 0.46825396825396826,
+      "n": 105,
+      "ci_low": 0.42142857142857143,
+      "ci_high": 0.515079365079365
+    },
+    "clarification": {
+      "rate": 1.0,
+      "n": 15,
+      "successes": 15,
+      "ci_low": 0.7961107336956521,
+      "ci_high": 1.0
+    }
+  },
+  {
+    "run_id": "koan_safe_llm__google_gemini-3.1-flash-lite",
+    "n_workflow": 105,
+    "graph_valid": {
+      "rate": 1.0,
+      "n": 105,
+      "successes": 105,
+      "ci_low": 0.9647046717431569,
+      "ci_high": 0.9999999999999998
+    },
+    "executable": {
+      "rate": 0.5523809523809524,
+      "n": 105,
+      "successes": 58,
+      "ci_low": 0.4570954967107025,
+      "ci_high": 0.6439688022338187
+    },
+    "safe_executable": {
+      "rate": 0.5523809523809524,
+      "n": 105,
+      "successes": 58,
+      "ci_low": 0.4570954967107025,
+      "ci_high": 0.6439688022338187
+    },
+    "config_completeness": {
+      "mean": 0.8695238095238095,
+      "n": 105,
+      "ci_low": 0.8371428571428572,
+      "ci_high": 0.9
+    },
+    "safety_recall": {
+      "mean": 0.9634920634920635,
+      "n": 105,
+      "ci_low": 0.9452380952380952,
+      "ci_high": 0.9801587301587302
+    },
+    "clarification": {
+      "rate": 1.0,
+      "n": 15,
+      "successes": 15,
+      "ci_low": 0.7961107336956521,
+      "ci_high": 1.0
+    }
+  },
+  {
+    "run_id": "koan_safe_llm__openai_gpt-5.4-mini",
+    "n_workflow": 105,
+    "graph_valid": {
+      "rate": 1.0,
+      "n": 105,
+      "successes": 105,
+      "ci_low": 0.9647046717431569,
+      "ci_high": 0.9999999999999998
+    },
+    "executable": {
+      "rate": 0.49523809523809526,
+      "n": 105,
+      "successes": 52,
+      "ci_low": 0.40147502342062186,
+      "ci_high": 0.5893373130389671
+    },
+    "safe_executable": {
+      "rate": 0.49523809523809526,
+      "n": 105,
+      "successes": 52,
+      "ci_low": 0.40147502342062186,
+      "ci_high": 0.5893373130389671
+    },
+    "config_completeness": {
+      "mean": 0.7357142857142858,
+      "n": 105,
+      "ci_low": 0.6738095238095239,
+      "ci_high": 0.7957142857142857
+    },
+    "safety_recall": {
+      "mean": 0.9317460317460317,
+      "n": 105,
+      "ci_low": 0.9079365079365079,
+      "ci_high": 0.9547619047619048
+    },
+    "clarification": {
+      "rate": 1.0,
+      "n": 15,
+      "successes": 15,
+      "ci_low": 0.7961107336956521,
+      "ci_high": 1.0
+    }
+  },
+  {
+    "run_id": "koan_safe_rules__noenforce",
+    "n_workflow": 105,
+    "graph_valid": {
+      "rate": 1.0,
+      "n": 105,
+      "successes": 105,
+      "ci_low": 0.9647046717431569,
+      "ci_high": 0.9999999999999998
+    },
+    "executable": {
+      "rate": 0.2857142857142857,
+      "n": 105,
+      "successes": 30,
+      "ci_low": 0.20806999151103067,
+      "ci_high": 0.3784851491704734
+    },
+    "safe_executable": {
+      "rate": 0.12380952380952381,
+      "n": 105,
+      "successes": 13,
+      "ci_low": 0.07380094170864485,
+      "ci_high": 0.2003736385988846
+    },
+    "config_completeness": {
+      "mean": 0.7247619047619047,
+      "n": 105,
+      "ci_low": 0.6814285714285714,
+      "ci_high": 0.7666666666666667
+    },
+    "safety_recall": {
+      "mean": 0.580952380952381,
+      "n": 105,
+      "ci_low": 0.5365079365079365,
+      "ci_high": 0.6253968253968253
+    },
+    "clarification": {
+      "rate": 1.0,
+      "n": 15,
+      "successes": 15,
+      "ci_low": 0.7961107336956521,
+      "ci_high": 1.0
+    }
+  },
+  {
+    "run_id": "koan_safe_rules",
+    "n_workflow": 105,
+    "graph_valid": {
+      "rate": 1.0,
+      "n": 105,
+      "successes": 105,
+      "ci_low": 0.9647046717431569,
+      "ci_high": 0.9999999999999998
+    },
+    "executable": {
+      "rate": 0.5619047619047619,
+      "n": 105,
+      "successes": 59,
+      "ci_low": 0.46648169138351786,
+      "ci_high": 0.6529579346418253
+    },
+    "safe_executable": {
+      "rate": 0.5619047619047619,
+      "n": 105,
+      "successes": 59,
+      "ci_low": 0.46648169138351786,
+      "ci_high": 0.6529579346418253
+    },
+    "config_completeness": {
+      "mean": 0.8752380952380953,
+      "n": 105,
+      "ci_low": 0.8433333333333333,
+      "ci_high": 0.9052380952380952
+    },
+    "safety_recall": {
+      "mean": 0.9603174603174602,
+      "n": 105,
+      "ci_low": 0.9420634920634922,
+      "ci_high": 0.9777777777777779
+    },
+    "clarification": {
+      "rate": 1.0,
+      "n": 15,
+      "successes": 15,
+      "ci_low": 0.7961107336956521,
+      "ci_high": 1.0
+    }
+  },
+  {
     "run_id": "null",
     "n_workflow": 105,
     "graph_valid": {

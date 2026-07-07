@@ -1,0 +1,67 @@
+{
+  "id": "l11",
+  "baseline": "koan_safe_hybrid",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"tokenSelector\",\"chainSelector\",\"limitOrder\"],\"edges\":[[\"walletConnector\",\"limitOrder\"],[\"tokenSelector\",\"limitOrder\"],[\"tokenSelector\",\"limitOrder\"],[\"chainSelector\",\"limitOrder\"]],\"config\":{\"fromToken\":\"ETH\",\"toToken\":\"USDC\",\"targetPrice\":2000},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "limitOrder",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "limitOrder"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "chainSelector",
+        "limitOrder"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "ETH",
+      "toToken": "USDC",
+      "targetPrice": 2000,
+      "expiry": "7d"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "price_bound",
+      "expiry_set"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

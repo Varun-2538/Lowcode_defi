@@ -32,6 +32,10 @@ BASELINE_FILES = {
     # LLM ablations (isolate one prompt-design factor each)
     "fewshot_llm": "fewshot_llm.py",
     "safety_llm": "safety_llm.py",
+    # proposed method: parser + generator-agnostic safety-enforcement layer
+    "koan_safe_rules": "koan_safe_rules_baseline.py",
+    "koan_safe_llm": "koan_safe_llm_baseline.py",
+    "koan_safe_hybrid": "koan_safe_hybrid_baseline.py",
 }
 
 

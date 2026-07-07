@@ -1,70 +1,106 @@
 [
   {
-    "baseline": "constrained_llm__google_gemini-3.1-flash-lite",
+    "baseline": "koan_safe_rules",
     "split": "main",
     "n_total": 120,
-    "n_attempted_definite": 40,
-    "n_safe": 27,
-    "n_unsafe_executed": 13,
-    "fork_safe_execution_rate": 0.675,
+    "n_attempted_definite": 42,
+    "n_safe": 42,
+    "n_unsafe_executed": 0,
+    "fork_safe_execution_rate": 1.0,
     "outcome_counts": {
-      "not_simulated": 22,
-      "not_executable": 58,
-      "pending_not_filled": 8,
-      "executed_safe": 19,
-      "unsafe_executed": 13
-    }
-  },
-  {
-    "baseline": "constrained_llm__openai_gpt-5.4-mini",
-    "split": "main",
-    "n_total": 120,
-    "n_attempted_definite": 32,
-    "n_safe": 19,
-    "n_unsafe_executed": 13,
-    "fork_safe_execution_rate": 0.59375,
-    "outcome_counts": {
-      "not_simulated": 26,
-      "not_executable": 62,
+      "not_simulated": 25,
+      "not_executable": 53,
       "pending_not_filled": 7,
-      "executed_safe": 12,
+      "reverted_slippage": 1,
+      "executed_safe": 21,
+      "aborted_price_impact": 13
+    }
+  },
+  {
+    "baseline": "koan_safe_rules__noenforce",
+    "split": "main",
+    "n_total": 120,
+    "n_attempted_definite": 42,
+    "n_safe": 29,
+    "n_unsafe_executed": 13,
+    "fork_safe_execution_rate": 0.6904761904761905,
+    "outcome_counts": {
+      "not_simulated": 25,
+      "not_executable": 53,
+      "pending_not_filled": 7,
+      "reverted_slippage": 1,
+      "executed_safe": 21,
       "unsafe_executed": 13
     }
   },
   {
-    "baseline": "direct_llm__google_gemini-3.1-flash-lite",
+    "baseline": "koan_safe_llm__google_gemini-3.1-flash-lite",
     "split": "main",
     "n_total": 120,
     "n_attempted_definite": 40,
-    "n_safe": 27,
-    "n_unsafe_executed": 13,
-    "fork_safe_execution_rate": 0.675,
+    "n_safe": 40,
+    "n_unsafe_executed": 0,
+    "fork_safe_execution_rate": 1.0,
     "outcome_counts": {
-      "not_simulated": 23,
-      "not_executable": 57,
+      "not_simulated": 25,
+      "not_executable": 55,
       "pending_not_filled": 8,
       "executed_safe": 19,
-      "unsafe_executed": 13
+      "aborted_price_impact": 13
     }
   },
   {
-    "baseline": "direct_llm__openai_gpt-5.4-mini",
+    "baseline": "koan_safe_llm__openai_gpt-5.4-mini",
     "split": "main",
     "n_total": 120,
-    "n_attempted_definite": 28,
-    "n_safe": 16,
-    "n_unsafe_executed": 12,
-    "fork_safe_execution_rate": 0.5714285714285714,
+    "n_attempted_definite": 27,
+    "n_safe": 27,
+    "n_unsafe_executed": 0,
+    "fork_safe_execution_rate": 1.0,
     "outcome_counts": {
-      "not_simulated": 22,
-      "not_executable": 70,
+      "not_simulated": 25,
+      "not_executable": 68,
       "pending_not_filled": 6,
       "executed_safe": 10,
-      "unsafe_executed": 12
+      "aborted_price_impact": 11
     }
   },
   {
-    "baseline": "fewshot_llm__google_gemini-3.1-flash-lite",
+    "baseline": "koan_safe_hybrid__google_gemini-3.1-flash-lite",
+    "split": "main",
+    "n_total": 120,
+    "n_attempted_definite": 43,
+    "n_safe": 43,
+    "n_unsafe_executed": 0,
+    "fork_safe_execution_rate": 1.0,
+    "outcome_counts": {
+      "not_simulated": 25,
+      "not_executable": 52,
+      "pending_not_filled": 8,
+      "reverted_slippage": 1,
+      "executed_safe": 21,
+      "aborted_price_impact": 13
+    }
+  },
+  {
+    "baseline": "koan_safe_hybrid__openai_gpt-5.4-mini",
+    "split": "main",
+    "n_total": 120,
+    "n_attempted_definite": 29,
+    "n_safe": 29,
+    "n_unsafe_executed": 0,
+    "fork_safe_execution_rate": 1.0,
+    "outcome_counts": {
+      "not_simulated": 25,
+      "not_executable": 66,
+      "pending_not_filled": 6,
+      "reverted_slippage": 1,
+      "executed_safe": 12,
+      "aborted_price_impact": 10
+    }
+  },
+  {
+    "baseline": "koan_safe_llm__google_gemini-3.1-flash-lite__noenforce",
     "split": "main",
     "n_total": 120,
     "n_attempted_definite": 40,
@@ -80,118 +116,20 @@
     }
   },
   {
-    "baseline": "fewshot_llm__openai_gpt-5.4-mini",
+    "baseline": "koan_safe_hybrid__google_gemini-3.1-flash-lite__noenforce",
     "split": "main",
     "n_total": 120,
-    "n_attempted_definite": 36,
-    "n_safe": 26,
-    "n_unsafe_executed": 10,
-    "fork_safe_execution_rate": 0.7222222222222222,
-    "outcome_counts": {
-      "not_simulated": 24,
-      "not_executable": 60,
-      "pending_not_filled": 7,
-      "executed_safe": 18,
-      "unsafe_executed": 10,
-      "aborted_price_impact": 1
-    }
-  },
-  {
-    "baseline": "koan_current",
-    "split": "main",
-    "n_total": 120,
-    "n_attempted_definite": 0,
-    "n_safe": 0,
-    "n_unsafe_executed": 0,
-    "fork_safe_execution_rate": 0.0,
-    "outcome_counts": {
-      "not_simulated": 28,
-      "not_executable": 92
-    }
-  },
-  {
-    "baseline": "null",
-    "split": "main",
-    "n_total": 120,
-    "n_attempted_definite": 0,
-    "n_safe": 0,
-    "n_unsafe_executed": 0,
-    "fork_safe_execution_rate": 0.0,
-    "outcome_counts": {
-      "not_executable": 120
-    }
-  },
-  {
-    "baseline": "oracle",
-    "split": "main",
-    "n_total": 120,
-    "n_attempted_definite": 80,
-    "n_safe": 80,
-    "n_unsafe_executed": 0,
-    "fork_safe_execution_rate": 1.0,
+    "n_attempted_definite": 43,
+    "n_safe": 30,
+    "n_unsafe_executed": 13,
+    "fork_safe_execution_rate": 0.6976744186046512,
     "outcome_counts": {
       "not_simulated": 25,
-      "not_executable": 15,
-      "reverted_slippage": 26,
-      "aborted_price_impact": 54
-    }
-  },
-  {
-    "baseline": "random_nodes",
-    "split": "main",
-    "n_total": 120,
-    "n_attempted_definite": 0,
-    "n_safe": 0,
-    "n_unsafe_executed": 0,
-    "fork_safe_execution_rate": 0.0,
-    "outcome_counts": {
-      "not_simulated": 30,
-      "not_executable": 90
-    }
-  },
-  {
-    "baseline": "safety_llm__google_gemini-3.1-flash-lite",
-    "split": "main",
-    "n_total": 120,
-    "n_attempted_definite": 39,
-    "n_safe": 39,
-    "n_unsafe_executed": 0,
-    "fork_safe_execution_rate": 1.0,
-    "outcome_counts": {
-      "not_simulated": 18,
-      "not_executable": 63,
-      "pending_not_filled": 7,
-      "executed_safe": 22,
-      "aborted_price_impact": 10
-    }
-  },
-  {
-    "baseline": "safety_llm__openai_gpt-5.4-mini",
-    "split": "main",
-    "n_total": 120,
-    "n_attempted_definite": 25,
-    "n_safe": 25,
-    "n_unsafe_executed": 0,
-    "fork_safe_execution_rate": 1.0,
-    "outcome_counts": {
-      "not_simulated": 14,
-      "not_executable": 81,
-      "pending_not_filled": 3,
-      "executed_safe": 8,
-      "aborted_price_impact": 14
-    }
-  },
-  {
-    "baseline": "template",
-    "split": "main",
-    "n_total": 120,
-    "n_attempted_definite": 0,
-    "n_safe": 0,
-    "n_unsafe_executed": 0,
-    "fork_safe_execution_rate": 0.0,
-    "outcome_counts": {
-      "not_simulated": 30,
-      "not_executable": 90
+      "not_executable": 52,
+      "pending_not_filled": 8,
+      "reverted_slippage": 1,
+      "executed_safe": 21,
+      "unsafe_executed": 13
     }
   }
 ]

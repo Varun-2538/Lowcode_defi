@@ -1,0 +1,17 @@
+{
+  "baseline": "koan_safe_rules",
+  "split": "main",
+  "n_total": 120,
+  "n_attempted_definite": 42,
+  "n_safe": 42,
+  "n_unsafe_executed": 0,
+  "fork_safe_execution_rate": 1.0,
+  "outcome_counts": {
+    "not_simulated": 25,
+    "not_executable": 53,
+    "pending_not_filled": 7,
+    "reverted_slippage": 1,
+    "executed_safe": 21,
+    "aborted_price_impact": 13
+  }
+}

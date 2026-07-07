@@ -29,6 +29,10 @@ from stats import wilson_interval  # noqa: E402
 BASELINE_ORDER = [
     "oracle", "null", "random_nodes", "template", "koan_current",
     "direct_llm", "constrained_llm", "fewshot_llm", "safety_llm",
+    "koan_safe_rules", "koan_safe_llm", "koan_safe_hybrid",
+    # enforcement-off ablations sort last
+    "koan_safe_rules__noenforce", "koan_safe_llm__noenforce",
+    "koan_safe_hybrid__noenforce",
 ]
 BASELINE_LABEL = {
     "oracle": "Oracle (ceiling)",
@@ -40,13 +44,26 @@ BASELINE_LABEL = {
     "constrained_llm": "Constrained LLM",
     "fewshot_llm": "Few-shot LLM",
     "safety_llm": "Safety-instruct LLM",
+    "koan_safe_rules": "Koan-Safe (rules)",
+    "koan_safe_llm": "Koan-Safe (LLM)",
+    "koan_safe_hybrid": "Koan-Safe (hybrid)",
 }
 CATEGORIES = ["swap", "limit_order", "cross_chain", "compositional"]
 
 MODEL_LABEL = {
     "google_gemini-3.1-flash-lite": "Gemini 3.1 FL",
     "openai_gpt-5.4-mini": "GPT-5.4 mini",
+    "noenforce": "no enforce",
 }
+
+# Koan-Safe systems whose enforcement layer can be toggled off for ablation.
+KOAN_SAFE_SYSTEMS = ["koan_safe_rules", "koan_safe_llm", "koan_safe_hybrid"]
+
+
+def _is_ablation(run_id: str) -> bool:
+    """True for enforcement-off ablation runs (tag ends in 'noenforce')."""
+    _base, tag = _split_run_id(run_id)
+    return tag is not None and tag.endswith("noenforce")
 
 
 def _rate(rows: list[dict[str, Any]], key: str) -> float:
@@ -69,7 +86,9 @@ def _label(run_id: str) -> str:
     base_label = BASELINE_LABEL.get(base, base)
     if tag is None:
         return base_label
-    return f"{base_label} ({MODEL_LABEL.get(tag, tag)})"
+    # a tag may be "<model>" or "<model>__noenforce" or "noenforce"
+    parts = [MODEL_LABEL.get(p, p) for p in tag.split("__")]
+    return f"{base_label} ({', '.join(parts)})"
 
 
 def _order_key(run_id: str) -> tuple[int, str]:
@@ -246,6 +265,61 @@ def per_category_tex(rows: list[dict[str, Any]], split: str) -> str:
     return "\n".join(lines)
 
 
+def enforcement_ablation_rows(summary: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Pair each Koan-Safe run with its enforcement-off ablation.
+
+    A row is emitted only when both the enforced and the ``__noenforce``
+    variant of the same (system, model) exist, so the delta is a like-for-like
+    measurement of the enforcement layer's effect.
+    """
+    by_id = {r["run_id"]: r for r in summary}
+    rows: list[dict[str, Any]] = []
+    for run_id, r in by_id.items():
+        if _is_ablation(run_id):
+            continue
+        base, tag = _split_run_id(run_id)
+        if base not in KOAN_SAFE_SYSTEMS:
+            continue
+        off_id = f"{base}__noenforce" if tag is None else f"{base}__{tag}__noenforce"
+        off = by_id.get(off_id)
+        if off is None:
+            continue
+        rows.append({
+            "system": r["label"],
+            "on_safe": r["safe_executable"], "off_safe": off["safe_executable"],
+            "on_exec": r["executable"], "off_exec": off["executable"],
+            "on_fork_unsafe": r["fork_unsafe_executed"],
+            "off_fork_unsafe": off["fork_unsafe_executed"],
+            "on_fork_rate": r["fork_safe_rate"], "off_fork_rate": off["fork_safe_rate"],
+        })
+    return rows
+
+
+def enforcement_ablation_tex(rows: list[dict[str, Any]], split: str) -> str:
+    lines = [
+        r"\begin{table}[t]",
+        r"\centering",
+        r"\caption{Enforcement-layer ablation on the "
+        f"{split} split: each Koan-Safe generator with the safety-enforcement "
+        r"layer on vs.\ off (same parser and generator). The layer is what "
+        r"drives on-chain unsafe executions to zero.}",
+        r"\label{tab:enforcement-ablation}",
+        r"\begin{tabular}{lcccc}",
+        r"\toprule",
+        r"System & \multicolumn{2}{c}{Safe (cfg)} & "
+        r"\multicolumn{2}{c}{Fork unsafe} \\",
+        r" & off & on & off & on \\",
+        r"\midrule",
+    ]
+    for r in rows:
+        lines.append(
+            f"{_tex_escape(r['system'])} & {r['off_safe']:.2f} & {r['on_safe']:.2f} "
+            f"& {r['off_fork_unsafe']:d} & {r['on_fork_unsafe']:d} \\\\"
+        )
+    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
+    return "\n".join(lines)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--results-root", type=Path, required=True)
@@ -264,10 +338,21 @@ def main() -> int:
     summary = summary_rows(metrics, fork)
     per_cat = per_category_rows(metrics)
 
+    # The enforcement-off runs belong only in the ablation table.
+    main_summary = [r for r in summary if not _is_ablation(r["run_id"])]
+    main_percat = [r for r in per_cat if not _is_ablation(r["run_id"])]
+
     (table_dir / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     (table_dir / "per_category.json").write_text(json.dumps(per_cat, indent=2) + "\n")
-    (table_dir / "main_results.tex").write_text(main_results_tex(summary, args.split))
-    (table_dir / "per_category.tex").write_text(per_category_tex(per_cat, args.split))
+    (table_dir / "main_results.tex").write_text(main_results_tex(main_summary, args.split))
+    (table_dir / "per_category.tex").write_text(per_category_tex(main_percat, args.split))
+
+    ablation = enforcement_ablation_rows(summary)
+    if ablation:
+        (table_dir / "enforcement_ablation.json").write_text(
+            json.dumps(ablation, indent=2) + "\n")
+        (table_dir / "enforcement_ablation.tex").write_text(
+            enforcement_ablation_tex(ablation, args.split))
 
     print(f"wrote tables to {table_dir}")
     for r in summary:

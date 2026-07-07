@@ -1,0 +1,75 @@
+{
+  "id": "c04",
+  "baseline": "koan_safe_hybrid",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "google/gemini-3.1-flash-lite",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\": [\"walletConnector\", \"chainSelector\", \"tokenSelector\", \"oneInchQuote\", \"oneInchSwap\", \"transactionMonitor\"], \"edges\": [[\"walletConnector\", \"chainSelector\"], [\"chainSelector\", \"tokenSelector\"], [\"tokenSelector\", \"oneInchQuote\"], [\"oneInchQuote\", \"oneInchSwap\"], [\"oneInchSwap\", \"transactionMonitor\"]], \"config\": {\"sourceChain\": \"Ethereum\", \"destinationChain\": \"Optimism\", \"fromToken\": \"USDC\", \"toToken\": \"USDT\"}, \"needs_clarification\": true}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "oneInchQuote",
+      "oneInchSwap",
+      "transactionMonitor",
+      "fusionPlus"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "sourceChain": "Ethereum",
+      "destinationChain": "Optimism",
+      "fromToken": "USDC",
+      "toToken": "USDT",
+      "default_confirmations": 12,
+      "destinationAddress": "self"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}
