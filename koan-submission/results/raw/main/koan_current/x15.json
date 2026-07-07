@@ -1,0 +1,22 @@
+{
+  "id": "x15",
+  "baseline": "koan_current",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "requirements": {
+    "pattern": "conversational",
+    "tokens": [],
+    "features": [],
+    "chains": [],
+    "user_intent": "Swap ETH to DAI and also let me set limit orders on the same pair, warn me on high impact.",
+    "suggested_nodes": []
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

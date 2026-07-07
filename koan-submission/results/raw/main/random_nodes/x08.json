@@ -1,0 +1,37 @@
+{
+  "id": "x08",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "limitOrder",
+      "fusionSwap",
+      "chainSelector",
+      "oneInchSwap",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "limitOrder",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

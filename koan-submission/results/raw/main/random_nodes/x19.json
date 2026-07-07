@@ -1,0 +1,32 @@
+{
+  "id": "x19",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchQuote",
+      "walletConnector",
+      "defiDashboard",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "oneInchQuote",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "limitOrder"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

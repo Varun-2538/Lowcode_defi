@@ -1,0 +1,42 @@
+{
+  "id": "c25",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "limitOrder",
+      "oneInchQuote",
+      "tokenSelector",
+      "walletConnector",
+      "priceImpactCalculator",
+      "fusionSwap"
+    ],
+    "edges": [
+      [
+        "limitOrder",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "fusionSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

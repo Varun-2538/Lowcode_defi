@@ -1,0 +1,68 @@
+{
+  "id": "x16",
+  "baseline": "safety_llm",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"defiDashboard\",\"walletConnector\",\"tokenSelector\",\"oneInchQuote\",\"priceImpactCalculator\",\"oneInchSwap\",\"limitOrder\",\"transactionMonitor\"],\"edges\":[[\"defiDashboard\",\"walletConnector\"],[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"oneInchQuote\"],[\"oneInchQuote\",\"priceImpactCalculator\"],[\"priceImpactCalculator\",\"oneInchSwap\"],[\"defiDashboard\",\"limitOrder\"],[\"oneInchSwap\",\"transactionMonitor\"],[\"limitOrder\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"ETH\",\"toToken\":\"USDC\"},\"needs_clarification\":true}",
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "limitOrder",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "defiDashboard",
+        "limitOrder"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "ETH",
+      "toToken": "USDC"
+    },
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "safety_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

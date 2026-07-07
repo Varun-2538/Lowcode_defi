@@ -1,0 +1,27 @@
+{
+  "id": "l20",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "walletConnector",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

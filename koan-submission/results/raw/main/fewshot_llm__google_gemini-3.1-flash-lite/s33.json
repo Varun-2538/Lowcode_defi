@@ -1,0 +1,52 @@
+{
+  "id": "s33",
+  "baseline": "fewshot_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"oneInchQuote\", \"oneInchSwap\", \"transactionMonitor\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"oneInchQuote\"], [\"oneInchQuote\", \"oneInchSwap\"], [\"oneInchSwap\", \"transactionMonitor\"]], \"config\": {\"fromToken\": \"DAI\", \"toToken\": \"USDC\", \"amount\": \"750\", \"slippage\": \"0.3%\"}, \"needs_clarification\": false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "oneInchSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "DAI",
+      "toToken": "USDC",
+      "amount": "750",
+      "slippage": "0.3%"
+    },
+    "safety": [
+      "slippage_bound",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "fewshot_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

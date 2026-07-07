@@ -1,0 +1,22 @@
+{
+  "id": "l03",
+  "baseline": "koan_current",
+  "category": "limit_order",
+  "status": "needs_clarification",
+  "error": null,
+  "requirements": {
+    "pattern": "conversational",
+    "tokens": [],
+    "features": [],
+    "chains": [],
+    "user_intent": "I want to place a limit order to swap DAI to ETH when ETH hits 2500.",
+    "suggested_nodes": []
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

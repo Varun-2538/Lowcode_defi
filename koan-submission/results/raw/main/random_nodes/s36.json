@@ -1,0 +1,49 @@
+{
+  "id": "s36",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "transactionMonitor",
+      "walletConnector",
+      "priceImpactCalculator",
+      "chainSelector",
+      "oneInchQuote",
+      "oneInchSwap",
+      "fusionPlus"
+    ],
+    "edges": [
+      [
+        "transactionMonitor",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "fusionPlus"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

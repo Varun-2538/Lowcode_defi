@@ -1,0 +1,13 @@
+{
+  "baseline": "koan_current",
+  "split": "main",
+  "n_total": 120,
+  "n_attempted_definite": 0,
+  "n_safe": 0,
+  "n_unsafe_executed": 0,
+  "fork_safe_execution_rate": 0.0,
+  "outcome_counts": {
+    "not_simulated": 28,
+    "not_executable": 92
+  }
+}

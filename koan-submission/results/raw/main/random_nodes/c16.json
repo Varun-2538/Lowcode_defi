@@ -1,0 +1,27 @@
+{
+  "id": "c16",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "oneInchQuote",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

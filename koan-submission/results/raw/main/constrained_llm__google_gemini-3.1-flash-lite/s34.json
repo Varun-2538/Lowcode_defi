@@ -1,0 +1,49 @@
+{
+  "id": "s34",
+  "baseline": "constrained_llm",
+  "category": "swap",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"tokenSelector\", \"oneInchQuote\", \"priceImpactCalculator\", \"oneInchSwap\", \"transactionMonitor\"], \"edges\": [[\"tokenSelector\", \"oneInchQuote\"], [\"oneInchQuote\", \"priceImpactCalculator\"], [\"priceImpactCalculator\", \"oneInchSwap\"], [\"oneInchSwap\", \"transactionMonitor\"]], \"config\": {\"fromToken\": \"AAVE\", \"toToken\": \"ETH\"}, \"needs_clarification\": true}",
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "AAVE",
+      "toToken": "ETH"
+    },
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "constrained_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -224,7 +225,7 @@ def _edges(nodes: list[str]) -> list[list[str]]:
     return [[nodes[i], nodes[i + 1]] for i in range(len(nodes) - 1)]
 
 
-def build_rows() -> tuple[list[dict], list[dict], list[str]]:
+def build_pilot_rows() -> tuple[list[dict], list[dict], list[str]]:
     prompts: list[dict] = []
     gold: list[dict] = []
     ids: list[str] = []
@@ -251,20 +252,73 @@ def build_rows() -> tuple[list[dict], list[dict], list[str]]:
     return prompts, gold, ids
 
 
+def build_main_rows() -> tuple[list[dict], list[dict], list[str]]:
+    """Build the 120-prompt MAIN split from the authored prompt list.
+
+    Gold is derived from the same category templates so every baseline is
+    scored uniformly; per-prompt difficulty/phenomena/paraphrase metadata is
+    carried through for stratified reporting and robustness analysis.
+    """
+    from main_prompts import MAIN  # local import keeps the pilot path standalone
+
+    prompts: list[dict] = []
+    gold: list[dict] = []
+    ids: list[str] = []
+    for (pid, category, text, entities, difficulty, phenomena,
+         paraphrase_of, notes, clarify) in MAIN:
+        nodes, config, safety, allowed_extra = CATEGORY_DEFAULTS[category]
+        prompts.append({
+            "id": pid,
+            "split": "main",
+            "category": category,
+            "prompt": text,
+            "entities": entities,
+            "difficulty": difficulty,
+            "phenomena": list(phenomena),
+            "paraphrase_of": paraphrase_of,
+            "notes": notes,
+        })
+        gold.append({
+            "id": pid,
+            "required_nodes": list(nodes),
+            "required_edges": _edges(nodes),
+            "required_config": dict(config),
+            "safety_requirements": list(safety),
+            "allowed_extra_nodes": list(allowed_extra),
+            "expects_clarification": clarify,
+        })
+        ids.append(pid)
+    return prompts, gold, ids
+
+
+SPLIT_BUILDERS = {
+    "pilot": build_pilot_rows,
+    "main": build_main_rows,
+}
+
+SPLIT_DESCRIPTION = {
+    "pilot": "Expert-authored 30-prompt pilot for safety-constrained DeFi "
+             "workflow synthesis.",
+    "main": "Expert-authored 120-prompt DeFiFlowBench main split "
+            "(40 swap / 30 limit_order / 30 cross_chain / 20 compositional) "
+            "with difficulty tiers, phenomena tags, and paraphrase clusters.",
+}
+
+
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Author and emit the pilot benchmark split.")
+    parser = argparse.ArgumentParser(description="Author and emit a benchmark split.")
     parser.add_argument("--data-root", type=Path, required=True)
-    parser.add_argument("--split", default="pilot")
+    parser.add_argument("--split", default="pilot", choices=sorted(SPLIT_BUILDERS))
     args = parser.parse_args()
 
-    if args.split != "pilot":
-        raise SystemExit("Only the 'pilot' split is authored in this script.")
+    # main_prompts lives alongside this file; make it importable.
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-    prompts, gold, ids = build_rows()
+    prompts, gold, ids = SPLIT_BUILDERS[args.split]()
 
-    prompts_path = args.data_root / "prompts" / "pilot.jsonl"
-    gold_path = args.data_root / "gold" / "pilot.jsonl"
-    split_path = args.data_root / "splits" / "pilot.json"
+    prompts_path = args.data_root / "prompts" / f"{args.split}.jsonl"
+    gold_path = args.data_root / "gold" / f"{args.split}.jsonl"
+    split_path = args.data_root / "splits" / f"{args.split}.json"
 
     prompts_path.parent.mkdir(parents=True, exist_ok=True)
     gold_path.parent.mkdir(parents=True, exist_ok=True)
@@ -274,19 +328,32 @@ def main() -> int:
     gold_path.write_text("\n".join(json.dumps(r) for r in gold) + "\n")
 
     counts: dict[str, int] = {}
-    for row in prompts:
+    diff_counts: dict[str, int] = {}
+    n_clarify = 0
+    for row, grow in zip(prompts, gold):
         counts[row["category"]] = counts.get(row["category"], 0) + 1
+        if row.get("difficulty"):
+            diff_counts[row["difficulty"]] = diff_counts.get(row["difficulty"], 0) + 1
+        if grow["expects_clarification"]:
+            n_clarify += 1
 
-    split_path.write_text(json.dumps({
-        "name": "pilot",
-        "description": "Expert-authored 30-prompt pilot for safety-constrained DeFi workflow synthesis.",
+    split_meta = {
+        "name": args.split,
+        "description": SPLIT_DESCRIPTION[args.split],
+        "n_prompts": len(prompts),
         "category_counts": counts,
         "prompt_ids": ids,
-    }, indent=2) + "\n")
+    }
+    if diff_counts:
+        split_meta["difficulty_counts"] = diff_counts
+        split_meta["n_clarification"] = n_clarify
+    split_path.write_text(json.dumps(split_meta, indent=2) + "\n")
 
     print(f"wrote {len(prompts)} prompts -> {prompts_path}")
     print(f"wrote {len(gold)} gold rows -> {gold_path}")
     print(f"category counts: {counts}")
+    if diff_counts:
+        print(f"difficulty counts: {diff_counts}  clarification: {n_clarify}")
     return 0
 
 

@@ -1,0 +1,22 @@
+{
+  "baseline": "safety_llm",
+  "n_total": 120,
+  "n_workflow": 105,
+  "n_clarification": 15,
+  "graph_valid_rate": 0.13333333333333333,
+  "executable_rate": 0.0761904761904762,
+  "safe_executable_rate": 0.0761904761904762,
+  "mean_node_recall": 0.8507936507936508,
+  "mean_edge_recall": 0.5819047619047619,
+  "mean_config_completeness": 0.7214285714285714,
+  "mean_safety_recall": 0.765079365079365,
+  "mean_extra_nodes": 0.3619047619047619,
+  "clarification_correct_rate": 0.8,
+  "run_id": "safety_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini",
+  "split": "main",
+  "n_ok": 120,
+  "n_error": 0,
+  "n_skipped": 0,
+  "generated_at": "2026-07-07T21:00:19.747164+00:00"
+}

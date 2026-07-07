@@ -1,0 +1,42 @@
+{
+  "id": "s08",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "defiDashboard",
+      "priceImpactCalculator",
+      "tokenSelector",
+      "oneInchQuote",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "limitOrder"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

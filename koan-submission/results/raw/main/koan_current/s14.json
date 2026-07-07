@@ -1,0 +1,22 @@
+{
+  "id": "s14",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "needs_clarification",
+  "error": null,
+  "requirements": {
+    "pattern": "conversational",
+    "tokens": [],
+    "features": [],
+    "chains": [],
+    "user_intent": "I've been holding some MATIC for a while and now I'd like to move it into USDC; please keep slippage under 1%.",
+    "suggested_nodes": []
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

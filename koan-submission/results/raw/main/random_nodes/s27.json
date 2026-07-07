@@ -1,0 +1,37 @@
+{
+  "id": "s27",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "portfolioAPI",
+      "defiDashboard",
+      "fusionPlus",
+      "priceImpactCalculator",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "portfolioAPI",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

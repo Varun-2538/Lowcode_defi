@@ -1,0 +1,63 @@
+{
+  "id": "x01",
+  "baseline": "koan_current",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Limit Order Application",
+    "tokens": [
+      "ETH",
+      "USDC"
+    ],
+    "features": [
+      "limit orders"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Build an app that can swap ETH to USDC and also place limit orders for the same pair.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "limitOrder",
+      "transactionMonitor"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "limitOrder",
+      "transactionMonitor",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {
+      "default_confirmations": 1,
+      "expiry": 30
+    },
+    "safety": [
+      "transaction_monitoring",
+      "expiry_set"
+    ]
+  },
+  "run_id": "koan_current"
+}

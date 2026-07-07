@@ -1,0 +1,42 @@
+{
+  "id": "s26",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "tokenSelector",
+      "priceImpactCalculator",
+      "portfolioAPI",
+      "oneInchQuote",
+      "walletConnector"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "walletConnector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

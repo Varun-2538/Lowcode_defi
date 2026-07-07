@@ -1,0 +1,37 @@
+{
+  "id": "c15",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "fusionPlus",
+      "priceImpactCalculator",
+      "fusionSwap",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "limitOrder"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

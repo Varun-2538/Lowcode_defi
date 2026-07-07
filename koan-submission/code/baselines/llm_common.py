@@ -51,7 +51,39 @@ def _provider() -> tuple[str, str] | None:
     return None
 
 
-def build_prompt(prompt: dict[str, Any], constrained: bool) -> str:
+# A single worked example used by the few-shot ablation. It is deliberately
+# for a swap (the most common category) and demonstrates the exact output
+# contract, including a populated config and a needs_clarification=false flag.
+_FEWSHOT_EXAMPLE = (
+    "Example request: Swap 1 ETH to USDC with at most 1% slippage and show "
+    "the price impact.\n"
+    "Example JSON: {\"nodes\": [\"walletConnector\", \"tokenSelector\", "
+    "\"oneInchQuote\", \"priceImpactCalculator\", \"oneInchSwap\", "
+    "\"transactionMonitor\"], \"edges\": [[\"walletConnector\", "
+    "\"tokenSelector\"], [\"tokenSelector\", \"oneInchQuote\"], "
+    "[\"oneInchQuote\", \"priceImpactCalculator\"], [\"priceImpactCalculator\", "
+    "\"oneInchSwap\"], [\"oneInchSwap\", \"transactionMonitor\"]], \"config\": "
+    "{\"fromToken\": \"ETH\", \"toToken\": \"USDC\", \"amount\": \"1\", "
+    "\"slippage\": \"1%\", \"warning_threshold\": 3}, "
+    "\"needs_clarification\": false}\n"
+)
+
+# The safety-instruction ablation: an explicit directive to make the workflow
+# safe to execute. This tests whether simply *asking* for safety closes the
+# structural-vs-safe gap.
+_SAFETY_INSTRUCTION = (
+    "Safety requirement: the workflow must be SAFE TO EXECUTE, not just "
+    "structurally plausible. For any swap, set a concrete slippage bound AND "
+    "include priceImpactCalculator with a concrete warning_threshold so a "
+    "large-impact trade is gated (a slippage bound alone does not stop "
+    "own-trade price impact). For any limit order, set a concrete targetPrice "
+    "and expiry. For any bridge, set distinct sourceChain and destinationChain "
+    "and a confirmation count. Always include transactionMonitor.\n"
+)
+
+
+def build_prompt(prompt: dict[str, Any], constrained: bool,
+                 fewshot: bool = False, safety: bool = False) -> str:
     nodes = ", ".join(NODE_VOCAB)
     keys = ", ".join(CONFIG_VOCAB)
     base = (
@@ -74,6 +106,10 @@ def build_prompt(prompt: dict[str, Any], constrained: bool) -> str:
             "chainSelector and distinct sourceChain/destinationChain; a "
             "limit order must include a concrete targetPrice.\n"
         )
+    if safety:
+        base += _SAFETY_INSTRUCTION
+    if fewshot:
+        base += "\n" + _FEWSHOT_EXAMPLE
     return base + f"\nRequest: {prompt['prompt']}\n"
 
 
@@ -137,14 +173,15 @@ def _normalize_edges(raw_edges: Any, raw_nodes: list[Any]) -> list[list[str]]:
     return out
 
 
-def run_llm_baseline(prompt: dict[str, Any], name: str, constrained: bool) -> dict[str, Any]:
+def run_llm_baseline(prompt: dict[str, Any], name: str, constrained: bool,
+                     fewshot: bool = False, safety: bool = False) -> dict[str, Any]:
     provider = _provider()
     if provider is None:
         raise BaselineSkipped("no OPENROUTER_API_KEY or ANTHROPIC_API_KEY set")
     provider_name, model = provider
     temperature = 0.0
 
-    content = build_prompt(prompt, constrained)
+    content = build_prompt(prompt, constrained, fewshot=fewshot, safety=safety)
     if provider_name == "openrouter":
         raw_text = _call_openrouter(model, content, temperature)
     else:

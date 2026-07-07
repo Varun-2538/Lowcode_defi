@@ -1,0 +1,37 @@
+{
+  "id": "x14",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "limitOrder",
+      "portfolioAPI",
+      "fusionSwap",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

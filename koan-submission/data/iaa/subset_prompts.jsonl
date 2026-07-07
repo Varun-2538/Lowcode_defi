@@ -1,0 +1,31 @@
+{"id": "c01", "category": "cross_chain", "prompt": "Bridge 100 USDC from Ethereum to Polygon."}
+{"id": "c04", "category": "cross_chain", "prompt": "Cross-chain swap USDC on Ethereum to USDT on Optimism."}
+{"id": "c05", "category": "cross_chain", "prompt": "Send 2 ETH from Ethereum to Base."}
+{"id": "c15", "category": "cross_chain", "prompt": "Get my tokens to another chain."}
+{"id": "c20", "category": "cross_chain", "prompt": "Transfer 150 DAI from Optimism to Polygon."}
+{"id": "c22", "category": "cross_chain", "prompt": "Bridge 2000 USDC from Polygon to Ethereum."}
+{"id": "c23", "category": "cross_chain", "prompt": "Move 50 DAI from Polygon to Polygon."}
+{"id": "c28", "category": "cross_chain", "prompt": "Bridge my LINK from Ethereum to Polygon."}
+{"id": "l02", "category": "limit_order", "prompt": "Set a buy limit order for ETH using USDC at price 3000 expiring in 7 days."}
+{"id": "l06", "category": "limit_order", "prompt": "Sell my LINK for DAI at a target price of 25 with a 30 day expiry."}
+{"id": "l10", "category": "limit_order", "prompt": "Create a sell limit order: 1 WBTC to DAI at 68000, valid 10 days."}
+{"id": "l16", "category": "limit_order", "prompt": "I'd like to place an order that sells half a WBTC for USDC once it reaches 70000."}
+{"id": "l18", "category": "limit_order", "prompt": "Create a buy limit for 3 ETH using DAI at 2900, good for 5 days."}
+{"id": "l22", "category": "limit_order", "prompt": "Set a limit order to sell ETH for ETH at 3000."}
+{"id": "l25", "category": "limit_order", "prompt": "Limit sell 50 AAVE for ETH at 0.05 expiring 7 days."}
+{"id": "l27", "category": "limit_order", "prompt": "limt ordr sell 100 link usdc @ 20 exp 7d"}
+{"id": "s01", "category": "swap", "prompt": "Swap 1 ETH to USDC with at most 1% slippage and show me the price impact."}
+{"id": "s11", "category": "swap", "prompt": "Dump my LINK into USDC as fast as possible, I don't care about slippage."}
+{"id": "s14", "category": "swap", "prompt": "I've been holding some MATIC for a while and now I'd like to move it into USDC; please keep slippage under 1%."}
+{"id": "s20", "category": "swap", "prompt": "Convert one Ether to USD Coin, cap slippage at 1 percent, and display the price impact."}
+{"id": "s25", "category": "swap", "prompt": "Set up a gasless swap of DAI to ETH with MEV protection."}
+{"id": "s27", "category": "swap", "prompt": "Exchange 50 UNI for USDC at 1% slippage."}
+{"id": "s33", "category": "swap", "prompt": "Convert 750 DAI to USDC with 0.3% slippage."}
+{"id": "s36", "category": "swap", "prompt": "Swap 10 MATIC to USDC at 1% slippage."}
+{"id": "s38", "category": "swap", "prompt": "Exchange 0.2 WBTC into ETH with tight slippage control."}
+{"id": "s39", "category": "swap", "prompt": "Swap 600 USDT to DAI with 0.5% slippage and show impact."}
+{"id": "x02", "category": "compositional", "prompt": "I want to swap DAI to ETH now and set a limit order to sell ETH at 4000 later."}
+{"id": "x04", "category": "compositional", "prompt": "Make a trading app that does market swaps and stop-loss limit orders for WBTC/USDC."}
+{"id": "x08", "category": "compositional", "prompt": "Build me an app to swap 1 ETH to USDC at 1% slippage and also set a limit order to buy back ETH at 2500."}
+{"id": "x13", "category": "compositional", "prompt": "Build swaps and limit orders for MATIC/USDC with a live dashboard."}
+{"id": "x14", "category": "compositional", "prompt": "I want everything DeFi in one app."}

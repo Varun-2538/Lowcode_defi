@@ -1,0 +1,47 @@
+{
+  "id": "s03",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "oneInchSwap",
+      "oneInchQuote",
+      "tokenSelector",
+      "defiDashboard",
+      "limitOrder",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

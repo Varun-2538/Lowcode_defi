@@ -1,0 +1,29 @@
+{
+  "id": "s22",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "transactionMonitor",
+      "defiDashboard",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

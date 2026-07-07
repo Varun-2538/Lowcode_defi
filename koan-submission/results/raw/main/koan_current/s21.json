@@ -1,0 +1,22 @@
+{
+  "id": "s21",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "needs_clarification",
+  "error": null,
+  "requirements": {
+    "pattern": "conversational",
+    "tokens": [],
+    "features": [],
+    "chains": [],
+    "user_intent": "Please set up a swap of 1 ETH for USDC, no more than 1% slippage, and I want to see the impact on price.",
+    "suggested_nodes": []
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

@@ -1,0 +1,16 @@
+{
+  "baseline": "safety_llm__openai_gpt-5.4-mini",
+  "split": "main",
+  "n_total": 120,
+  "n_attempted_definite": 25,
+  "n_safe": 25,
+  "n_unsafe_executed": 0,
+  "fork_safe_execution_rate": 1.0,
+  "outcome_counts": {
+    "not_simulated": 14,
+    "not_executable": 81,
+    "pending_not_filled": 3,
+    "executed_safe": 8,
+    "aborted_price_impact": 14
+  }
+}

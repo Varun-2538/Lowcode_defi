@@ -1,0 +1,50 @@
+{
+  "id": "c21",
+  "baseline": "direct_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"chainSelector\",\"fusionPlus\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"walletConnector\",\"chainSelector\"],[\"tokenSelector\",\"fusionPlus\"],[\"chainSelector\",\"fusionPlus\"]],\"config\":{\"fromToken\":\"USDT\",\"amount\":\"400\",\"sourceChain\":\"Ethereum\",\"destinationChain\":\"Avalanche\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "fusionPlus"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "chainSelector",
+        "fusionPlus"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDT",
+      "amount": "400",
+      "sourceChain": "Ethereum",
+      "destinationChain": "Avalanche"
+    },
+    "safety": [
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

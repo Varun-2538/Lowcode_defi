@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
+import inspect
 import json
 import sys
 from datetime import datetime, timezone
@@ -24,6 +25,13 @@ BASELINE_FILES = {
     "direct_llm": "direct_llm.py",
     "constrained_llm": "constrained_llm.py",
     "koan_current": "koan_current.py",
+    # floor / ceiling reference baselines (ABC R.13-R.14: trivial + oracle)
+    "oracle": "oracle_baseline.py",
+    "null": "null_baseline.py",
+    "random_nodes": "random_baseline.py",
+    # LLM ablations (isolate one prompt-design factor each)
+    "fewshot_llm": "fewshot_llm.py",
+    "safety_llm": "safety_llm.py",
 }
 
 
@@ -79,12 +87,16 @@ def main() -> int:
     for d in (raw_dir, processed_dir, log_dir):
         d.mkdir(parents=True, exist_ok=True)
 
+    # Some baselines (e.g. the oracle) need the gold record; pass it only if
+    # the baseline's generate() declares a second parameter.
+    wants_gold = len(inspect.signature(generate).parameters) >= 2
+
     metrics: list[dict[str, Any]] = []
     n_ok = n_error = n_skipped = 0
 
     for prompt in prompts:
         try:
-            run = generate(prompt)
+            run = generate(prompt, gold_rows[prompt["id"]]) if wants_gold else generate(prompt)
         except Exception as exc:  # noqa: BLE001
             is_skip = skipped_cls is not None and isinstance(exc, skipped_cls)
             status = "skipped" if is_skip else "error"

@@ -1,0 +1,63 @@
+\begin{table}[t]
+\centering
+\caption{Graph-valid / safe-executable rate per category (main split).}
+\label{tab:per-category}
+\begin{tabular}{llcc}
+\toprule
+System & Category & Graph valid & Safe-exec. \\
+\midrule
+Oracle (ceiling) & swap & 1.00 & 1.00 \\
+Oracle (ceiling) & limit\_order & 1.00 & 1.00 \\
+Oracle (ceiling) & cross\_chain & 1.00 & 1.00 \\
+Oracle (ceiling) & compositional & 1.00 & 1.00 \\
+Null (floor) & swap & 0.00 & 0.00 \\
+Null (floor) & limit\_order & 0.00 & 0.00 \\
+Null (floor) & cross\_chain & 0.00 & 0.00 \\
+Null (floor) & compositional & 0.00 & 0.00 \\
+Random nodes & swap & 0.00 & 0.00 \\
+Random nodes & limit\_order & 0.00 & 0.00 \\
+Random nodes & cross\_chain & 0.00 & 0.00 \\
+Random nodes & compositional & 0.00 & 0.00 \\
+Template-only & swap & 1.00 & 0.00 \\
+Template-only & limit\_order & 1.00 & 0.00 \\
+Template-only & cross\_chain & 1.00 & 0.00 \\
+Template-only & compositional & 1.00 & 0.00 \\
+Koan (regex$+$gen) & swap & 0.00 & 0.00 \\
+Koan (regex$+$gen) & limit\_order & 0.50 & 0.00 \\
+Koan (regex$+$gen) & cross\_chain & 0.00 & 0.00 \\
+Koan (regex$+$gen) & compositional & 0.00 & 0.00 \\
+Direct LLM (Gemini 3.1 FL) & swap & 0.42 & 0.00 \\
+Direct LLM (Gemini 3.1 FL) & limit\_order & 0.12 & 0.12 \\
+Direct LLM (Gemini 3.1 FL) & cross\_chain & 0.00 & 0.00 \\
+Direct LLM (Gemini 3.1 FL) & compositional & 0.00 & 0.00 \\
+Direct LLM (GPT-5.4 mini) & swap & 0.03 & 0.00 \\
+Direct LLM (GPT-5.4 mini) & limit\_order & 0.00 & 0.00 \\
+Direct LLM (GPT-5.4 mini) & cross\_chain & 0.04 & 0.00 \\
+Direct LLM (GPT-5.4 mini) & compositional & 0.00 & 0.00 \\
+Constrained LLM (Gemini 3.1 FL) & swap & 0.69 & 0.00 \\
+Constrained LLM (Gemini 3.1 FL) & limit\_order & 0.81 & 0.42 \\
+Constrained LLM (Gemini 3.1 FL) & cross\_chain & 0.00 & 0.00 \\
+Constrained LLM (Gemini 3.1 FL) & compositional & 0.00 & 0.00 \\
+Constrained LLM (GPT-5.4 mini) & swap & 0.08 & 0.00 \\
+Constrained LLM (GPT-5.4 mini) & limit\_order & 0.12 & 0.08 \\
+Constrained LLM (GPT-5.4 mini) & cross\_chain & 0.00 & 0.00 \\
+Constrained LLM (GPT-5.4 mini) & compositional & 0.00 & 0.00 \\
+Few-shot LLM (Gemini 3.1 FL) & swap & 0.19 & 0.00 \\
+Few-shot LLM (Gemini 3.1 FL) & limit\_order & 0.92 & 0.42 \\
+Few-shot LLM (Gemini 3.1 FL) & cross\_chain & 0.00 & 0.00 \\
+Few-shot LLM (Gemini 3.1 FL) & compositional & 0.00 & 0.00 \\
+Few-shot LLM (GPT-5.4 mini) & swap & 0.19 & 0.08 \\
+Few-shot LLM (GPT-5.4 mini) & limit\_order & 0.69 & 0.31 \\
+Few-shot LLM (GPT-5.4 mini) & cross\_chain & 0.08 & 0.00 \\
+Few-shot LLM (GPT-5.4 mini) & compositional & 0.00 & 0.00 \\
+Safety-instruct LLM (Gemini 3.1 FL) & swap & 0.72 & 0.56 \\
+Safety-instruct LLM (Gemini 3.1 FL) & limit\_order & 0.38 & 0.35 \\
+Safety-instruct LLM (Gemini 3.1 FL) & cross\_chain & 0.00 & 0.00 \\
+Safety-instruct LLM (Gemini 3.1 FL) & compositional & 0.06 & 0.06 \\
+Safety-instruct LLM (GPT-5.4 mini) & swap & 0.19 & 0.11 \\
+Safety-instruct LLM (GPT-5.4 mini) & limit\_order & 0.19 & 0.15 \\
+Safety-instruct LLM (GPT-5.4 mini) & cross\_chain & 0.08 & 0.00 \\
+Safety-instruct LLM (GPT-5.4 mini) & compositional & 0.00 & 0.00 \\
+\bottomrule
+\end{tabular}
+\end{table}

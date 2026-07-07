@@ -1,0 +1,52 @@
+{
+  "id": "s32",
+  "baseline": "direct_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"tokenSelector\",\"priceImpactCalculator\",\"oneInchQuote\",\"oneInchSwap\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"priceImpactCalculator\"],[\"tokenSelector\",\"oneInchQuote\"],[\"oneInchQuote\",\"oneInchSwap\"],[\"priceImpactCalculator\",\"oneInchSwap\"]],\"config\":{\"fromToken\":\"ETH\",\"toToken\":\"LINK\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "tokenSelector",
+      "priceImpactCalculator",
+      "oneInchQuote",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {
+      "fromToken": "ETH",
+      "toToken": "LINK"
+    },
+    "safety": []
+  },
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

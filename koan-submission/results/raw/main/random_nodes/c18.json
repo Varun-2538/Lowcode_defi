@@ -1,0 +1,27 @@
+{
+  "id": "c18",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchQuote",
+      "defiDashboard",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "oneInchQuote",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

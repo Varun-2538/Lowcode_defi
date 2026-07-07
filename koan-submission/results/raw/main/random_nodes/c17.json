@@ -1,0 +1,42 @@
+{
+  "id": "c17",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "defiDashboard",
+      "oneInchSwap",
+      "priceImpactCalculator",
+      "oneInchQuote",
+      "fusionPlus"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "fusionPlus"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

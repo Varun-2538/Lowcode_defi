@@ -1,0 +1,14 @@
+{
+  "id": "x13",
+  "baseline": "null",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "null"
+}

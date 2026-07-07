@@ -1,0 +1,49 @@
+{
+  "id": "l11",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "walletConnector",
+      "priceImpactCalculator",
+      "limitOrder",
+      "transactionMonitor",
+      "chainSelector",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

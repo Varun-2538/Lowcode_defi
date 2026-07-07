@@ -1,0 +1,39 @@
+{
+  "id": "l29",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "priceImpactCalculator",
+      "chainSelector",
+      "transactionMonitor",
+      "tokenSelector",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "priceImpactCalculator",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

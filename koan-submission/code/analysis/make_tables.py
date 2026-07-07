@@ -18,16 +18,28 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from stats import wilson_interval  # noqa: E402
 
-BASELINE_ORDER = ["template", "koan_current", "direct_llm", "constrained_llm"]
+
+BASELINE_ORDER = [
+    "oracle", "null", "random_nodes", "template", "koan_current",
+    "direct_llm", "constrained_llm", "fewshot_llm", "safety_llm",
+]
 BASELINE_LABEL = {
+    "oracle": "Oracle (ceiling)",
+    "null": "Null (floor)",
+    "random_nodes": "Random nodes",
     "template": "Template-only",
     "koan_current": "Koan (regex+gen)",
     "direct_llm": "Direct LLM",
     "constrained_llm": "Constrained LLM",
+    "fewshot_llm": "Few-shot LLM",
+    "safety_llm": "Safety-instruct LLM",
 }
 CATEGORIES = ["swap", "limit_order", "cross_chain", "compositional"]
 
@@ -93,13 +105,18 @@ def summary_rows(metrics: dict[str, list[dict[str, Any]]],
         wf = [m for m in data if not m["expects_clarification"]]
         clarify = [m for m in data if m["expects_clarification"]]
         fk = fork.get(run_id, {})
+        n_wf = len(wf)
+        n_safe_ok = sum(1 for m in wf if m["safe_executable_proxy"])
+        safe_lo, safe_hi = wilson_interval(n_safe_ok, n_wf)
         rows.append({
             "run_id": run_id,
             "label": _label(run_id),
-            "n_workflow": len(wf),
+            "n_workflow": n_wf,
             "graph_valid": _rate(wf, "graph_valid"),
             "executable": _rate(wf, "executable_proxy"),
             "safe_executable": _rate(wf, "safe_executable_proxy"),
+            "safe_ci_low": safe_lo,
+            "safe_ci_high": safe_hi,
             "config_completeness": _mean(wf, "config_completeness"),
             "safety_recall": _mean(wf, "safety_recall"),
             "extra_nodes": _mean(wf, "extra_nodes"),
@@ -137,20 +154,24 @@ def _tex_escape(text: str) -> str:
     return text.replace("_", r"\_").replace("+", r"$+$").replace("%", r"\%")
 
 
-def main_results_tex(rows: list[dict[str, Any]]) -> str:
+def main_results_tex(rows: list[dict[str, Any]], split: str) -> str:
+    n_wf = max((r["n_workflow"] for r in rows), default=0)
     lines = [
-        r"\begin{table}[t]",
+        r"\begin{table*}[t]",
         r"\centering",
         r"\caption{Static structural/executable/safe metrics vs.\ on-chain "
-        r"execution on the pilot split ($n{=}26$ workflow prompts). "
-        r"Fork-Unsafe counts workflows that executed on a local py-EVM at "
-        r"$>$5\% own-trade price impact with no price-impact gate. LLM "
-        r"baselines run at temperature~0.}",
+        f"execution on the {split} split (${{n{{=}}{n_wf}}}$ workflow prompts). "
+        r"Safe (cfg) is reported with a 95\% Wilson interval. Fork-Unsafe "
+        r"counts workflows that executed on a local py-EVM at $>$5\% own-trade "
+        r"price impact with no price-impact gate; Fork safe-rate is over "
+        r"prompts with a definite on-chain outcome. Oracle and the "
+        r"null/random baselines bound the ceiling and floor. LLM baselines run "
+        r"at temperature~0.}",
         r"\label{tab:main-results}",
         r"\begin{tabular}{lccccc}",
         r"\toprule",
-        r"System & Graph & Exec. & Safe & Fork & Fork \\",
-        r"       & valid & (cfg) & (cfg) & unsafe & safe-rate \\",
+        r"System & Graph & Exec. & Safe (cfg) & Fork & Fork \\",
+        r"       & valid & (cfg) & [95\% CI] & unsafe & safe-rate \\",
         r"\midrule",
     ]
     for r in rows:
@@ -161,20 +182,23 @@ def main_results_tex(rows: list[dict[str, Any]]) -> str:
             continue
         # fork safe-rate is only meaningful when something executed on-chain
         fork_rate = f"{r['fork_safe_rate']:.2f}" if r["fork_definite"] else r"n/a"
+        safe_ci = (f"{r['safe_executable']:.2f} "
+                   f"[{r['safe_ci_low']:.2f},{r['safe_ci_high']:.2f}]")
         lines.append(
             f"{_tex_escape(r['label'])} & {r['graph_valid']:.2f} & {r['executable']:.2f} "
-            f"& {r['safe_executable']:.2f} & {r['fork_unsafe_executed']:d} "
+            f"& {safe_ci} & {r['fork_unsafe_executed']:d} "
             f"& {fork_rate} \\\\"
         )
-    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
+    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table*}", ""]
     return "\n".join(lines)
 
 
-def per_category_tex(rows: list[dict[str, Any]]) -> str:
+def per_category_tex(rows: list[dict[str, Any]], split: str) -> str:
     lines = [
         r"\begin{table}[t]",
         r"\centering",
-        r"\caption{Graph-valid / safe-executable rate per category (pilot).}",
+        r"\caption{Graph-valid / safe-executable rate per category "
+        f"({split} split).}}",
         r"\label{tab:per-category}",
         r"\begin{tabular}{llcc}",
         r"\toprule",
@@ -202,7 +226,7 @@ def main() -> int:
         return 1
     fork = load_fork(args.results_root, args.split)
 
-    table_dir = args.results_root / "tables"
+    table_dir = args.results_root / "tables" / args.split
     table_dir.mkdir(parents=True, exist_ok=True)
 
     summary = summary_rows(metrics, fork)
@@ -210,8 +234,8 @@ def main() -> int:
 
     (table_dir / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     (table_dir / "per_category.json").write_text(json.dumps(per_cat, indent=2) + "\n")
-    (table_dir / "main_results.tex").write_text(main_results_tex(summary))
-    (table_dir / "per_category.tex").write_text(per_category_tex(per_cat))
+    (table_dir / "main_results.tex").write_text(main_results_tex(summary, args.split))
+    (table_dir / "per_category.tex").write_text(per_category_tex(per_cat, args.split))
 
     print(f"wrote tables to {table_dir}")
     for r in summary:

@@ -1,0 +1,14 @@
+{
+  "id": "l22",
+  "baseline": "oracle",
+  "category": "limit_order",
+  "error": null,
+  "status": "needs_clarification",
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "oracle"
+}

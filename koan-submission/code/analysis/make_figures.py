@@ -24,13 +24,20 @@ def main() -> int:
     parser.add_argument("--split", default="pilot")
     args = parser.parse_args()
 
-    summary_path = args.results_root / "tables" / "summary.json"
+    summary_path = args.results_root / "tables" / args.split / "summary.json"
+    if not summary_path.exists():
+        # fall back to the legacy flat location for older runs
+        legacy = args.results_root / "tables" / "summary.json"
+        summary_path = legacy if legacy.exists() else summary_path
     if not summary_path.exists():
         print("no summary.json; run make_tables.py first")
         return 1
     summary = json.loads(summary_path.read_text())
 
-    rows = [r for r in summary if not r["n_skipped"]]
+    # Exclude reference floor/ceiling baselines from the headline figure; they
+    # are shown in the table. Keep only the systems under test.
+    reference = {"oracle", "null", "random_nodes"}
+    rows = [r for r in summary if not r["n_skipped"] and r["run_id"] not in reference]
     if not rows:
         print("no non-skipped baselines to plot")
         return 0
@@ -72,7 +79,7 @@ def main() -> int:
     ax.legend()
     fig.tight_layout()
 
-    fig_dir = args.results_root / "figures"
+    fig_dir = args.results_root / "figures" / args.split
     fig_dir.mkdir(parents=True, exist_ok=True)
     out = fig_dir / "structural_vs_safe.png"
     fig.savefig(out, dpi=150)

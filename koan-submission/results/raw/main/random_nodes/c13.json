@@ -1,0 +1,39 @@
+{
+  "id": "c13",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "transactionMonitor",
+      "walletConnector",
+      "priceImpactCalculator",
+      "fusionSwap",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "transactionMonitor",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

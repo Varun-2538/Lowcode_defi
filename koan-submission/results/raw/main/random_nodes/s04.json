@@ -1,0 +1,47 @@
+{
+  "id": "s04",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "oneInchSwap",
+      "chainSelector",
+      "fusionPlus",
+      "fusionSwap",
+      "portfolioAPI",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

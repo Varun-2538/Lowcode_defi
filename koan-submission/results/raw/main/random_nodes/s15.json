@@ -1,0 +1,37 @@
+{
+  "id": "s15",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "portfolioAPI",
+      "priceImpactCalculator",
+      "chainSelector",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

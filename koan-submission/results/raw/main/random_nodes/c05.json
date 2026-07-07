@@ -1,0 +1,32 @@
+{
+  "id": "c05",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "oneInchQuote",
+      "limitOrder",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

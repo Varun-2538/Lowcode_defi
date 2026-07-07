@@ -1,0 +1,62 @@
+{
+  "id": "x09",
+  "baseline": "constrained_llm",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"tokenSelector\",\"priceImpactCalculator\",\"oneInchQuote\",\"oneInchSwap\",\"transactionMonitor\",\"limitOrder\"],\"edges\":[[\"tokenSelector\",\"priceImpactCalculator\"],[\"tokenSelector\",\"oneInchQuote\"],[\"priceImpactCalculator\",\"oneInchSwap\"],[\"oneInchQuote\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"],[\"tokenSelector\",\"limitOrder\"],[\"priceImpactCalculator\",\"limitOrder\"]],\"config\":{\"fromToken\":\"UNI\",\"toToken\":\"ETH\"},\"needs_clarification\":true}",
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "priceImpactCalculator",
+      "oneInchQuote",
+      "oneInchSwap",
+      "transactionMonitor",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "priceImpactCalculator",
+        "limitOrder"
+      ]
+    ],
+    "config": {
+      "fromToken": "UNI",
+      "toToken": "ETH"
+    },
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "constrained_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

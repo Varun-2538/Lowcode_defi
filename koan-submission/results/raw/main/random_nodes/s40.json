@@ -1,0 +1,37 @@
+{
+  "id": "s40",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "fusionSwap",
+      "defiDashboard",
+      "chainSelector",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "limitOrder"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

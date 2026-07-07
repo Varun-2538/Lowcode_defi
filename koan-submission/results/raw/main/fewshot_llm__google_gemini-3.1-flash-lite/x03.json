@@ -1,0 +1,50 @@
+{
+  "id": "x03",
+  "baseline": "fewshot_llm",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"oneInchQuote\", \"priceImpactCalculator\", \"oneInchSwap\", \"defiDashboard\", \"portfolioAPI\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"oneInchQuote\"], [\"oneInchQuote\", \"priceImpactCalculator\"], [\"priceImpactCalculator\", \"oneInchSwap\"], [\"defiDashboard\", \"portfolioAPI\"]], \"config\": {}, \"needs_clarification\": true}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "defiDashboard",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "defiDashboard",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "fewshot_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

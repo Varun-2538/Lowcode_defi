@@ -1,0 +1,47 @@
+{
+  "id": "l15",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "priceImpactCalculator",
+      "chainSelector",
+      "oneInchSwap",
+      "fusionSwap",
+      "oneInchQuote",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}
