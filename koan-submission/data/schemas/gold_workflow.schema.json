@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Koan benchmark gold workflow",
+  "type": "object",
+  "required": ["id", "required_nodes", "required_edges", "required_config", "safety_requirements"],
+  "properties": {
+    "id": {"type": "string"},
+    "required_nodes": {"type": "array", "items": {"type": "string"}},
+    "required_edges": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [{"type": "string"}, {"type": "string"}],
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "required_config": {"type": "object", "additionalProperties": true},
+    "safety_requirements": {"type": "array", "items": {"type": "string"}},
+    "allowed_extra_nodes": {"type": "array", "items": {"type": "string"}},
+    "expects_clarification": {"type": "boolean"},
+    "unsupported_if_missing": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
+

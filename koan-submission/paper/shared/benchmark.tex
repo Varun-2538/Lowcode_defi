@@ -1,0 +1,54 @@
+\section{Benchmark}
+\label{sec:benchmark}
+
+\subsection{Categories and prompts}
+
+The pilot benchmark contains 30 expert-authored prompts across four
+categories: token swaps (8), limit orders (7), cross-chain transfers (8),
+and compositional workflows that combine primitives (7). Four prompts
+across categories are deliberately underspecified (e.g.\ ``help me trade
+some tokens''), and two are adversarial in the sense that the user waives
+a safety constraint the gold annotation still requires (e.g.\ ``I don't
+care about slippage'', or a bridge whose source and destination chains are
+identical). Prompts vary in phrasing and specificity, from fully specified
+(``swap 1 ETH to USDC with at most 1\% slippage'') to schematic (``make a
+token swap app for UNI to ETH'').
+
+\subsection{Gold annotations}
+
+Each prompt is paired with a gold annotation recording (i) the required
+node types, (ii) the required type-level edges, (iii) the required
+execution-configuration keys, (iv) the safety predicates that must hold,
+and (v) a set of \emph{allowed extra nodes} that a richer-but-correct
+workflow may include without penalty. The annotation scheme, including
+what qualifies as a required node, edge, configuration key, and safety
+predicate, is documented in the artifact's annotation guide so that the
+final split can be extended consistently. The node vocabulary is taken
+from an existing executable DeFi node catalog, ensuring every required
+node corresponds to a real executor rather than an abstract label.
+
+\subsection{Baselines}
+
+We evaluate four families of systems, all scored by the identical
+evaluator:
+
+\begin{itemize}
+  \item \textbf{Template-only.} A deterministic baseline that emits the
+        canonical workflow for the prompt's category with static safety
+        defaults, but performs no language understanding and therefore
+        cannot populate trade-specific configuration.
+  \item \textbf{Koan.} The regex-fallback intent parser and workflow
+        generator of an existing no-code DeFi platform, run offline and
+        deterministically. This baseline is a real deployed system, not a
+        strawman.
+  \item \textbf{Direct LLM.} A language model prompted to emit a workflow
+        graph and configuration as JSON, with no structural constraints.
+  \item \textbf{Constrained LLM.} The same model with per-category
+        structural and safety constraints injected into the prompt.
+\end{itemize}
+
+The two LLM baselines are evaluated on two model families to test whether
+findings are model-specific. Model outputs are normalized (node and edge
+vocabularies filtered; index-based and name-based edge encodings both
+accepted) before scoring, and each raw model response is retained so that
+metrics can be re-derived deterministically without additional queries.

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Koan benchmark run output",
+  "type": "object",
+  "required": ["id", "baseline", "status", "workflow"],
+  "properties": {
+    "id": {"type": "string"},
+    "baseline": {"type": "string"},
+    "status": {"type": "string", "enum": ["ok", "error"]},
+    "error": {"type": ["string", "null"]},
+    "workflow": {
+      "type": "object",
+      "properties": {
+        "nodes": {"type": "array", "items": {"type": "string"}},
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [{"type": "string"}, {"type": "string"}],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "config": {"type": "object", "additionalProperties": true},
+        "safety": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
+

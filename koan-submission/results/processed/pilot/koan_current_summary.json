@@ -1,0 +1,22 @@
+{
+  "baseline": "koan_current",
+  "n_total": 30,
+  "n_workflow": 26,
+  "n_clarification": 4,
+  "graph_valid_rate": 0.15384615384615385,
+  "executable_rate": 0.0,
+  "safe_executable_rate": 0.0,
+  "mean_node_recall": 0.676007326007326,
+  "mean_edge_recall": 0.48205128205128206,
+  "mean_config_completeness": 0.15576923076923077,
+  "mean_safety_recall": 0.48717948717948717,
+  "mean_extra_nodes": 0.5769230769230769,
+  "clarification_correct_rate": 0.25,
+  "run_id": "koan_current",
+  "model_tag": null,
+  "split": "pilot",
+  "n_ok": 30,
+  "n_error": 0,
+  "n_skipped": 0,
+  "generated_at": "2026-07-07T16:08:20.854483+00:00"
+}

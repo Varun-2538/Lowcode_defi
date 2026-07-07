@@ -1,0 +1,218 @@
+[
+  {
+    "run_id": "template",
+    "label": "Template-only",
+    "category": "swap",
+    "n": 7,
+    "graph_valid": 1.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "template",
+    "label": "Template-only",
+    "category": "limit_order",
+    "n": 6,
+    "graph_valid": 1.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "template",
+    "label": "Template-only",
+    "category": "cross_chain",
+    "n": 7,
+    "graph_valid": 1.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "template",
+    "label": "Template-only",
+    "category": "compositional",
+    "n": 6,
+    "graph_valid": 1.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "koan_current",
+    "label": "Koan (regex+gen)",
+    "category": "swap",
+    "n": 7,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "koan_current",
+    "label": "Koan (regex+gen)",
+    "category": "limit_order",
+    "n": 6,
+    "graph_valid": 0.6666666666666666,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "koan_current",
+    "label": "Koan (regex+gen)",
+    "category": "cross_chain",
+    "n": 7,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "koan_current",
+    "label": "Koan (regex+gen)",
+    "category": "compositional",
+    "n": 6,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+    "label": "Direct LLM (Gemini 3.1 FL)",
+    "category": "swap",
+    "n": 7,
+    "graph_valid": 0.2857142857142857,
+    "executable": 0.14285714285714285,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+    "label": "Direct LLM (Gemini 3.1 FL)",
+    "category": "limit_order",
+    "n": 6,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+    "label": "Direct LLM (Gemini 3.1 FL)",
+    "category": "cross_chain",
+    "n": 7,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+    "label": "Direct LLM (Gemini 3.1 FL)",
+    "category": "compositional",
+    "n": 6,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "label": "Direct LLM (GPT-5.4 mini)",
+    "category": "swap",
+    "n": 7,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "label": "Direct LLM (GPT-5.4 mini)",
+    "category": "limit_order",
+    "n": 6,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "label": "Direct LLM (GPT-5.4 mini)",
+    "category": "cross_chain",
+    "n": 7,
+    "graph_valid": 0.14285714285714285,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "label": "Direct LLM (GPT-5.4 mini)",
+    "category": "compositional",
+    "n": 6,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "constrained_llm__google_gemini-3.1-flash-lite",
+    "label": "Constrained LLM (Gemini 3.1 FL)",
+    "category": "swap",
+    "n": 7,
+    "graph_valid": 0.5714285714285714,
+    "executable": 0.14285714285714285,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "constrained_llm__google_gemini-3.1-flash-lite",
+    "label": "Constrained LLM (Gemini 3.1 FL)",
+    "category": "limit_order",
+    "n": 6,
+    "graph_valid": 0.5,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "constrained_llm__google_gemini-3.1-flash-lite",
+    "label": "Constrained LLM (Gemini 3.1 FL)",
+    "category": "cross_chain",
+    "n": 7,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "constrained_llm__google_gemini-3.1-flash-lite",
+    "label": "Constrained LLM (Gemini 3.1 FL)",
+    "category": "compositional",
+    "n": 6,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "constrained_llm__openai_gpt-5.4-mini",
+    "label": "Constrained LLM (GPT-5.4 mini)",
+    "category": "swap",
+    "n": 7,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "constrained_llm__openai_gpt-5.4-mini",
+    "label": "Constrained LLM (GPT-5.4 mini)",
+    "category": "limit_order",
+    "n": 6,
+    "graph_valid": 0.16666666666666666,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "constrained_llm__openai_gpt-5.4-mini",
+    "label": "Constrained LLM (GPT-5.4 mini)",
+    "category": "cross_chain",
+    "n": 7,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  },
+  {
+    "run_id": "constrained_llm__openai_gpt-5.4-mini",
+    "label": "Constrained LLM (GPT-5.4 mini)",
+    "category": "compositional",
+    "n": 6,
+    "graph_valid": 0.0,
+    "executable": 0.0,
+    "safe_executable": 0.0
+  }
+]

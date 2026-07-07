@@ -1,0 +1,78 @@
+\section{Experiments}
+\label{sec:experiments}
+
+We report the pilot evaluation over the 30-prompt benchmark. Of the 30
+prompts, four are underspecified and scored on the clarification axis,
+leaving $n=26$ prompts that should yield a workflow. LLM baselines are run
+at temperature $0$ on two model families, Gemini~3.1~Flash~Lite and
+GPT-5.4~mini, accessed through a common OpenRouter endpoint. Because
+temperature-$0$ API calls still exhibit minor run-to-run variation, exact
+decimals may shift on re-run; the qualitative pattern is stable, and all
+tables are generated directly from saved outputs.
+
+\subsection{Structural validity does not imply safe executability}
+
+Table~\ref{tab:main-results} reports, for each system, the static
+structural, executable, and safe rates alongside on-chain execution
+outcomes. The central result is that \textbf{no system produces a single
+statically safe-executable workflow}: the safe rate is $0.00$ for every
+baseline and both LLM families. The failure is not a single model's quirk.
+
+\input{tables/main_results}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{structural_vs_safe.png}
+\caption{Static structural, executable, and safe rates per system on the
+pilot ($n=26$). Every bar for the safe rate is zero; annotations mark the
+number of workflows that executed unsafely on the local EVM.}
+\label{fig:structural-vs-safe}
+\end{figure}
+
+The three layers fail for structurally different reasons. The
+template-only baseline is perfectly graph-valid ($1.00$) yet has zero
+configuration completeness, so it produces well-formed graphs with no
+executable trade parameters. The Koan generator is graph-valid on only
+$0.15$ of prompts: it over-generates swaps into a fixed multi-node suite
+that breaks the required \texttt{oneInchSwap}$\rightarrow$%
+\texttt{transactionMonitor} edge, omits \texttt{tokenSelector} on
+cross-chain prompts while setting identical source and destination chains,
+and collapses compositional ``swap and limit order'' prompts to a
+limit-order-only workflow. The LLM baselines, conversely, extract concrete
+configuration far better (completeness $0.38$--$0.58$) but violate
+structural constraints; injecting per-category constraints raises
+Gemini's graph-valid rate but does not close the safety gap.
+
+\subsection{On-chain evidence of unsafe execution}
+
+The static safe rate treats a declared-but-unparameterized safety node as
+a failure, but it cannot show that an ``executable'' workflow is actually
+dangerous. The execution layer does. Every LLM configuration, on both
+models and under both direct and constrained prompting, produces a swap
+for the prompt ``trade 500 DAI into ETH'' that includes a concrete trade
+amount but no wired price-impact gate. On the local EVM this transaction
+\textbf{mines successfully (transaction status 1) at approximately $33\%$
+price impact} --- a trade a safe system should have blocked. The harness
+labels these \texttt{unsafe\_executed}. The template and Koan baselines
+never reach this failure because they never populate a concrete amount, so
+nothing executes on-chain at all.
+
+This is the paper's thesis made concrete. A slippage bound, which the LLMs
+sometimes set, computes its minimum output from the already
+impact-adjusted quote and therefore does not prevent a large order from
+executing at severe self-inflicted impact; only a separate price-impact
+gate does, and none of the systems wire one.
+
+\subsection{Clarification and per-category behavior}
+
+The clarification axis (Table~\ref{tab:main-results}, final column, and the
+per-category breakdown in Table~\ref{tab:per-category}) exposes a
+complementary split. Both LLM families correctly request clarification on
+all four underspecified prompts, whereas the template baseline never asks
+and Koan asks only when its keyword heuristics happen to fall through.
+Per-category, structural validity is concentrated: Koan passes only the
+limit-order category, and the LLMs pass primarily on swaps, with
+cross-chain and compositional prompts failing structural matching for all
+systems.
+
+\input{tables/per_category}

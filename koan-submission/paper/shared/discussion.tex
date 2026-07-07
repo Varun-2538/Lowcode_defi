@@ -1,0 +1,31 @@
+\section{Discussion}
+\label{sec:discussion}
+
+The pilot exposes a consistent division of labor among failure modes.
+Deterministic template instantiation guarantees structure but cannot bind
+trade-specific parameters, so its outputs are inert. The deployed Koan
+generator, driven by pattern templates, over-generates and mis-routes,
+which breaks structural validity even where its intent classification is
+correct. Language models invert this trade-off: they parse the request
+well enough to fill in concrete amounts, tokens, and prices, but they do
+not reliably reproduce the required graph structure, and, most
+importantly, they do not wire the safety machinery that would make an
+executable trade safe.
+
+The on-chain result sharpens the practical stakes. A workflow that a
+graph-only or even a configuration-level evaluator would accept as
+``executable'' can, when actually run, mine a trade at severe self-inflicted
+price impact. This happens precisely because the systems conflate two
+different protections: a slippage bound, which guards against price
+movement between quote and execution, and a price-impact gate, which
+guards against the cost of one's own order. Templates encode a static
+threshold but have no live trade to protect; language models supply the
+live trade but omit the gate. Neither composition is safe.
+
+These observations suggest that safe DeFi workflow synthesis should be
+evaluated, and built, as a constraint-satisfaction problem over executable
+state rather than as graph generation. A generator that emits a
+structurally plausible, parameter-complete workflow is not done: the
+workflow must additionally carry, and enforce, the safety predicates that
+the target protocols require. Our benchmark operationalizes exactly this
+requirement and makes the gap measurable.

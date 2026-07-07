@@ -1,0 +1,35 @@
+\begin{table}[t]
+\centering
+\caption{Graph-valid / safe-executable rate per category (pilot).}
+\label{tab:per-category}
+\begin{tabular}{llcc}
+\toprule
+System & Category & Graph valid & Safe-exec. \\
+\midrule
+Template-only & swap & 1.00 & 0.00 \\
+Template-only & limit\_order & 1.00 & 0.00 \\
+Template-only & cross\_chain & 1.00 & 0.00 \\
+Template-only & compositional & 1.00 & 0.00 \\
+Koan (regex$+$gen) & swap & 0.00 & 0.00 \\
+Koan (regex$+$gen) & limit\_order & 0.67 & 0.00 \\
+Koan (regex$+$gen) & cross\_chain & 0.00 & 0.00 \\
+Koan (regex$+$gen) & compositional & 0.00 & 0.00 \\
+Direct LLM (Gemini 3.1 FL) & swap & 0.29 & 0.00 \\
+Direct LLM (Gemini 3.1 FL) & limit\_order & 0.00 & 0.00 \\
+Direct LLM (Gemini 3.1 FL) & cross\_chain & 0.00 & 0.00 \\
+Direct LLM (Gemini 3.1 FL) & compositional & 0.00 & 0.00 \\
+Direct LLM (GPT-5.4 mini) & swap & 0.00 & 0.00 \\
+Direct LLM (GPT-5.4 mini) & limit\_order & 0.00 & 0.00 \\
+Direct LLM (GPT-5.4 mini) & cross\_chain & 0.14 & 0.00 \\
+Direct LLM (GPT-5.4 mini) & compositional & 0.00 & 0.00 \\
+Constrained LLM (Gemini 3.1 FL) & swap & 0.57 & 0.00 \\
+Constrained LLM (Gemini 3.1 FL) & limit\_order & 0.50 & 0.00 \\
+Constrained LLM (Gemini 3.1 FL) & cross\_chain & 0.00 & 0.00 \\
+Constrained LLM (Gemini 3.1 FL) & compositional & 0.00 & 0.00 \\
+Constrained LLM (GPT-5.4 mini) & swap & 0.00 & 0.00 \\
+Constrained LLM (GPT-5.4 mini) & limit\_order & 0.17 & 0.00 \\
+Constrained LLM (GPT-5.4 mini) & cross\_chain & 0.00 & 0.00 \\
+Constrained LLM (GPT-5.4 mini) & compositional & 0.00 & 0.00 \\
+\bottomrule
+\end{tabular}
+\end{table}

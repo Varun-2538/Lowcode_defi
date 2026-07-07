@@ -1,0 +1,44 @@
+{
+  "id": "c01",
+  "baseline": "template",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "fusionPlus",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "mode": "template",
+      "default_confirmations": 3,
+      "min_confirmations": 3
+    },
+    "safety": [
+      "transaction_monitoring",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "template"
+}

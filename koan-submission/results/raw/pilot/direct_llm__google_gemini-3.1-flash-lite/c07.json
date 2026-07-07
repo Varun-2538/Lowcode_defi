@@ -1,0 +1,57 @@
+{
+  "id": "c07",
+  "baseline": "direct_llm",
+  "category": "cross_chain",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"chainSelector\", \"tokenSelector\", \"fusionSwap\", \"transactionMonitor\", \"defiDashboard\"], \"edges\": [[\"walletConnector\", \"chainSelector\"], [\"chainSelector\", \"tokenSelector\"], [\"tokenSelector\", \"fusionSwap\"], [\"fusionSwap\", \"transactionMonitor\"], [\"transactionMonitor\", \"defiDashboard\"]], \"config\": {\"fromToken\": \"DAI\", \"toToken\": \"DAI\", \"sourceChain\": \"Arbitrum\", \"destinationChain\": \"Polygon\"}, \"needs_clarification\": true}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "fusionSwap",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "fromToken": "DAI",
+      "toToken": "DAI",
+      "sourceChain": "Arbitrum",
+      "destinationChain": "Polygon"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

@@ -1,0 +1,22 @@
+{
+  "baseline": "constrained_llm",
+  "n_total": 30,
+  "n_workflow": 26,
+  "n_clarification": 4,
+  "graph_valid_rate": 0.038461538461538464,
+  "executable_rate": 0.0,
+  "safe_executable_rate": 0.0,
+  "mean_node_recall": 0.661996336996337,
+  "mean_edge_recall": 0.35705128205128206,
+  "mean_config_completeness": 0.5192307692307693,
+  "mean_safety_recall": 0.4230769230769231,
+  "mean_extra_nodes": 0.23076923076923078,
+  "clarification_correct_rate": 1.0,
+  "run_id": "constrained_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini",
+  "split": "pilot",
+  "n_ok": 30,
+  "n_error": 0,
+  "n_skipped": 0,
+  "generated_at": "2026-07-07T16:55:50.596297+00:00"
+}

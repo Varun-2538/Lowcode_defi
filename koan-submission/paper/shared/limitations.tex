@@ -1,0 +1,30 @@
+\section{Limitations}
+\label{sec:limitations}
+
+\paragraph{Local EVM, not a mainnet fork.} The execution layer deploys a
+constant-product AMM and mock tokens on an in-process EVM with
+deterministically seeded reserves. This yields real EVM execution
+semantics (real transfers, reverts, and gas) and byte-for-byte
+reproducibility, but the prices and liquidity are synthetic. It is a
+pinned local snapshot rather than a live mainnet fork; absolute
+price-impact magnitudes depend on the seeded reserves, though the
+qualitative unsafe-execution finding does not. Replacing the synthetic AMM
+with a mainnet-fork RPC is a natural extension and the harness interface
+is designed for that substitution.
+
+\paragraph{Pilot scale and scoring strictness.} The pilot uses 30 prompts,
+temperature-$0$ decoding, and a single run per model. Temperature-$0$ API
+calls still vary slightly across runs, so individual decimals are
+approximate; we report the stable qualitative pattern and generate all
+tables from saved outputs. Edge matching is strict and type-level, which
+penalizes reasonable-but-reordered graphs and therefore treats the LLM
+structural rates as a lower bound. This strictness does not affect the
+headline safe-rate or the on-chain unsafe-execution finding, which are
+driven by missing safety parameterization rather than edge ordering.
+
+\paragraph{Category scope of the execution layer.} On-chain execution
+currently covers swaps and the swap leg of compositional workflows; limit
+orders are checked for immediate fillability against the pool mid-price,
+and cross-chain workflows are not executed because a single local chain
+cannot bridge. Every unexecuted case is recorded explicitly rather than
+silently passed.

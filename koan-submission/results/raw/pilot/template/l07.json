@@ -1,0 +1,37 @@
+{
+  "id": "l07",
+  "baseline": "template",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "limitOrder",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "mode": "template",
+      "default_confirmations": 1
+    },
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "template"
+}

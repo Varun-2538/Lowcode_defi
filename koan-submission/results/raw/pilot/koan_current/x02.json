@@ -1,0 +1,22 @@
+{
+  "id": "x02",
+  "baseline": "koan_current",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "requirements": {
+    "pattern": "conversational",
+    "tokens": [],
+    "features": [],
+    "chains": [],
+    "user_intent": "I want to swap DAI to ETH now and set a limit order to sell ETH at 4000 later.",
+    "suggested_nodes": []
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

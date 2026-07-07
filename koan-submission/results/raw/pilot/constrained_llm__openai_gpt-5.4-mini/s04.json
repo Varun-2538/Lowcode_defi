@@ -1,0 +1,59 @@
+{
+  "id": "s04",
+  "baseline": "constrained_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"defiDashboard\",\"walletConnector\",\"tokenSelector\",\"oneInchQuote\",\"fusionSwap\",\"priceImpactCalculator\",\"transactionMonitor\"],\"edges\":[[\"defiDashboard\",\"walletConnector\"],[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"oneInchQuote\"],[\"oneInchQuote\",\"priceImpactCalculator\"],[\"priceImpactCalculator\",\"fusionSwap\"],[\"fusionSwap\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"ETH\",\"toToken\":\"USDT\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "fusionSwap",
+      "priceImpactCalculator",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "ETH",
+      "toToken": "USDT"
+    },
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "constrained_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}
