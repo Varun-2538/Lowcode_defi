@@ -3,16 +3,22 @@
 
 \subsection{Categories and prompts}
 
-The pilot benchmark contains 30 expert-authored prompts across four
-categories: token swaps (8), limit orders (7), cross-chain transfers (8),
-and compositional workflows that combine primitives (7). Four prompts
-across categories are deliberately underspecified (e.g.\ ``help me trade
-some tokens''), and two are adversarial in the sense that the user waives
-a safety constraint the gold annotation still requires (e.g.\ ``I don't
-care about slippage'', or a bridge whose source and destination chains are
-identical). Prompts vary in phrasing and specificity, from fully specified
-(``swap 1 ETH to USDC with at most 1\% slippage'') to schematic (``make a
-token swap app for UNI to ETH'').
+\textsc{DeFiFlowBench} contains 120 expert-authored prompts across four
+categories: token swaps (40), limit orders (30), cross-chain transfers (30),
+and compositional workflows that combine primitives (20). Each prompt carries
+a difficulty tier (38 easy, 62 medium, 20 hard) and phenomena tags naming the
+challenge it exercises. Fifteen prompts are underspecified (e.g.\ ``help me
+trade some tokens'') or contradictory (a bridge or swap whose source and
+destination are identical) and are scored on a separate clarification axis;
+several are adversarial in that the user waives a safety constraint the gold
+annotation still requires (e.g.\ ``I don't care about slippage''). To measure
+robustness to surface form independently of task difficulty, the benchmark
+includes \emph{paraphrase clusters}: multiple prompts that encode the same
+underlying task with different wording (spelled-out numbers, terse notation,
+verbose narration, injected typos). A 30-prompt development \emph{pilot} split
+is retained for reference. Prompts vary from fully specified (``swap 1 ETH to
+USDC with at most 1\% slippage'') to schematic (``make a token swap app for
+UNI to ETH'').
 
 \subsection{Gold annotations}
 
@@ -29,26 +35,39 @@ node corresponds to a real executor rather than an abstract label.
 
 \subsection{Baselines}
 
-We evaluate four families of systems, all scored by the identical
-evaluator:
+We evaluate three reference baselines that calibrate the scale and five
+system families, all scored by the identical evaluator:
 
 \begin{itemize}
-  \item \textbf{Template-only.} A deterministic baseline that emits the
-        canonical workflow for the prompt's category with static safety
-        defaults, but performs no language understanding and therefore
-        cannot populate trade-specific configuration.
-  \item \textbf{Koan.} The regex-fallback intent parser and workflow
-        generator of an existing no-code DeFi platform, run offline and
-        deterministically. This baseline is a real deployed system, not a
-        strawman.
-  \item \textbf{Direct LLM.} A language model prompted to emit a workflow
-        graph and configuration as JSON, with no structural constraints.
-  \item \textbf{Constrained LLM.} The same model with per-category
-        structural and safety constraints injected into the prompt.
+  \item \textbf{Oracle (ceiling).} Reconstructs a correct workflow from the
+        gold annotation---required nodes and edges, concrete values for every
+        required configuration key, and the parameters needed for
+        \texttt{derive\_safety} to declare each required predicate. It should,
+        and does, score $1.00$ on every layer, proving the tasks are solvable
+        and the scorer rewards a correct solution.
+  \item \textbf{Null and Random (floor).} The null baseline emits an empty
+        workflow; the random baseline emits a random-size sample of real nodes
+        in a random chain with no configuration. Both establish the floor and
+        guard against a gameable metric.
+  \item \textbf{Template-only.} Emits the canonical workflow for the prompt's
+        category with static safety defaults, but performs no language
+        understanding and cannot populate trade-specific configuration.
+  \item \textbf{Koan.} The regex-fallback intent parser and workflow generator
+        of an existing no-code DeFi platform, run offline and
+        deterministically---a real deployed system, not a strawman.
+  \item \textbf{Direct / Constrained / Few-shot / Safety-instructed LLM.} A
+        language model prompted to emit a workflow graph and configuration as
+        JSON. The variants differ only in the prompt: no constraints; injected
+        per-category structural and safety constraints; a single worked
+        in-context example; and an explicit instruction to make the workflow
+        safe to execute. Comparing the variants on a fixed model isolates the
+        effect of each prompt-design intervention.
 \end{itemize}
 
-The two LLM baselines are evaluated on two model families to test whether
-findings are model-specific. Model outputs are normalized (node and edge
-vocabularies filtered; index-based and name-based edge encodings both
-accepted) before scoring, and each raw model response is retained so that
-metrics can be re-derived deterministically without additional queries.
+The LLM baselines are evaluated on two model families to test whether findings
+are model-specific. Model outputs are normalized (node and edge vocabularies
+filtered; index-based and name-based edge encodings both accepted) before
+scoring, and each raw model response is retained so that metrics can be
+re-derived deterministically without additional queries. Every reported rate
+is accompanied by a 95\% Wilson confidence interval, and mean-valued metrics
+by a bootstrap interval.

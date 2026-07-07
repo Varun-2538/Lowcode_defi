@@ -1,0 +1,51 @@
+\section{Analysis}
+\label{sec:analysis}
+
+\subsection{Construct validity: does the static proxy measure real safety?}
+
+The static safe-executable layer is a cheap proxy for an expensive property:
+whether a workflow is actually safe to run. We test the proxy against the
+on-chain outcome on every prompt the fork harness executed or gated to a
+definite safe/unsafe label ($n=360$ system$\times$prompt pairs across all
+runs). The proxy is \emph{sound} on this data: it never labels a workflow
+safe-executable that then executes unsafely on-chain (zero
+proxy-safe/on-chain-unsafe pairs). It is deliberately conservative---in $131$
+pairs it withholds ``safe'' from a workflow whose single executed swap
+happened to be within impact bounds---because it requires a declared
+price-impact gate rather than a fortunate trade size. This is the intended
+direction of error for a safety metric: it does not certify danger as safe.
+The $74$ proxy-unsafe/on-chain-unsafe pairs are the concrete unsafe
+executions the proxy correctly refuses to certify.
+
+\subsection{Failure taxonomy}
+
+Aggregating the per-prompt scores into named failure categories (released in
+full with the artifact) separates the systems' error profiles. The Koan
+generator's failures are structural: $92$ missing required edges and $64$
+missing required nodes,
+driven by fixed-suite over-generation and category collapse. The LLMs'
+failures are predominantly \emph{safety-predicate} omissions: for direct
+Gemini the most frequent missing predicate is \texttt{price\_impact\_gate}
+($54$ prompts), followed by \texttt{transaction\_monitoring} ($45$) and
+\texttt{slippage\_bound} ($34$); GPT-5.4~mini additionally drops
+\texttt{transaction\_monitoring} on $74$ prompts by building terser graphs.
+The safety-instruction ablation nearly eliminates the two swap-safety
+omissions (\texttt{price\_impact\_gate} and \texttt{slippage\_bound} fall to
+$1$ each) while leaving cross-chain and limit-order predicates
+(\texttt{bridge\_confirmation}~$25$, \texttt{price\_bound}~$16$) largely
+untouched, explaining why it fixes on-chain swap safety but not the overall
+structural gap.
+
+\subsection{Robustness to surface form and difficulty}
+
+The benchmark holds task semantics fixed across paraphrase clusters and tags
+each prompt with a difficulty tier, letting us separate competence from
+surface sensitivity. Within paraphrase clusters, graph-valid agreement is
+high for the deterministic systems (Koan $0.91$; safety-instructed Gemini
+$1.00$) and lower for constrained Gemini ($0.81$), indicating that some of the
+LLM structural score is surface-sensitive rather than robust. Across
+difficulty tiers the expected monotone degradation appears for the stronger
+LLM configuration (constrained Gemini: easy $0.58$, medium $0.35$, hard
+$0.40$), while the rule-based generator is uniformly low (easy $0.16$, medium
+$0.11$, hard $0.00$), consistent with keyword matching rather than
+compositional understanding.

@@ -76,3 +76,45 @@
 - Next: scale to ~120 prompts, then rerun the full pipeline; decide on the
   ICSTCEE fallback by ~July 25.
 
+## 2026-07-08 (benchmark-grade main split)
+
+- Directive from user: a benchmark paper needs more rigor (more ablations,
+  more analyses). Researched best practice (Agentic Benchmark Checklist / ABC,
+  NeurIPS 2025; BetterBench, Stanford; NeurIPS D&B CFP) and adopted the
+  applicable items.
+- User scope decisions: keep 2 models (cost); include all ablations (few-shot
+  + safety-instruction); draft a 2nd-annotator IAA guide+subset for a human to
+  fill; target ICDLT-depth packaging (datasheet-lite, license, reproducible
+  scripts), not full NeurIPS-D&B Croissant/hosting.
+- Built the 120-prompt `main` split (`code/benchmark/main_prompts.py`):
+  balanced 40/30/30/20, difficulty tiers, phenomena tags, paraphrase clusters,
+  15 clarification/rejection prompts. Schema extended with
+  difficulty/phenomena/paraphrase_of. Gold still derived from the same
+  category templates so scoring stays uniform.
+- Added floor/ceiling baselines: `oracle` (reconstructs gold; scores
+  1.00/1.00/1.00 and is on-chain safe — proves solvability + scorer soundness,
+  ABC T.9/R.13), `null` and `random_nodes` (floor, ABC R.14). Runner passes
+  gold to baselines that declare a 2nd param (oracle only).
+- Added LLM ablations `fewshot_llm` and `safety_llm` sharing `llm_common`
+  (one worked example / explicit safety directive). Ran both models x four
+  LLM variants (~960 calls, ~$0.26). Fork pass rerun on main.
+- Added rigor: `code/analysis/stats.py` (Wilson + bootstrap + two-proportion
+  z, stdlib only); `code/analysis/analyze.py` (construct-validity confusion
+  vs on-chain, quantified failure taxonomy, paraphrase/difficulty robustness).
+  Tables now carry 95% Wilson CI on the Safe column and split-specific output
+  dirs; per-category table pivoted to fit; figure omits reference baselines.
+- Key finding update: the pilot's "safe=0.00 for everyone" is superseded by a
+  nuanced result — best safe-executability 0.29 (safety-instructed Gemini);
+  direct/constrained/few-shot each execute 10-13 on-chain unsafe swaps;
+  safety instruction alone drives on-chain unsafe to 0 but leaves structure
+  incomplete. Construct validity: static safe-proxy has ZERO false positives
+  vs on-chain (sound, conservative).
+- Docs: `datasheet.md`, `contamination.md`, `licensing.md` (flagged the
+  proprietary-parent-repo conflict rather than asserting an open license),
+  `second_annotator_guide.md` + `make_iaa_subset.py` + `compute_iaa.py`.
+  New `code/run_benchmark.sh`; `paper/build_icdlt.sh` now split-aware.
+- Paper rewritten on main-split numbers (abstract, intro, benchmark,
+  experiments, new analysis section, discussion, limitations). Builds clean,
+  6 pages, verified citations only. IAA number intentionally withheld until a
+  human second pass exists (integrity: no fabricated annotator).
+

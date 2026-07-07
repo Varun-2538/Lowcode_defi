@@ -10,45 +10,64 @@
 - Matplotlib (figure) and the EVM stack (fork pass) are pulled on demand
   via `uv run --no-project --with ...`, so nothing pollutes the agents env.
 
-## One-command pilot
+## One-command run (main or pilot)
 
 ```bash
-koan-submission/code/run_pilot.sh
+koan-submission/code/run_benchmark.sh main    # or: ... pilot
 ```
 
-Rebuilds the dataset, validates it, runs the two static baselines, runs the
-two LLM baselines against **each model in `LLM_MODELS`** (Gemini 3.1 Flash
-Lite and GPT-5.4 mini, tagged so runs never overwrite each other), executes
-the **fork pass** on a local py-EVM chain, then regenerates tables + figure.
+Rebuilds the dataset, validates it, runs the reference baselines (`oracle`,
+`null`, `random_nodes`, `template`, `koan_current`), runs the four LLM
+baselines/ablations (`direct_llm`, `constrained_llm`, `fewshot_llm`,
+`safety_llm`) against **each model in `LLM_MODELS`** (Gemini 3.1 Flash Lite
+and GPT-5.4 mini, tagged so runs never overwrite each other), executes the
+**fork pass** on a local py-EVM chain, then regenerates tables, the deeper
+analyses (CIs / construct validity / failure taxonomy / robustness), and the
+figure. (`code/run_pilot.sh` is retained for the original pilot-only flow.)
 
 ## Individual steps
 
 ```bash
-# validate
-uv run --project agents python koan-submission/code/benchmark/validate_dataset.py \
-  --data-root koan-submission/data --split pilot
+# build + validate
+uv run --no-project python koan-submission/code/benchmark/build_dataset.py \
+  --data-root koan-submission/data --split main
+uv run --no-project python koan-submission/code/benchmark/validate_dataset.py \
+  --data-root koan-submission/data --split main
 
-# run one baseline (optionally tag by model)
-KOAN_LLM_MODEL=openai/gpt-5.4-mini \
+# an offline reference baseline (oracle needs no key; runs plain)
+uv run --no-project python koan-submission/code/benchmark/run_evaluation.py \
+  --data-root koan-submission/data --results-root koan-submission/results \
+  --split main --baseline oracle
+# koan_current needs the agents env:
 uv run --project agents python koan-submission/code/benchmark/run_evaluation.py \
   --data-root koan-submission/data --results-root koan-submission/results \
-  --split pilot --baseline direct_llm --tag openai_gpt-5.4-mini
+  --split main --baseline koan_current
+
+# an LLM baseline / ablation (tag by model)
+KOAN_LLM_MODEL=openai/gpt-5.4-mini \
+uv run --no-project --with "openai>=1.0" \
+  python koan-submission/code/benchmark/run_evaluation.py \
+  --data-root koan-submission/data --results-root koan-submission/results \
+  --split main --baseline safety_llm --tag openai_gpt-5.4-mini
 
 # on-chain fork pass over all saved raw outputs (EVM deps pulled on demand)
 uv run --no-project --with "web3>=6" --with "eth-tester[py-evm]>=0.9.0b1" \
   --with py-solc-x python koan-submission/code/safety/fork_simulation.py \
-  --results-root koan-submission/results --split pilot
+  --results-root koan-submission/results --split main
 
-# tables + figure
+# tables + analyses + figure (all split-aware; outputs under results/<kind>/<split>)
 uv run --no-project python koan-submission/code/analysis/make_tables.py \
-  --results-root koan-submission/results
+  --results-root koan-submission/results --split main
+uv run --no-project python koan-submission/code/analysis/analyze.py \
+  --results-root koan-submission/results --data-root koan-submission/data --split main
 uv run --no-project --with matplotlib python koan-submission/code/analysis/make_figures.py \
-  --results-root koan-submission/results
+  --results-root koan-submission/results --split main
 ```
 
 ## LLM baselines
 
-`direct_llm` and `constrained_llm` require an API key:
+`direct_llm`, `constrained_llm`, `fewshot_llm`, and `safety_llm` require an
+API key:
 
 - Set `OPENROUTER_API_KEY` (default model `openai/gpt-4o-mini`) or
   `ANTHROPIC_API_KEY` (default `claude-3-5-sonnet-latest`).
@@ -68,8 +87,8 @@ If parsing/normalization changes, re-derive LLM metrics from the saved
 `raw_output` (no re-query, deterministic):
 
 ```bash
-uv run --project agents python koan-submission/code/benchmark/rescore_llm.py \
-  --data-root koan-submission/data --results-root koan-submission/results --split pilot
+uv run --no-project python koan-submission/code/benchmark/rescore_llm.py \
+  --data-root koan-submission/data --results-root koan-submission/results --split main
 ```
 
 ## Fork pass (local EVM, not a mainnet fork)
@@ -86,11 +105,16 @@ uv run --project agents python koan-submission/code/benchmark/rescore_llm.py \
 
 ## Rules
 
-- Raw outputs -> `results/raw/`, processed metrics -> `results/processed/`,
-  fork outcomes -> `results/fork/`, tables/figures -> `results/tables`,
-  `results/figures`.
+- Every results kind is split-scoped: raw -> `results/raw/<split>/`,
+  processed -> `results/processed/<split>/`, fork -> `results/fork/<split>/`,
+  tables -> `results/tables/<split>/`, figures -> `results/figures/<split>/`,
+  deeper analyses -> `results/analysis/<split>/`.
 - Every prompt yields exactly one raw record (ok / error / skipped /
   needs_clarification). Nothing is silently dropped.
-- Tables/figures are generated from saved results only, never hand-edited.
+- Reference baselines (`oracle`, `null`, `random_nodes`) run offline and need
+  no key: `oracle` is the ceiling (reconstructs gold), `null`/`random_nodes`
+  are the floor. They are what pins the metric as solvable-but-not-gameable.
+- Tables/figures/analyses are generated from saved results only, never
+  hand-edited.
 - On-chain claims are limited to what the harness actually executes; its
   synthetic-price / local-snapshot nature is stated wherever it is cited.

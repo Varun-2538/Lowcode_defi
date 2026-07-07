@@ -3,8 +3,8 @@
 This is the reference an annotator (or reviewer) uses to author or check a
 gold record. Every field is scored by `code/benchmark/metrics.py` and
 `code/benchmark/workflow_utils.py`; this guide states exactly what each field
-means so annotations stay consistent as the set scales from the 30-prompt
-pilot to the full split.
+means so annotations stay consistent across the 30-prompt `pilot` and the
+120-prompt `main` split (and any future extension).
 
 A gold record is one JSON line in `data/gold/<split>.jsonl` and validates
 against `data/schemas/gold_workflow.schema.json`. It pairs with a prompt of

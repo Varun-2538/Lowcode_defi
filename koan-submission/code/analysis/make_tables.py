@@ -194,23 +194,55 @@ def main_results_tex(rows: list[dict[str, Any]], split: str) -> str:
 
 
 def per_category_tex(rows: list[dict[str, Any]], split: str) -> str:
+    """Pivoted per-category table: one row per system, category columns.
+
+    Graph-valid (G) and safe-executable (S) are shown side by side for each
+    category. The trivially-constant reference baselines (oracle/null/random/
+    template) are omitted here -- they are reported in the main table -- so the
+    table stays compact and fits a two-column page as a full-width float.
+    """
+    skip = {"oracle", "null", "random_nodes", "template"}
+    cat_short = {"swap": "Swap", "limit_order": "Limit",
+                 "cross_chain": "Cross", "compositional": "Compo"}
+    # group rows by run label, preserving BASELINE_ORDER via input order
+    by_label: dict[str, dict[str, dict[str, float]]] = {}
+    order: list[str] = []
+    for r in rows:
+        base, _ = _split_run_id(r["run_id"])
+        if base in skip:
+            continue
+        if r["label"] not in by_label:
+            by_label[r["label"]] = {}
+            order.append(r["label"])
+        by_label[r["label"]][r["category"]] = r
+
+    header_cat = " & ".join(fr"\multicolumn{{2}}{{c}}{{{cat_short[c]}}}"
+                            for c in CATEGORIES)
+    subhdr = " & ".join(["G & S"] * len(CATEGORIES))
     lines = [
-        r"\begin{table}[t]",
+        r"\begin{table*}[t]",
         r"\centering",
-        r"\caption{Graph-valid / safe-executable rate per category "
-        f"({split} split).}}",
+        r"\caption{Per-category graph-valid (G) and safe-executable (S) rate "
+        f"on the {split} split. Reference floor/ceiling baselines "
+        r"(all constant) are omitted; see Table~\ref{tab:main-results}.}",
         r"\label{tab:per-category}",
-        r"\begin{tabular}{llcc}",
+        r"\begin{tabular}{l" + "cc" * len(CATEGORIES) + "}",
         r"\toprule",
-        r"System & Category & Graph valid & Safe-exec. \\",
+        f"System & {header_cat} \\\\",
+        f"& {subhdr} \\\\",
         r"\midrule",
     ]
-    for r in rows:
-        lines.append(
-            f"{_tex_escape(r['label'])} & {_tex_escape(r['category'])} & "
-            f"{r['graph_valid']:.2f} & {r['safe_executable']:.2f} \\\\"
-        )
-    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
+    for label in order:
+        cats = by_label[label]
+        cells = []
+        for c in CATEGORIES:
+            r = cats.get(c)
+            if r is None:
+                cells.append("-- & --")
+            else:
+                cells.append(f"{r['graph_valid']:.2f} & {r['safe_executable']:.2f}")
+        lines.append(f"{_tex_escape(label)} & " + " & ".join(cells) + r" \\")
+    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table*}", ""]
     return "\n".join(lines)
 
 

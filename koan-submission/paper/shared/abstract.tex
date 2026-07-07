@@ -3,21 +3,29 @@ make multi-step protocol interactions accessible to non-expert users, but
 they are typically evaluated only on whether the generated workflow graph
 looks structurally valid. We argue that this is the wrong bar for a
 high-stakes execution domain, and we study a stricter question: are
-generated DeFi workflows \emph{safely executable}? We introduce a
-benchmark for safety-constrained DeFi workflow synthesis that scores
-generated workflows on three static layers---structural validity,
-executable configuration completeness, and declared safety---and adds an
-execution layer that runs each generated swap on a real EVM. Across a
-30-prompt pilot spanning swaps, limit orders, cross-chain transfers, and
-compositional workflows, we evaluate a deterministic template baseline, a
-deployed no-code DeFi generator, and direct and constrained language-model
-baselines on two model families. No system produces a single statically
-safe-executable workflow. The failure modes are complementary: templates
-guarantee structure but bind no trade parameters, the deployed generator
-over-generates and breaks required structure, and language models parse
-concrete parameters but omit the safety machinery that protects execution.
-On-chain, every language-model configuration executes a large swap at
-roughly $33\%$ self-inflicted price impact because it wires a slippage
-bound but no price-impact gate---demonstrating directly that a workflow
-can be structurally plausible, parameter-complete, and still unsafe. We
-release the benchmark, baselines, and execution harness.
+generated DeFi workflows \emph{safely executable}? We introduce
+\textsc{DeFiFlowBench}, a benchmark of 120 expert-authored prompts spanning
+swaps, limit orders, cross-chain transfers, and compositional tasks, with
+difficulty tiers, paraphrase clusters, and adversarial cases. Each generated
+workflow is scored on three nested static layers---structural validity,
+executable configuration completeness, and declared safety---and on an
+execution layer that runs each generated swap on a real EVM. To make scores
+interpretable we bound the scale with an oracle solver (which scores $1.00$
+on every layer and is on-chain safe) and null and random-node baselines
+(which score $0.00$), and we validate the static safety proxy against on-chain
+outcomes: on our data the proxy never certifies a workflow that then executes
+unsafely. Evaluating a deterministic template, a deployed no-code DeFi
+generator, and direct, constrained, few-shot, and safety-instructed
+language-model baselines across two model families, we find a large and
+consistent structural-to-safe gap: the best system reaches only $0.44$
+structural validity and no system exceeds $0.29$ safe-executability (95\%
+CI $[0.21,0.38]$). The failure modes are complementary and quantified: the
+template binds no trade parameters, the deployed generator breaks required
+structure, and language models parse parameters but omit safety machinery.
+On-chain, direct, constrained, and few-shot configurations each execute
+$10$--$13$ swaps at roughly $33\%$ self-inflicted price impact because they
+wire a slippage bound but no price-impact gate. An explicit safety
+instruction is the only intervention that eliminates on-chain unsafe
+execution---yet still leaves most workflows structurally incomplete---showing
+the gap is real but partially addressable. We release the benchmark,
+baselines, execution harness, and analysis code.

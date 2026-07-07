@@ -29,22 +29,30 @@ the parameters needed to execute, and, when executed, does it actually
 behave safely?
 
 Our central finding is that structural validity does not imply safe
-executability, and the gap is large. Across a 30-prompt pilot and a range
-of systems---a deterministic template baseline, a deployed no-code DeFi
-generator, and direct and constrained language-model baselines on two
-model families---no system produces a single statically safe-executable
-workflow. On-chain, every language-model configuration executes a large
-swap at roughly $33\%$ self-inflicted price impact because it sets a
-slippage bound but no price-impact gate.
+executability, and the gap is large and consistent. Across a 120-prompt
+benchmark and a range of systems---a deterministic template baseline, a
+deployed no-code DeFi generator, and direct, constrained, few-shot, and
+safety-instructed language-model baselines on two model families---the best
+system reaches only $0.44$ structural validity and none exceeds $0.29$
+safe-executability. On-chain, the direct, constrained, and few-shot
+configurations each execute $10$--$13$ large swaps at roughly $33\%$
+self-inflicted price impact because they set a slippage bound but no
+price-impact gate. An explicit safety instruction is the only intervention
+that removes on-chain unsafe execution, and even it leaves most workflows
+structurally incomplete.
 
-\paragraph{Contributions.} (1) We define a three-layer static evaluation
-of DeFi workflow synthesis (structural, executable, safe) plus a
-clarification axis, with safety predicates derived uniformly across
-systems. (2) We add an on-chain execution layer that runs generated swaps
-on a real EVM and distinguishes a slippage bound from a price-impact gate,
-turning ``declared safety'' into ``observed safety''. (3) We report a
-pilot over four DeFi task categories and multiple baselines, including a
-deployed no-code system and two language-model families, and show that the
-structural-versus-safe gap is consistent across models and visible on
-chain. (4) We release the prompts, gold annotations, baselines, and
-execution harness for reproducible evaluation.
+\paragraph{Contributions.} (1) We introduce \textsc{DeFiFlowBench}, a
+120-prompt benchmark over four DeFi task categories with difficulty tiers,
+paraphrase clusters, and adversarial cases, and a three-layer static
+evaluation (structural, executable, safe) plus a clarification axis, with
+safety predicates derived uniformly across systems. (2) We add an on-chain
+execution layer that runs generated swaps on a real EVM and distinguishes a
+slippage bound from a price-impact gate, turning ``declared safety'' into
+``observed safety'', and we show the static safety proxy is sound against
+this on-chain ground truth (no false certifications). (3) We calibrate the
+scale with an oracle ceiling and null/random floors, report every rate with
+confidence intervals, and provide a quantified failure taxonomy and
+robustness analysis; we ablate constrained, few-shot, and safety-instructed
+prompting to show the gap is real but only partially closable by prompt
+design. (4) We release the prompts, gold annotations, baselines, execution
+harness, and analysis code for reproducible evaluation.

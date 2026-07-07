@@ -12,15 +12,19 @@ qualitative unsafe-execution finding does not. Replacing the synthetic AMM
 with a mainnet-fork RPC is a natural extension and the harness interface
 is designed for that substitution.
 
-\paragraph{Pilot scale and scoring strictness.} The pilot uses 30 prompts,
-temperature-$0$ decoding, and a single run per model. Temperature-$0$ API
-calls still vary slightly across runs, so individual decimals are
-approximate; we report the stable qualitative pattern and generate all
-tables from saved outputs. Edge matching is strict and type-level, which
-penalizes reasonable-but-reordered graphs and therefore treats the LLM
-structural rates as a lower bound. This strictness does not affect the
-headline safe-rate or the on-chain unsafe-execution finding, which are
-driven by missing safety parameterization rather than edge ordering.
+\paragraph{Scale, single annotator, and scoring strictness.} The main split
+uses 120 expert-authored prompts, temperature-$0$ decoding, and a single run
+per model on two model families. Temperature-$0$ API calls still vary slightly
+across runs, so individual decimals are approximate; we report every rate with
+a confidence interval and generate all tables from saved outputs. The gold
+annotations were authored primarily by one team; we provide a second-annotator
+protocol, a reproducible stratified subset, and tooling to compute
+inter-annotator agreement, but the agreement number awaits an independent
+pass and is therefore not yet reported. Edge matching is strict and
+type-level, which penalizes reasonable-but-reordered graphs and treats the LLM
+structural rates as a lower bound; this does not affect the safe-rate or the
+on-chain unsafe-execution findings, which are driven by missing safety
+parameterization rather than edge ordering.
 
 \paragraph{Category scope of the execution layer.} On-chain execution
 currently covers swaps and the swap leg of compositional workflows; limit

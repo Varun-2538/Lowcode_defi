@@ -1,78 +1,97 @@
 \section{Experiments}
 \label{sec:experiments}
 
-We report the pilot evaluation over the 30-prompt benchmark. Of the 30
-prompts, four are underspecified and scored on the clarification axis,
-leaving $n=26$ prompts that should yield a workflow. LLM baselines are run
-at temperature $0$ on two model families, Gemini~3.1~Flash~Lite and
-GPT-5.4~mini, accessed through a common OpenRouter endpoint. Because
-temperature-$0$ API calls still exhibit minor run-to-run variation, exact
-decimals may shift on re-run; the qualitative pattern is stable, and all
-tables are generated directly from saved outputs.
+We evaluate over the 120-prompt \textsc{main} split. Of the 120 prompts, 15
+are underspecified or contradictory and are scored on the clarification axis,
+leaving $n=105$ prompts that should yield a workflow. LLM baselines run at
+temperature $0$ on two model families, Gemini~3.1~Flash~Lite and
+GPT-5.4~mini, through a common OpenRouter endpoint. Because temperature-$0$
+API calls still exhibit minor run-to-run variation, exact decimals may shift
+on re-run; all tables are generated directly from saved outputs, and every raw
+model response is stored so metrics can be re-derived without re-querying.
+
+\subsection{The scale is calibrated by reference baselines}
+
+Before comparing systems we fix the meaning of the scores
+(Table~\ref{tab:main-results}). The \emph{oracle}, which reconstructs a
+correct workflow from the gold annotation, scores $1.00$ on all three static
+layers and is safe on every executed swap, confirming that the tasks are
+solvable and that the scorer rewards a genuinely correct solution. The
+\emph{null} (empty output) and \emph{random-node} baselines score $0.00$ on
+every layer, so the metric cannot be gamed by degenerate or padded graphs.
+Real systems are therefore compared against a demonstrated ceiling of $1.00$
+and a floor of $0.00$.
+
+\input{tables/main_results}
 
 \subsection{Structural validity does not imply safe executability}
 
-Table~\ref{tab:main-results} reports, for each system, the static
-structural, executable, and safe rates alongside on-chain execution
-outcomes. The central result is that \textbf{no system produces a single
-statically safe-executable workflow}: the safe rate is $0.00$ for every
-baseline and both LLM families. The failure is not a single model's quirk.
-
-\input{tables/main_results}
+The central result is a large and consistent gap between structural validity
+and safe executability. The strongest structural system, constrained Gemini,
+reaches only $0.44$ graph-valid, and \textbf{no system exceeds $0.29$
+safe-executability} (safety-instructed Gemini, 95\% Wilson CI
+$[0.21,0.38]$); most systems sit at or near the floor. The three layers fail
+for structurally different, quantified reasons (Section~\ref{sec:analysis}).
+The template-only baseline is perfectly graph-valid ($1.00$) yet has zero
+configuration completeness: well-formed graphs with no executable trade
+parameters. The Koan generator is graph-valid on only $0.12$ of prompts:
+across the split it leaves $92$ required edges and $64$ required nodes
+unmatched, over-generating swaps into a fixed multi-node suite that breaks the
+required \texttt{oneInchSwap}$\rightarrow$\texttt{transactionMonitor} edge,
+omitting \texttt{tokenSelector} on cross-chain prompts, and collapsing
+compositional ``swap and limit order'' prompts to a limit-order-only workflow.
+The LLM baselines extract concrete configuration better but omit safety
+machinery, discussed next.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{structural_vs_safe.png}
 \caption{Static structural, executable, and safe rates per system on the
-pilot ($n=26$). Every bar for the safe rate is zero; annotations mark the
-number of workflows that executed unsafely on the local EVM.}
+\textsc{main} split ($n=105$; reference floor/ceiling baselines omitted).
+Annotations mark workflows that executed unsafely on the local EVM.}
 \label{fig:structural-vs-safe}
 \end{figure}
 
-The three layers fail for structurally different reasons. The
-template-only baseline is perfectly graph-valid ($1.00$) yet has zero
-configuration completeness, so it produces well-formed graphs with no
-executable trade parameters. The Koan generator is graph-valid on only
-$0.15$ of prompts: it over-generates swaps into a fixed multi-node suite
-that breaks the required \texttt{oneInchSwap}$\rightarrow$%
-\texttt{transactionMonitor} edge, omits \texttt{tokenSelector} on
-cross-chain prompts while setting identical source and destination chains,
-and collapses compositional ``swap and limit order'' prompts to a
-limit-order-only workflow. The LLM baselines, conversely, extract concrete
-configuration far better (completeness $0.38$--$0.58$) but violate
-structural constraints; injecting per-category constraints raises
-Gemini's graph-valid rate but does not close the safety gap.
-
 \subsection{On-chain evidence of unsafe execution}
 
-The static safe rate treats a declared-but-unparameterized safety node as
-a failure, but it cannot show that an ``executable'' workflow is actually
-dangerous. The execution layer does. Every LLM configuration, on both
-models and under both direct and constrained prompting, produces a swap
-for the prompt ``trade 500 DAI into ETH'' that includes a concrete trade
-amount but no wired price-impact gate. On the local EVM this transaction
-\textbf{mines successfully (transaction status 1) at approximately $33\%$
-price impact} --- a trade a safe system should have blocked. The harness
-labels these \texttt{unsafe\_executed}. The template and Koan baselines
-never reach this failure because they never populate a concrete amount, so
-nothing executes on-chain at all.
+The static safe rate treats a declared-but-unparameterized safety node as a
+failure, but it cannot show that an ``executable'' workflow is actually
+dangerous. The execution layer does. Under direct, constrained, and few-shot
+prompting, both models emit swaps with a concrete amount but no wired
+price-impact gate; on the local EVM these \textbf{mine successfully at
+roughly $33\%$ self-inflicted price impact}, and the harness labels them
+\texttt{unsafe\_executed}---$10$ to $13$ such executions per configuration
+(Table~\ref{tab:main-results}). This is the paper's thesis made concrete: a
+slippage bound, which the models often set, computes its minimum output from
+the already impact-adjusted quote and so does not prevent a large order from
+executing at severe self-inflicted impact; only a separate price-impact gate
+does. The template and Koan baselines never reach this failure because they
+never populate a concrete amount, so nothing executes on-chain.
 
-This is the paper's thesis made concrete. A slippage bound, which the LLMs
-sometimes set, computes its minimum output from the already
-impact-adjusted quote and therefore does not prevent a large order from
-executing at severe self-inflicted impact; only a separate price-impact
-gate does, and none of the systems wire one.
+\subsection{Does prompting close the gap? Ablations}
+
+We ablate two obvious mitigations on both models
+(Table~\ref{tab:main-results}). Adding per-category structural
+\emph{constraints} improves Gemini's structural validity most ($0.17\to0.44$)
+but leaves $13$ on-chain unsafe executions. A single in-context
+\emph{few-shot} example helps GPT-5.4~mini's structure sharply
+($0.02\to0.26$) and modestly raises safe-executability, but still executes
+$10$--$13$ unsafe swaps. Only an explicit \emph{safety instruction}
+eliminates on-chain unsafe execution entirely for both models (fork safe-rate
+$1.00$, zero \texttt{unsafe\_executed}) by inducing a parameterized
+price-impact gate---yet it still leaves most workflows structurally
+incomplete (safe-executability $0.29$ for Gemini, $0.08$ for GPT). The gap is
+thus real but partially addressable by prompt design, and no single
+intervention closes both the structural and the safety half.
 
 \subsection{Clarification and per-category behavior}
 
-The clarification axis (Table~\ref{tab:main-results}, final column, and the
-per-category breakdown in Table~\ref{tab:per-category}) exposes a
-complementary split. Both LLM families correctly request clarification on
-all four underspecified prompts, whereas the template baseline never asks
-and Koan asks only when its keyword heuristics happen to fall through.
-Per-category, structural validity is concentrated: Koan passes only the
-limit-order category, and the LLMs pass primarily on swaps, with
-cross-chain and compositional prompts failing structural matching for all
-systems.
+On the clarification axis, both LLM families correctly request clarification
+on most underspecified prompts (clarification-correct $\geq0.73$), whereas the
+template baseline never asks and Koan asks only when its keyword heuristics
+fall through ($0.47$). Per-category, structural validity is concentrated
+(Table~\ref{tab:per-category}): Koan passes mainly the limit-order category,
+and the LLMs pass primarily swaps, with cross-chain and compositional prompts
+failing structural matching for nearly all systems.
 
 \input{tables/per_category}

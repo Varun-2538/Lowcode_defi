@@ -1,6 +1,37 @@
 # Koan Submission Status
 
-Last updated: 2026-07-07
+Last updated: 2026-07-08
+
+## Main split (120 prompts) — benchmark-grade upgrade
+
+Scaled the pilot into **DeFiFlowBench** (120 prompts) following the Agentic
+Benchmark Checklist (ABC), BetterBench, and NeurIPS D&B guidance:
+
+- Balanced 40/30/30/20 across categories; difficulty tiers (38 easy / 62
+  medium / 20 hard); phenomena tags; paraphrase clusters; 15 clarification/
+  rejection prompts.
+- Floor/ceiling baselines: **oracle** scores 1.00/1.00/1.00 and is on-chain
+  safe (tasks solvable, scorer sound); **null** + **random_nodes** floor at
+  0.00 (metric not gameable).
+- Ablations: **few-shot** and **safety-instruction** LLM variants on both
+  models. Safety instruction is the only intervention that removes on-chain
+  unsafe execution (fork safe-rate -> 1.00) but still leaves most workflows
+  structurally incomplete.
+- Rigor: Wilson + bootstrap CIs; construct-validity check (static safe-proxy
+  has zero false positives vs on-chain); quantified failure taxonomy;
+  paraphrase/difficulty robustness.
+- Docs: datasheet, contamination note, licensing note (parent repo is
+  proprietary — open license pending author decision), second-annotator IAA
+  guide + reproducible subset + `compute_iaa.py`.
+- Paper rebuilt on the main split (6 pages, clean, CIs + ablations +
+  analysis section). Build: `paper/build_icdlt.sh main`.
+
+Headline (main, n=105 workflow prompts): best structural 0.44 (constrained
+Gemini); best safe-executability 0.29 (safety-instructed Gemini, 95% CI
+[0.21,0.38]); direct/constrained/few-shot each execute 10-13 on-chain unsafe
+swaps at ~33% impact.
+
+## Pilot (30 prompts) — retained for reference
 
 ## Venue plan
 
@@ -37,10 +68,12 @@ Last updated: 2026-07-07
 
 ## Next milestones
 
-1. Scale to ~120 prompts (40 swap / 30 limit / 30 cross-chain / 20
-   compositional, incl. underspecified + adversarial), then rerun the full
-   pipeline. Gap already confirmed across two models and on-chain.
-2. Decide on the ICSTCEE 2026 fallback by ~July 25 (only if defensible).
-3. Optionally swap the synthetic AMM for a real mainnet-fork RPC
-   (Anvil/Alchemy) to replace synthetic prices/liquidity with live state.
-4. Broaden the on-chain harness to the limit and cross-chain legs.
+1. Complete an independent second-annotation pass on the IAA subset
+   (`data/iaa/`) and report Cohen's kappa via `code/benchmark/compute_iaa.py`.
+2. Resolve the open license question (`docs/licensing.md`) before any public
+   release; parent repo is currently proprietary.
+3. Rotate the OpenRouter API key (shared in chat earlier).
+4. Decide on the ICSTCEE 2026 fallback by ~July 25 (only if defensible).
+5. Optionally swap the synthetic AMM for a real mainnet-fork RPC
+   (Anvil/Alchemy) to replace synthetic prices/liquidity with live state, and
+   broaden the on-chain harness to the limit and cross-chain legs.
