@@ -2,7 +2,53 @@
 
 Last updated: 2026-07-08
 
-## Main split (120 prompts) — benchmark-grade upgrade
+## Koan-Safe method + held-out test split (proposed system)
+
+The paper now has a dual contribution: the benchmark **and** a proposed
+safety-enforcement system, **Koan-Safe**, evaluated on a fresh held-out split.
+
+- **Koan-Safe** (`code/baselines/koan_safe_*`): a prompt-only intent parser, a
+  replaceable candidate generator (`rules` / `llm` / `hybrid`), and a
+  generator-agnostic **safety-enforcement layer** that repairs structure and
+  injects conservative safety *policy* (slippage bound, price-impact gate +
+  threshold, bridge confirmations, expiry) but **never fabricates trade
+  intent** (tokens/amount/price/chain). Missing intent -> clarify. Toggle the
+  layer with `KOAN_SAFE_ENFORCE=0` for the ablation.
+- **Integrity protocol**: the method was built/tuned on `main` (now the *dev*
+  split), then **frozen** (commit `e98b0bb`), then evaluated **once** on a
+  newly authored `heldout` test split with **new structural variants**
+  (gasless swap, quote-first limit, dashboard bridge, cross-chain swap) whose
+  gold structures lie outside Koan-Safe's presets. No tuning against heldout.
+
+### Held-out results (n=75 workflow prompts; all real, saved)
+| System | Graph | Safe [95% CI] | Fork unsafe |
+|---|---|---|---|
+| Best baseline (safety-instruct Gemini) | 0.33 | 0.33 [.24,.45] | 0 |
+| Direct/Constr/Fewshot LLMs | 0.01-0.31 | 0.00-0.13 | **15-19** |
+| **Koan-Safe (hybrid, Gemini)** | 0.73 | **0.67 [.55,.76]** | **0** |
+| Koan-Safe (LLM, Gemini) | 0.71 | 0.64 | 0 |
+| Koan-Safe (rules) | 0.52 | 0.43 | 0 |
+
+- **Koan-Safe doubles safe-executability over the best baseline (0.67 vs 0.33)
+  and drives on-chain unsafe executions to ZERO across all 3 generators x 2
+  models**, vs 15-19 for plain LLMs.
+- **Enforcement on/off ablation** (only the layer changes): safe 0.43->0.12
+  (rules), 0.64->0.00 (LLM), 0.67->0.01 (hybrid); fork-unsafe 0->16/17. The
+  layer, not the generator, is the cause.
+- **Honest generalization gap**: the frozen rules presets don't cover the new
+  structural variants (graph 1.00 dev -> 0.52 heldout); the LLM/hybrid
+  generators recover most of it (graph 0.71-0.73). Reported as-is.
+- **Construct validity holds on heldout**: proxy declared 282 safe, all 282
+  safe on-chain (precision 1.00, 0 false positives; n=891).
+- 3 held-out clarification misses (terse "I want a limit order") left
+  unpatched per the freeze rule.
+
+Paper reframed and rebuilt: title now "Benchmarking **and Improving** Safe
+Executability..."; new method section, dev+heldout experiments, generator x
+enforcement ablation (Table II), per-category (Table III). PDF: 8 pages,
+clean build, 3 tables render as full-width floats.
+
+## Main split (120 prompts) — benchmark-grade upgrade (now the DEV split)
 
 Scaled the pilot into **DeFiFlowBench** (120 prompts) following the Agentic
 Benchmark Checklist (ABC), BetterBench, and NeurIPS D&B guidance:

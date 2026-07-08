@@ -28,31 +28,50 @@ evaluations conflate: does the graph have the right shape, does it carry
 the parameters needed to execute, and, when executed, does it actually
 behave safely?
 
-Our central finding is that structural validity does not imply safe
-executability, and the gap is large and consistent. Across a 120-prompt
-benchmark and a range of systems---a deterministic template baseline, a
-deployed no-code DeFi generator, and direct, constrained, few-shot, and
-safety-instructed language-model baselines on two model families---the best
-system reaches only $0.44$ structural validity and none exceeds $0.29$
+Our first finding is that structural validity does not imply safe
+executability, and the gap is large and consistent. Across the benchmark and
+a range of systems---a deterministic template baseline, a deployed no-code
+DeFi generator, and direct, constrained, few-shot, and safety-instructed
+language-model baselines on two model families---no baseline exceeds $0.33$
 safe-executability. On-chain, the direct, constrained, and few-shot
-configurations each execute $10$--$13$ large swaps at roughly $33\%$
+configurations each execute $15$--$19$ large swaps at roughly $33\%$
 self-inflicted price impact because they set a slippage bound but no
-price-impact gate. An explicit safety instruction is the only intervention
-that removes on-chain unsafe execution, and even it leaves most workflows
-structurally incomplete.
+price-impact gate.
 
-\paragraph{Contributions.} (1) We introduce \textsc{DeFiFlowBench}, a
-120-prompt benchmark over four DeFi task categories with difficulty tiers,
-paraphrase clusters, and adversarial cases, and a three-layer static
-evaluation (structural, executable, safe) plus a clarification axis, with
-safety predicates derived uniformly across systems. (2) We add an on-chain
-execution layer that runs generated swaps on a real EVM and distinguishes a
-slippage bound from a price-impact gate, turning ``declared safety'' into
-``observed safety'', and we show the static safety proxy is sound against
-this on-chain ground truth (no false certifications). (3) We calibrate the
-scale with an oracle ceiling and null/random floors, report every rate with
-confidence intervals, and provide a quantified failure taxonomy and
-robustness analysis; we ablate constrained, few-shot, and safety-instructed
-prompting to show the gap is real but only partially closable by prompt
-design. (4) We release the prompts, gold annotations, baselines, execution
-harness, and analysis code for reproducible evaluation.
+The benchmark's failure taxonomy points to a fix. Because the dominant failure
+is \emph{omitted safety machinery} rather than misread intent, safety should
+be enforced on a candidate workflow rather than left to the generator. We
+therefore build \textbf{Koan-Safe}, a system that factors synthesis into a
+prompt-only intent parser, a replaceable candidate generator (rule-based, a
+language model, or a hybrid), and a generator-agnostic safety-enforcement
+layer that repairs structure and injects conservative safety policy---a
+slippage bound, a parameterized price-impact gate, bridge confirmations---while
+never fabricating trade intent it cannot read from the prompt. To test
+generalization rather than memorization, we freeze the method and evaluate it
+once on a held-out split authored afterward, which deliberately includes
+workflow structures outside the method's presets. On that split Koan-Safe
+reaches $0.67$ safe-executability---double the best baseline---and, across all
+three generators and both model families, drives on-chain unsafe executions to
+zero. An ablation that toggles only the enforcement layer, holding the parser
+and generator fixed, moves unsafe executions from $16$--$17$ back to zero,
+identifying the layer as the cause.
+
+\paragraph{Contributions.} (1) We introduce \textsc{DeFiFlowBench}, an
+expert-authored benchmark over four DeFi task categories with difficulty
+tiers, paraphrase clusters, and adversarial cases, a three-layer static
+evaluation (structural, executable, safe) plus a clarification axis, and a
+separate held-out test split with novel workflow structures for measuring
+generalization. (2) We add an on-chain execution layer that runs generated
+swaps on a real EVM and distinguishes a slippage bound from a price-impact
+gate, turning ``declared safety'' into ``observed safety'', and we show the
+static safety proxy is sound against this on-chain ground truth on both splits
+(precision $1.00$, no false certifications). (3) We present Koan-Safe, a
+generator-agnostic safety-enforcement layer, and show on the held-out split
+that it doubles safe-executability over the best baseline and eliminates
+on-chain unsafe execution across rule-based, language-model, and hybrid
+generators; an enforcement on/off ablation isolates the layer as the cause.
+(4) We calibrate the scale with an oracle ceiling and null/random floors,
+report every rate with confidence intervals, and provide a quantified failure
+taxonomy and robustness analysis. (5) We release the prompts, gold
+annotations, baselines, the Koan-Safe reference system, the execution harness,
+and analysis code for reproducible evaluation.

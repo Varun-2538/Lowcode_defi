@@ -1,0 +1,34 @@
+{
+  "id": "hl03",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "transactionMonitor",
+      "chainSelector",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

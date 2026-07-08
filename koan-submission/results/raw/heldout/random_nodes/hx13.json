@@ -1,0 +1,37 @@
+{
+  "id": "hx13",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "tokenSelector",
+      "oneInchQuote",
+      "portfolioAPI",
+      "walletConnector"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "walletConnector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

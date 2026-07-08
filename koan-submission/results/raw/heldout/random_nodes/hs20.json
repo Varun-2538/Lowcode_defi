@@ -1,0 +1,49 @@
+{
+  "id": "hs20",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "transactionMonitor",
+      "oneInchQuote",
+      "limitOrder",
+      "fusionSwap",
+      "tokenSelector",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

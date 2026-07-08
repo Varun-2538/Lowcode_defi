@@ -1,0 +1,44 @@
+{
+  "id": "hc08",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "transactionMonitor",
+      "fusionSwap",
+      "walletConnector",
+      "fusionPlus",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

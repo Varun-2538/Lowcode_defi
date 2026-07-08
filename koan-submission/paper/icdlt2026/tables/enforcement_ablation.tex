@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Enforcement-layer ablation on the heldout split: each Koan-Safe generator with the safety-enforcement layer on vs.\ off (same parser and generator). The layer is what drives on-chain unsafe executions to zero.}
+\label{tab:enforcement-ablation}
+\begin{tabular}{lcccc}
+\toprule
+System & \multicolumn{2}{c}{Safe (cfg)} & \multicolumn{2}{c}{Fork unsafe} \\
+ & off & on & off & on \\
+\midrule
+Koan-Safe (rules) & 0.12 & 0.43 & 17 & 0 \\
+Koan-Safe (LLM) (Gemini 3.1 FL) & 0.00 & 0.64 & 17 & 0 \\
+Koan-Safe (hybrid) (Gemini 3.1 FL) & 0.01 & 0.67 & 16 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}

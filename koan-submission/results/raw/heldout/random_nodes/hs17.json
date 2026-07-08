@@ -1,0 +1,49 @@
+{
+  "id": "hs17",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchQuote",
+      "walletConnector",
+      "defiDashboard",
+      "tokenSelector",
+      "priceImpactCalculator",
+      "limitOrder",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "oneInchQuote",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

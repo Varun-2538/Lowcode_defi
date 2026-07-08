@@ -1,0 +1,27 @@
+{
+  "id": "hx01",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "fusionPlus",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

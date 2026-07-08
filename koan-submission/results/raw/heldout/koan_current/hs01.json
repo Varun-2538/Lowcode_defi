@@ -1,0 +1,95 @@
+{
+  "id": "hs01",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "DEX Aggregator",
+    "tokens": [
+      "ETH",
+      "USDC"
+    ],
+    "features": [
+      "slippage protection"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Swap 3 ETH to USDC, keep slippage under 0.5%.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "transactionMonitor"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "fusionSwap",
+      "limitOrder",
+      "portfolioAPI",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "slippage": 1.0,
+      "warning_threshold": 2.0,
+      "max_impact_threshold": 15.0,
+      "default_confirmations": 1,
+      "expiry": 30
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring",
+      "expiry_set"
+    ]
+  },
+  "run_id": "koan_current"
+}

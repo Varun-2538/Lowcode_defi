@@ -38,3 +38,20 @@ structurally plausible, parameter-complete workflow is not done: the
 workflow must additionally carry, and enforce, the safety predicates that
 the target protocols require. Our benchmark operationalizes exactly this
 requirement and makes the gap measurable.
+
+Koan-Safe is a direct consequence of this framing, and its results support it.
+Treating safety as an enforcement pass over a candidate workflow---rather than
+as an emergent property of the generator---doubles safe-executability over the
+best baseline on a held-out split and eliminates on-chain unsafe execution
+across three different generators and two model families. The enforcement
+on/off ablation shows the layer, not the generator, is responsible. Two
+qualifications keep the claim honest. First, the layer improves safety but not
+intent: it never invents a missing amount or price, so a request that omits
+them still yields a non-executable workflow, which is the correct conservative
+behavior but caps the achievable rate. Second, the split between generators is
+informative: the frozen rule-based presets do not cover novel workflow
+structures and lose structural validity on the held-out variants, whereas a
+language-model generator under the same enforcement layer recovers most of that
+loss. The practical recommendation is therefore a hybrid: use a flexible
+generator for structure and a deterministic enforcement layer for safety, and
+evaluate the composition on executable ground truth rather than graph shape.

@@ -1,0 +1,44 @@
+{
+  "id": "hs29",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "chainSelector",
+      "defiDashboard",
+      "oneInchQuote",
+      "transactionMonitor",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

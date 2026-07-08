@@ -1,0 +1,54 @@
+{
+  "id": "hc15",
+  "baseline": "koan_safe_rules",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "fusionPlus",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "LINK",
+      "amount": "200",
+      "sourceChain": "ethereum",
+      "destinationChain": "zksync",
+      "default_confirmations": 12,
+      "destinationAddress": "self"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "koan_safe_rules"
+}

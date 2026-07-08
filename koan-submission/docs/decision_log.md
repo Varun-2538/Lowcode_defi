@@ -118,3 +118,44 @@
   6 pages, verified citations only. IAA number intentionally withheld until a
   human second pass exists (integrity: no fabricated annotator).
 
+## 2026-07-08 (Koan-Safe method + held-out test split)
+
+- Directive from user: make Koan the best performer, but by *improving Koan to
+  the benchmark's failure taxonomy*, never by bending the benchmark to Koan.
+  Reframe the paper from benchmark-only to "benchmark + proposed method".
+- Design decisions (user-approved): build the safety layer over BOTH a rules
+  generator and an LLM generator, plus a hybrid, so we can ablate
+  rules/LLM/together (x/y/z). Held-out split = ~90 prompts including NEW
+  structural variants (novel gold templates), not just harder parsing.
+  Reporting stance: iterate on dev only, then FREEZE once and report held-out
+  as-is even if Koan-Safe loses.
+- Built `code/baselines/koan_safe_core.py` (parser + generator-agnostic
+  enforcement layer) and three baselines (`koan_safe_rules/llm/hybrid`), all
+  prompt-only. Hard integrity rules enforced in code: no gold/category/entities
+  access; the layer injects safety *policy* but never fabricates trade intent;
+  missing intent -> clarify; safety waivers overridden. `KOAN_SAFE_ENFORCE=0`
+  toggles the layer for the causal ablation.
+- Iterated the rules parser on dev (`main`) until graph=1.00, safe=0.56, 0
+  category mislabels, 0 clarification mismatches, 0 on-chain unsafe. Verified
+  every remaining executable miss is an honest prompt omission (no fabricated
+  amount/price), not a scorer artifact.
+- FROZE the method at commit `e98b0bb`. Then authored `heldout` (87 prompts,
+  `code/benchmark/heldout_prompts.py` + `VARIANT_TEMPLATES` in
+  `build_dataset.py`): canonical prompts with fresh/out-of-vocab tokens plus 5
+  new structural variants. Ran ALL systems once (offline + 2 LLM families +
+  Koan-Safe + ablations, ~1000 calls), fork pass, tables/analysis/figure.
+- Result: Koan-Safe (hybrid, Gemini) safe=0.67 [.55,.76] on held-out, DOUBLE
+  the best baseline (0.33), with 0 on-chain unsafe across all 3 generators x 2
+  models (vs 15-19 for plain LLMs). Enforcement on/off is the sole cause
+  (safe collapses to 0.00-0.12, unsafe returns to 16/17). Construct validity
+  holds (precision 1.00, n=891). Honest generalization gap reported: frozen
+  rules presets miss the new structural variants (graph 0.52), LLM/hybrid
+  recover (0.71-0.73). 3 held-out clarification misses left unpatched by the
+  freeze rule.
+- Reframed the whole paper: title "Benchmarking and Improving..."; new
+  `\section{Koan-Safe}` in method.tex; experiments now dev+heldout with the
+  Koan-Safe results, generator ablation (Table II), and per-category (Table
+  III); abstract/intro/benchmark/analysis/discussion/limitations updated.
+  `build_icdlt.sh` regenerates both splits and copies held-out as primary.
+  PDF rebuilt: 8 pages, clean, all 3 tables render as full-width floats.
+

@@ -1,0 +1,34 @@
+{
+  "id": "hx05",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "transactionMonitor",
+      "walletConnector",
+      "limitOrder",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "transactionMonitor",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

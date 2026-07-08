@@ -1,0 +1,27 @@
+{
+  "id": "hc12",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "priceImpactCalculator",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

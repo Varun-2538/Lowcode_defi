@@ -1,0 +1,47 @@
+{
+  "id": "hs28",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "limitOrder",
+      "fusionPlus",
+      "walletConnector",
+      "tokenSelector",
+      "oneInchSwap",
+      "fusionSwap"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "fusionSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "hc12",
+  "baseline": "constrained_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"chainSelector\",\"defiDashboard\",\"transactionMonitor\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"chainSelector\"],[\"chainSelector\",\"defiDashboard\"],[\"chainSelector\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"DAI\",\"amount\":\"450\",\"sourceChain\":\"Arbitrum\",\"destinationChain\":\"Base\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "defiDashboard",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "defiDashboard"
+      ],
+      [
+        "chainSelector",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "DAI",
+      "amount": "450",
+      "sourceChain": "Arbitrum",
+      "destinationChain": "Base"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "constrained_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

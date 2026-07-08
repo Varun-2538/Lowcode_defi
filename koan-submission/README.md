@@ -31,8 +31,17 @@ floor/ceiling baselines, LLM ablations, fork pass, tables, analyses, and
 figure:
 
 ```bash
-koan-submission/code/run_benchmark.sh main    # or: ... pilot
+koan-submission/code/run_benchmark.sh main       # development split
+koan-submission/code/run_benchmark.sh heldout    # held-out TEST split
 ```
+
+The **development** split (`main`, 120 prompts) characterizes the
+structural-to-safe gap and is where the proposed **Koan-Safe** system was
+built and tuned. The **held-out** split (`heldout`, 87 prompts) was authored
+*after* Koan-Safe was frozen and is evaluated once, with new structural
+variants that test generalization. Both runs include the Koan-Safe baselines
+(`koan_safe_rules` / `koan_safe_llm` / `koan_safe_hybrid`) and the
+enforcement on/off ablation (`KOAN_SAFE_ENFORCE=0`).
 
 Or step by step:
 
@@ -67,7 +76,8 @@ uv run --no-project --with matplotlib python koan-submission/code/analysis/make_
 ```
 
 Rebuild the paper from saved results (no experiments re-run):
-`koan-submission/paper/build_icdlt.sh main`.
+`koan-submission/paper/build_icdlt.sh main heldout` (regenerates both splits
+and uses the held-out split for the primary tables/figure).
 
 See `docs/pilot_findings.md` for the current results, `docs/datasheet.md` for
 dataset documentation, and `docs/reproducibility.md` for LLM-baseline setup.

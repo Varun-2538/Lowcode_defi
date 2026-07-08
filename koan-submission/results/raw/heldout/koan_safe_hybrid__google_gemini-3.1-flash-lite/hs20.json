@@ -1,0 +1,74 @@
+{
+  "id": "hs20",
+  "baseline": "koan_safe_hybrid",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "google/gemini-3.1-flash-lite",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"fusionSwap\", \"transactionMonitor\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"fusionSwap\"], [\"fusionSwap\", \"transactionMonitor\"]], \"config\": {\"fromToken\": \"UNI\", \"toToken\": \"DAI\", \"amount\": 45, \"slippage\": 0.01}, \"needs_clarification\": false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "fusionSwap",
+      "transactionMonitor",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "transactionMonitor"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "UNI",
+      "toToken": "DAI",
+      "amount": 45,
+      "slippage": 0.01,
+      "warning_threshold": 3
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

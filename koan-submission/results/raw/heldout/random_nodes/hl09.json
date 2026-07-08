@@ -1,0 +1,42 @@
+{
+  "id": "hl09",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "tokenSelector",
+      "defiDashboard",
+      "chainSelector",
+      "walletConnector",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

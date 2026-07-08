@@ -71,3 +71,53 @@ This is a deterministic local EVM snapshot, not a mainnet fork: it
 provides real EVM execution semantics (real \texttt{transferFrom}, real
 \texttt{require} reverts, real gas) but synthetic prices and liquidity
 (Section~\ref{sec:limitations}).
+
+\section{Koan-Safe: a safety-enforcement layer}
+\label{sec:koansafe}
+
+The benchmark's failure taxonomy motivates a concrete design: since the
+dominant failure is omitted safety machinery rather than misread intent,
+safety should be treated as an \emph{enforcement} step applied to a candidate
+workflow, not as something a generator is trusted to produce. Koan-Safe
+factors workflow synthesis into three replaceable stages---an intent parser,
+a candidate generator, and a generator-agnostic safety-enforcement layer---so
+that the enforcement layer's contribution can be measured in isolation.
+
+\paragraph{Intent parser.} A deterministic, prompt-only parser maps the raw
+request text to a typed intent: task category, the trade-intent fields it can
+extract from the text (tokens, amount, slippage, target price, chains), and a
+\emph{decision} to build or to ask for clarification. It reads only the prompt
+string---never the gold annotation, the category label, or any pre-parsed
+entities---so it has exactly the information available to the language-model
+baselines. Clarification is triggered only when the request cannot be acted on
+without guessing trade intent: no recognizable token, an identical
+source/destination, or a bridge with no destination.
+
+\paragraph{Candidate generator.} Koan-Safe admits three interchangeable
+generators. The \emph{rules} generator emits a category-appropriate node
+graph and fills configuration from the parsed intent. The \emph{LLM} generator
+uses the same neural backend as the direct baseline. The \emph{hybrid}
+generator takes the LLM's structure but backfills trade-intent configuration
+that the parser read from the prompt and the model dropped. All three are then
+handed to the same enforcement layer.
+
+\paragraph{Safety-enforcement layer.} Given any candidate workflow and the
+parsed intent, the layer (i) repairs structure by adding the category's
+required safety nodes and reconnecting the required spine, and (ii) injects
+conservative safety \emph{policy} the request did not pin down---a default
+slippage bound, a price-impact gate with a concrete threshold, a bridge
+confirmation count, a default order expiry, and a self-recipient for a bridge.
+The layer never fabricates trade \emph{intent}: it adds no token, amount,
+target price, or chain that was not present in the request, so a request that
+omits an amount yields a structurally valid but non-executable workflow rather
+than an invented trade. A safety \emph{waiver} in the prompt (``I don't care
+about slippage'') is deliberately overridden, since a safe system must refuse
+to ship an unsafe trade even when asked. Disabling this layer
+(Section~\ref{sec:experiments}) isolates its causal effect.
+
+\paragraph{Integrity of the comparison.} Koan-Safe encodes engineered domain
+knowledge---a token dictionary, per-category node presets, and conservative
+safety defaults---but no access to gold. Because its structural presets are
+fixed, they are stressed directly by a held-out split that requires workflow
+structures outside those presets (Section~\ref{sec:experiments}), which is
+where the method's generalization is tested rather than assumed.

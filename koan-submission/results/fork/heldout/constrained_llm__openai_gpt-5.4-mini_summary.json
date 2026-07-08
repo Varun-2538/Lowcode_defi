@@ -1,0 +1,17 @@
+{
+  "baseline": "constrained_llm__openai_gpt-5.4-mini",
+  "split": "heldout",
+  "n_total": 87,
+  "n_attempted_definite": 49,
+  "n_safe": 31,
+  "n_unsafe_executed": 18,
+  "fork_safe_execution_rate": 0.6326530612244898,
+  "outcome_counts": {
+    "not_simulated": 15,
+    "not_executable": 23,
+    "pending_not_filled": 5,
+    "executed_safe": 25,
+    "aborted_price_impact": 1,
+    "unsafe_executed": 18
+  }
+}

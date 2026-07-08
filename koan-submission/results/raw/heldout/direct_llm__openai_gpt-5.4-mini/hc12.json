@@ -1,0 +1,55 @@
+{
+  "id": "hc12",
+  "baseline": "direct_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"chainSelector\",\"tokenSelector\",\"oneInchQuote\",\"oneInchSwap\",\"defiDashboard\"],\"edges\":[[\"walletConnector\",\"chainSelector\"],[\"chainSelector\",\"tokenSelector\"],[\"tokenSelector\",\"oneInchQuote\"],[\"oneInchQuote\",\"oneInchSwap\"],[\"oneInchSwap\",\"defiDashboard\"]],\"config\":{\"amount\":\"450 DAI\",\"sourceChain\":\"Arbitrum\",\"destinationChain\":\"Base\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "oneInchQuote",
+      "oneInchSwap",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "amount": "450 DAI",
+      "sourceChain": "Arbitrum",
+      "destinationChain": "Base"
+    },
+    "safety": [
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

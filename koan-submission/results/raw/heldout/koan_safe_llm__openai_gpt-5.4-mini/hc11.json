@@ -1,0 +1,65 @@
+{
+  "id": "hc11",
+  "baseline": "koan_safe_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "llm",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"walletConnector\",\"chainSelector\",\"tokenSelector\",\"fusionPlus\",\"transactionMonitor\",\"defiDashboard\"],\"edges\":[[\"walletConnector\",\"chainSelector\"],[\"chainSelector\",\"tokenSelector\"],[\"tokenSelector\",\"fusionPlus\"],[\"fusionPlus\",\"transactionMonitor\"],[\"transactionMonitor\",\"defiDashboard\"]],\"config\":{\"amount\":\"2 ETH\",\"sourceChain\":\"Polygon\",\"destinationChain\":\"Optimism\"},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "fusionPlus",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "amount": "2 ETH",
+      "sourceChain": "Polygon",
+      "destinationChain": "Optimism",
+      "default_confirmations": 12,
+      "destinationAddress": "self"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "koan_safe_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

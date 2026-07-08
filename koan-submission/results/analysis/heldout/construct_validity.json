@@ -1,0 +1,89 @@
+{
+  "description": "Rows: static safe_executable_proxy (True/False). Cols: on-chain safe_execution (True/False). Restricted to fork-definite prompts.",
+  "confusion": {
+    "proxy_safe__onchain_safe": 282,
+    "proxy_safe__onchain_unsafe": 0,
+    "proxy_unsafe__onchain_safe": 453,
+    "proxy_unsafe__onchain_unsafe": 156
+  },
+  "n": 891,
+  "agreement": 0.49158249158249157,
+  "proxy_safe_precision": 1.0,
+  "note": "Of 282 workflows the proxy declared safe, all were safe on-chain (0 false positives): the static safe verdict never gives false reassurance. It is conservative -- 453 proxy-unsafe workflows were nonetheless safe on-chain (e.g. small trades or reverts).",
+  "per_run": {
+    "constrained_llm__google_gemini-3.1-flash-lite": {
+      "False_True": 28,
+      "True_True": 10,
+      "False_False": 18
+    },
+    "constrained_llm__openai_gpt-5.4-mini": {
+      "False_True": 30,
+      "False_False": 18,
+      "True_True": 1
+    },
+    "direct_llm__google_gemini-3.1-flash-lite": {
+      "False_True": 36,
+      "False_False": 19,
+      "True_True": 2
+    },
+    "direct_llm__openai_gpt-5.4-mini": {
+      "False_True": 29,
+      "False_False": 15
+    },
+    "fewshot_llm__google_gemini-3.1-flash-lite": {
+      "False_True": 28,
+      "False_False": 19,
+      "True_True": 9
+    },
+    "fewshot_llm__openai_gpt-5.4-mini": {
+      "False_True": 32,
+      "True_True": 8,
+      "False_False": 17
+    },
+    "koan_safe_hybrid__google_gemini-3.1-flash-lite__noenforce": {
+      "False_True": 36,
+      "False_False": 16,
+      "True_True": 1
+    },
+    "koan_safe_hybrid__google_gemini-3.1-flash-lite": {
+      "True_True": 37,
+      "False_True": 16
+    },
+    "koan_safe_hybrid__openai_gpt-5.4-mini": {
+      "True_True": 29,
+      "False_True": 16
+    },
+    "koan_safe_llm__google_gemini-3.1-flash-lite__noenforce": {
+      "False_True": 36,
+      "False_False": 17
+    },
+    "koan_safe_llm__google_gemini-3.1-flash-lite": {
+      "True_True": 35,
+      "False_True": 18
+    },
+    "koan_safe_llm__openai_gpt-5.4-mini": {
+      "True_True": 27,
+      "False_True": 18
+    },
+    "koan_safe_rules__noenforce": {
+      "False_True": 27,
+      "False_False": 17,
+      "True_True": 9
+    },
+    "koan_safe_rules": {
+      "True_True": 23,
+      "False_True": 30
+    },
+    "oracle": {
+      "True_True": 60
+    },
+    "safety_llm__google_gemini-3.1-flash-lite": {
+      "True_True": 26,
+      "False_True": 30
+    },
+    "safety_llm__openai_gpt-5.4-mini": {
+      "False_True": 43,
+      "True_True": 5
+    }
+  }
+}

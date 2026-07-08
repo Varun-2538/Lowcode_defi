@@ -1,0 +1,40 @@
+{
+  "id": "hs21",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "ETH",
+      "USDT"
+    ],
+    "features": [
+      "gas optimization"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "gasless swp 250 usdt to eth 1% slipage via fusion",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

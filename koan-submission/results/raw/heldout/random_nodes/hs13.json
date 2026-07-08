@@ -1,0 +1,27 @@
+{
+  "id": "hs13",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "tokenSelector",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

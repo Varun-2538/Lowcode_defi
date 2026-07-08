@@ -1,0 +1,27 @@
+{
+  "id": "hl07",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "limitOrder",
+      "priceImpactCalculator",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "limitOrder",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "hl06",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "priceImpactCalculator",
+      "limitOrder",
+      "fusionPlus",
+      "defiDashboard",
+      "fusionSwap"
+    ],
+    "edges": [
+      [
+        "priceImpactCalculator",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "fusionSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

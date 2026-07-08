@@ -1,0 +1,67 @@
+{
+  "id": "hx08",
+  "baseline": "safety_llm",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"chainSelector\",\"tokenSelector\",\"priceImpactCalculator\",\"oneInchQuote\",\"oneInchSwap\",\"transactionMonitor\"],\"edges\":[[\"walletConnector\",\"chainSelector\"],[\"chainSelector\",\"tokenSelector\"],[\"tokenSelector\",\"priceImpactCalculator\"],[\"priceImpactCalculator\",\"oneInchQuote\"],[\"oneInchQuote\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"USDC\",\"toToken\":\"USDT\",\"amount\":\"500\",\"slippage\":\"1%\",\"sourceChain\":\"Ethereum\",\"destinationChain\":\"Polygon\",\"warning_threshold\":\"3%\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "priceImpactCalculator",
+      "oneInchQuote",
+      "oneInchSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "toToken": "USDT",
+      "amount": "500",
+      "slippage": "1%",
+      "sourceChain": "Ethereum",
+      "destinationChain": "Polygon",
+      "warning_threshold": "3%"
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "safety_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

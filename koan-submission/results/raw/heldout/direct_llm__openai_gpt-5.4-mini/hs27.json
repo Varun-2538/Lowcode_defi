@@ -1,0 +1,42 @@
+{
+  "id": "hs27",
+  "baseline": "direct_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"tokenSelector\",\"oneInchSwap\",\"portfolioAPI\",\"defiDashboard\"],\"edges\":[[\"tokenSelector\",\"oneInchSwap\"],[\"portfolioAPI\",\"defiDashboard\"]],\"config\":{\"fromToken\":\"AAVE\",\"toToken\":\"USDC\",\"amount\":\"8\",\"slippage\":\"1%\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "oneInchSwap",
+      "portfolioAPI",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "oneInchSwap"
+      ],
+      [
+        "portfolioAPI",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "fromToken": "AAVE",
+      "toToken": "USDC",
+      "amount": "8",
+      "slippage": "1%"
+    },
+    "safety": [
+      "slippage_bound"
+    ]
+  },
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "hx17",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "portfolioAPI",
+      "transactionMonitor",
+      "fusionPlus",
+      "limitOrder",
+      "priceImpactCalculator",
+      "defiDashboard",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "portfolioAPI",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

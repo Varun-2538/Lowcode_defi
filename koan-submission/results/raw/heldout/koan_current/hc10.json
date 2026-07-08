@@ -1,0 +1,64 @@
+{
+  "id": "hc10",
+  "baseline": "koan_current",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Cross-Chain Bridge",
+    "tokens": [
+      "ETH",
+      "USDC"
+    ],
+    "features": [],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Bridge 300 USDC from Ethereum to Arbitrum and show me a dashboard to track it.",
+    "suggested_nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "fusionPlus",
+      "transactionMonitor"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "fusionPlus",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "default_confirmations": 3,
+      "min_confirmations": 3,
+      "sourceChain": "ethereum",
+      "destinationChain": "ethereum"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "koan_current"
+}

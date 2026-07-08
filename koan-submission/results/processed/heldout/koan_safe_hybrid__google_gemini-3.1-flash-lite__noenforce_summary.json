@@ -1,0 +1,22 @@
+{
+  "baseline": "koan_safe_hybrid",
+  "n_total": 87,
+  "n_workflow": 75,
+  "n_clarification": 12,
+  "graph_valid_rate": 0.10666666666666667,
+  "executable_rate": 0.05333333333333334,
+  "safe_executable_rate": 0.013333333333333334,
+  "mean_node_recall": 0.7214285714285714,
+  "mean_edge_recall": 0.4266666666666667,
+  "mean_config_completeness": 0.9033333333333333,
+  "mean_safety_recall": 0.57,
+  "mean_extra_nodes": 0.22666666666666666,
+  "clarification_correct_rate": 0.75,
+  "run_id": "koan_safe_hybrid__google_gemini-3.1-flash-lite__noenforce",
+  "model_tag": "google_gemini-3.1-flash-lite__noenforce",
+  "split": "heldout",
+  "n_ok": 87,
+  "n_error": 0,
+  "n_skipped": 0,
+  "generated_at": "2026-07-08T11:44:02.394492+00:00"
+}

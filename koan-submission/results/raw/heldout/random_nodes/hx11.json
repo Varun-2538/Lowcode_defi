@@ -1,0 +1,32 @@
+{
+  "id": "hx11",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "defiDashboard",
+      "portfolioAPI",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

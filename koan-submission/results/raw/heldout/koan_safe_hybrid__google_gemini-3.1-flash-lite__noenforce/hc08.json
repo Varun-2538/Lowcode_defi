@@ -1,0 +1,58 @@
+{
+  "id": "hc08",
+  "baseline": "koan_safe_hybrid",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": false,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "google/gemini-3.1-flash-lite",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"chainSelector\", \"oneInchSwap\", \"transactionMonitor\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"chainSelector\"], [\"chainSelector\", \"oneInchSwap\"], [\"oneInchSwap\", \"transactionMonitor\"]], \"config\": {\"amount\": 60, \"fromToken\": \"UNI\", \"sourceChain\": \"Base\", \"destinationChain\": \"Ethereum\"}, \"needs_clarification\": false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "oneInchSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "amount": 60,
+      "fromToken": "UNI",
+      "sourceChain": "Base",
+      "destinationChain": "Ethereum"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__google_gemini-3.1-flash-lite__noenforce",
+  "model_tag": "google_gemini-3.1-flash-lite__noenforce"
+}

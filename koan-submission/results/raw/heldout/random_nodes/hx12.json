@@ -1,0 +1,42 @@
+{
+  "id": "hx12",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchQuote",
+      "oneInchSwap",
+      "chainSelector",
+      "walletConnector",
+      "portfolioAPI",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

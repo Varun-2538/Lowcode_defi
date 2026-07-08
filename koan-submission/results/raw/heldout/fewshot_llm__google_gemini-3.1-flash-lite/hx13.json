@@ -1,0 +1,55 @@
+{
+  "id": "hx13",
+  "baseline": "fewshot_llm",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"chainSelector\", \"fusionSwap\", \"transactionMonitor\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"chainSelector\"], [\"chainSelector\", \"fusionSwap\"], [\"fusionSwap\", \"transactionMonitor\"]], \"config\": {\"fromToken\": \"LINK\", \"toToken\": \"USDC\", \"amount\": \"40\", \"slippage\": \"1%\", \"sourceChain\": \"Ethereum\", \"destinationChain\": \"zkSync\"}, \"needs_clarification\": false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "fusionSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "LINK",
+      "toToken": "USDC",
+      "amount": "40",
+      "slippage": "1%",
+      "sourceChain": "Ethereum",
+      "destinationChain": "zkSync"
+    },
+    "safety": [
+      "slippage_bound",
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "fewshot_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

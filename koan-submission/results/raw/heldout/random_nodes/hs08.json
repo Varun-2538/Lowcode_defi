@@ -1,0 +1,39 @@
+{
+  "id": "hs08",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "transactionMonitor",
+      "fusionSwap",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "chainSelector"
+    ],
+    "edges": [
+      [
+        "transactionMonitor",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "chainSelector"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

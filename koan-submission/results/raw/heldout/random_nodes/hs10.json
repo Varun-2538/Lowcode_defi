@@ -1,0 +1,32 @@
+{
+  "id": "hs10",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "walletConnector",
+      "tokenSelector",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

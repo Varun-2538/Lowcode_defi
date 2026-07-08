@@ -1,0 +1,55 @@
+{
+  "id": "hx10",
+  "baseline": "fewshot_llm",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"chainSelector\",\"fusionPlus\",\"transactionMonitor\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"chainSelector\"],[\"chainSelector\",\"fusionPlus\"],[\"fusionPlus\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"DAI\",\"toToken\":\"USDC\",\"amount\":\"300\",\"sourceChain\":\"Arbitrum\",\"destinationChain\":\"Base\",\"slippage\":\"0.5%\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "fusionPlus",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "DAI",
+      "toToken": "USDC",
+      "amount": "300",
+      "sourceChain": "Arbitrum",
+      "destinationChain": "Base",
+      "slippage": "0.5%"
+    },
+    "safety": [
+      "slippage_bound",
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "fewshot_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

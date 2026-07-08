@@ -1,0 +1,17 @@
+{
+  "baseline": "fewshot_llm__openai_gpt-5.4-mini",
+  "split": "heldout",
+  "n_total": 87,
+  "n_attempted_definite": 57,
+  "n_safe": 40,
+  "n_unsafe_executed": 17,
+  "fork_safe_execution_rate": 0.7017543859649122,
+  "outcome_counts": {
+    "not_simulated": 13,
+    "not_executable": 17,
+    "pending_not_filled": 7,
+    "executed_safe": 30,
+    "aborted_price_impact": 3,
+    "unsafe_executed": 17
+  }
+}

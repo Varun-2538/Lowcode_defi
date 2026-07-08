@@ -1,0 +1,59 @@
+{
+  "id": "hs20",
+  "baseline": "safety_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"tokenSelector\",\"fusionSwap\",\"priceImpactCalculator\",\"transactionMonitor\"],\"edges\":[[\"walletConnector\",\"fusionSwap\"],[\"tokenSelector\",\"fusionSwap\"],[\"tokenSelector\",\"fusionSwap\"],[\"priceImpactCalculator\",\"fusionSwap\"],[\"fusionSwap\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"UNI\",\"toToken\":\"DAI\",\"amount\":\"45\",\"slippage\":\"1%\",\"warning_threshold\":\"concrete\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "tokenSelector",
+      "fusionSwap",
+      "priceImpactCalculator",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "fusionSwap"
+      ],
+      [
+        "tokenSelector",
+        "fusionSwap"
+      ],
+      [
+        "tokenSelector",
+        "fusionSwap"
+      ],
+      [
+        "priceImpactCalculator",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "UNI",
+      "toToken": "DAI",
+      "amount": "45",
+      "slippage": "1%",
+      "warning_threshold": "concrete"
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "safety_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "hc16",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "transactionMonitor",
+      "oneInchSwap",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

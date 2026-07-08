@@ -1,0 +1,27 @@
+{
+  "id": "hx07",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "defiDashboard",
+      "chainSelector"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "chainSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

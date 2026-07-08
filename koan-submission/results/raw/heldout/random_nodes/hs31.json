@@ -1,0 +1,32 @@
+{
+  "id": "hs31",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "fusionPlus",
+      "walletConnector",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

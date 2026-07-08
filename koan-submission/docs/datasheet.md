@@ -21,9 +21,12 @@ Following *Datasheets for Datasets* (Gebru et al., 2021). This documents the
   workflow annotation (required nodes, required type-level edges, required
   execution-config keys, required safety predicates, allowed extra nodes,
   and an `expects_clarification` flag).
-- **Counts.** Main split: 120 prompts — swap 40, limit_order 30, cross_chain
-  30, compositional 20. Difficulty: 38 easy / 62 medium / 20 hard. 15 prompts
-  are clarification/rejection cases. Pilot split: 30 prompts (frozen).
+- **Counts.** Main (development) split: 120 prompts — swap 40, limit_order 30,
+  cross_chain 30, compositional 20. Difficulty: 38 easy / 62 medium / 20 hard.
+  15 prompts are clarification/rejection cases. Held-out (test) split: 87
+  prompts — swap 31, limit_order 20, cross_chain 18, compositional 18; 16 easy
+  / 47 medium / 24 hard; 12 clarification cases. Pilot split: 30 prompts
+  (frozen).
 - **Metadata per prompt.** `category`, `entities`, `difficulty`
   (easy/medium/hard), `phenomena` (challenge tags, e.g. `underspecified`,
   `adversarial_waiver`, `adversarial_reject`, `identical_chain`,
@@ -38,9 +41,15 @@ Following *Datasheets for Datasets* (Gebru et al., 2021). This documents the
   correct* templates (see `code/benchmark/build_dataset.py`) plus per-prompt
   clarification flags. The node/config/safety vocabulary matches the backend
   executor catalog.
-- **Splits.** `pilot` (development, frozen) and `main` (evaluation). No train
-  split: the benchmark evaluates externally-built systems, not a model trained
-  on it.
+- **Splits.** `pilot` (early development, frozen), `main` (development /
+  evaluation split used to characterize the gap and tune the Koan-Safe
+  method), and `heldout` (test split, authored *after* Koan-Safe was frozen
+  and evaluated once). The held-out split adds new gold structural variants
+  (gasless swap, quote-first limit, dashboard bridge, cross-chain swap; see
+  `VARIANT_TEMPLATES` in `code/benchmark/build_dataset.py`) plus
+  out-of-vocabulary token symbols, so it tests generalization rather than
+  in-distribution fit. No train split: the benchmark evaluates
+  externally-built systems, not a model trained on it.
 - **Errors / noise.** Some prompts intentionally contain typos or vague
   phrasing (tagged `typo_noise` / `underspecified`); these are features, not
   defects.

@@ -1,0 +1,62 @@
+{
+  "id": "hx01",
+  "baseline": "constrained_llm",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"oneInchQuote\", \"priceImpactCalculator\", \"oneInchSwap\", \"transactionMonitor\", \"limitOrder\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"oneInchQuote\"], [\"oneInchQuote\", \"priceImpactCalculator\"], [\"priceImpactCalculator\", \"oneInchSwap\"], [\"oneInchSwap\", \"transactionMonitor\"], [\"walletConnector\", \"limitOrder\"]], \"config\": {\"amount\": \"2\", \"fromToken\": \"ETH\", \"toToken\": \"USDC\", \"slippage\": \"1%\"}, \"needs_clarification\": true}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "transactionMonitor",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "walletConnector",
+        "limitOrder"
+      ]
+    ],
+    "config": {
+      "amount": "2",
+      "fromToken": "ETH",
+      "toToken": "USDC",
+      "slippage": "1%"
+    },
+    "safety": [
+      "slippage_bound",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "constrained_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

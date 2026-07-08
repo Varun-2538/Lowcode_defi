@@ -18,20 +18,33 @@ cd "$REPO_ROOT"
 RESULTS="koan-submission/results"
 DATA="koan-submission/data"
 PAPER="koan-submission/paper/icdlt2026"
-SPLIT="${1:-main}"
 
-echo "== regenerate tables + analyses from processed metrics ($SPLIT) =="
-uv run --no-project python koan-submission/code/analysis/make_tables.py \
-  --results-root "$RESULTS" --split "$SPLIT"
-uv run --no-project python koan-submission/code/analysis/analyze.py \
-  --results-root "$RESULTS" --data-root "$DATA" --split "$SPLIT" || true
-uv run --no-project --with matplotlib python \
-  koan-submission/code/analysis/make_figures.py --results-root "$RESULTS" --split "$SPLIT" || true
+# The paper reports two splits: the development split (default "main") that
+# characterizes the gap and tunes Koan-Safe, and the held-out TEST split that
+# measures generalization. Both are regenerated; the held-out tables are the
+# paper's primary results.
+DEV_SPLIT="${1:-main}"
+TEST_SPLIT="${2:-heldout}"
+
+for SPLIT in "$DEV_SPLIT" "$TEST_SPLIT"; do
+  echo "== regenerate tables + analyses from processed metrics ($SPLIT) =="
+  uv run --no-project python koan-submission/code/analysis/make_tables.py \
+    --results-root "$RESULTS" --split "$SPLIT"
+  uv run --no-project python koan-submission/code/analysis/analyze.py \
+    --results-root "$RESULTS" --data-root "$DATA" --split "$SPLIT" || true
+  uv run --no-project --with matplotlib python \
+    koan-submission/code/analysis/make_figures.py --results-root "$RESULTS" --split "$SPLIT" || true
+done
 
 echo "== copy paper-facing assets =="
-cp "$RESULTS/tables/$SPLIT/main_results.tex" "$PAPER/tables/main_results.tex"
-cp "$RESULTS/tables/$SPLIT/per_category.tex" "$PAPER/tables/per_category.tex"
-cp "$RESULTS/figures/$SPLIT/structural_vs_safe.png" "$PAPER/figures/structural_vs_safe.png"
+# Primary results = the held-out TEST split.
+cp "$RESULTS/tables/$TEST_SPLIT/main_results.tex" "$PAPER/tables/main_results.tex"
+cp "$RESULTS/tables/$TEST_SPLIT/per_category.tex" "$PAPER/tables/per_category.tex"
+cp "$RESULTS/tables/$TEST_SPLIT/enforcement_ablation.tex" "$PAPER/tables/enforcement_ablation.tex"
+cp "$RESULTS/figures/$TEST_SPLIT/structural_vs_safe.png" "$PAPER/figures/structural_vs_safe.png"
+# Development-split results, referenced in the text and shown in an appendix-style table.
+cp "$RESULTS/tables/$DEV_SPLIT/main_results.tex" "$PAPER/tables/main_results_dev.tex"
+cp "$RESULTS/tables/$DEV_SPLIT/enforcement_ablation.tex" "$PAPER/tables/enforcement_ablation_dev.tex"
 
 echo "== build PDF =="
 ( cd "$PAPER" && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex >/dev/null )

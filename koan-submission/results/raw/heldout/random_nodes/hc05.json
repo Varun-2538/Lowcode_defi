@@ -1,0 +1,37 @@
+{
+  "id": "hc05",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "portfolioAPI",
+      "fusionSwap",
+      "limitOrder",
+      "chainSelector"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "chainSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

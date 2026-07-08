@@ -1,0 +1,49 @@
+{
+  "id": "hc07",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "limitOrder",
+      "fusionSwap",
+      "defiDashboard",
+      "transactionMonitor",
+      "walletConnector",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

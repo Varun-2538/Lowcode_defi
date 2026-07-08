@@ -291,9 +291,58 @@ def build_main_rows() -> tuple[list[dict], list[dict], list[str]]:
     return prompts, gold, ids
 
 
+def build_heldout_rows() -> tuple[list[dict], list[dict], list[str]]:
+    """Build the held-out TEST split from the frozen held-out prompt list.
+
+    Gold structure comes from a per-prompt ``template`` key: canonical keys
+    resolve to ``CATEGORY_DEFAULTS`` (identical to the dev split) while variant
+    keys resolve to ``VARIANT_TEMPLATES`` (novel structures authored to test
+    structural generalization). ``category`` still drives the on-chain harness.
+    """
+    from heldout_prompts import HELDOUT, VARIANT_TEMPLATES  # local import
+
+    def resolve(template_key: str):
+        if template_key in CATEGORY_DEFAULTS:
+            return CATEGORY_DEFAULTS[template_key]
+        if template_key in VARIANT_TEMPLATES:
+            return VARIANT_TEMPLATES[template_key]
+        raise KeyError(f"unknown gold template {template_key!r}")
+
+    prompts: list[dict] = []
+    gold: list[dict] = []
+    ids: list[str] = []
+    for (pid, category, template_key, text, entities, difficulty, phenomena,
+         paraphrase_of, notes, clarify) in HELDOUT:
+        nodes, config, safety, allowed_extra = resolve(template_key)
+        prompts.append({
+            "id": pid,
+            "split": "heldout",
+            "category": category,
+            "prompt": text,
+            "entities": entities,
+            "difficulty": difficulty,
+            "phenomena": list(phenomena),
+            "paraphrase_of": paraphrase_of,
+            "notes": notes,
+        })
+        gold.append({
+            "id": pid,
+            "template": template_key,
+            "required_nodes": list(nodes),
+            "required_edges": _edges(nodes),
+            "required_config": dict(config),
+            "safety_requirements": list(safety),
+            "allowed_extra_nodes": list(allowed_extra),
+            "expects_clarification": clarify,
+        })
+        ids.append(pid)
+    return prompts, gold, ids
+
+
 SPLIT_BUILDERS = {
     "pilot": build_pilot_rows,
     "main": build_main_rows,
+    "heldout": build_heldout_rows,
 }
 
 SPLIT_DESCRIPTION = {
@@ -302,6 +351,12 @@ SPLIT_DESCRIPTION = {
     "main": "Expert-authored 120-prompt DeFiFlowBench main split "
             "(40 swap / 30 limit_order / 30 cross_chain / 20 compositional) "
             "with difficulty tiers, phenomena tags, and paraphrase clusters.",
+    "heldout": "Expert-authored held-out TEST split (~87 prompts) authored "
+               "after the Koan-Safe method was frozen. Mixes canonical-structure "
+               "prompts (harder parsing, fresh/out-of-vocabulary tokens) with "
+               "new structural variants (gasless swap, quote-first limit, "
+               "dashboard bridge, cross-chain swap) that require gold structures "
+               "outside the four frozen presets, to test generalization.",
 }
 
 

@@ -1,0 +1,37 @@
+{
+  "id": "hs09",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "portfolioAPI",
+      "tokenSelector",
+      "priceImpactCalculator",
+      "fusionPlus"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "fusionPlus"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

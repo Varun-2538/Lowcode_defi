@@ -1,0 +1,49 @@
+{
+  "id": "hs01",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "transactionMonitor",
+      "portfolioAPI",
+      "defiDashboard",
+      "limitOrder",
+      "oneInchQuote",
+      "walletConnector"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "walletConnector"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

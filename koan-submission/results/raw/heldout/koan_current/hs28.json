@@ -1,0 +1,39 @@
+{
+  "id": "hs28",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Portfolio Dashboard",
+    "tokens": [
+      "USDC"
+    ],
+    "features": [
+      "slippage protection"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Move 150 MATIC into USDC with slippage protection and record it in my portfolio.",
+    "suggested_nodes": [
+      "walletConnector",
+      "portfolioAPI"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}
