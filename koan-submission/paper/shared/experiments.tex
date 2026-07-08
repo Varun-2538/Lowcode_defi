@@ -118,6 +118,70 @@ execution to zero.
 
 \input{tables/enforcement_ablation}
 
+\subsection{Metamorphic safety: robustness without per-prompt labels}
+\label{sec:metamorphic}
+
+Static and on-chain metrics both compare an output to a fixed target. They do
+not test whether a system's declared safety is \emph{robust} when the risk of
+the request changes. We therefore add a label-free \emph{metamorphic} suite of
+$34$ base/variant prompt pairs (Section~\ref{sec:benchmark}) and check, for
+each pair, a relation the two outputs must satisfy rather than a per-prompt
+gold label: \textbf{amount monotonicity} (a $100\times$ larger trade must not
+weaken the declared safety set nor newly execute unsafely on-chain),
+\textbf{threshold tightening} (asking for a stricter price-impact tolerance
+must keep the gate and not loosen the number), \textbf{waiver resistance} (an
+explicit instruction to skip checks or ``accept all risk'' must not remove a
+mandatory safety predicate), \textbf{paraphrase invariance} (a reworded
+request must keep the workflow class and safety policy), and
+\textbf{drop-field non-fabrication} (removing a critical field such as the
+amount or bridge destination must trigger a clarification or an empty field,
+never an invented value). Pairs whose base prompt a system fails to build are
+not applicable and are excluded from that system's denominator.
+
+Table~\ref{tab:metamorphic} reports the results. The direct LLMs violate
+$14$--$16$ of $\sim\!32$ applicable relations, concentrated exactly where the
+core thesis predicts: they fail \emph{every} amount-monotonicity pair
+($7$--$8$ of $8$), silently executing the enlarged trade at severe price impact
+because no gate is wired, and they comply with $6$--$7$ of $8$ waivers by
+dropping the slippage bound, monitoring, or expiry the base request had
+included. A safety instruction sharply reduces these ($2$--$3$ violations
+total) but does not eliminate them: it still drops a mandatory gate under one
+waiver and flips a workflow class or policy under paraphrase. \textbf{Every
+Koan-Safe configuration satisfies all amount, threshold, waiver, and drop-field
+relations across both models}; the only residual is a single paraphrase pair
+for the hybrid generator on Gemini, where the LLM structure step emits a
+different class for a cross-chain rewording---an imperfection we report rather
+than patch. Because the enforcement layer injects mandatory safety from the
+parsed intent regardless of the surface form or any waiver text, safety
+monotonicity and waiver resistance hold by construction, which the suite
+confirms empirically.
+
+\input{tables/metamorphic}
+
+\subsection{Cost and latency}
+\label{sec:cost}
+
+Enforcement is cheap. Table~\ref{tab:cost} reports the two reproducible cost
+drivers per workflow. The rule-based generator makes \emph{zero} LLM calls and
+runs fully offline; the LLM and hybrid generators make one call per built
+workflow---and \emph{fewer} than the plain baselines, because Koan-Safe's
+clarification gate fires before generation and skips the model call on
+underspecified prompts ($0.99$ vs.\ $1.00$ calls/workflow here). End-to-end
+latency for all LLM systems is dominated by provider round-trip
+($\sim\!1.7$--$2.0$\,s/workflow) and is statistically indistinguishable between
+Koan-Safe and the baselines, since the safety layer adds only structural
+manipulation. Measured in isolation, that manipulation---the enforcement
+layer's own overhead on top of a fixed generator---is $0.07$\,ms per workflow,
+four orders of magnitude below the network cost. At an assumed
+\$0.30 per million output tokens the estimated spend is under
+\$0.005 per $100$ workflows for every system. Koan-Safe thus removes on-chain
+unsafe execution (Tables~\ref{tab:main-results},~\ref{tab:enforcement-ablation})
+and restores safety robustness (Table~\ref{tab:metamorphic}) at no measurable
+cost or latency penalty, and at zero marginal cost in its offline rule-based
+form.
+
+\input{tables/cost}
+
 \subsection{Clarification and per-category behavior}
 
 On the clarification axis, Koan-Safe correctly handles $9$ of $12$ held-out

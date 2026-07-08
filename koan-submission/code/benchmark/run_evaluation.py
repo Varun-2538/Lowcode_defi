@@ -12,6 +12,7 @@ import importlib.util
 import inspect
 import json
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
@@ -97,8 +98,10 @@ def main() -> int:
 
     metrics: list[dict[str, Any]] = []
     n_ok = n_error = n_skipped = 0
+    timings: list[dict[str, Any]] = []
 
     for prompt in prompts:
+        t0 = time.perf_counter()
         try:
             run = generate(prompt, gold_rows[prompt["id"]]) if wants_gold else generate(prompt)
         except Exception as exc:  # noqa: BLE001
@@ -115,10 +118,19 @@ def main() -> int:
                 n_error += 1
         else:
             n_ok += 1
+        elapsed = time.perf_counter() - t0
 
         run.setdefault("run_id", run_id)
         if args.tag:
             run.setdefault("model_tag", args.tag)
+        # An LLM call happened iff the output carries model metadata with a model
+        # name (Koan-Safe records model=None when its parser short-circuits).
+        model_meta = run.get("model")
+        if not model_meta:
+            ks = run.get("koan_safe") or {}
+            model_meta = ks.get("model")
+        llm_called = bool(model_meta and model_meta.get("model"))
+        timings.append({"id": prompt["id"], "seconds": elapsed, "llm_called": llm_called})
         (raw_dir / f"{prompt['id']}.json").write_text(json.dumps(run, indent=2) + "\n")
         metric = score_run(gold_rows[prompt["id"]], run).to_dict()
         metric["run_id"] = run_id
@@ -126,6 +138,20 @@ def main() -> int:
         metrics.append(metric)
 
     (processed_dir / f"{run_id}_metrics.json").write_text(json.dumps(metrics, indent=2) + "\n")
+
+    n_llm_calls = sum(1 for t in timings if t["llm_called"])
+    secs = [t["seconds"] for t in timings]
+    timing_summary = {
+        "run_id": run_id, "baseline": args.baseline, "split": args.split,
+        "model_tag": args.tag or None,
+        "n_prompts": len(timings), "n_llm_calls": n_llm_calls,
+        "llm_calls_per_prompt": (n_llm_calls / len(timings)) if timings else 0.0,
+        "total_seconds": sum(secs),
+        "mean_seconds": (sum(secs) / len(secs)) if secs else 0.0,
+        "median_seconds": (sorted(secs)[len(secs) // 2]) if secs else 0.0,
+        "per_prompt": timings,
+    }
+    (processed_dir / f"{run_id}_timing.json").write_text(json.dumps(timing_summary, indent=2) + "\n")
     summary = aggregate(metrics)
     summary.update({
         "baseline": args.baseline,

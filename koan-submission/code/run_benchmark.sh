@@ -97,6 +97,16 @@ echo "== 4. fork execution pass (local py-EVM) =="
 RUN_PLAIN "${FORK_DEPS[@]}" python \
   "$CODE/safety/fork_simulation.py" --results-root "$RESULTS" --split "$SPLIT" || true
 
+if [ "$SPLIT" = "metamorphic" ]; then
+  echo "== 5. metamorphic + cost analysis =="
+  RUN_PLAIN python "$CODE/analysis/metamorphic.py" \
+    --results-root "$RESULTS" --data-root "$DATA"
+  RUN_PLAIN python "$CODE/analysis/cost.py" \
+    --results-root "$RESULTS" --split "$SPLIT" --price-per-mtok 0.30
+  echo "== done (metamorphic): see $RESULTS/analysis/$SPLIT, $RESULTS/tables/$SPLIT =="
+  exit 0
+fi
+
 echo "== 5. tables =="
 RUN_PLAIN python "$CODE/analysis/make_tables.py" --results-root "$RESULTS" --split "$SPLIT"
 

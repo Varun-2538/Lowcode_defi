@@ -1,0 +1,15 @@
+{
+  "baseline": "koan_safe_rules__noenforce",
+  "split": "metamorphic",
+  "n_total": 68,
+  "n_attempted_definite": 58,
+  "n_safe": 13,
+  "n_unsafe_executed": 45,
+  "fork_safe_execution_rate": 0.22413793103448276,
+  "outcome_counts": {
+    "executed_safe": 13,
+    "unsafe_executed": 45,
+    "not_executable": 4,
+    "not_simulated": 6
+  }
+}

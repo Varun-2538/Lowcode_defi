@@ -339,10 +339,54 @@ def build_heldout_rows() -> tuple[list[dict], list[dict], list[str]]:
     return prompts, gold, ids
 
 
+def build_metamorphic_rows() -> tuple[list[dict], list[dict], list[str]]:
+    """Build the metamorphic safety split (base/variant prompt pairs).
+
+    Gold is derived from the prompt category exactly like the other splits, so
+    the standard scorer still runs; the metamorphic *result* is a relation
+    between the base and variant outputs, computed by
+    ``code/analysis/metamorphic.py`` from saved outputs (not from gold). The
+    base/variant pairing and metamorphic relation are carried in the prompt
+    metadata and saved as a manifest in the split file.
+    """
+    from metamorphic_prompts import iter_rows  # local import
+
+    prompts: list[dict] = []
+    gold: list[dict] = []
+    ids: list[str] = []
+    for (row_id, category, text, entities, mr, pair_id, role, param) in iter_rows():
+        nodes, config, safety, allowed_extra = CATEGORY_DEFAULTS[category]
+        prompts.append({
+            "id": row_id,
+            "split": "metamorphic",
+            "category": category,
+            "prompt": text,
+            "entities": entities,
+            "metamorphic": {"relation": mr, "pair_id": pair_id, "role": role,
+                            "param": param},
+            "notes": f"metamorphic {mr} pair {pair_id} ({role})",
+        })
+        gold.append({
+            "id": row_id,
+            "required_nodes": list(nodes),
+            "required_edges": _edges(nodes),
+            "required_config": dict(config),
+            "safety_requirements": list(safety),
+            "allowed_extra_nodes": list(allowed_extra),
+            # Metamorphic rows are scored by the relation analyzer, not the
+            # clarification axis; keep them on the workflow axis for the
+            # standard scorer.
+            "expects_clarification": False,
+        })
+        ids.append(row_id)
+    return prompts, gold, ids
+
+
 SPLIT_BUILDERS = {
     "pilot": build_pilot_rows,
     "main": build_main_rows,
     "heldout": build_heldout_rows,
+    "metamorphic": build_metamorphic_rows,
 }
 
 SPLIT_DESCRIPTION = {
@@ -357,6 +401,11 @@ SPLIT_DESCRIPTION = {
                "new structural variants (gasless swap, quote-first limit, "
                "dashboard bridge, cross-chain swap) that require gold structures "
                "outside the four frozen presets, to test generalization.",
+    "metamorphic": "Metamorphic safety suite: base/variant prompt pairs testing "
+                   "safety invariants (amount monotonicity, threshold tightening, "
+                   "waiver resistance, paraphrase invariance, drop-field "
+                   "clarification) via relations between outputs, not per-prompt "
+                   "gold labels.",
 }
 
 
@@ -402,6 +451,14 @@ def main() -> int:
     if diff_counts:
         split_meta["difficulty_counts"] = diff_counts
         split_meta["n_clarification"] = n_clarify
+    if args.split == "metamorphic":
+        from metamorphic_prompts import pairs_manifest
+        manifest = pairs_manifest()
+        split_meta["metamorphic_pairs"] = manifest
+        mr_counts: dict[str, int] = {}
+        for m in manifest:
+            mr_counts[m["mr"]] = mr_counts.get(m["mr"], 0) + 1
+        split_meta["metamorphic_relation_counts"] = mr_counts
     split_path.write_text(json.dumps(split_meta, indent=2) + "\n")
 
     print(f"wrote {len(prompts)} prompts -> {prompts_path}")

@@ -1,0 +1,33 @@
+{
+  "id": "mm_w08b",
+  "baseline": "direct_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"tokenSelector\",\"oneInchSwap\"],\"edges\":[[\"tokenSelector\",\"oneInchSwap\"]],\"config\":{\"fromToken\":\"AAVE\",\"toToken\":\"WETH\",\"amount\":\"200\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {
+      "fromToken": "AAVE",
+      "toToken": "WETH",
+      "amount": "200"
+    },
+    "safety": []
+  },
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

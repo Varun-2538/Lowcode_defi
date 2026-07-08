@@ -34,6 +34,22 @@ presets, the split directly tests whether the method generalizes beyond the
 structures it was built around. A $30$-prompt development \emph{pilot} split is
 also retained for reference.
 
+\paragraph{Metamorphic safety suite.} Absolute scores compare an output to a
+fixed target and cannot say whether a system's safety is \emph{robust} when the
+request is transformed in a risk-relevant way. We therefore add a label-free
+metamorphic split of $34$ base/variant prompt pairs ($68$ prompts) grouped by
+the metamorphic relation the two outputs must satisfy: amount monotonicity (a
+$100\times$ larger trade), threshold tightening (a stricter price-impact
+tolerance), waiver resistance (an appended instruction to skip safety), 
+paraphrase invariance (a reworded task), and drop-field non-fabrication (a
+removed critical field). Each pair is authored so its base prompt is well
+specified and executable, and the transform is faithful; the base and variant
+share a category and are scored by the standard evaluator, but the metamorphic
+\emph{result} is a relation between their two outputs, computed post hoc, so it
+needs no per-prompt gold label. This suite tests a property---the stability of
+declared and executed safety under adversarial and benign rewrites---that no
+static or single-output on-chain metric captures.
+
 \subsection{Gold annotations}
 
 Each prompt is paired with a gold annotation recording (i) the required

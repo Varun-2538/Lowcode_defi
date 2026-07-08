@@ -159,3 +159,48 @@
   `build_icdlt.sh` regenerates both splits and copies held-out as primary.
   PDF rebuilt: 8 pages, clean, all 3 tables render as full-width floats.
 
+## 2026-07-08 (metamorphic safety suite + cost/latency)
+
+- Reviewer-hardening sprint. Of the user's five asks, three were unblocked and
+  done this turn; two remain blocked on external inputs (see below).
+- **Metamorphic safety suite** (new, highest-novelty): authored 34 base/variant
+  prompt PAIRS across five metamorphic relations
+  (`code/benchmark/metamorphic_prompts.py`): amount monotonicity (100x larger
+  trade), threshold tightening (5%->1%), waiver resistance ("ignore price
+  impact"), paraphrase invariance, drop-field non-fabrication. Built as split
+  `metamorphic` (68 prompts) via `build_dataset.py` (pairs manifest saved in
+  the split json). The waiver adversarial suite (user ask #4) is folded in as
+  the `waiver` relation rather than a separate anecdotal test.
+- Rationale: absolute scores compare to a fixed target and cannot show whether
+  declared/executed safety is *robust* to risk-relevant rewrites. Metamorphic
+  testing checks output RELATIONS, so it needs no per-prompt gold label. The
+  invariant checkers (`code/analysis/metamorphic.py`) are a-priori and
+  interpretable: superset-of-safety, no-new-unsafe-on-chain, gate-preservation,
+  numeric-threshold monotonicity, class/policy invariance, no-fabrication. A
+  pair whose base fails to build is N/A (excluded from the denominator), so
+  denominators legitimately vary across systems.
+- Ran koan_safe_rules(+noenforce) offline, then the LLM-dependent systems
+  (direct_llm, safety_llm, koan_safe_llm/hybrid) on both model families, plus a
+  fork pass, then the analyzer. Result: **every Koan-Safe config satisfies all
+  amount/threshold/waiver/dropfield relations** (0/34, except 1 hybrid-Gemini
+  paraphrase class-flip, reported not patched); **direct LLMs fail every
+  amount-monotonicity pair and most waiver pairs** (14-16/32); the rules
+  enforcement-OFF ablation shows 15/34 (amount 8/8, waiver 7/8), proving the
+  enforcement layer is what restores safety monotonicity and waiver resistance.
+- **Cost/latency** (user ask #5): instrumented `run_evaluation.py` with
+  per-prompt wall-clock + LLM-call detection -> `<run>_timing.json`; added
+  `code/analysis/cost.py`. Grounded on the two measurable drivers (LLM
+  calls/wf, latency) + a token estimate at a STATED price (no fabricated
+  per-model prices). Rules = 0 calls/offline; LLM/hybrid 0.99 calls/wf
+  (clarification gate skips the call); enforcement-layer overhead measured in
+  isolation = 0.07 ms/wf; est. < $0.005/100 wf.
+- Paper: added Experiments subsections "Metamorphic safety" (Table III) and
+  "Cost and latency" (Table IV) + a benchmark paragraph + abstract/intro/
+  contributions updates. `build_icdlt.sh` + `run_benchmark.sh` wired for the
+  metamorphic split. PDF rebuilt: 9 pages, clean, no undefined refs.
+- **Still blocked, reported to user (NOT fabricated):** (a) mainnet-fork
+  validation (user ask #2) — this environment has no external RPC; needs an
+  RPC key. (b) human inter-annotator agreement kappa (user ask #3) — the
+  subset + `compute_iaa.py` + guides exist, but a real independent annotator
+  must do the pass; will not invent a second annotator.
+

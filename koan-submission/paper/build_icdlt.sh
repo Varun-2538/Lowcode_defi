@@ -25,6 +25,7 @@ PAPER="koan-submission/paper/icdlt2026"
 # paper's primary results.
 DEV_SPLIT="${1:-main}"
 TEST_SPLIT="${2:-heldout}"
+MM_SPLIT="${3:-metamorphic}"
 
 for SPLIT in "$DEV_SPLIT" "$TEST_SPLIT"; do
   echo "== regenerate tables + analyses from processed metrics ($SPLIT) =="
@@ -36,6 +37,12 @@ for SPLIT in "$DEV_SPLIT" "$TEST_SPLIT"; do
     koan-submission/code/analysis/make_figures.py --results-root "$RESULTS" --split "$SPLIT" || true
 done
 
+echo "== regenerate metamorphic + cost tables ($MM_SPLIT) =="
+uv run --no-project python koan-submission/code/analysis/metamorphic.py \
+  --results-root "$RESULTS" --data-root "$DATA" || true
+uv run --no-project python koan-submission/code/analysis/cost.py \
+  --results-root "$RESULTS" --split "$MM_SPLIT" --price-per-mtok 0.30 || true
+
 echo "== copy paper-facing assets =="
 # Primary results = the held-out TEST split.
 cp "$RESULTS/tables/$TEST_SPLIT/main_results.tex" "$PAPER/tables/main_results.tex"
@@ -45,6 +52,9 @@ cp "$RESULTS/figures/$TEST_SPLIT/structural_vs_safe.png" "$PAPER/figures/structu
 # Development-split results, referenced in the text and shown in an appendix-style table.
 cp "$RESULTS/tables/$DEV_SPLIT/main_results.tex" "$PAPER/tables/main_results_dev.tex"
 cp "$RESULTS/tables/$DEV_SPLIT/enforcement_ablation.tex" "$PAPER/tables/enforcement_ablation_dev.tex"
+# Metamorphic safety suite and cost/latency tables.
+cp "$RESULTS/tables/$MM_SPLIT/metamorphic.tex" "$PAPER/tables/metamorphic.tex"
+cp "$RESULTS/tables/$MM_SPLIT/cost.tex" "$PAPER/tables/cost.tex"
 
 echo "== build PDF =="
 ( cd "$PAPER" && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex >/dev/null )

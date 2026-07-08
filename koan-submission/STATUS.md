@@ -45,8 +45,47 @@ safety-enforcement system, **Koan-Safe**, evaluated on a fresh held-out split.
 
 Paper reframed and rebuilt: title now "Benchmarking **and Improving** Safe
 Executability..."; new method section, dev+heldout experiments, generator x
-enforcement ablation (Table II), per-category (Table III). PDF: 8 pages,
-clean build, 3 tables render as full-width floats.
+enforcement ablation (Table II), per-category (Table V). PDF: 9 pages,
+clean build.
+
+## Metamorphic safety suite + cost/latency (reviewer-hardening)
+
+Added a label-free **metamorphic** split (`data/*/metamorphic.*`; 34
+base/variant prompt pairs = 68 prompts) that tests output *relations* instead
+of per-prompt gold: **amount** monotonicity (100x larger trade), **threshold**
+tightening (5%->1%), **waiver** resistance ("ignore price impact"),
+**paraphrase** invariance, **dropfield** non-fabrication. Analyzer:
+`code/analysis/metamorphic.py` (invariant checkers over saved outputs + fork),
+writes `results/analysis/metamorphic/metamorphic.json` + Table III.
+
+### Metamorphic results (violated pairs, lower is better; denom = applicable pairs)
+| System | Amt | Thr | Waiv | Para | Drop | All |
+|---|---|---|---|---|---|---|
+| Direct LLM (Gemini) | 8 | 0 | 6 | 0 | 0 | 14/32 |
+| Direct LLM (GPT) | 7 | 0 | 7 | 2 | 0 | 16/33 |
+| Safety-instruct (Gemini) | 0 | 0 | 1 | 2 | 0 | 3/30 |
+| Safety-instruct (GPT) | 0 | 1 | 0 | 1 | 0 | 2/28 |
+| **Koan-Safe (rules)** | 0 | 0 | 0 | 0 | 0 | **0/34** |
+| **Koan-Safe (LLM, both)** | 0 | 0 | 0 | 0 | 0 | **0/34** |
+| **Koan-Safe (hybrid, GPT)** | 0 | 0 | 0 | 0 | 0 | **0/34** |
+| Koan-Safe (hybrid, Gemini) | 0 | 0 | 0 | 1 | 0 | 1/34 |
+
+- **Direct LLMs fail every amount-monotonicity pair** (larger trade newly
+  mines unsafe) and **most waiver pairs** (drop slippage/expiry/monitoring).
+  Enforcement-OFF rules ablation: 15/34 (amount 8/8, waiver 7/8).
+- **Every Koan-Safe config satisfies all amount/threshold/waiver/dropfield**;
+  only residual = 1 hybrid-Gemini paraphrase (cross-chain class flip),
+  reported not patched.
+
+### Cost/latency (`code/analysis/cost.py`; Table IV)
+- Rules generator: **0 LLM calls, fully offline**. LLM/hybrid: 0.99 calls/wf
+  (clarification gate skips the call), vs 1.00 for plain baselines.
+- Latency ~1.7-2.0 s/wf for all LLM systems (provider round-trip dominated,
+  indistinguishable Koan-Safe vs baselines).
+- **Enforcement-layer overhead measured in isolation: 0.07 ms/wf.** Est. spend
+  < $0.005 / 100 wf at $0.30/1M output tokens.
+- Runner now writes `results/processed/<split>/<run>_timing.json` (per-prompt
+  seconds + llm_called).
 
 ## Main split (120 prompts) — benchmark-grade upgrade (now the DEV split)
 

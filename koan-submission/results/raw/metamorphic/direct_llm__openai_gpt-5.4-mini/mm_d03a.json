@@ -1,0 +1,43 @@
+{
+  "id": "mm_d03a",
+  "baseline": "direct_llm",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"tokenSelector\",\"tokenSelector\",\"limitOrder\"],\"edges\":[[\"tokenSelector\",\"limitOrder\"],[\"tokenSelector\",\"limitOrder\"]],\"config\":{\"fromToken\":\"LINK\",\"toToken\":\"USDC\",\"amount\":\"100\",\"targetPrice\":\"20\",\"expiry\":\"7 days\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "tokenSelector",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ]
+    ],
+    "config": {
+      "fromToken": "LINK",
+      "toToken": "USDC",
+      "amount": "100",
+      "targetPrice": "20",
+      "expiry": "7 days"
+    },
+    "safety": [
+      "price_bound",
+      "expiry_set"
+    ]
+  },
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

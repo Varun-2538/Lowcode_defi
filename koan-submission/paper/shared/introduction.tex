@@ -70,8 +70,14 @@ generator-agnostic safety-enforcement layer, and show on the held-out split
 that it doubles safe-executability over the best baseline and eliminates
 on-chain unsafe execution across rule-based, language-model, and hybrid
 generators; an enforcement on/off ablation isolates the layer as the cause.
-(4) We calibrate the scale with an oracle ceiling and null/random floors,
-report every rate with confidence intervals, and provide a quantified failure
-taxonomy and robustness analysis. (5) We release the prompts, gold
-annotations, baselines, the Koan-Safe reference system, the execution harness,
-and analysis code for reproducible evaluation.
+(4) We add a label-free \emph{metamorphic} safety suite that checks robustness
+relations---safety monotonicity under larger trades, resistance to explicit
+safety waivers, invariance to paraphrase, and non-fabrication of dropped
+fields---and show Koan-Safe satisfies them where the baselines fail every
+larger-trade and most waiver pairs, at negligible enforcement cost
+($0.07$\,ms/workflow and no extra model calls). (5) We calibrate the scale
+with an oracle ceiling and null/random floors, report every rate with
+confidence intervals, and provide a quantified failure taxonomy and robustness
+analysis. (6) We release the prompts, gold annotations, baselines, the
+Koan-Safe reference system, the execution harness, and analysis code for
+reproducible evaluation.

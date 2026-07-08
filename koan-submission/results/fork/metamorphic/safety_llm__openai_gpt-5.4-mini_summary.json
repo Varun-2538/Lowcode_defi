@@ -1,0 +1,15 @@
+{
+  "baseline": "safety_llm__openai_gpt-5.4-mini",
+  "split": "metamorphic",
+  "n_total": 68,
+  "n_attempted_definite": 41,
+  "n_safe": 41,
+  "n_unsafe_executed": 0,
+  "fork_safe_execution_rate": 1.0,
+  "outcome_counts": {
+    "executed_safe": 11,
+    "aborted_price_impact": 30,
+    "not_executable": 22,
+    "not_simulated": 5
+  }
+}

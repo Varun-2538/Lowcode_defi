@@ -1,0 +1,109 @@
+{
+  "split": "metamorphic",
+  "price_per_mtok": 0.3,
+  "runs": {
+    "direct_llm__google_gemini-3.1-flash-lite": {
+      "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+      "baseline": "direct_llm",
+      "llm_calls_per_prompt": 1.0,
+      "mean_seconds": 1.8692835912122117,
+      "median_seconds": 1.6134081250056624,
+      "n_prompts": 68,
+      "est_tokens_per_wf": 101.19852941176471,
+      "est_cost_per_100wf": 0.003035955882352941
+    },
+    "direct_llm__openai_gpt-5.4-mini": {
+      "run_id": "direct_llm__openai_gpt-5.4-mini",
+      "baseline": "direct_llm",
+      "llm_calls_per_prompt": 1.0,
+      "mean_seconds": 1.6800726660517018,
+      "median_seconds": 1.5886178329819813,
+      "n_prompts": 68,
+      "est_tokens_per_wf": 72.61397058823529,
+      "est_cost_per_100wf": 0.0021784191176470583
+    },
+    "koan_safe_hybrid__google_gemini-3.1-flash-lite": {
+      "run_id": "koan_safe_hybrid__google_gemini-3.1-flash-lite",
+      "baseline": "koan_safe_hybrid",
+      "llm_calls_per_prompt": 0.9852941176470589,
+      "mean_seconds": 1.6923911281012218,
+      "median_seconds": 1.3551135830348358,
+      "n_prompts": 68,
+      "est_tokens_per_wf": 99.94117647058823,
+      "est_cost_per_100wf": 0.002998235294117647
+    },
+    "koan_safe_hybrid__openai_gpt-5.4-mini": {
+      "run_id": "koan_safe_hybrid__openai_gpt-5.4-mini",
+      "baseline": "koan_safe_hybrid",
+      "llm_calls_per_prompt": 0.9852941176470589,
+      "mean_seconds": 1.7581942971258233,
+      "median_seconds": 1.6309762910241261,
+      "n_prompts": 68,
+      "est_tokens_per_wf": 75.54411764705883,
+      "est_cost_per_100wf": 0.002266323529411765
+    },
+    "koan_safe_llm__google_gemini-3.1-flash-lite": {
+      "run_id": "koan_safe_llm__google_gemini-3.1-flash-lite",
+      "baseline": "koan_safe_llm",
+      "llm_calls_per_prompt": 0.9852941176470589,
+      "mean_seconds": 1.9008901109781993,
+      "median_seconds": 1.4972622089553624,
+      "n_prompts": 68,
+      "est_tokens_per_wf": 98.14338235294117,
+      "est_cost_per_100wf": 0.002944301470588235
+    },
+    "koan_safe_llm__openai_gpt-5.4-mini": {
+      "run_id": "koan_safe_llm__openai_gpt-5.4-mini",
+      "baseline": "koan_safe_llm",
+      "llm_calls_per_prompt": 0.9852941176470589,
+      "mean_seconds": 1.7197871140002354,
+      "median_seconds": 1.6317175410222262,
+      "n_prompts": 68,
+      "est_tokens_per_wf": 74.7904411764706,
+      "est_cost_per_100wf": 0.0022437132352941176
+    },
+    "koan_safe_rules__noenforce": {
+      "run_id": "koan_safe_rules__noenforce",
+      "baseline": "koan_safe_rules",
+      "llm_calls_per_prompt": 0.0,
+      "mean_seconds": 0.00012044856146744946,
+      "median_seconds": 6.479199510067701e-05,
+      "n_prompts": 68,
+      "est_tokens_per_wf": 0.0,
+      "est_cost_per_100wf": 0.0
+    },
+    "koan_safe_rules": {
+      "run_id": "koan_safe_rules",
+      "baseline": "koan_safe_rules",
+      "llm_calls_per_prompt": 0.0,
+      "mean_seconds": 0.00018649888122180367,
+      "median_seconds": 0.00010983308311551809,
+      "n_prompts": 68,
+      "est_tokens_per_wf": 0.0,
+      "est_cost_per_100wf": 0.0
+    },
+    "safety_llm__google_gemini-3.1-flash-lite": {
+      "run_id": "safety_llm__google_gemini-3.1-flash-lite",
+      "baseline": "safety_llm",
+      "llm_calls_per_prompt": 1.0,
+      "mean_seconds": 1.8303221857007457,
+      "median_seconds": 1.5047137920046225,
+      "n_prompts": 68,
+      "est_tokens_per_wf": 124.65441176470588,
+      "est_cost_per_100wf": 0.0037396323529411764
+    },
+    "safety_llm__openai_gpt-5.4-mini": {
+      "run_id": "safety_llm__openai_gpt-5.4-mini",
+      "baseline": "safety_llm",
+      "llm_calls_per_prompt": 1.0,
+      "mean_seconds": 1.965319726795903,
+      "median_seconds": 1.8450107909739017,
+      "n_prompts": 68,
+      "est_tokens_per_wf": 112.44852941176471,
+      "est_cost_per_100wf": 0.0033734558823529407
+    }
+  },
+  "enforcement_overhead_ms": {
+    "koan_safe_rules": 0.06605031975435421
+  }
+}

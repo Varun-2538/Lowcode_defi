@@ -25,8 +25,10 @@ Following *Datasheets for Datasets* (Gebru et al., 2021). This documents the
   cross_chain 30, compositional 20. Difficulty: 38 easy / 62 medium / 20 hard.
   15 prompts are clarification/rejection cases. Held-out (test) split: 87
   prompts — swap 31, limit_order 20, cross_chain 18, compositional 18; 16 easy
-  / 47 medium / 24 hard; 12 clarification cases. Pilot split: 30 prompts
-  (frozen).
+  / 47 medium / 24 hard; 12 clarification cases. Metamorphic split: 68 prompts
+  = 34 base/variant PAIRS (swap 46, compositional 8, limit_order 6,
+  cross_chain 8) across five metamorphic relations (amount 8, threshold 6,
+  waiver 8, paraphrase 6, dropfield 6). Pilot split: 30 prompts (frozen).
 - **Metadata per prompt.** `category`, `entities`, `difficulty`
   (easy/medium/hard), `phenomena` (challenge tags, e.g. `underspecified`,
   `adversarial_waiver`, `adversarial_reject`, `identical_chain`,
@@ -48,8 +50,11 @@ Following *Datasheets for Datasets* (Gebru et al., 2021). This documents the
   (gasless swap, quote-first limit, dashboard bridge, cross-chain swap; see
   `VARIANT_TEMPLATES` in `code/benchmark/build_dataset.py`) plus
   out-of-vocabulary token symbols, so it tests generalization rather than
-  in-distribution fit. No train split: the benchmark evaluates
-  externally-built systems, not a model trained on it.
+  in-distribution fit. `metamorphic` is a label-free robustness split of
+  base/variant prompt pairs scored by output *relations* (see
+  `code/analysis/metamorphic.py`), not per-prompt gold; its pairing manifest
+  and relation are stored in `data/splits/metamorphic.json`. No train split:
+  the benchmark evaluates externally-built systems, not a model trained on it.
 - **Errors / noise.** Some prompts intentionally contain typos or vague
   phrasing (tagged `typo_noise` / `underspecified`); these are features, not
   defects.

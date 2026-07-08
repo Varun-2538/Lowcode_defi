@@ -28,6 +28,10 @@ including workflow structures outside the method's presets---Koan-Safe raises
 safe-executability to $0.67$ and, across rule-based, language-model, and
 hybrid generators, drives on-chain unsafe executions to \emph{zero}. An
 ablation that toggles only the enforcement layer moves unsafe executions from
-$16$--$17$ back to $0$, isolating the layer as the cause. We release the
-benchmark, baselines, the Koan-Safe reference system, the execution harness,
-and analysis code.
+$16$--$17$ back to $0$, isolating the layer as the cause. A label-free
+metamorphic suite corroborates this: Koan-Safe preserves safety under
+$100\times$ larger trades and explicit safety waivers---transforms on which
+the direct baselines fail every larger-trade pair and most waiver pairs---at
+an enforcement cost of $0.07$\,ms per workflow. We release the benchmark,
+baselines, the Koan-Safe reference system, the execution harness, and analysis
+code.

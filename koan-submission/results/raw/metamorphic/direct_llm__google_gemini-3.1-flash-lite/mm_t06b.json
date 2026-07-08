@@ -1,0 +1,46 @@
+{
+  "id": "mm_t06b",
+  "baseline": "direct_llm",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"tokenSelector\", \"priceImpactCalculator\", \"oneInchSwap\", \"limitOrder\"], \"edges\": [[\"tokenSelector\", \"priceImpactCalculator\"], [\"priceImpactCalculator\", \"oneInchSwap\"], [\"tokenSelector\", \"limitOrder\"]], \"config\": {\"fromToken\": \"DAI\", \"toToken\": \"ETH\", \"amount\": 500, \"warning_threshold\": 0.01}, \"needs_clarification\": false}",
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ]
+    ],
+    "config": {
+      "fromToken": "DAI",
+      "toToken": "ETH",
+      "amount": 500,
+      "warning_threshold": 0.01
+    },
+    "safety": [
+      "price_impact_gate"
+    ]
+  },
+  "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}
