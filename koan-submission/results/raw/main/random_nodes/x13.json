@@ -1,0 +1,44 @@
+{
+  "id": "x13",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "transactionMonitor",
+      "defiDashboard",
+      "oneInchQuote",
+      "tokenSelector",
+      "portfolioAPI",
+      "chainSelector"
+    ],
+    "edges": [
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "chainSelector"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

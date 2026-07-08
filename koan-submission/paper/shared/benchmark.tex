@@ -1,0 +1,108 @@
+\section{Benchmark}
+\label{sec:benchmark}
+
+\subsection{Categories and prompts}
+
+\textsc{DeFiFlowBench} contains 120 expert-authored prompts across four
+categories: token swaps (40), limit orders (30), cross-chain transfers (30),
+and compositional workflows that combine primitives (20). Each prompt carries
+a difficulty tier (38 easy, 62 medium, 20 hard) and phenomena tags naming the
+challenge it exercises. Fifteen prompts are underspecified (e.g.\ ``help me
+trade some tokens'') or contradictory (a bridge or swap whose source and
+destination are identical) and are scored on a separate clarification axis;
+several are adversarial in that the user waives a safety constraint the gold
+annotation still requires (e.g.\ ``I don't care about slippage''). To measure
+robustness to surface form independently of task difficulty, the benchmark
+includes \emph{paraphrase clusters}: multiple prompts that encode the same
+underlying task with different wording (spelled-out numbers, terse notation,
+verbose narration, injected typos). Prompts vary from fully specified (``swap
+1 ETH to USDC with at most 1\% slippage'') to schematic (``make a token swap
+app for UNI to ETH'').
+
+\paragraph{Held-out test split.} To measure generalization rather than
+in-distribution fit, we author a separate $87$-prompt held-out split
+\emph{after} freezing the Koan-Safe method (Section~\ref{sec:koansafe}) and
+evaluate every system on it exactly once. It is harder in two independent
+ways. First, its canonical-structure prompts use fresh surface forms and a few
+\emph{out-of-vocabulary} token symbols (MKR, SUSHI, GRT) absent from
+Koan-Safe's token dictionary, stressing intent extraction and clarification.
+Second, a large block requires \emph{new workflow structures} not covered by
+any system's category presets---a gasless/Fusion swap, a quote-first limit
+order, a dashboard-augmented bridge, and a genuine cross-chain swap---each with
+its own gold annotation. Because these structures lie outside Koan-Safe's fixed
+presets, the split directly tests whether the method generalizes beyond the
+structures it was built around. A $30$-prompt development \emph{pilot} split is
+also retained for reference.
+
+\paragraph{Metamorphic safety suite.} Absolute scores compare an output to a
+fixed target and cannot say whether a system's safety is \emph{robust} when the
+request is transformed in a risk-relevant way. We therefore add a label-free
+metamorphic split of $34$ base/variant prompt pairs ($68$ prompts) grouped by
+the metamorphic relation the two outputs must satisfy: amount monotonicity (a
+$100\times$ larger trade), threshold tightening (a stricter price-impact
+tolerance), waiver resistance (an appended instruction to skip safety), 
+paraphrase invariance (a reworded task), and drop-field non-fabrication (a
+removed critical field). Each pair is authored so its base prompt is well
+specified and executable, and the transform is faithful; the base and variant
+share a category and are scored by the standard evaluator, but the metamorphic
+\emph{result} is a relation between their two outputs, computed post hoc, so it
+needs no per-prompt gold label. This suite tests a property---the stability of
+declared and executed safety under adversarial and benign rewrites---that no
+static or single-output on-chain metric captures.
+
+\subsection{Gold annotations}
+
+Each prompt is paired with a gold annotation recording (i) the required
+node types, (ii) the required type-level edges, (iii) the required
+execution-configuration keys, (iv) the safety predicates that must hold,
+and (v) a set of \emph{allowed extra nodes} that a richer-but-correct
+workflow may include without penalty. The annotation scheme, including
+what qualifies as a required node, edge, configuration key, and safety
+predicate, is documented in the artifact's annotation guide so that the
+final split can be extended consistently. The node vocabulary is taken
+from an existing executable DeFi node catalog, ensuring every required
+node corresponds to a real executor rather than an abstract label.
+
+\subsection{Baselines}
+
+We evaluate three reference baselines that calibrate the scale and five
+system families, all scored by the identical evaluator:
+
+\begin{itemize}
+  \item \textbf{Oracle (ceiling).} Reconstructs a correct workflow from the
+        gold annotation---required nodes and edges, concrete values for every
+        required configuration key, and the parameters needed for
+        \texttt{derive\_safety} to declare each required predicate. It should,
+        and does, score $1.00$ on every layer, proving the tasks are solvable
+        and the scorer rewards a correct solution.
+  \item \textbf{Null and Random (floor).} The null baseline emits an empty
+        workflow; the random baseline emits a random-size sample of real nodes
+        in a random chain with no configuration. Both establish the floor and
+        guard against a gameable metric.
+  \item \textbf{Template-only.} Emits the canonical workflow for the prompt's
+        category with static safety defaults, but performs no language
+        understanding and cannot populate trade-specific configuration.
+  \item \textbf{Koan.} The regex-fallback intent parser and workflow generator
+        of an existing no-code DeFi platform, run offline and
+        deterministically---a real deployed system, not a strawman.
+  \item \textbf{Direct / Constrained / Few-shot / Safety-instructed LLM.} A
+        language model prompted to emit a workflow graph and configuration as
+        JSON. The variants differ only in the prompt: no constraints; injected
+        per-category structural and safety constraints; a single worked
+        in-context example; and an explicit instruction to make the workflow
+        safe to execute. Comparing the variants on a fixed model isolates the
+        effect of each prompt-design intervention.
+  \item \textbf{Koan-Safe (proposed).} Our safety-enforcement system
+        (Section~\ref{sec:koansafe}), evaluated with all three generators
+        (rule-based, LLM, hybrid) and with the enforcement layer toggled off as
+        an ablation. It is scored by the identical evaluator and, like every
+        other system, reads only the raw prompt text.
+\end{itemize}
+
+The LLM baselines are evaluated on two model families to test whether findings
+are model-specific. Model outputs are normalized (node and edge vocabularies
+filtered; index-based and name-based edge encodings both accepted) before
+scoring, and each raw model response is retained so that metrics can be
+re-derived deterministically without additional queries. Every reported rate
+is accompanied by a 95\% Wilson confidence interval, and mean-valued metrics
+by a bootstrap interval.

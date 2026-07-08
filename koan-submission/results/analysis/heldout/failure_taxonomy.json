@@ -1,0 +1,503 @@
+{
+  "constrained_llm__google_gemini-3.1-flash-lite": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_node": 45,
+      "missing_required_edge": 52,
+      "has_extra_nodes": 12,
+      "bailed_to_clarification": 5
+    },
+    "missing_config_keys": {
+      "destinationAddress": 15,
+      "slippage": 11,
+      "targetPrice": 5,
+      "amount": 4,
+      "fromToken": 1
+    },
+    "missing_safety_predicates": {
+      "price_impact_gate": 42,
+      "bridge_confirmation": 15,
+      "slippage_bound": 11,
+      "price_bound": 5,
+      "transaction_monitoring": 3
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 2
+  },
+  "constrained_llm__openai_gpt-5.4-mini": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_node": 54,
+      "missing_required_edge": 64,
+      "has_extra_nodes": 11,
+      "bailed_to_clarification": 5
+    },
+    "missing_config_keys": {
+      "destinationAddress": 15,
+      "slippage": 9,
+      "targetPrice": 5,
+      "amount": 4,
+      "fromToken": 2,
+      "toToken": 2
+    },
+    "missing_safety_predicates": {
+      "price_impact_gate": 41,
+      "bridge_confirmation": 15,
+      "transaction_monitoring": 12,
+      "slippage_bound": 9,
+      "price_bound": 5
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 2
+  },
+  "direct_llm__google_gemini-3.1-flash-lite": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_node": 67,
+      "missing_required_edge": 68,
+      "has_extra_nodes": 16,
+      "bailed_to_clarification": 4
+    },
+    "missing_config_keys": {
+      "destinationAddress": 15,
+      "slippage": 11,
+      "targetPrice": 5,
+      "amount": 4
+    },
+    "missing_safety_predicates": {
+      "price_impact_gate": 43,
+      "transaction_monitoring": 32,
+      "bridge_confirmation": 15,
+      "slippage_bound": 11,
+      "price_bound": 5
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 3
+  },
+  "direct_llm__openai_gpt-5.4-mini": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_edge": 74,
+      "missing_required_node": 69,
+      "has_extra_nodes": 12,
+      "bailed_to_clarification": 6
+    },
+    "missing_config_keys": {
+      "destinationAddress": 15,
+      "fromToken": 11,
+      "slippage": 9,
+      "toToken": 9,
+      "targetPrice": 7,
+      "amount": 6,
+      "expiry": 1
+    },
+    "missing_safety_predicates": {
+      "transaction_monitoring": 54,
+      "price_impact_gate": 41,
+      "bridge_confirmation": 15,
+      "slippage_bound": 9,
+      "price_bound": 7,
+      "expiry_set": 1
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 2
+  },
+  "fewshot_llm__google_gemini-3.1-flash-lite": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_node": 60,
+      "missing_required_edge": 61,
+      "has_extra_nodes": 16,
+      "bailed_to_clarification": 3
+    },
+    "missing_config_keys": {
+      "destinationAddress": 15,
+      "slippage": 11,
+      "targetPrice": 5,
+      "amount": 4
+    },
+    "missing_safety_predicates": {
+      "price_impact_gate": 43,
+      "bridge_confirmation": 15,
+      "slippage_bound": 11,
+      "transaction_monitoring": 11,
+      "price_bound": 5
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 1
+  },
+  "fewshot_llm__openai_gpt-5.4-mini": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_node": 53,
+      "missing_required_edge": 61,
+      "has_extra_nodes": 6,
+      "bailed_to_clarification": 5
+    },
+    "missing_config_keys": {
+      "destinationAddress": 15,
+      "slippage": 11,
+      "amount": 5,
+      "targetPrice": 5,
+      "fromToken": 3,
+      "toToken": 3,
+      "sourceChain": 1
+    },
+    "missing_safety_predicates": {
+      "price_impact_gate": 40,
+      "transaction_monitoring": 17,
+      "bridge_confirmation": 15,
+      "slippage_bound": 11,
+      "price_bound": 5,
+      "destination_chain_check": 1
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 1
+  },
+  "koan_current": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_edge": 71,
+      "has_extra_nodes": 24,
+      "missing_required_node": 54,
+      "bailed_to_clarification": 3
+    },
+    "missing_config_keys": {
+      "fromToken": 75,
+      "amount": 75,
+      "toToken": 60,
+      "targetPrice": 24,
+      "slippage": 19,
+      "sourceChain": 16,
+      "destinationChain": 16,
+      "destinationAddress": 15,
+      "expiry": 9
+    },
+    "missing_safety_predicates": {
+      "transaction_monitoring": 30,
+      "price_bound": 24,
+      "destination_chain_check": 23,
+      "slippage_bound": 19,
+      "price_impact_gate": 19,
+      "expiry_set": 9,
+      "bridge_confirmation": 9
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 8
+  },
+  "koan_safe_hybrid__google_gemini-3.1-flash-lite__noenforce": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_node": 66,
+      "missing_required_edge": 67,
+      "has_extra_nodes": 15
+    },
+    "missing_config_keys": {
+      "destinationAddress": 15,
+      "slippage": 11,
+      "targetPrice": 5,
+      "amount": 4
+    },
+    "missing_safety_predicates": {
+      "price_impact_gate": 42,
+      "transaction_monitoring": 32,
+      "bridge_confirmation": 15,
+      "slippage_bound": 11,
+      "price_bound": 5
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 3
+  },
+  "koan_safe_hybrid__google_gemini-3.1-flash-lite": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "has_extra_nodes": 20,
+      "missing_required_edge": 20,
+      "missing_required_node": 8
+    },
+    "missing_config_keys": {
+      "targetPrice": 5,
+      "amount": 4
+    },
+    "missing_safety_predicates": {
+      "price_bound": 5,
+      "price_impact_gate": 3
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 3
+  },
+  "koan_safe_hybrid__openai_gpt-5.4-mini": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "has_extra_nodes": 9,
+      "missing_required_edge": 27,
+      "missing_required_node": 9
+    },
+    "missing_config_keys": {
+      "targetPrice": 5,
+      "amount": 4
+    },
+    "missing_safety_predicates": {
+      "price_bound": 5,
+      "price_impact_gate": 3
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 3
+  },
+  "koan_safe_llm__google_gemini-3.1-flash-lite__noenforce": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_node": 67,
+      "missing_required_edge": 68,
+      "has_extra_nodes": 15
+    },
+    "missing_config_keys": {
+      "destinationAddress": 15,
+      "slippage": 11,
+      "targetPrice": 5,
+      "amount": 4
+    },
+    "missing_safety_predicates": {
+      "price_impact_gate": 43,
+      "transaction_monitoring": 33,
+      "bridge_confirmation": 15,
+      "slippage_bound": 11,
+      "price_bound": 5
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 3
+  },
+  "koan_safe_llm__google_gemini-3.1-flash-lite": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "has_extra_nodes": 19,
+      "missing_required_edge": 22,
+      "missing_required_node": 9
+    },
+    "missing_config_keys": {
+      "targetPrice": 5,
+      "amount": 4
+    },
+    "missing_safety_predicates": {
+      "price_bound": 5,
+      "price_impact_gate": 3
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 3
+  },
+  "koan_safe_llm__openai_gpt-5.4-mini": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "has_extra_nodes": 14,
+      "missing_required_edge": 29,
+      "missing_required_node": 11
+    },
+    "missing_config_keys": {
+      "fromToken": 11,
+      "toToken": 8,
+      "targetPrice": 8,
+      "amount": 7
+    },
+    "missing_safety_predicates": {
+      "price_bound": 8,
+      "price_impact_gate": 3
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 3
+  },
+  "koan_safe_rules__noenforce": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_edge": 36,
+      "has_extra_nodes": 5,
+      "missing_required_node": 16
+    },
+    "missing_config_keys": {
+      "slippage": 15,
+      "destinationAddress": 15,
+      "toToken": 5,
+      "targetPrice": 5,
+      "sourceChain": 5,
+      "destinationChain": 5,
+      "amount": 4,
+      "fromToken": 1
+    },
+    "missing_safety_predicates": {
+      "price_impact_gate": 43,
+      "slippage_bound": 15,
+      "bridge_confirmation": 15,
+      "price_bound": 5,
+      "destination_chain_check": 5
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 3
+  },
+  "koan_safe_rules": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_edge": 36,
+      "has_extra_nodes": 5,
+      "missing_required_node": 16
+    },
+    "missing_config_keys": {
+      "toToken": 5,
+      "targetPrice": 5,
+      "sourceChain": 5,
+      "destinationChain": 5,
+      "amount": 4,
+      "slippage": 3,
+      "fromToken": 1
+    },
+    "missing_safety_predicates": {
+      "price_bound": 5,
+      "destination_chain_check": 5,
+      "slippage_bound": 3,
+      "price_impact_gate": 3
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 3
+  },
+  "null": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_node": 75,
+      "missing_required_edge": 75,
+      "bailed_to_clarification": 75
+    },
+    "missing_config_keys": {
+      "fromToken": 75,
+      "amount": 75,
+      "toToken": 60,
+      "slippage": 43,
+      "targetPrice": 24,
+      "sourceChain": 23,
+      "destinationChain": 23,
+      "expiry": 17,
+      "destinationAddress": 15
+    },
+    "missing_safety_predicates": {
+      "transaction_monitoring": 75,
+      "slippage_bound": 43,
+      "price_impact_gate": 43,
+      "price_bound": 24,
+      "destination_chain_check": 23,
+      "expiry_set": 17,
+      "bridge_confirmation": 15
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 0
+  },
+  "oracle": {
+    "n_workflow": 75,
+    "structural_failures": {},
+    "missing_config_keys": {},
+    "missing_safety_predicates": {},
+    "clarification_prompts": 12,
+    "clarification_missed": 0
+  },
+  "random_nodes": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_node": 75,
+      "missing_required_edge": 75,
+      "has_extra_nodes": 63
+    },
+    "missing_config_keys": {
+      "fromToken": 75,
+      "amount": 75,
+      "toToken": 60,
+      "slippage": 43,
+      "targetPrice": 24,
+      "sourceChain": 23,
+      "destinationChain": 23,
+      "expiry": 17,
+      "destinationAddress": 15
+    },
+    "missing_safety_predicates": {
+      "transaction_monitoring": 49,
+      "slippage_bound": 43,
+      "price_impact_gate": 43,
+      "price_bound": 24,
+      "destination_chain_check": 23,
+      "expiry_set": 17,
+      "bridge_confirmation": 15
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 12
+  },
+  "safety_llm__google_gemini-3.1-flash-lite": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_edge": 50,
+      "missing_required_node": 35,
+      "has_extra_nodes": 19,
+      "bailed_to_clarification": 6
+    },
+    "missing_config_keys": {
+      "destinationAddress": 15,
+      "targetPrice": 5,
+      "amount": 4
+    },
+    "missing_safety_predicates": {
+      "bridge_confirmation": 15,
+      "price_bound": 5
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 1
+  },
+  "safety_llm__openai_gpt-5.4-mini": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_edge": 70,
+      "missing_required_node": 41,
+      "has_extra_nodes": 15,
+      "bailed_to_clarification": 12
+    },
+    "missing_config_keys": {
+      "destinationAddress": 15,
+      "amount": 11,
+      "targetPrice": 4,
+      "slippage": 3,
+      "fromToken": 2,
+      "sourceChain": 2,
+      "destinationChain": 2,
+      "toToken": 1
+    },
+    "missing_safety_predicates": {
+      "bridge_confirmation": 12,
+      "price_impact_gate": 5,
+      "price_bound": 4,
+      "slippage_bound": 3,
+      "destination_chain_check": 2,
+      "transaction_monitoring": 2
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 1
+  },
+  "template": {
+    "n_workflow": 75,
+    "structural_failures": {
+      "missing_required_node": 36,
+      "missing_required_edge": 36,
+      "has_extra_nodes": 8
+    },
+    "missing_config_keys": {
+      "fromToken": 75,
+      "amount": 75,
+      "toToken": 60,
+      "slippage": 43,
+      "targetPrice": 24,
+      "sourceChain": 23,
+      "destinationChain": 23,
+      "expiry": 17,
+      "destinationAddress": 15
+    },
+    "missing_safety_predicates": {
+      "price_bound": 24,
+      "destination_chain_check": 23,
+      "expiry_set": 17
+    },
+    "clarification_prompts": 12,
+    "clarification_missed": 12
+  }
+}

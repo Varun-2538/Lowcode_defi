@@ -1,0 +1,48 @@
+{
+  "id": "hc01",
+  "baseline": "oracle",
+  "category": "cross_chain",
+  "error": null,
+  "status": "ok",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "fusionPlus",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "amount": "100",
+      "sourceChain": "ethereum",
+      "destinationChain": "polygon",
+      "destinationAddress": "0x1111111111111111111111111111111111111111",
+      "default_confirmations": 3
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "oracle"
+}

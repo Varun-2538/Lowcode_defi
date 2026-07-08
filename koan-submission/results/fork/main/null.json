@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "c01",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c02",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c03",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c04",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c05",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c06",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c07",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c08",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c09",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c10",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c11",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c12",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c13",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c14",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c15",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c16",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c17",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c18",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c19",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c20",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c21",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c22",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c23",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c24",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c25",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c26",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c27",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c28",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c29",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c30",
+    "baseline": "null",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l01",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l02",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l03",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l04",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l05",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l06",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l07",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l08",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l09",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l10",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l11",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l12",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l13",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l14",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l15",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l16",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l17",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l18",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l19",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l20",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l21",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l22",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l23",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l24",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l25",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l26",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l27",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l28",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l29",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l30",
+    "baseline": "null",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s01",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s02",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s03",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s04",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s05",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s06",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s07",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s08",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s09",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s10",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s11",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s12",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s13",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s14",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s15",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s16",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s17",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s18",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s19",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s20",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s21",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s22",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s23",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s24",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s25",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s26",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s27",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s28",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s29",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s30",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s31",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s32",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s33",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s34",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s35",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s36",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s37",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s38",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s39",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s40",
+    "baseline": "null",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x01",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x02",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x03",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x04",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x05",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x06",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x07",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x08",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x09",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x10",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x11",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x12",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x13",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x14",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x15",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x16",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x17",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x18",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x19",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x20",
+    "baseline": "null",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "baseline": "koan_safe_hybrid__google_gemini-3.1-flash-lite",
+  "split": "metamorphic",
+  "n_total": 68,
+  "n_attempted_definite": 58,
+  "n_safe": 58,
+  "n_unsafe_executed": 0,
+  "fork_safe_execution_rate": 1.0,
+  "outcome_counts": {
+    "executed_safe": 13,
+    "aborted_price_impact": 45,
+    "not_executable": 4,
+    "not_simulated": 6
+  }
+}

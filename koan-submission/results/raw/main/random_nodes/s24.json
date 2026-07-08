@@ -1,0 +1,29 @@
+{
+  "id": "s24",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "walletConnector",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

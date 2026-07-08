@@ -1,0 +1,64 @@
+{
+  "id": "c28",
+  "baseline": "koan_current",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Cross-Chain Bridge",
+    "tokens": [
+      "ETH",
+      "LINK"
+    ],
+    "features": [],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Bridge my LINK from Ethereum to Polygon.",
+    "suggested_nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "fusionPlus",
+      "transactionMonitor"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "fusionPlus",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "default_confirmations": 3,
+      "min_confirmations": 3,
+      "sourceChain": "ethereum",
+      "destinationChain": "ethereum"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "koan_current"
+}

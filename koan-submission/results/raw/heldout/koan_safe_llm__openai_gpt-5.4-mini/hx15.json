@@ -1,0 +1,81 @@
+{
+  "id": "hx15",
+  "baseline": "koan_safe_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "llm",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"chainSelector\",\"oneInchQuote\",\"oneInchSwap\",\"transactionMonitor\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"chainSelector\"],[\"chainSelector\",\"oneInchQuote\"],[\"oneInchQuote\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"WETH\",\"toToken\":\"USDC\",\"amount\":\"3\",\"slippage\":\"1%\",\"sourceChain\":\"Base\",\"destinationChain\":\"Ethereum\"},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "oneInchQuote",
+      "oneInchSwap",
+      "transactionMonitor",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {
+      "fromToken": "WETH",
+      "toToken": "USDC",
+      "amount": "3",
+      "slippage": "1%",
+      "sourceChain": "Base",
+      "destinationChain": "Ethereum",
+      "warning_threshold": 3
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "koan_safe_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

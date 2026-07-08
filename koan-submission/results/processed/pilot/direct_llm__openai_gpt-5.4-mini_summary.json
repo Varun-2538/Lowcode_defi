@@ -1,0 +1,22 @@
+{
+  "baseline": "direct_llm",
+  "n_total": 30,
+  "n_workflow": 26,
+  "n_clarification": 4,
+  "graph_valid_rate": 0.038461538461538464,
+  "executable_rate": 0.0,
+  "safe_executable_rate": 0.0,
+  "mean_node_recall": 0.3945054945054945,
+  "mean_edge_recall": 0.19294871794871796,
+  "mean_config_completeness": 0.37884615384615383,
+  "mean_safety_recall": 0.23717948717948717,
+  "mean_extra_nodes": 0.15384615384615385,
+  "clarification_correct_rate": 1.0,
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini",
+  "split": "pilot",
+  "n_ok": 30,
+  "n_error": 0,
+  "n_skipped": 0,
+  "generated_at": "2026-07-07T16:54:55.184588+00:00"
+}

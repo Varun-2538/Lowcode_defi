@@ -1,0 +1,27 @@
+{
+  "id": "hl14",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "portfolioAPI",
+      "fusionPlus",
+      "walletConnector"
+    ],
+    "edges": [
+      [
+        "portfolioAPI",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "walletConnector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

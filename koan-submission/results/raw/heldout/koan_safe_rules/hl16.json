@@ -1,0 +1,47 @@
+{
+  "id": "hl16",
+  "baseline": "koan_safe_rules",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "limitOrder",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "WETH",
+      "toToken": "USDT",
+      "amount": "5",
+      "targetPrice": "3700",
+      "expiry": "14d"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "price_bound",
+      "expiry_set"
+    ]
+  },
+  "run_id": "koan_safe_rules"
+}

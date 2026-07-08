@@ -1,0 +1,42 @@
+{
+  "id": "l25",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "portfolioAPI",
+      "defiDashboard",
+      "walletConnector",
+      "tokenSelector",
+      "limitOrder",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "portfolioAPI",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

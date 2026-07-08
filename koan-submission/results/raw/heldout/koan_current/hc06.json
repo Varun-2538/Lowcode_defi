@@ -1,0 +1,37 @@
+{
+  "id": "hc06",
+  "baseline": "koan_current",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "USDC"
+    ],
+    "features": [],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "I've got 800 USDC on Polygon that I'd like to get over to Optimism.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

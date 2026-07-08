@@ -1,0 +1,42 @@
+{
+  "id": "l30",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "limitOrder",
+      "chainSelector",
+      "tokenSelector",
+      "fusionSwap",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

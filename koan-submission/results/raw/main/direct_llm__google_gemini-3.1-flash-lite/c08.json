@@ -1,0 +1,44 @@
+{
+  "id": "c08",
+  "baseline": "direct_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"chainSelector\", \"oneInchSwap\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"chainSelector\"], [\"chainSelector\", \"oneInchSwap\"]], \"config\": {\"fromToken\": \"USDC\", \"toToken\": \"USDC\", \"sourceChain\": \"Ethereum\", \"destinationChain\": \"Ethereum\"}, \"needs_clarification\": false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "toToken": "USDC",
+      "sourceChain": "Ethereum",
+      "destinationChain": "Ethereum"
+    },
+    "safety": []
+  },
+  "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

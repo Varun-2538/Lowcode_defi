@@ -1,0 +1,62 @@
+{
+  "id": "c20",
+  "baseline": "direct_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"chainSelector\",\"chainSelector\",\"oneInchQuote\",\"oneInchSwap\",\"transactionMonitor\"],\"edges\":[[\"walletConnector\",\"chainSelector\"],[\"chainSelector\",\"tokenSelector\"],[\"tokenSelector\",\"chainSelector\"],[\"chainSelector\",\"oneInchQuote\"],[\"oneInchQuote\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"]],\"config\":{\"amount\":\"150\",\"fromToken\":\"DAI\",\"sourceChain\":\"Optimism\",\"destinationChain\":\"Polygon\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "chainSelector",
+      "oneInchQuote",
+      "oneInchSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "amount": "150",
+      "fromToken": "DAI",
+      "sourceChain": "Optimism",
+      "destinationChain": "Polygon"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

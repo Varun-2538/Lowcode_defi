@@ -1,0 +1,37 @@
+{
+  "id": "hx06",
+  "baseline": "direct_llm",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"tokenSelector\", \"oneInchSwap\", \"limitOrder\"], \"edges\": [[\"tokenSelector\", \"oneInchSwap\"], [\"tokenSelector\", \"limitOrder\"]], \"config\": {\"fromToken\": \"AAVE\", \"toToken\": \"USDC\"}, \"needs_clarification\": true}",
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "oneInchSwap",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "oneInchSwap"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ]
+    ],
+    "config": {
+      "fromToken": "AAVE",
+      "toToken": "USDC"
+    },
+    "safety": []
+  },
+  "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

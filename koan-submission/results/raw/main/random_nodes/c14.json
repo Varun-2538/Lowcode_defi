@@ -1,0 +1,37 @@
+{
+  "id": "c14",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "walletConnector",
+      "defiDashboard",
+      "oneInchQuote",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

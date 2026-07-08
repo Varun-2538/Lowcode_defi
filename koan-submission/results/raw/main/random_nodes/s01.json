@@ -1,0 +1,39 @@
+{
+  "id": "s01",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "oneInchQuote",
+      "transactionMonitor",
+      "tokenSelector",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

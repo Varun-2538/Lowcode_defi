@@ -1,0 +1,40 @@
+{
+  "id": "s08",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "ETH",
+      "USDT"
+    ],
+    "features": [
+      "slippage protection"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Convert 1000 USDT into ETH with a 1% slippage cap.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

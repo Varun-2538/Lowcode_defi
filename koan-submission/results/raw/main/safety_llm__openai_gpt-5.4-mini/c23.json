@@ -1,0 +1,61 @@
+{
+  "id": "c23",
+  "baseline": "safety_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"chainSelector\",\"oneInchSwap\",\"priceImpactCalculator\",\"transactionMonitor\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"chainSelector\"],[\"chainSelector\",\"oneInchSwap\"],[\"priceImpactCalculator\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"DAI\",\"amount\":\"50\",\"sourceChain\":\"Polygon\",\"destinationChain\":\"Polygon\",\"slippage\":\"0.5%\",\"warning_threshold\":\"1%\",\"default_confirmations\":1},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "oneInchSwap",
+      "priceImpactCalculator",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchSwap"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "DAI",
+      "amount": "50",
+      "sourceChain": "Polygon",
+      "destinationChain": "Polygon",
+      "slippage": "0.5%",
+      "warning_threshold": "1%",
+      "default_confirmations": 1
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "safety_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "hc10",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "portfolioAPI",
+      "transactionMonitor",
+      "fusionPlus",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "portfolioAPI",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "limitOrder"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

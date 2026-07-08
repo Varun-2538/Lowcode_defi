@@ -1,0 +1,37 @@
+{
+  "id": "s30",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "fusionSwap",
+      "tokenSelector",
+      "oneInchSwap",
+      "walletConnector"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "walletConnector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

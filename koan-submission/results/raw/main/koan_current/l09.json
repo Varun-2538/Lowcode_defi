@@ -1,0 +1,40 @@
+{
+  "id": "l09",
+  "baseline": "koan_current",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "USDC",
+      "UNI"
+    ],
+    "features": [
+      "limit orders"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Set a limit to sell 100 UNI for USDC at 12.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

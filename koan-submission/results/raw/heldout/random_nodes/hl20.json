@@ -1,0 +1,37 @@
+{
+  "id": "hl20",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "fusionPlus",
+      "priceImpactCalculator",
+      "fusionSwap",
+      "walletConnector"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "walletConnector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

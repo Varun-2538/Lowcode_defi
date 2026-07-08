@@ -1,0 +1,39 @@
+{
+  "id": "hc18",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "oneInchSwap",
+      "oneInchQuote",
+      "defiDashboard",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

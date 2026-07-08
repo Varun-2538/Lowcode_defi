@@ -1,0 +1,19 @@
+{
+  "id": "l12",
+  "baseline": "koan_safe_rules",
+  "category": "swap",
+  "status": "needs_clarification",
+  "error": null,
+  "koan_safe": {
+    "decision": "clarify",
+    "reason": "no concrete task to act on",
+    "enforced": false
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_safe_rules"
+}

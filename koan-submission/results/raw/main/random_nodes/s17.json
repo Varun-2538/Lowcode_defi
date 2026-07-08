@@ -1,0 +1,42 @@
+{
+  "id": "s17",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "defiDashboard",
+      "fusionSwap",
+      "oneInchQuote",
+      "oneInchSwap",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

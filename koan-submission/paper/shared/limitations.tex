@@ -1,0 +1,52 @@
+\section{Limitations}
+\label{sec:limitations}
+
+\paragraph{Local EVM, not live-fund execution.} The execution layer deploys a
+constant-product AMM and mock tokens on an in-process EVM with
+deterministically seeded reserves. This yields real EVM execution semantics
+(real transfers, reverts, and gas) and byte-for-byte reproducibility, but the
+default reserves are synthetic. We validate the harness against Ethereum
+mainnet (Section~\ref{sec:fidelity}): seeding it with the \emph{real}
+Uniswap~V2 reserves of every benchmark pair at a pinned block reproduces the
+real router's quotes and on-chain executions with exactly zero error, and
+because own-trade price impact depends only on the fraction of reserves traded,
+the unsafe-execution finding is invariant to absolute pool depth. What we do
+\emph{not} do is submit transactions to a live network or move real funds:
+all execution is against the local in-process chain, and the mainnet
+interaction is read-only state fetching. Extending the harness to submit
+against a full mainnet-fork node (e.g.\ replaying against forked state with
+real routing and multi-hop paths) is a natural next step.
+
+\paragraph{Scale, single annotator, and scoring strictness.} The development
+split uses 120 expert-authored prompts and the held-out split $87$, with
+temperature-$0$ decoding and a single run per model on two model families.
+Temperature-$0$ API calls still vary slightly across runs, so individual
+decimals are approximate; we report every rate with a confidence interval and
+generate all tables from saved outputs. The gold annotations were authored
+primarily by one team; we provide a second-annotator protocol, a reproducible
+stratified subset, and tooling to compute inter-annotator agreement, but the
+agreement number awaits an independent pass and is therefore not yet reported.
+Edge matching is strict and type-level, which penalizes reasonable-but-reordered
+graphs and treats structural rates as a lower bound; this does not affect the
+safe-rate or the on-chain unsafe-execution findings, which are driven by
+missing safety parameterization rather than edge ordering.
+
+\paragraph{Scope of the Koan-Safe method.} Koan-Safe encodes engineered domain
+knowledge---a token dictionary, per-category node presets, and conservative
+safety defaults---and reads only the raw prompt, but it has no access to gold
+annotations. Its enforcement layer improves safety, not intent extraction: it
+never fabricates a missing amount, price, or chain, so its achievable
+executable rate is bounded by what the parser and generator can read from the
+prompt. Its rule-based generator's fixed presets do not cover workflow
+structures outside the four categories, which is visible as reduced structural
+validity on the held-out variants; the language-model and hybrid generators
+mitigate but do not fully remove this. The held-out split is authored by the
+same team as the method, so it tests structural and surface generalization but
+not adversarial distribution shift from an independent party.
+
+\paragraph{Category scope of the execution layer.} On-chain execution
+currently covers swaps and the swap leg of compositional workflows; limit
+orders are checked for immediate fillability against the pool mid-price,
+and cross-chain workflows are not executed because a single local chain
+cannot bridge. Every unexecuted case is recorded explicitly rather than
+silently passed.

@@ -1,0 +1,39 @@
+{
+  "id": "s25",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "fusionPlus",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

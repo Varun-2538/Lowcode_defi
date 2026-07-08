@@ -1,0 +1,81 @@
+{
+  "id": "hx08",
+  "baseline": "koan_safe_hybrid",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "google/gemini-3.1-flash-lite",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"chainSelector\", \"oneInchQuote\", \"oneInchSwap\", \"transactionMonitor\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"chainSelector\"], [\"chainSelector\", \"oneInchQuote\"], [\"oneInchQuote\", \"oneInchSwap\"], [\"oneInchSwap\", \"transactionMonitor\"]], \"config\": {\"fromToken\": \"USDC\", \"toToken\": \"USDT\", \"amount\": 500, \"slippage\": 1, \"sourceChain\": \"Ethereum\", \"destinationChain\": \"Polygon\"}, \"needs_clarification\": false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "oneInchQuote",
+      "oneInchSwap",
+      "transactionMonitor",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "toToken": "USDT",
+      "amount": 500,
+      "slippage": 1,
+      "sourceChain": "Ethereum",
+      "destinationChain": "Polygon",
+      "warning_threshold": 3
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

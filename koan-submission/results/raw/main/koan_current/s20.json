@@ -1,0 +1,39 @@
+{
+  "id": "s20",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "ETH"
+    ],
+    "features": [
+      "slippage protection"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Convert one Ether to USD Coin, cap slippage at 1 percent, and display the price impact.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

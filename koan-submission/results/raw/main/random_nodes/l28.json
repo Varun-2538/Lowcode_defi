@@ -1,0 +1,27 @@
+{
+  "id": "l28",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "priceImpactCalculator",
+      "fusionPlus",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "priceImpactCalculator",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

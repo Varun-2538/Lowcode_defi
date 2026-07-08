@@ -1,0 +1,38 @@
+{
+  "id": "l06",
+  "baseline": "koan_current",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "DAI",
+      "LINK"
+    ],
+    "features": [],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Sell my LINK for DAI at a target price of 25 with a 30 day expiry.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

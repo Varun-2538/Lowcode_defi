@@ -1,0 +1,42 @@
+{
+  "id": "s10",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "limitOrder",
+      "tokenSelector",
+      "chainSelector",
+      "fusionSwap",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "hc13",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "oneInchSwap",
+      "walletConnector",
+      "limitOrder",
+      "portfolioAPI",
+      "chainSelector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

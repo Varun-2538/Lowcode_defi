@@ -1,0 +1,830 @@
+[
+  {
+    "id": "s01",
+    "baseline": "koan_current",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 0.8,
+    "extra_nodes": 2,
+    "graph_valid": false,
+    "config_completeness": 0.25,
+    "executable_proxy": false,
+    "safety_recall": 1.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount"
+    ],
+    "missing_safety": [],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "s02",
+    "baseline": "koan_current",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 0.8,
+    "extra_nodes": 2,
+    "graph_valid": false,
+    "config_completeness": 0.25,
+    "executable_proxy": false,
+    "safety_recall": 1.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount"
+    ],
+    "missing_safety": [],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "s03",
+    "baseline": "koan_current",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 0.8,
+    "extra_nodes": 2,
+    "graph_valid": false,
+    "config_completeness": 0.25,
+    "executable_proxy": false,
+    "safety_recall": 1.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount"
+    ],
+    "missing_safety": [],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "s04",
+    "baseline": "koan_current",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 0.8,
+    "extra_nodes": 2,
+    "graph_valid": false,
+    "config_completeness": 0.25,
+    "executable_proxy": false,
+    "safety_recall": 1.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount"
+    ],
+    "missing_safety": [],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "s05",
+    "baseline": "koan_current",
+    "category": "swap",
+    "status": "needs_clarification",
+    "expects_clarification": false,
+    "node_recall": 0.0,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": false,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "s06",
+    "baseline": "koan_current",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 0.8,
+    "extra_nodes": 2,
+    "graph_valid": false,
+    "config_completeness": 0.25,
+    "executable_proxy": false,
+    "safety_recall": 1.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount"
+    ],
+    "missing_safety": [],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "s07",
+    "baseline": "koan_current",
+    "category": "swap",
+    "status": "needs_clarification",
+    "expects_clarification": true,
+    "node_recall": 0.0,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "s08",
+    "baseline": "koan_current",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "l01",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 1.0,
+    "extra_nodes": 0,
+    "graph_valid": true,
+    "config_completeness": 0.19999999999999996,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "price_bound"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "l02",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 1.0,
+    "extra_nodes": 0,
+    "graph_valid": true,
+    "config_completeness": 0.19999999999999996,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "price_bound"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "l03",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "status": "needs_clarification",
+    "expects_clarification": false,
+    "node_recall": 0.0,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": false,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "targetPrice",
+      "expiry"
+    ],
+    "missing_safety": [
+      "price_bound",
+      "expiry_set",
+      "transaction_monitoring"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "l04",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 1.0,
+    "extra_nodes": 0,
+    "graph_valid": true,
+    "config_completeness": 0.19999999999999996,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "price_bound"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "l05",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": true,
+    "node_recall": 1.0,
+    "edge_recall": 1.0,
+    "extra_nodes": 0,
+    "graph_valid": true,
+    "config_completeness": 0.19999999999999996,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": false,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "price_bound"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "l06",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.3333333333333333,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "targetPrice",
+      "expiry"
+    ],
+    "missing_safety": [
+      "price_bound",
+      "expiry_set",
+      "transaction_monitoring"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "l07",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 1.0,
+    "extra_nodes": 0,
+    "graph_valid": true,
+    "config_completeness": 0.19999999999999996,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "price_bound"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "c01",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8,
+    "edge_recall": 0.5,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.4,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "amount",
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "destination_chain_check"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "c02",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.4,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "amount",
+      "sourceChain",
+      "destinationChain",
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "destination_chain_check",
+      "bridge_confirmation",
+      "transaction_monitoring"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "c03",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6,
+    "edge_recall": 0.0,
+    "extra_nodes": 5,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "amount",
+      "sourceChain",
+      "destinationChain",
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "destination_chain_check",
+      "bridge_confirmation"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "c04",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8,
+    "edge_recall": 0.5,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.4,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "amount",
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "destination_chain_check"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "c05",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": true,
+    "node_recall": 0.8,
+    "edge_recall": 0.5,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.4,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": false,
+    "missing_config": [
+      "fromToken",
+      "amount",
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "destination_chain_check"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "c06",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.4,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "amount",
+      "sourceChain",
+      "destinationChain",
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "destination_chain_check",
+      "bridge_confirmation",
+      "transaction_monitoring"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "c07",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8,
+    "edge_recall": 0.5,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.4,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "amount",
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "destination_chain_check"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "c08",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8,
+    "edge_recall": 0.5,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.4,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "amount",
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "destination_chain_check"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "x01",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5714285714285714,
+    "edge_recall": 0.3333333333333333,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.25,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "slippage",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "price_bound"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "x02",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "status": "needs_clarification",
+    "expects_clarification": false,
+    "node_recall": 0.0,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": false,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "slippage",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "x03",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 0.6666666666666666,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.19999999999999996,
+    "executable_proxy": false,
+    "safety_recall": 0.75,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "price_bound"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "x04",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5714285714285714,
+    "edge_recall": 0.3333333333333333,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.25,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "slippage",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "price_bound"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "x05",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 0.6666666666666666,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.19999999999999996,
+    "executable_proxy": false,
+    "safety_recall": 0.75,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "price_bound"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "x06",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "status": "ok",
+    "expects_clarification": true,
+    "node_recall": 0.2857142857142857,
+    "edge_recall": 0.16666666666666666,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": false,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "slippage",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  },
+  {
+    "id": "x07",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "status": "needs_clarification",
+    "expects_clarification": false,
+    "node_recall": 0.0,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": false,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "slippage",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "koan_current",
+    "model_tag": null
+  }
+]

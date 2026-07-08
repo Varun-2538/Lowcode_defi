@@ -1,0 +1,22 @@
+{
+  "id": "x07",
+  "baseline": "koan_current",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "requirements": {
+    "pattern": "conversational",
+    "tokens": [],
+    "features": [],
+    "chains": [],
+    "user_intent": "Combine a token swap with a limit order and portfolio tracking for LINK and USDC.",
+    "suggested_nodes": []
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

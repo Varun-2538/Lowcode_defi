@@ -1,0 +1,37 @@
+{
+  "id": "s31",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "priceImpactCalculator",
+      "portfolioAPI",
+      "chainSelector",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

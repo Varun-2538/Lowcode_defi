@@ -1,0 +1,1659 @@
+[
+  {
+    "id": "mm_a01a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a01b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.4,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a02a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a02b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a03a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a03b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 1.0,
+    "extra_nodes": 0,
+    "graph_valid": true,
+    "config_completeness": 1.0,
+    "executable_proxy": true,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a04a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a04b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a05a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.6,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a05b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a06a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a06b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8333333333333334,
+    "edge_recall": 0.8,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a07a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a07b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.6,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a08a",
+    "baseline": "direct_llm",
+    "category": "compositional",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.42857142857142855,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.8,
+    "executable_proxy": false,
+    "safety_recall": 0.25,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "price_impact_gate",
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_a08b",
+    "baseline": "direct_llm",
+    "category": "compositional",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.42857142857142855,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.8,
+    "executable_proxy": false,
+    "safety_recall": 0.25,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "price_impact_gate",
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t01a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.6,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t01b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.6,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t02a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.6,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t02b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.6,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.25,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t03a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8333333333333334,
+    "edge_recall": 0.8,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t03b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8333333333333334,
+    "edge_recall": 0.8,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t04a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.4,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t04b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.6,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t05a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8333333333333334,
+    "edge_recall": 0.6,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t05b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t06a",
+    "baseline": "direct_llm",
+    "category": "compositional",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5714285714285714,
+    "edge_recall": 0.16666666666666666,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.6,
+    "executable_proxy": false,
+    "safety_recall": 0.25,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_t06b",
+    "baseline": "direct_llm",
+    "category": "compositional",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.7142857142857143,
+    "edge_recall": 0.5,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.6,
+    "executable_proxy": false,
+    "safety_recall": 0.25,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w01a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w01b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w02a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w02b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w03a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w03b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.16666666666666666,
+    "edge_recall": 0.0,
+    "extra_nodes": 1,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w04a",
+    "baseline": "direct_llm",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.75,
+    "edge_recall": 0.6666666666666666,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w04b",
+    "baseline": "direct_llm",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.25,
+    "edge_recall": 0.0,
+    "extra_nodes": 1,
+    "graph_valid": false,
+    "config_completeness": 0.8,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "expiry"
+    ],
+    "missing_safety": [
+      "price_bound",
+      "expiry_set",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w05a",
+    "baseline": "direct_llm",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8,
+    "edge_recall": 0.0,
+    "extra_nodes": 1,
+    "graph_valid": false,
+    "config_completeness": 0.8,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "bridge_confirmation"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w05b",
+    "baseline": "direct_llm",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8,
+    "edge_recall": 0.0,
+    "extra_nodes": 1,
+    "graph_valid": false,
+    "config_completeness": 0.8,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "bridge_confirmation"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w06a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w06b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w07a",
+    "baseline": "direct_llm",
+    "category": "compositional",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.42857142857142855,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.8,
+    "executable_proxy": false,
+    "safety_recall": 0.25,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "price_impact_gate",
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w07b",
+    "baseline": "direct_llm",
+    "category": "compositional",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5714285714285714,
+    "edge_recall": 0.16666666666666666,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.6,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w08a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_w08b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "slippage"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p01a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p01b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.6,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p02a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p02b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p03a",
+    "baseline": "direct_llm",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.3333333333333333,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p03b",
+    "baseline": "direct_llm",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.3333333333333333,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p04a",
+    "baseline": "direct_llm",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8,
+    "edge_recall": 0.5,
+    "extra_nodes": 2,
+    "graph_valid": false,
+    "config_completeness": 0.8,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "bridge_confirmation"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p04b",
+    "baseline": "direct_llm",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 0.75,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.8,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "bridge_confirmation"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p05a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p05b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.4,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p06a",
+    "baseline": "direct_llm",
+    "category": "compositional",
+    "status": "needs_clarification",
+    "expects_clarification": false,
+    "node_recall": 0.0,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": false,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "slippage",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_p06b",
+    "baseline": "direct_llm",
+    "category": "compositional",
+    "status": "needs_clarification",
+    "expects_clarification": false,
+    "node_recall": 0.0,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": false,
+    "missing_config": [
+      "fromToken",
+      "toToken",
+      "amount",
+      "slippage",
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d01a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8333333333333334,
+    "edge_recall": 0.6,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d01b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "amount"
+    ],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d02a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d02b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.3333333333333333,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "amount"
+    ],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d03a",
+    "baseline": "direct_llm",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.3333333333333333,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d03b",
+    "baseline": "direct_llm",
+    "category": "limit_order",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.3333333333333333,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.8,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "targetPrice"
+    ],
+    "missing_safety": [
+      "price_bound",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d04a",
+    "baseline": "direct_llm",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8,
+    "edge_recall": 0.5,
+    "extra_nodes": 2,
+    "graph_valid": false,
+    "config_completeness": 0.6,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "fromToken",
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "bridge_confirmation"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d04b",
+    "baseline": "direct_llm",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 1.0,
+    "edge_recall": 0.25,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.6,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "destinationChain",
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "destination_chain_check",
+      "bridge_confirmation"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d05a",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.6666666666666666,
+    "edge_recall": 0.4,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 1.0,
+    "executable_proxy": false,
+    "safety_recall": 0.6666666666666666,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [],
+    "missing_safety": [
+      "price_impact_gate"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d05b",
+    "baseline": "direct_llm",
+    "category": "swap",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.5,
+    "edge_recall": 0.2,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.75,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "amount"
+    ],
+    "missing_safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d06a",
+    "baseline": "direct_llm",
+    "category": "cross_chain",
+    "status": "ok",
+    "expects_clarification": false,
+    "node_recall": 0.8,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.8,
+    "executable_proxy": false,
+    "safety_recall": 0.3333333333333333,
+    "safe_executable_proxy": false,
+    "clarification_correct": true,
+    "missing_config": [
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "bridge_confirmation",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  },
+  {
+    "id": "mm_d06b",
+    "baseline": "direct_llm",
+    "category": "cross_chain",
+    "status": "needs_clarification",
+    "expects_clarification": false,
+    "node_recall": 0.0,
+    "edge_recall": 0.0,
+    "extra_nodes": 0,
+    "graph_valid": false,
+    "config_completeness": 0.0,
+    "executable_proxy": false,
+    "safety_recall": 0.0,
+    "safe_executable_proxy": false,
+    "clarification_correct": false,
+    "missing_config": [
+      "fromToken",
+      "amount",
+      "sourceChain",
+      "destinationChain",
+      "destinationAddress"
+    ],
+    "missing_safety": [
+      "destination_chain_check",
+      "bridge_confirmation",
+      "transaction_monitoring"
+    ],
+    "run_id": "direct_llm__openai_gpt-5.4-mini",
+    "model_tag": "openai_gpt-5.4-mini"
+  }
+]

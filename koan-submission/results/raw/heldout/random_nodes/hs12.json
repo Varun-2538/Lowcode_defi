@@ -1,0 +1,37 @@
+{
+  "id": "hs12",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "oneInchSwap",
+      "limitOrder",
+      "oneInchQuote",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

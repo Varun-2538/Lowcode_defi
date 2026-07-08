@@ -1,0 +1,54 @@
+{
+  "id": "c11",
+  "baseline": "direct_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"chainSelector\", \"chainSelector\", \"fusionSwap\", \"transactionMonitor\"], \"edges\": [[\"walletConnector\", \"chainSelector\"], [\"chainSelector\", \"chainSelector\"], [\"chainSelector\", \"fusionSwap\"], [\"fusionSwap\", \"transactionMonitor\"]], \"config\": {\"amount\": \"2\", \"fromToken\": \"ETH\", \"toToken\": \"ETH\", \"sourceChain\": \"Optimism\", \"destinationChain\": \"Ethereum\", \"default_confirmations\": \"fast\"}, \"needs_clarification\": false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "chainSelector",
+      "fusionSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "amount": "2",
+      "fromToken": "ETH",
+      "toToken": "ETH",
+      "sourceChain": "Optimism",
+      "destinationChain": "Ethereum",
+      "default_confirmations": "fast"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

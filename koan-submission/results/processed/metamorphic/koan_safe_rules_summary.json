@@ -1,0 +1,22 @@
+{
+  "baseline": "koan_safe_rules",
+  "n_total": 68,
+  "n_workflow": 68,
+  "n_clarification": 0,
+  "graph_valid_rate": 0.9558823529411765,
+  "executable_rate": 0.7941176470588235,
+  "safe_executable_rate": 0.7941176470588235,
+  "mean_node_recall": 0.9757352941176469,
+  "mean_edge_recall": 0.9607843137254901,
+  "mean_config_completeness": 0.9360294117647059,
+  "mean_safety_recall": 0.9362745098039216,
+  "mean_extra_nodes": 0.07352941176470588,
+  "clarification_correct_rate": 0.0,
+  "run_id": "koan_safe_rules",
+  "model_tag": null,
+  "split": "metamorphic",
+  "n_ok": 68,
+  "n_error": 0,
+  "n_skipped": 0,
+  "generated_at": "2026-07-08T12:24:20.826038+00:00"
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "system": "Koan-Safe (rules)",
+    "on_safe": 0.4266666666666667,
+    "off_safe": 0.12,
+    "on_exec": 0.4266666666666667,
+    "off_exec": 0.22666666666666666,
+    "on_fork_unsafe": 0,
+    "off_fork_unsafe": 17,
+    "on_fork_rate": 1.0,
+    "off_fork_rate": 0.6792452830188679
+  },
+  {
+    "system": "Koan-Safe (LLM) (Gemini 3.1 FL)",
+    "on_safe": 0.64,
+    "off_safe": 0.0,
+    "on_exec": 0.64,
+    "off_exec": 0.05333333333333334,
+    "on_fork_unsafe": 0,
+    "off_fork_unsafe": 17,
+    "on_fork_rate": 1.0,
+    "off_fork_rate": 0.6792452830188679
+  },
+  {
+    "system": "Koan-Safe (hybrid) (Gemini 3.1 FL)",
+    "on_safe": 0.6666666666666666,
+    "off_safe": 0.013333333333333334,
+    "on_exec": 0.6666666666666666,
+    "off_exec": 0.05333333333333334,
+    "on_fork_unsafe": 0,
+    "off_fork_unsafe": 16,
+    "on_fork_rate": 1.0,
+    "off_fork_rate": 0.6981132075471698
+  }
+]

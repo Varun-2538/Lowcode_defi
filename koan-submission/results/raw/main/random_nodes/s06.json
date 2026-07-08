@@ -1,0 +1,39 @@
+{
+  "id": "s06",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "transactionMonitor",
+      "limitOrder",
+      "oneInchSwap",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

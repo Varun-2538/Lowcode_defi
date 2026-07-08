@@ -1,0 +1,32 @@
+{
+  "id": "s21",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "defiDashboard",
+      "fusionPlus",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

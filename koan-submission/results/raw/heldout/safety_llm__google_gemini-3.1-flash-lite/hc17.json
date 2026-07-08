@@ -1,0 +1,41 @@
+{
+  "id": "hc17",
+  "baseline": "safety_llm",
+  "category": "cross_chain",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"portfolioAPI\", \"chainSelector\", \"transactionMonitor\"], \"edges\": [[\"walletConnector\", \"portfolioAPI\"], [\"portfolioAPI\", \"chainSelector\"], [\"chainSelector\", \"transactionMonitor\"]], \"config\": {}, \"needs_clarification\": true}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "portfolioAPI",
+      "chainSelector",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "safety_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "x01",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "priceImpactCalculator",
+      "defiDashboard",
+      "portfolioAPI",
+      "fusionPlus",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "limitOrder"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

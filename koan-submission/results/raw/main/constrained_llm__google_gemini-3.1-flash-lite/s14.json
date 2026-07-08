@@ -1,0 +1,56 @@
+{
+  "id": "s14",
+  "baseline": "constrained_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"oneInchQuote\", \"priceImpactCalculator\", \"oneInchSwap\", \"transactionMonitor\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"oneInchQuote\"], [\"oneInchQuote\", \"priceImpactCalculator\"], [\"priceImpactCalculator\", \"oneInchSwap\"], [\"oneInchSwap\", \"transactionMonitor\"]], \"config\": {\"fromToken\": \"MATIC\", \"toToken\": \"USDC\", \"slippage\": 0.01}, \"needs_clarification\": false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "MATIC",
+      "toToken": "USDC",
+      "slippage": 0.01
+    },
+    "safety": [
+      "slippage_bound",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "constrained_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

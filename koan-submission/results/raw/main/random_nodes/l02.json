@@ -1,0 +1,42 @@
+{
+  "id": "l02",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "oneInchSwap",
+      "portfolioAPI",
+      "tokenSelector",
+      "defiDashboard",
+      "walletConnector"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "walletConnector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

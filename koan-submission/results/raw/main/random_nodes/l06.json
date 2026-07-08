@@ -1,0 +1,44 @@
+{
+  "id": "l06",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "portfolioAPI",
+      "tokenSelector",
+      "walletConnector",
+      "limitOrder",
+      "fusionPlus",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "portfolioAPI",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

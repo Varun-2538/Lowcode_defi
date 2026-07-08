@@ -1,0 +1,42 @@
+{
+  "name": "pilot",
+  "description": "Expert-authored 30-prompt pilot for safety-constrained DeFi workflow synthesis.",
+  "category_counts": {
+    "swap": 8,
+    "limit_order": 7,
+    "cross_chain": 8,
+    "compositional": 7
+  },
+  "prompt_ids": [
+    "s01",
+    "s02",
+    "s03",
+    "s04",
+    "s05",
+    "s06",
+    "s07",
+    "s08",
+    "l01",
+    "l02",
+    "l03",
+    "l04",
+    "l05",
+    "l06",
+    "l07",
+    "c01",
+    "c02",
+    "c03",
+    "c04",
+    "c05",
+    "c06",
+    "c07",
+    "c08",
+    "x01",
+    "x02",
+    "x03",
+    "x04",
+    "x05",
+    "x06",
+    "x07"
+  ]
+}

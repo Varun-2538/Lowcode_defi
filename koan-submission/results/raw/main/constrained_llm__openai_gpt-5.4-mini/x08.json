@@ -1,0 +1,59 @@
+{
+  "id": "x08",
+  "baseline": "constrained_llm",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"oneInchSwap\",\"priceImpactCalculator\",\"transactionMonitor\",\"limitOrder\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"priceImpactCalculator\"],[\"priceImpactCalculator\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"],[\"walletConnector\",\"limitOrder\"]],\"config\":{\"fromToken\":\"ETH\",\"toToken\":\"USDC\",\"amount\":\"1 ETH\",\"slippage\":\"1%\",\"targetPrice\":\"2500\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchSwap",
+      "priceImpactCalculator",
+      "transactionMonitor",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "walletConnector",
+        "limitOrder"
+      ]
+    ],
+    "config": {
+      "fromToken": "ETH",
+      "toToken": "USDC",
+      "amount": "1 ETH",
+      "slippage": "1%",
+      "targetPrice": "2500"
+    },
+    "safety": [
+      "slippage_bound",
+      "transaction_monitoring",
+      "price_bound"
+    ]
+  },
+  "run_id": "constrained_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

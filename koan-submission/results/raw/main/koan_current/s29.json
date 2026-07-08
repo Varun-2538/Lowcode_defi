@@ -1,0 +1,38 @@
+{
+  "id": "s29",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "ETH",
+      "USDC"
+    ],
+    "features": [],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "swp 100 usdc to eth wth 1% slipage",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

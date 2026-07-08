@@ -1,0 +1,46 @@
+{
+  "id": "hs15",
+  "baseline": "direct_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"tokenSelector\", \"fusionSwap\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"tokenSelector\"], [\"tokenSelector\", \"fusionSwap\"]], \"config\": {\"amount\": \"2\", \"fromToken\": \"ETH\", \"toToken\": \"USDC\", \"slippage\": \"1%\"}, \"needs_clarification\": false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "tokenSelector",
+      "fusionSwap"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionSwap"
+      ]
+    ],
+    "config": {
+      "amount": "2",
+      "fromToken": "ETH",
+      "toToken": "USDC",
+      "slippage": "1%"
+    },
+    "safety": [
+      "slippage_bound"
+    ]
+  },
+  "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

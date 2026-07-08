@@ -1,0 +1,37 @@
+{
+  "id": "c04",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchQuote",
+      "walletConnector",
+      "fusionPlus",
+      "defiDashboard",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "oneInchQuote",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

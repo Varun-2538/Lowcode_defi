@@ -1,0 +1,42 @@
+{
+  "id": "hl17",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "walletConnector",
+      "chainSelector",
+      "portfolioAPI",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

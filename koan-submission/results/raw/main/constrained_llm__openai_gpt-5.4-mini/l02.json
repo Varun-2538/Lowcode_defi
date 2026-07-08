@@ -1,0 +1,37 @@
+{
+  "id": "l02",
+  "baseline": "constrained_llm",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"tokenSelector\",\"limitOrder\"],\"edges\":[[\"tokenSelector\",\"limitOrder\"]],\"config\":{\"fromToken\":\"USDC\",\"toToken\":\"ETH\",\"targetPrice\":3000,\"expiry\":\"7 days\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "limitOrder"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "toToken": "ETH",
+      "targetPrice": 3000,
+      "expiry": "7 days"
+    },
+    "safety": [
+      "price_bound",
+      "expiry_set"
+    ]
+  },
+  "run_id": "constrained_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

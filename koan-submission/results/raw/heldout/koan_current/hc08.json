@@ -1,0 +1,38 @@
+{
+  "id": "hc08",
+  "baseline": "koan_current",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "ETH",
+      "UNI"
+    ],
+    "features": [],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Move 60 UNI from Base to Ethereum.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

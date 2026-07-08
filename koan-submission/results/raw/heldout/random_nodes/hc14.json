@@ -1,0 +1,27 @@
+{
+  "id": "hc14",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchQuote",
+      "limitOrder",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "oneInchQuote",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

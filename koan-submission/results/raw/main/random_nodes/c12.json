@@ -1,0 +1,47 @@
+{
+  "id": "c12",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchQuote",
+      "fusionPlus",
+      "limitOrder",
+      "oneInchSwap",
+      "tokenSelector",
+      "chainSelector",
+      "fusionSwap"
+    ],
+    "edges": [
+      [
+        "oneInchQuote",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

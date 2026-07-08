@@ -1,0 +1,16 @@
+{
+  "baseline": "fewshot_llm__google_gemini-3.1-flash-lite",
+  "split": "heldout",
+  "n_total": 87,
+  "n_attempted_definite": 56,
+  "n_safe": 37,
+  "n_unsafe_executed": 19,
+  "fork_safe_execution_rate": 0.6607142857142857,
+  "outcome_counts": {
+    "not_simulated": 15,
+    "not_executable": 16,
+    "pending_not_filled": 7,
+    "executed_safe": 30,
+    "unsafe_executed": 19
+  }
+}

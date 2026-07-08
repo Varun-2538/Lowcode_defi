@@ -1,0 +1,22 @@
+{
+  "baseline": "fewshot_llm",
+  "n_total": 120,
+  "n_workflow": 105,
+  "n_clarification": 15,
+  "graph_valid_rate": 0.2571428571428571,
+  "executable_rate": 0.10476190476190476,
+  "safe_executable_rate": 0.10476190476190476,
+  "mean_node_recall": 0.7796371882086168,
+  "mean_edge_recall": 0.5261904761904762,
+  "mean_config_completeness": 0.6633333333333334,
+  "mean_safety_recall": 0.5333333333333333,
+  "mean_extra_nodes": 0.19047619047619047,
+  "clarification_correct_rate": 0.7333333333333333,
+  "run_id": "fewshot_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini",
+  "split": "main",
+  "n_ok": 120,
+  "n_error": 0,
+  "n_skipped": 0,
+  "generated_at": "2026-07-07T20:57:01.086165+00:00"
+}

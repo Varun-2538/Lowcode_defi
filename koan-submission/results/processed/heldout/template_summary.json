@@ -1,0 +1,22 @@
+{
+  "baseline": "template",
+  "n_total": 87,
+  "n_workflow": 75,
+  "n_clarification": 12,
+  "graph_valid_rate": 0.52,
+  "executable_rate": 0.0,
+  "safe_executable_rate": 0.0,
+  "mean_node_recall": 0.9056507936507937,
+  "mean_edge_recall": 0.8035555555555556,
+  "mean_config_completeness": 0.0,
+  "mean_safety_recall": 0.7322222222222222,
+  "mean_extra_nodes": 0.10666666666666667,
+  "clarification_correct_rate": 0.0,
+  "run_id": "template",
+  "model_tag": null,
+  "split": "heldout",
+  "n_ok": 87,
+  "n_error": 0,
+  "n_skipped": 0,
+  "generated_at": "2026-07-08T11:01:42.748881+00:00"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "c21",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "portfolioAPI",
+      "oneInchQuote",
+      "fusionSwap",
+      "chainSelector",
+      "walletConnector"
+    ],
+    "edges": [
+      [
+        "portfolioAPI",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "walletConnector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

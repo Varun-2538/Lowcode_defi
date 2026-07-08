@@ -1,0 +1,40 @@
+{
+  "id": "s08",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "USDC",
+      "LINK"
+    ],
+    "features": [
+      "slippage protection"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Dump my LINK into USDC as fast as possible, I don't care about slippage.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

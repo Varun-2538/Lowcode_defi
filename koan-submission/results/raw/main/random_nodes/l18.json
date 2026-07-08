@@ -1,0 +1,47 @@
+{
+  "id": "l18",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "oneInchQuote",
+      "fusionSwap",
+      "portfolioAPI",
+      "walletConnector",
+      "fusionPlus",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

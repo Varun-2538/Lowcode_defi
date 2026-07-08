@@ -1,0 +1,55 @@
+{
+  "id": "hl07",
+  "baseline": "koan_safe_hybrid",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"tokenSelector\",\"limitOrder\"],\"edges\":[[\"tokenSelector\",\"limitOrder\"]],\"config\":{\"fromToken\":\"WETH\",\"toToken\":\"DAI\",\"amount\":\"3 WETH\",\"targetPrice\":\"3600\",\"expiry\":\"5 days\"},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "limitOrder",
+      "walletConnector",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "WETH",
+      "toToken": "DAI",
+      "amount": "3 WETH",
+      "targetPrice": "3600",
+      "expiry": "5 days"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "price_bound",
+      "expiry_set"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

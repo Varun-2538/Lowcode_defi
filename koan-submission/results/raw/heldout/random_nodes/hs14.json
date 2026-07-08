@@ -1,0 +1,37 @@
+{
+  "id": "hs14",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "limitOrder",
+      "fusionPlus",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

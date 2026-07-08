@@ -1,0 +1,55 @@
+{
+  "id": "c01",
+  "baseline": "safety_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"chainSelector\", \"priceImpactCalculator\", \"transactionMonitor\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"chainSelector\"], [\"chainSelector\", \"priceImpactCalculator\"], [\"priceImpactCalculator\", \"transactionMonitor\"]], \"config\": {\"fromToken\": \"USDC\", \"amount\": 100, \"sourceChain\": \"Ethereum\", \"destinationChain\": \"Polygon\", \"warning_threshold\": 0.05, \"default_confirmations\": 12}, \"needs_clarification\": false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "priceImpactCalculator",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "amount": 100,
+      "sourceChain": "Ethereum",
+      "destinationChain": "Polygon",
+      "warning_threshold": 0.05,
+      "default_confirmations": 12
+    },
+    "safety": [
+      "price_impact_gate",
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "safety_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

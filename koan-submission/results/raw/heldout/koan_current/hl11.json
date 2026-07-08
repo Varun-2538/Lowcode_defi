@@ -1,0 +1,40 @@
+{
+  "id": "hl11",
+  "baseline": "koan_current",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "ETH",
+      "USDC"
+    ],
+    "features": [
+      "limit orders"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Quote ETH to USDC, then set a limit to sell 2 ETH at 4300, good for 14 days.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

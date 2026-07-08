@@ -1,0 +1,38 @@
+{
+  "id": "hc13",
+  "baseline": "koan_current",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Portfolio Dashboard",
+    "tokens": [
+      "ETH",
+      "WBTC"
+    ],
+    "features": [],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Send 1 WBTC from Ethereum to Avalanche and give me a dashboard view.",
+    "suggested_nodes": [
+      "walletConnector",
+      "portfolioAPI"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

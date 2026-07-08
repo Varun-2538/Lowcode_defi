@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Koan benchmark prompt",
+  "type": "object",
+  "required": ["id", "split", "category", "prompt", "entities"],
+  "properties": {
+    "id": {"type": "string"},
+    "split": {"type": "string"},
+    "category": {
+      "type": "string",
+      "enum": ["swap", "limit_order", "cross_chain", "compositional"]
+    },
+    "prompt": {"type": "string"},
+    "entities": {
+      "type": "object",
+      "properties": {
+        "tokens": {"type": "array", "items": {"type": "string"}},
+        "chains": {"type": "array", "items": {"type": "string"}},
+        "protocols": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "difficulty": {"type": "string", "enum": ["easy", "medium", "hard"]},
+    "phenomena": {"type": "array", "items": {"type": "string"}},
+    "paraphrase_of": {"type": ["string", "null"]},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}
+

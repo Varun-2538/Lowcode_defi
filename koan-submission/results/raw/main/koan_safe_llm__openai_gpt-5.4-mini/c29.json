@@ -1,0 +1,78 @@
+{
+  "id": "c29",
+  "baseline": "koan_safe_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "llm",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"tokenSelector\",\"chainSelector\",\"walletConnector\",\"oneInchSwap\",\"transactionMonitor\"],\"edges\":[[\"tokenSelector\",\"chainSelector\"],[\"chainSelector\",\"walletConnector\"],[\"walletConnector\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"USDC\",\"amount\":\"500\",\"sourceChain\":\"Base\",\"destinationChain\":\"Optimism\"},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "chainSelector",
+      "walletConnector",
+      "oneInchSwap",
+      "transactionMonitor",
+      "fusionPlus"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "amount": "500",
+      "sourceChain": "Base",
+      "destinationChain": "Optimism",
+      "default_confirmations": 12,
+      "destinationAddress": "self"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "koan_safe_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

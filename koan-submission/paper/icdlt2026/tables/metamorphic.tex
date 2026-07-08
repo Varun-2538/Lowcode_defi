@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\caption{Metamorphic safety violations (count of violated pairs, lower is better) by relation on the metamorphic suite. Amount: $100\times$ larger trade must not weaken safety; Thr: tightening tolerance must keep the gate; Waiv: an explicit safety waiver must not remove mandatory gates; Para: paraphrase must preserve class and policy; Drop: a removed field must not be fabricated. Denominators vary because pairs whose base prompt a system fails to build are not applicable.}
+\label{tab:metamorphic}
+\begin{tabular}{lcccccc}
+\toprule
+System & Amt & Thr & Waiv & Para & Drop & All \\
+\midrule
+Direct LLM (GPT-5.4 mini) & 7 & 0 & 7 & 2 & 0 & 16/33 \\
+Direct LLM (Gemini 3.1 FL) & 8 & 0 & 6 & 0 & 0 & 14/32 \\
+Safety-instruct LLM (GPT-5.4 mini) & 0 & 1 & 0 & 1 & 0 & 2/28 \\
+Safety-instruct LLM (Gemini 3.1 FL) & 0 & 0 & 1 & 2 & 0 & 3/30 \\
+Koan-Safe (rules) & 0 & 0 & 0 & 0 & 0 & 0/34 \\
+Koan-Safe (LLM) (GPT-5.4 mini) & 0 & 0 & 0 & 0 & 0 & 0/34 \\
+Koan-Safe (LLM) (Gemini 3.1 FL) & 0 & 0 & 0 & 0 & 0 & 0/34 \\
+Koan-Safe (hybrid) (GPT-5.4 mini) & 0 & 0 & 0 & 0 & 0 & 0/34 \\
+Koan-Safe (hybrid) (Gemini 3.1 FL) & 0 & 0 & 0 & 1 & 0 & 1/34 \\
+\bottomrule
+\end{tabular}
+\end{table*}

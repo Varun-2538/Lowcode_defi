@@ -1,0 +1,32 @@
+{
+  "id": "hl13",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "limitOrder",
+      "chainSelector",
+      "fusionPlus"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionPlus"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

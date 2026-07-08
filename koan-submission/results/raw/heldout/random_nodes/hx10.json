@@ -1,0 +1,27 @@
+{
+  "id": "hx10",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "limitOrder",
+      "oneInchQuote",
+      "fusionPlus"
+    ],
+    "edges": [
+      [
+        "limitOrder",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "fusionPlus"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

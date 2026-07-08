@@ -1,0 +1,22 @@
+{
+  "id": "s34",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "needs_clarification",
+  "error": null,
+  "requirements": {
+    "pattern": "conversational",
+    "tokens": [],
+    "features": [],
+    "chains": [],
+    "user_intent": "Swap AAVE to ETH, and I care about not losing money to price impact.",
+    "suggested_nodes": []
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

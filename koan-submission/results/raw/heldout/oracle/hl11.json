@@ -1,0 +1,48 @@
+{
+  "id": "hl11",
+  "baseline": "oracle",
+  "category": "limit_order",
+  "error": null,
+  "status": "ok",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "limitOrder",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "toToken": "ETH",
+      "amount": "100",
+      "targetPrice": "3000",
+      "expiry": "7d",
+      "destinationChain": "polygon"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "price_bound",
+      "expiry_set"
+    ]
+  },
+  "run_id": "oracle"
+}

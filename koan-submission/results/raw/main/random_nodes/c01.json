@@ -1,0 +1,32 @@
+{
+  "id": "c01",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "oneInchSwap",
+      "fusionPlus"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "fusionPlus"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "c26",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "priceImpactCalculator",
+      "oneInchQuote",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "priceImpactCalculator",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

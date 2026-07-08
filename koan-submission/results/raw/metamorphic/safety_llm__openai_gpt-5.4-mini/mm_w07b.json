@@ -1,0 +1,68 @@
+{
+  "id": "mm_w07b",
+  "baseline": "safety_llm",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"oneInchQuote\",\"priceImpactCalculator\",\"oneInchSwap\",\"limitOrder\",\"transactionMonitor\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"oneInchQuote\"],[\"oneInchQuote\",\"priceImpactCalculator\"],[\"priceImpactCalculator\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"],[\"tokenSelector\",\"limitOrder\"],[\"limitOrder\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"DAI\",\"toToken\":\"ETH\",\"amount\":\"500\",\"slippage\":\"0.5%\",\"warning_threshold\":\"5%\"},\"needs_clarification\":true}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "limitOrder",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "DAI",
+      "toToken": "ETH",
+      "amount": "500",
+      "slippage": "0.5%",
+      "warning_threshold": "5%"
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "safety_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

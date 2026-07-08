@@ -1,0 +1,39 @@
+{
+  "id": "s30",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "USDC"
+    ],
+    "features": [
+      "slippage protection"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Just get rid of my CRV for USDC, slippage doesn't matter to me.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

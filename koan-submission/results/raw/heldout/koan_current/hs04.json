@@ -1,0 +1,40 @@
+{
+  "id": "hs04",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Custom DeFi Application",
+    "tokens": [
+      "USDT",
+      "LINK"
+    ],
+    "features": [
+      "slippage protection"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "I'd like to turn 5 LINK into USDT, protect me from bad slippage.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

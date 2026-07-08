@@ -1,0 +1,32 @@
+{
+  "id": "hs22",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "fusionPlus",
+      "limitOrder",
+      "fusionSwap"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "fusionSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

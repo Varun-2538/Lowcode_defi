@@ -1,0 +1,53 @@
+{
+  "id": "c11",
+  "baseline": "constrained_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"chainSelector\",\"oneInchSwap\",\"transactionMonitor\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"chainSelector\"],[\"chainSelector\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"ETH\",\"amount\":\"2\",\"sourceChain\":\"Optimism\",\"destinationChain\":\"Ethereum mainnet\",\"default_confirmations\":\"fast\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "oneInchSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "ETH",
+      "amount": "2",
+      "sourceChain": "Optimism",
+      "destinationChain": "Ethereum mainnet",
+      "default_confirmations": "fast"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "constrained_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

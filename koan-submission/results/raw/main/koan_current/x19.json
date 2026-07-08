@@ -1,0 +1,96 @@
+{
+  "id": "x19",
+  "baseline": "koan_current",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "DEX Aggregator",
+    "tokens": [
+      "ETH",
+      "USDT"
+    ],
+    "features": [
+      "slippage protection",
+      "limit orders"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Swap 2 ETH to USDT at 1% slippage, set a limit to rebuy ETH at 2600, and track it on a dashboard.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "transactionMonitor"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "fusionSwap",
+      "limitOrder",
+      "portfolioAPI",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "slippage": 1.0,
+      "warning_threshold": 2.0,
+      "max_impact_threshold": 15.0,
+      "default_confirmations": 1,
+      "expiry": 30
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring",
+      "expiry_set"
+    ]
+  },
+  "run_id": "koan_current"
+}

@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Cost and latency per workflow. LLM calls/wf is the dominant cost driver (Koan-Safe's rules variant is fully offline; its LLM and hybrid variants skip the model call whenever the clarification gate fires). Latency is end-to-end wall-clock and, for LLM systems, is dominated by provider round-trip. Cost is an estimate at an assumed \$0.30/1M output tokens.}
+\label{tab:cost}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccc}
+\toprule
+System & Calls/wf & Lat.\ (s) & \$/100 wf \\
+\midrule
+Direct LLM (GPT-5.4 mini) & 1.00 & 1.68 & 0.002 \\
+Direct LLM (Gemini 3.1 FL) & 1.00 & 1.87 & 0.003 \\
+Safety-instruct LLM (GPT-5.4 mini) & 1.00 & 1.97 & 0.003 \\
+Safety-instruct LLM (Gemini 3.1 FL) & 1.00 & 1.83 & 0.004 \\
+Koan-Safe (rules) & 0.00 & 0.00 & 0.000 \\
+Koan-Safe (LLM) (GPT-5.4 mini) & 0.99 & 1.72 & 0.002 \\
+Koan-Safe (LLM) (Gemini 3.1 FL) & 0.99 & 1.90 & 0.003 \\
+Koan-Safe (hybrid) (GPT-5.4 mini) & 0.99 & 1.76 & 0.002 \\
+Koan-Safe (hybrid) (Gemini 3.1 FL) & 0.99 & 1.69 & 0.003 \\
+\bottomrule
+\end{tabular}
+\end{table}

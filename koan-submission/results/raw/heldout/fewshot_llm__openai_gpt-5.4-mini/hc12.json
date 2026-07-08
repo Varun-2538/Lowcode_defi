@@ -1,0 +1,41 @@
+{
+  "id": "hc12",
+  "baseline": "fewshot_llm",
+  "category": "cross_chain",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"chainSelector\",\"tokenSelector\",\"defiDashboard\"],\"edges\":[[\"chainSelector\",\"tokenSelector\"],[\"tokenSelector\",\"defiDashboard\"]],\"config\":{\"fromToken\":\"DAI\",\"amount\":\"450\",\"sourceChain\":\"Arbitrum\",\"destinationChain\":\"Base\"},\"needs_clarification\":true}",
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "tokenSelector",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "fromToken": "DAI",
+      "amount": "450",
+      "sourceChain": "Arbitrum",
+      "destinationChain": "Base"
+    },
+    "safety": [
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "fewshot_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "l03",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "priceImpactCalculator",
+      "chainSelector",
+      "limitOrder",
+      "oneInchSwap",
+      "walletConnector"
+    ],
+    "edges": [
+      [
+        "priceImpactCalculator",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "walletConnector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

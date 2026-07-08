@@ -1,0 +1,32 @@
+{
+  "id": "c11",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "priceImpactCalculator",
+      "tokenSelector",
+      "defiDashboard",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "priceImpactCalculator",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

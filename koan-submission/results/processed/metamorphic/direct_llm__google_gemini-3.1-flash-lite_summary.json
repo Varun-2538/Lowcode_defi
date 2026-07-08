@@ -1,0 +1,22 @@
+{
+  "baseline": "direct_llm",
+  "n_total": 68,
+  "n_workflow": 68,
+  "n_clarification": 0,
+  "graph_valid_rate": 0.35294117647058826,
+  "executable_rate": 0.2647058823529412,
+  "safe_executable_rate": 0.0,
+  "mean_node_recall": 0.8291316526610644,
+  "mean_edge_recall": 0.6279411764705882,
+  "mean_config_completeness": 0.8661764705882353,
+  "mean_safety_recall": 0.5551470588235294,
+  "mean_extra_nodes": 0.08823529411764706,
+  "clarification_correct_rate": 0.0,
+  "run_id": "direct_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite",
+  "split": "metamorphic",
+  "n_ok": 68,
+  "n_error": 0,
+  "n_skipped": 0,
+  "generated_at": "2026-07-08T12:41:41.478326+00:00"
+}

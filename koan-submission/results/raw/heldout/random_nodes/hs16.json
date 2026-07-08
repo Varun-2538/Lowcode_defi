@@ -1,0 +1,32 @@
+{
+  "id": "hs16",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "walletConnector",
+      "oneInchQuote",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

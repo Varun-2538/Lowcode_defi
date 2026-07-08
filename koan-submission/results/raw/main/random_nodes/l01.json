@@ -1,0 +1,42 @@
+{
+  "id": "l01",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "portfolioAPI",
+      "walletConnector",
+      "fusionSwap",
+      "oneInchQuote",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,15 @@
+{
+  "baseline": "oracle",
+  "split": "heldout",
+  "n_total": 87,
+  "n_attempted_definite": 60,
+  "n_safe": 60,
+  "n_unsafe_executed": 0,
+  "fork_safe_execution_rate": 1.0,
+  "outcome_counts": {
+    "not_simulated": 15,
+    "not_executable": 12,
+    "reverted_slippage": 17,
+    "aborted_price_impact": 43
+  }
+}

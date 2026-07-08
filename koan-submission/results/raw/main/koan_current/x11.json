@@ -1,0 +1,22 @@
+{
+  "id": "x11",
+  "baseline": "koan_current",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "requirements": {
+    "pattern": "conversational",
+    "tokens": [],
+    "features": [],
+    "chains": [],
+    "user_intent": "Swap 500 DAI to ETH now, then place a limit sell of that ETH at 4200 with a 7 day expiry.",
+    "suggested_nodes": []
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

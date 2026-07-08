@@ -1,0 +1,18 @@
+[
+  {
+    "baseline": "direct_llm__google_gemini-3.1-flash-lite",
+    "split": "metamorphic",
+    "n_total": 68,
+    "n_attempted_definite": 52,
+    "n_safe": 24,
+    "n_unsafe_executed": 28,
+    "fork_safe_execution_rate": 0.46153846153846156,
+    "outcome_counts": {
+      "executed_safe": 13,
+      "unsafe_executed": 28,
+      "not_executable": 10,
+      "not_simulated": 6,
+      "aborted_price_impact": 11
+    }
+  }
+]

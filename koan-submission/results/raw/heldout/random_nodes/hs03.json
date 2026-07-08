@@ -1,0 +1,47 @@
+{
+  "id": "hs03",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "walletConnector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "fusionSwap",
+      "fusionPlus",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

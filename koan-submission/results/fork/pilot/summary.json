@@ -1,0 +1,90 @@
+[
+  {
+    "baseline": "constrained_llm__google_gemini-3.1-flash-lite",
+    "split": "pilot",
+    "n_total": 30,
+    "n_attempted_definite": 3,
+    "n_safe": 2,
+    "n_unsafe_executed": 1,
+    "fork_safe_execution_rate": 0.6666666666666666,
+    "outcome_counts": {
+      "not_simulated": 5,
+      "not_executable": 22,
+      "pending_not_filled": 1,
+      "executed_safe": 1,
+      "unsafe_executed": 1
+    }
+  },
+  {
+    "baseline": "constrained_llm__openai_gpt-5.4-mini",
+    "split": "pilot",
+    "n_total": 30,
+    "n_attempted_definite": 2,
+    "n_safe": 1,
+    "n_unsafe_executed": 1,
+    "fork_safe_execution_rate": 0.5,
+    "outcome_counts": {
+      "not_simulated": 5,
+      "not_executable": 23,
+      "pending_not_filled": 1,
+      "unsafe_executed": 1
+    }
+  },
+  {
+    "baseline": "direct_llm__google_gemini-3.1-flash-lite",
+    "split": "pilot",
+    "n_total": 30,
+    "n_attempted_definite": 3,
+    "n_safe": 2,
+    "n_unsafe_executed": 1,
+    "fork_safe_execution_rate": 0.6666666666666666,
+    "outcome_counts": {
+      "not_simulated": 4,
+      "not_executable": 23,
+      "pending_not_filled": 1,
+      "executed_safe": 1,
+      "unsafe_executed": 1
+    }
+  },
+  {
+    "baseline": "direct_llm__openai_gpt-5.4-mini",
+    "split": "pilot",
+    "n_total": 30,
+    "n_attempted_definite": 2,
+    "n_safe": 1,
+    "n_unsafe_executed": 1,
+    "fork_safe_execution_rate": 0.5,
+    "outcome_counts": {
+      "not_simulated": 4,
+      "not_executable": 24,
+      "pending_not_filled": 1,
+      "unsafe_executed": 1
+    }
+  },
+  {
+    "baseline": "koan_current",
+    "split": "pilot",
+    "n_total": 30,
+    "n_attempted_definite": 0,
+    "n_safe": 0,
+    "n_unsafe_executed": 0,
+    "fork_safe_execution_rate": 0.0,
+    "outcome_counts": {
+      "not_simulated": 8,
+      "not_executable": 22
+    }
+  },
+  {
+    "baseline": "template",
+    "split": "pilot",
+    "n_total": 30,
+    "n_attempted_definite": 0,
+    "n_safe": 0,
+    "n_unsafe_executed": 0,
+    "fork_safe_execution_rate": 0.0,
+    "outcome_counts": {
+      "not_simulated": 8,
+      "not_executable": 22
+    }
+  }
+]

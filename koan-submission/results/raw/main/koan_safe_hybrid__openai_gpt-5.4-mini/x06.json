@@ -1,0 +1,22 @@
+{
+  "id": "x06",
+  "baseline": "koan_safe_hybrid",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "koan_safe": {
+    "decision": "clarify",
+    "reason": "no concrete task to act on",
+    "enforced": false,
+    "generator": "hybrid",
+    "model": null
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_safe_hybrid__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

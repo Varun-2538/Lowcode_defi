@@ -1,0 +1,49 @@
+{
+  "id": "x17",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "oneInchSwap",
+      "transactionMonitor",
+      "walletConnector",
+      "oneInchQuote",
+      "defiDashboard",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

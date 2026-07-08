@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "c01",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c02",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c03",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c04",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c05",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c06",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c07",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c08",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c09",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c10",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c11",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c12",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c13",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c14",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c15",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "c16",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c17",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c18",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c19",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c20",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c21",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c22",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c23",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c24",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c25",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c26",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c27",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c28",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c29",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "c30",
+    "baseline": "koan_current",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l01",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l02",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l03",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "l04",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l05",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l06",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l07",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l08",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l09",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l10",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l11",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l12",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l13",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l14",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l15",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l16",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l17",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l18",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l19",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l20",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l21",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l22",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l23",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l24",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l25",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l26",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l27",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l28",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l29",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "limit order needs concrete amount and targetPrice",
+    "onchain": {}
+  },
+  {
+    "id": "l30",
+    "baseline": "koan_current",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s01",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s02",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s03",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s04",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s05",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s06",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s07",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s08",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s09",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s10",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s11",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s12",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s13",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s14",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s15",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s16",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s17",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s18",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s19",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s20",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s21",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s22",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s23",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s24",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s25",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s26",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s27",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s28",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s29",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s30",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s31",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s32",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s33",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s34",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s35",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s36",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s37",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "s38",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s39",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "s40",
+    "baseline": "koan_current",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount",
+    "onchain": {}
+  },
+  {
+    "id": "x01",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x02",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x03",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x04",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x05",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x06",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x07",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x08",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x09",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x10",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x11",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x12",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x13",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x14",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x15",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "x16",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x17",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x18",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x19",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  },
+  {
+    "id": "x20",
+    "baseline": "koan_current",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "no concrete positive amount (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {}
+  }
+]

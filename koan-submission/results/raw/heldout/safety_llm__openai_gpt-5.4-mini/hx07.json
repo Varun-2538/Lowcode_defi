@@ -1,0 +1,76 @@
+{
+  "id": "hx07",
+  "baseline": "safety_llm",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"defiDashboard\",\"walletConnector\",\"tokenSelector\",\"oneInchQuote\",\"priceImpactCalculator\",\"oneInchSwap\",\"limitOrder\",\"transactionMonitor\"],\"edges\":[[\"defiDashboard\",\"walletConnector\"],[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"oneInchQuote\"],[\"tokenSelector\",\"priceImpactCalculator\"],[\"oneInchQuote\",\"oneInchSwap\"],[\"priceImpactCalculator\",\"oneInchSwap\"],[\"tokenSelector\",\"limitOrder\"],[\"limitOrder\",\"transactionMonitor\"],[\"oneInchSwap\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"UNI\",\"toToken\":\"ETH\",\"slippage\":\"0.5%\",\"warning_threshold\":\"1%\"},\"needs_clarification\":true}",
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "limitOrder",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "UNI",
+      "toToken": "ETH",
+      "slippage": "0.5%",
+      "warning_threshold": "1%"
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "safety_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

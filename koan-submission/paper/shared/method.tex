@@ -1,0 +1,125 @@
+\section{Task and Evaluation Model}
+\label{sec:method}
+
+We formalize DeFi workflow synthesis as mapping a natural-language intent
+$p$ to a workflow specification $W = (N, E, C)$, where $N$ is a set of
+typed nodes drawn from a fixed DeFi node vocabulary (e.g.\
+\texttt{tokenSelector}, \texttt{oneInchQuote}, \texttt{priceImpact\-Calculator},
+\texttt{oneInchSwap}, \texttt{limitOrder}, \texttt{fusionPlus},
+\texttt{transactionMonitor}), $E \subseteq N \times N$ is a set of
+type-level data-flow edges, and $C$ is an execution configuration mapping
+keys such as \texttt{fromToken}, \texttt{amount}, \texttt{slippage}, and
+\texttt{targetPrice} to values.
+
+Each benchmark item pairs a prompt with an expert-authored gold
+annotation $(N^{\star}, E^{\star}, C^{\star}, S^{\star})$, where
+$S^{\star}$ is a set of \emph{safety predicates} the workflow must satisfy
+to be safely executable (e.g.\ a slippage bound, a price-impact gate,
+transaction monitoring, a distinct bridge destination). The annotation
+also marks whether a prompt is underspecified, in which case the ideal
+system response is to request clarification rather than emit a workflow.
+
+\subsection{Three static evaluation layers}
+
+We score a generated workflow along three strictly nested layers, so that
+each captures a distinct failure mode.
+
+\paragraph{Structural validity.} A workflow is \emph{graph-valid} if it
+recalls every required node type and every required type-level edge and
+the generator did not error. This layer is deliberately lenient: it
+ignores extra nodes unless they break a required edge, matching the weak
+notion of ``valid'' that graph-only evaluations reward.
+
+\paragraph{Executable completeness.} A workflow is \emph{executable} if it
+is graph-valid \emph{and} every required configuration key in $C^{\star}$
+is populated with a concrete (non-placeholder) value. A node that merely
+exists in template mode, with no trade amount or target price, is not
+executable.
+
+\paragraph{Declared safety.} A workflow is \emph{statically safe} if it is
+executable \emph{and} every required safety predicate in $S^{\star}$ is
+declared and parameterized. Safety predicates are derived uniformly from
+the normalized workflow for all systems, so no system is advantaged by
+self-reporting safety.
+
+A separate \emph{clarification} axis scores underspecified prompts: the
+correct behavior is to ask for the missing information, not to emit a
+confidently wrong workflow.
+
+\subsection{On-chain execution layer}
+\label{sec:method-onchain}
+
+Static declaration of a safety predicate does not prove that the predicate
+actually gates execution. We therefore add an execution layer that runs
+each generated swap on a real EVM. We deploy a constant-product
+automated market maker (Uniswap-V2-style $x\cdot y = k$ with a $0.3\%$ fee)
+and mock ERC20 tokens on an in-process EVM, seed deterministic reserves,
+and submit the generated trade as an actual transaction. The harness
+observes the mined receipt, gas, or revert, and labels the outcome as one
+of \texttt{executed\_safe}, \texttt{reverted\_slippage},
+\texttt{aborted\_price\_impact}, \texttt{unsafe\_executed},
+\texttt{pending\_not\_filled}, or \texttt{not\_executable}.
+
+The critical distinction the harness captures is between a slippage bound
+and a price-impact gate. A slippage bound sets a minimum output computed
+from the (already impact-adjusted) quote, so it protects only against
+price \emph{movement between quote and execution}; it does \emph{not}
+prevent a large order from executing at severe self-inflicted price
+impact. Only a separate price-impact gate does. A workflow that mines a
+high-impact trade with no such gate is labeled \texttt{unsafe\_executed}.
+This is a deterministic local EVM snapshot: it provides real EVM execution
+semantics (real \texttt{transferFrom}, real \texttt{require} reverts, real
+gas) with reserves seeded deterministically. We validate the harness against
+real Ethereum mainnet liquidity in Section~\ref{sec:fidelity}, where seeding
+it with each benchmark pair's real Uniswap~V2 reserves reproduces the real
+router's quotes and executions with zero error.
+
+\section{Koan-Safe: a safety-enforcement layer}
+\label{sec:koansafe}
+
+The benchmark's failure taxonomy motivates a concrete design: since the
+dominant failure is omitted safety machinery rather than misread intent,
+safety should be treated as an \emph{enforcement} step applied to a candidate
+workflow, not as something a generator is trusted to produce. Koan-Safe
+factors workflow synthesis into three replaceable stages---an intent parser,
+a candidate generator, and a generator-agnostic safety-enforcement layer---so
+that the enforcement layer's contribution can be measured in isolation.
+
+\paragraph{Intent parser.} A deterministic, prompt-only parser maps the raw
+request text to a typed intent: task category, the trade-intent fields it can
+extract from the text (tokens, amount, slippage, target price, chains), and a
+\emph{decision} to build or to ask for clarification. It reads only the prompt
+string---never the gold annotation, the category label, or any pre-parsed
+entities---so it has exactly the information available to the language-model
+baselines. Clarification is triggered only when the request cannot be acted on
+without guessing trade intent: no recognizable token, an identical
+source/destination, or a bridge with no destination.
+
+\paragraph{Candidate generator.} Koan-Safe admits three interchangeable
+generators. The \emph{rules} generator emits a category-appropriate node
+graph and fills configuration from the parsed intent. The \emph{LLM} generator
+uses the same neural backend as the direct baseline. The \emph{hybrid}
+generator takes the LLM's structure but backfills trade-intent configuration
+that the parser read from the prompt and the model dropped. All three are then
+handed to the same enforcement layer.
+
+\paragraph{Safety-enforcement layer.} Given any candidate workflow and the
+parsed intent, the layer (i) repairs structure by adding the category's
+required safety nodes and reconnecting the required spine, and (ii) injects
+conservative safety \emph{policy} the request did not pin down---a default
+slippage bound, a price-impact gate with a concrete threshold, a bridge
+confirmation count, a default order expiry, and a self-recipient for a bridge.
+The layer never fabricates trade \emph{intent}: it adds no token, amount,
+target price, or chain that was not present in the request, so a request that
+omits an amount yields a structurally valid but non-executable workflow rather
+than an invented trade. A safety \emph{waiver} in the prompt (``I don't care
+about slippage'') is deliberately overridden, since a safe system must refuse
+to ship an unsafe trade even when asked. Disabling this layer
+(Section~\ref{sec:experiments}) isolates its causal effect.
+
+\paragraph{Integrity of the comparison.} Koan-Safe encodes engineered domain
+knowledge---a token dictionary, per-category node presets, and conservative
+safety defaults---but no access to gold. Because its structural presets are
+fixed, they are stressed directly by a held-out split that requires workflow
+structures outside those presets (Section~\ref{sec:experiments}), which is
+where the method's generalization is tested rather than assumed.

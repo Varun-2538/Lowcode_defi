@@ -1,0 +1,27 @@
+{
+  "id": "hs23",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "chainSelector",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "c02",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "priceImpactCalculator",
+      "oneInchQuote",
+      "walletConnector",
+      "portfolioAPI",
+      "oneInchSwap",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "priceImpactCalculator",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

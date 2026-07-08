@@ -1,0 +1,47 @@
+{
+  "id": "hc07",
+  "baseline": "constrained_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"chainSelector\",\"tokenSelector\",\"fusionPlus\",\"transactionMonitor\"],\"edges\":[[\"chainSelector\",\"fusionPlus\"],[\"tokenSelector\",\"fusionPlus\"],[\"fusionPlus\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"LINK\",\"amount\":\"120\",\"sourceChain\":\"Ethereum\",\"destinationChain\":\"zkSync\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "tokenSelector",
+      "fusionPlus",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "fusionPlus"
+      ],
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "LINK",
+      "amount": "120",
+      "sourceChain": "Ethereum",
+      "destinationChain": "zkSync"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "constrained_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

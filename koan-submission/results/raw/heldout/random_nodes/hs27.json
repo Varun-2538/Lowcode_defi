@@ -1,0 +1,44 @@
+{
+  "id": "hs27",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "portfolioAPI",
+      "limitOrder",
+      "transactionMonitor",
+      "oneInchQuote",
+      "fusionSwap"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "fusionSwap"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "hx06",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "portfolioAPI",
+      "chainSelector",
+      "tokenSelector",
+      "walletConnector",
+      "oneInchQuote",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

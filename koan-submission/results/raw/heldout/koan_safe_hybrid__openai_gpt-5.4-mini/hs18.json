@@ -1,0 +1,78 @@
+{
+  "id": "hs18",
+  "baseline": "koan_safe_hybrid",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"tokenSelector\",\"fusionSwap\"],\"edges\":[[\"walletConnector\",\"fusionSwap\"],[\"tokenSelector\",\"fusionSwap\"],[\"tokenSelector\",\"fusionSwap\"]],\"config\":{\"amount\":\"3 WBTC\",\"slippage\":\"0.8%\"},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "fusionSwap",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "fusionSwap"
+      ],
+      [
+        "tokenSelector",
+        "fusionSwap"
+      ],
+      [
+        "tokenSelector",
+        "fusionSwap"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "amount": "3 WBTC",
+      "slippage": "0.8%",
+      "fromToken": "WBTC",
+      "toToken": "USDT",
+      "warning_threshold": 3
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

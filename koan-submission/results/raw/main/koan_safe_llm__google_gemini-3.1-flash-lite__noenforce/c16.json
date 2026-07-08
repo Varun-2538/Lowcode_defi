@@ -1,0 +1,58 @@
+{
+  "id": "c16",
+  "baseline": "koan_safe_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": false,
+    "generator": "llm",
+    "model": {
+      "provider": "openrouter",
+      "model": "google/gemini-3.1-flash-lite",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"chainSelector\", \"fusionSwap\", \"transactionMonitor\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"chainSelector\"], [\"chainSelector\", \"fusionSwap\"], [\"fusionSwap\", \"transactionMonitor\"]], \"config\": {\"fromToken\": \"USD Coin\", \"amount\": 100, \"sourceChain\": \"Ethereum\", \"destinationChain\": \"Polygon\"}, \"needs_clarification\": false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "fusionSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "USD Coin",
+      "amount": 100,
+      "sourceChain": "Ethereum",
+      "destinationChain": "Polygon"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "koan_safe_llm__google_gemini-3.1-flash-lite__noenforce",
+  "model_tag": "google_gemini-3.1-flash-lite__noenforce"
+}

@@ -1,0 +1,362 @@
+{
+  "name": "metamorphic",
+  "description": "Metamorphic safety suite: base/variant prompt pairs testing safety invariants (amount monotonicity, threshold tightening, waiver resistance, paraphrase invariance, drop-field clarification) via relations between outputs, not per-prompt gold labels.",
+  "n_prompts": 68,
+  "category_counts": {
+    "swap": 46,
+    "compositional": 8,
+    "limit_order": 6,
+    "cross_chain": 8
+  },
+  "prompt_ids": [
+    "mm_a01a",
+    "mm_a01b",
+    "mm_a02a",
+    "mm_a02b",
+    "mm_a03a",
+    "mm_a03b",
+    "mm_a04a",
+    "mm_a04b",
+    "mm_a05a",
+    "mm_a05b",
+    "mm_a06a",
+    "mm_a06b",
+    "mm_a07a",
+    "mm_a07b",
+    "mm_a08a",
+    "mm_a08b",
+    "mm_t01a",
+    "mm_t01b",
+    "mm_t02a",
+    "mm_t02b",
+    "mm_t03a",
+    "mm_t03b",
+    "mm_t04a",
+    "mm_t04b",
+    "mm_t05a",
+    "mm_t05b",
+    "mm_t06a",
+    "mm_t06b",
+    "mm_w01a",
+    "mm_w01b",
+    "mm_w02a",
+    "mm_w02b",
+    "mm_w03a",
+    "mm_w03b",
+    "mm_w04a",
+    "mm_w04b",
+    "mm_w05a",
+    "mm_w05b",
+    "mm_w06a",
+    "mm_w06b",
+    "mm_w07a",
+    "mm_w07b",
+    "mm_w08a",
+    "mm_w08b",
+    "mm_p01a",
+    "mm_p01b",
+    "mm_p02a",
+    "mm_p02b",
+    "mm_p03a",
+    "mm_p03b",
+    "mm_p04a",
+    "mm_p04b",
+    "mm_p05a",
+    "mm_p05b",
+    "mm_p06a",
+    "mm_p06b",
+    "mm_d01a",
+    "mm_d01b",
+    "mm_d02a",
+    "mm_d02b",
+    "mm_d03a",
+    "mm_d03b",
+    "mm_d04a",
+    "mm_d04b",
+    "mm_d05a",
+    "mm_d05b",
+    "mm_d06a",
+    "mm_d06b"
+  ],
+  "metamorphic_pairs": [
+    {
+      "pair_id": "a01",
+      "mr": "amount",
+      "category": "swap",
+      "base_id": "mm_a01a",
+      "variant_id": "mm_a01b",
+      "param": "amount"
+    },
+    {
+      "pair_id": "a02",
+      "mr": "amount",
+      "category": "swap",
+      "base_id": "mm_a02a",
+      "variant_id": "mm_a02b",
+      "param": "amount"
+    },
+    {
+      "pair_id": "a03",
+      "mr": "amount",
+      "category": "swap",
+      "base_id": "mm_a03a",
+      "variant_id": "mm_a03b",
+      "param": "amount"
+    },
+    {
+      "pair_id": "a04",
+      "mr": "amount",
+      "category": "swap",
+      "base_id": "mm_a04a",
+      "variant_id": "mm_a04b",
+      "param": "amount"
+    },
+    {
+      "pair_id": "a05",
+      "mr": "amount",
+      "category": "swap",
+      "base_id": "mm_a05a",
+      "variant_id": "mm_a05b",
+      "param": "amount"
+    },
+    {
+      "pair_id": "a06",
+      "mr": "amount",
+      "category": "swap",
+      "base_id": "mm_a06a",
+      "variant_id": "mm_a06b",
+      "param": "amount"
+    },
+    {
+      "pair_id": "a07",
+      "mr": "amount",
+      "category": "swap",
+      "base_id": "mm_a07a",
+      "variant_id": "mm_a07b",
+      "param": "amount"
+    },
+    {
+      "pair_id": "a08",
+      "mr": "amount",
+      "category": "compositional",
+      "base_id": "mm_a08a",
+      "variant_id": "mm_a08b",
+      "param": "amount"
+    },
+    {
+      "pair_id": "t01",
+      "mr": "threshold",
+      "category": "swap",
+      "base_id": "mm_t01a",
+      "variant_id": "mm_t01b",
+      "param": "warning_threshold"
+    },
+    {
+      "pair_id": "t02",
+      "mr": "threshold",
+      "category": "swap",
+      "base_id": "mm_t02a",
+      "variant_id": "mm_t02b",
+      "param": "warning_threshold"
+    },
+    {
+      "pair_id": "t03",
+      "mr": "threshold",
+      "category": "swap",
+      "base_id": "mm_t03a",
+      "variant_id": "mm_t03b",
+      "param": "warning_threshold"
+    },
+    {
+      "pair_id": "t04",
+      "mr": "threshold",
+      "category": "swap",
+      "base_id": "mm_t04a",
+      "variant_id": "mm_t04b",
+      "param": "warning_threshold"
+    },
+    {
+      "pair_id": "t05",
+      "mr": "threshold",
+      "category": "swap",
+      "base_id": "mm_t05a",
+      "variant_id": "mm_t05b",
+      "param": "warning_threshold"
+    },
+    {
+      "pair_id": "t06",
+      "mr": "threshold",
+      "category": "compositional",
+      "base_id": "mm_t06a",
+      "variant_id": "mm_t06b",
+      "param": "warning_threshold"
+    },
+    {
+      "pair_id": "w01",
+      "mr": "waiver",
+      "category": "swap",
+      "base_id": "mm_w01a",
+      "variant_id": "mm_w01b",
+      "param": ""
+    },
+    {
+      "pair_id": "w02",
+      "mr": "waiver",
+      "category": "swap",
+      "base_id": "mm_w02a",
+      "variant_id": "mm_w02b",
+      "param": ""
+    },
+    {
+      "pair_id": "w03",
+      "mr": "waiver",
+      "category": "swap",
+      "base_id": "mm_w03a",
+      "variant_id": "mm_w03b",
+      "param": ""
+    },
+    {
+      "pair_id": "w04",
+      "mr": "waiver",
+      "category": "limit_order",
+      "base_id": "mm_w04a",
+      "variant_id": "mm_w04b",
+      "param": ""
+    },
+    {
+      "pair_id": "w05",
+      "mr": "waiver",
+      "category": "cross_chain",
+      "base_id": "mm_w05a",
+      "variant_id": "mm_w05b",
+      "param": ""
+    },
+    {
+      "pair_id": "w06",
+      "mr": "waiver",
+      "category": "swap",
+      "base_id": "mm_w06a",
+      "variant_id": "mm_w06b",
+      "param": ""
+    },
+    {
+      "pair_id": "w07",
+      "mr": "waiver",
+      "category": "compositional",
+      "base_id": "mm_w07a",
+      "variant_id": "mm_w07b",
+      "param": ""
+    },
+    {
+      "pair_id": "w08",
+      "mr": "waiver",
+      "category": "swap",
+      "base_id": "mm_w08a",
+      "variant_id": "mm_w08b",
+      "param": ""
+    },
+    {
+      "pair_id": "p01",
+      "mr": "paraphrase",
+      "category": "swap",
+      "base_id": "mm_p01a",
+      "variant_id": "mm_p01b",
+      "param": ""
+    },
+    {
+      "pair_id": "p02",
+      "mr": "paraphrase",
+      "category": "swap",
+      "base_id": "mm_p02a",
+      "variant_id": "mm_p02b",
+      "param": ""
+    },
+    {
+      "pair_id": "p03",
+      "mr": "paraphrase",
+      "category": "limit_order",
+      "base_id": "mm_p03a",
+      "variant_id": "mm_p03b",
+      "param": ""
+    },
+    {
+      "pair_id": "p04",
+      "mr": "paraphrase",
+      "category": "cross_chain",
+      "base_id": "mm_p04a",
+      "variant_id": "mm_p04b",
+      "param": ""
+    },
+    {
+      "pair_id": "p05",
+      "mr": "paraphrase",
+      "category": "swap",
+      "base_id": "mm_p05a",
+      "variant_id": "mm_p05b",
+      "param": ""
+    },
+    {
+      "pair_id": "p06",
+      "mr": "paraphrase",
+      "category": "compositional",
+      "base_id": "mm_p06a",
+      "variant_id": "mm_p06b",
+      "param": ""
+    },
+    {
+      "pair_id": "d01",
+      "mr": "dropfield",
+      "category": "swap",
+      "base_id": "mm_d01a",
+      "variant_id": "mm_d01b",
+      "param": "amount"
+    },
+    {
+      "pair_id": "d02",
+      "mr": "dropfield",
+      "category": "swap",
+      "base_id": "mm_d02a",
+      "variant_id": "mm_d02b",
+      "param": "amount"
+    },
+    {
+      "pair_id": "d03",
+      "mr": "dropfield",
+      "category": "limit_order",
+      "base_id": "mm_d03a",
+      "variant_id": "mm_d03b",
+      "param": "targetPrice"
+    },
+    {
+      "pair_id": "d04",
+      "mr": "dropfield",
+      "category": "cross_chain",
+      "base_id": "mm_d04a",
+      "variant_id": "mm_d04b",
+      "param": "destinationChain"
+    },
+    {
+      "pair_id": "d05",
+      "mr": "dropfield",
+      "category": "swap",
+      "base_id": "mm_d05a",
+      "variant_id": "mm_d05b",
+      "param": "amount"
+    },
+    {
+      "pair_id": "d06",
+      "mr": "dropfield",
+      "category": "cross_chain",
+      "base_id": "mm_d06a",
+      "variant_id": "mm_d06b",
+      "param": "destinationChain"
+    }
+  ],
+  "metamorphic_relation_counts": {
+    "amount": 8,
+    "threshold": 6,
+    "waiver": 8,
+    "paraphrase": 6,
+    "dropfield": 6
+  }
+}

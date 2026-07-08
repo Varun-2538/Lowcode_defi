@@ -1,0 +1,37 @@
+{
+  "id": "hc15",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "walletConnector",
+      "oneInchSwap",
+      "limitOrder",
+      "fusionPlus"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "fusionPlus"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

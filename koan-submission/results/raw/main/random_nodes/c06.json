@@ -1,0 +1,49 @@
+{
+  "id": "c06",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "priceImpactCalculator",
+      "tokenSelector",
+      "limitOrder",
+      "fusionPlus",
+      "transactionMonitor",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

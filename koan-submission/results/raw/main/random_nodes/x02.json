@@ -1,0 +1,37 @@
+{
+  "id": "x02",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "oneInchQuote",
+      "oneInchSwap",
+      "portfolioAPI",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "c25",
+  "baseline": "koan_safe_rules",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "fusionPlus",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDT",
+      "amount": "750",
+      "sourceChain": "arbitrum",
+      "destinationChain": "base",
+      "default_confirmations": 12,
+      "destinationAddress": "self"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "koan_safe_rules"
+}

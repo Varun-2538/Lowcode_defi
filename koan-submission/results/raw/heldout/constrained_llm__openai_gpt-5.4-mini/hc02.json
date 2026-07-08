@@ -1,0 +1,53 @@
+{
+  "id": "hc02",
+  "baseline": "constrained_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"chainSelector\",\"walletConnector\",\"tokenSelector\",\"oneInchSwap\",\"priceImpactCalculator\",\"transactionMonitor\"],\"edges\":[[\"chainSelector\",\"tokenSelector\"],[\"tokenSelector\",\"priceImpactCalculator\"],[\"priceImpactCalculator\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"ETH\",\"amount\":\"3\",\"sourceChain\":\"Optimism\",\"destinationChain\":\"Polygon\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "walletConnector",
+      "tokenSelector",
+      "oneInchSwap",
+      "priceImpactCalculator",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "ETH",
+      "amount": "3",
+      "sourceChain": "Optimism",
+      "destinationChain": "Polygon"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "constrained_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

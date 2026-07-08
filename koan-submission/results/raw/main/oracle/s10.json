@@ -1,0 +1,14 @@
+{
+  "id": "s10",
+  "baseline": "oracle",
+  "category": "swap",
+  "error": null,
+  "status": "needs_clarification",
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "oracle"
+}

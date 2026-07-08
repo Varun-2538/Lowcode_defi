@@ -1,0 +1,63 @@
+{
+  "id": "hl09",
+  "baseline": "koan_current",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Limit Order Application",
+    "tokens": [
+      "USDC",
+      "WBTC"
+    ],
+    "features": [
+      "limit orders"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Create a stop order to sell 0.6 WBTC into USDC at 68000 within 14 days.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "limitOrder",
+      "transactionMonitor"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "limitOrder",
+      "transactionMonitor",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {
+      "default_confirmations": 1,
+      "expiry": 30
+    },
+    "safety": [
+      "transaction_monitoring",
+      "expiry_set"
+    ]
+  },
+  "run_id": "koan_current"
+}

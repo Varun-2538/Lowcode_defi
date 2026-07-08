@@ -1,0 +1,37 @@
+{
+  "id": "s33",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "portfolioAPI",
+      "oneInchQuote",
+      "defiDashboard",
+      "chainSelector"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "chainSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

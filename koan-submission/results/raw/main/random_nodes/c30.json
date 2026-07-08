@@ -1,0 +1,32 @@
+{
+  "id": "c30",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchQuote",
+      "oneInchSwap",
+      "limitOrder",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

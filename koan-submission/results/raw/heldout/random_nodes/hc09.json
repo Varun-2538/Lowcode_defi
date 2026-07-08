@@ -1,0 +1,49 @@
+{
+  "id": "hc09",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "oneInchSwap",
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,80 @@
+\section{Analysis}
+\label{sec:analysis}
+
+\subsection{Construct validity: does the static proxy measure real safety?}
+
+The static safe-executable layer is a cheap proxy for an expensive property:
+whether a workflow is actually safe to run. We test the proxy against the
+on-chain outcome on every prompt the fork harness executed or gated to a
+definite safe/unsafe label ($n=891$ system$\times$prompt pairs on the held-out
+split). The proxy is \emph{sound} on this data: of the $282$ workflows it
+declares safe-executable, all $282$ are safe on-chain---\emph{precision
+$1.00$, zero false certifications}. Because Koan-Safe actually parameterizes a
+price-impact gate, these are genuine true positives, not an artifact of no
+system ever declaring safety (as was the case for the baselines alone). The
+proxy is also deliberately conservative: in $453$ pairs it withholds ``safe''
+from a workflow whose single executed swap happened to be within impact bounds,
+because it requires a declared gate rather than a fortunate trade size. The
+$156$ proxy-unsafe/on-chain-unsafe pairs are the concrete unsafe executions it
+correctly refuses to certify. This is the intended direction of error for a
+safety metric: it never certifies danger as safe.
+
+\subsection{Mainnet fidelity: is the local AMM a faithful proxy?}
+\label{sec:fidelity}
+
+The execution harness runs on a local EVM with an AMM seeded with synthetic
+reserves, which raises the question of whether its on-chain outcomes reflect
+real markets. We validate this directly against Ethereum mainnet. For every
+benchmark swap pair we read its \emph{real} Uniswap~V2 reserves at a pinned
+mainnet block over a read-only RPC, seed the identical harness AMM contract
+with those reserves, and compare the harness's quotes and \emph{actual on-chain
+executions} to the real Uniswap~V2 router across trade sizes from $10^{-6}$ to
+$0.5$ of the pool (Table~\ref{tab:fidelity}). Across all $11$ pairs---whose
+real reserves span several orders of magnitude, and including the held-out
+out-of-vocabulary tokens---and all seven trade sizes, the relative deviation of
+both the harness quote and the executed output from the real router is
+\emph{exactly zero}, and every harness quote equals the Uniswap~V2 integer
+formula bit-for-bit. This is expected but worth confirming: the harness is a
+faithful reimplementation of the constant-product AMM, not an approximation.
+The validation also clarifies why synthetic reserves suffice for the safety
+finding: under the $x{\cdot}y{=}k$ invariant, own-trade price impact is a
+function of the \emph{fraction} of reserves traded, so it is identical across
+pools of any absolute depth (e.g.\ $9.3\%$ impact at a tenth of the pool,
+$33.5\%$ at half). The unsafe-execution result is therefore a property of the
+missing price-impact gate and the AMM invariant, not of the particular reserves
+chosen; a large order is unsafe on a deep real pool at the same reserve
+fraction as on the harness. This is a read-only mainnet-state validation, not
+live-fund execution (Section~\ref{sec:limitations}).
+
+\input{tables/fidelity}
+
+\subsection{Failure taxonomy}
+
+Aggregating the per-prompt scores into named failure categories (released in
+full with the artifact) separates the systems' error profiles on the held-out
+split. The deployed Koan generator's failures are structural: $71$ missing
+required edges and $54$ missing required nodes, driven by fixed-suite
+over-generation. The LLM baselines' failures are predominantly
+\emph{safety-predicate} omissions: for direct Gemini the most frequent missing
+predicate is \texttt{price\_impact\_gate} ($43$ prompts), followed by
+\texttt{transaction\_monitoring} ($32$) and \texttt{bridge\_confirmation}
+($15$). Koan-Safe's enforcement layer targets exactly these: the hybrid
+generator's remaining errors are almost entirely structural
+(\texttt{missing\_required\_edge}~$20$, driven by the held-out structural
+variants) with only $8$ residual safety-predicate omissions in total, since
+the layer injects the safety policy the generator would otherwise omit.
+
+\subsection{Robustness to surface form and difficulty}
+
+The development split holds task semantics fixed across paraphrase clusters and
+tags each prompt with a difficulty tier, letting us separate competence from
+surface sensitivity. On development, within-cluster graph-valid agreement is
+high for Koan-Safe (rule-based $1.00$) because enforcement makes structure
+deterministic, and lower for constrained Gemini ($0.81$), indicating that some
+of the LLM baseline's structural score is surface-sensitive. Across difficulty
+tiers on the held-out split, the hybrid generator degrades gracefully (easy
+$1.00$, medium $0.77$, hard $0.25$) and dominates the constrained-LLM baseline
+at every tier (easy $0.56$, medium $0.26$, hard $0.17$); the hard tier is
+dominated by the novel structural variants, where the frozen rule-based
+generator falls furthest (hard $0.25$) and the neural generators recover most
+of the loss.

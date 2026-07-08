@@ -1,0 +1,22 @@
+{
+  "id": "hs12",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "needs_clarification",
+  "error": null,
+  "requirements": {
+    "pattern": "conversational",
+    "tokens": [],
+    "features": [],
+    "chains": [],
+    "user_intent": "Exchange 300 SUSHI into GRT, 1% slippage.",
+    "suggested_nodes": []
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

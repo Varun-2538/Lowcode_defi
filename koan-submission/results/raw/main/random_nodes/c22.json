@@ -1,0 +1,34 @@
+{
+  "id": "c22",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "transactionMonitor",
+      "fusionPlus",
+      "fusionSwap",
+      "walletConnector"
+    ],
+    "edges": [
+      [
+        "transactionMonitor",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "walletConnector"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

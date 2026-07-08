@@ -1,0 +1,64 @@
+{
+  "id": "hl13",
+  "baseline": "koan_safe_hybrid",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"tokenSelector\",\"oneInchQuote\",\"limitOrder\"],\"edges\":[[\"tokenSelector\",\"oneInchQuote\"],[\"tokenSelector\",\"limitOrder\"],[\"oneInchQuote\",\"limitOrder\"]],\"config\":{\"fromToken\":\"UNI\",\"toToken\":\"DAI\",\"amount\":\"400\",\"targetPrice\":\"13\",\"expiry\":\"10 days\"},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "oneInchQuote",
+      "limitOrder",
+      "walletConnector",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "oneInchQuote",
+        "limitOrder"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "UNI",
+      "toToken": "DAI",
+      "amount": "400",
+      "targetPrice": "13",
+      "expiry": "10 days"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "price_bound",
+      "expiry_set"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

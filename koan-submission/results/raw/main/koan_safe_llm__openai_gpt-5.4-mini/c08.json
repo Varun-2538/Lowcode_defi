@@ -1,0 +1,22 @@
+{
+  "id": "c08",
+  "baseline": "koan_safe_llm",
+  "category": "cross_chain",
+  "status": "needs_clarification",
+  "error": null,
+  "koan_safe": {
+    "decision": "clarify",
+    "reason": "identical source/destination chain",
+    "enforced": false,
+    "generator": "llm",
+    "model": null
+  },
+  "workflow": {
+    "nodes": [],
+    "edges": [],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_safe_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

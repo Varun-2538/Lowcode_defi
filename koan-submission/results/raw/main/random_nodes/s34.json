@@ -1,0 +1,49 @@
+{
+  "id": "s34",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "fusionPlus",
+      "oneInchQuote",
+      "tokenSelector",
+      "portfolioAPI",
+      "transactionMonitor",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "hc04",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "portfolioAPI",
+      "priceImpactCalculator",
+      "oneInchQuote",
+      "fusionPlus",
+      "oneInchSwap",
+      "limitOrder",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "portfolioAPI",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

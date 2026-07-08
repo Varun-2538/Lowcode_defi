@@ -1,0 +1,41 @@
+{
+  "id": "mm_t05b",
+  "baseline": "direct_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"tokenSelector\",\"priceImpactCalculator\",\"oneInchSwap\"],\"edges\":[[\"tokenSelector\",\"priceImpactCalculator\"],[\"priceImpactCalculator\",\"oneInchSwap\"]],\"config\":{\"fromToken\":\"WETH\",\"toToken\":\"USDT\",\"amount\":\"100\",\"warning_threshold\":\"1%\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "priceImpactCalculator",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {
+      "fromToken": "WETH",
+      "toToken": "USDT",
+      "amount": "100",
+      "warning_threshold": "1%"
+    },
+    "safety": [
+      "price_impact_gate"
+    ]
+  },
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

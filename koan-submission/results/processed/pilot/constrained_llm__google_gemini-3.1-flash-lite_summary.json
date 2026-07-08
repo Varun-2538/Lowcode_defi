@@ -1,0 +1,22 @@
+{
+  "baseline": "constrained_llm",
+  "n_total": 30,
+  "n_workflow": 26,
+  "n_clarification": 4,
+  "graph_valid_rate": 0.2692307692307692,
+  "executable_rate": 0.038461538461538464,
+  "safe_executable_rate": 0.0,
+  "mean_node_recall": 0.8546703296703296,
+  "mean_edge_recall": 0.6256410256410256,
+  "mean_config_completeness": 0.5634615384615385,
+  "mean_safety_recall": 0.49038461538461536,
+  "mean_extra_nodes": 0.46153846153846156,
+  "clarification_correct_rate": 1.0,
+  "run_id": "constrained_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite",
+  "split": "pilot",
+  "n_ok": 30,
+  "n_error": 0,
+  "n_skipped": 0,
+  "generated_at": "2026-07-07T16:53:57.410899+00:00"
+}

@@ -1,0 +1,1308 @@
+[
+  {
+    "id": "hc01",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc02",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc03",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc04",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc05",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc06",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc07",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc08",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc09",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc10",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc11",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc12",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc13",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc14",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc15",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_simulated",
+    "safe_execution": null,
+    "notes": "single local chain cannot bridge; out of harness scope",
+    "onchain": {}
+  },
+  {
+    "id": "hc16",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "hc17",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "hc18",
+    "baseline": "oracle",
+    "category": "cross_chain",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "hl01",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl02",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl03",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl04",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl05",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl06",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl07",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl08",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl09",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl10",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl11",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl12",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl13",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl14",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl15",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl16",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl17",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "reverted_slippage",
+    "safe_execution": true,
+    "notes": "target not met at execution; reverted",
+    "onchain": {
+      "mid_price": 3000.0,
+      "target_price": 3000.0,
+      "amount_in": "100000000000000000000",
+      "min_out": "300000000000000008388608",
+      "tx_status": 0,
+      "gas_used": null,
+      "revert_reason": "slippage"
+    }
+  },
+  {
+    "id": "hl18",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "hl19",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "hl20",
+    "baseline": "oracle",
+    "category": "limit_order",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "hs01",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs02",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs03",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs04",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs05",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs06",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs07",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs08",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs09",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs10",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs11",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs12",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs13",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs14",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs15",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs16",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs17",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs18",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs19",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs20",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs21",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs22",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs23",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs24",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs25",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs26",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs27",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs28",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00%",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hs29",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "hs30",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "hs31",
+    "baseline": "oracle",
+    "category": "swap",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "hx01",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx02",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx03",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx04",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx05",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx06",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx07",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx08",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx09",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx10",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx11",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx12",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx13",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx14",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx15",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "aborted_price_impact",
+    "safe_execution": true,
+    "notes": "impact 9.34% > gate 3.00% (swap leg only; limit leg not simulated on a static snapshot)",
+    "onchain": {
+      "amount_in": "100000000000000000000",
+      "quote_out": "271983268164044739474402",
+      "min_out": "269263435482404264869888",
+      "slippage_frac": 0.01,
+      "price_impact_pct": 9.3389,
+      "gate_declared": true,
+      "gate_threshold_pct": 3.0,
+      "action": "aborted_pre_send"
+    }
+  },
+  {
+    "id": "hx16",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "hx17",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  },
+  {
+    "id": "hx18",
+    "baseline": "oracle",
+    "category": "compositional",
+    "outcome": "not_executable",
+    "safe_execution": null,
+    "notes": "run status=needs_clarification; nothing to execute",
+    "onchain": {}
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "id": "hs18",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "priceImpactCalculator",
+      "walletConnector",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "priceImpactCalculator",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

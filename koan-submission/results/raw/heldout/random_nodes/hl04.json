@@ -1,0 +1,47 @@
+{
+  "id": "hl04",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "chainSelector",
+      "limitOrder",
+      "fusionPlus",
+      "tokenSelector",
+      "defiDashboard",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

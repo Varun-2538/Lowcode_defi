@@ -1,0 +1,42 @@
+{
+  "id": "s20",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "oneInchQuote",
+      "fusionSwap",
+      "portfolioAPI",
+      "walletConnector",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

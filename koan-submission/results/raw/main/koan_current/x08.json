@@ -1,0 +1,64 @@
+{
+  "id": "x08",
+  "baseline": "koan_current",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Limit Order Application",
+    "tokens": [
+      "ETH",
+      "USDC"
+    ],
+    "features": [
+      "slippage protection",
+      "limit orders"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Build me an app to swap 1 ETH to USDC at 1% slippage and also set a limit order to buy back ETH at 2500.",
+    "suggested_nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "limitOrder",
+      "transactionMonitor"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "limitOrder",
+      "transactionMonitor",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {
+      "default_confirmations": 1,
+      "expiry": 30
+    },
+    "safety": [
+      "transaction_monitoring",
+      "expiry_set"
+    ]
+  },
+  "run_id": "koan_current"
+}

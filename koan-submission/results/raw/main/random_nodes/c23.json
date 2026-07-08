@@ -1,0 +1,47 @@
+{
+  "id": "c23",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "priceImpactCalculator",
+      "fusionPlus",
+      "portfolioAPI",
+      "defiDashboard",
+      "limitOrder",
+      "tokenSelector",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "priceImpactCalculator",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

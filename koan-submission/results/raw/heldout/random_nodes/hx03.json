@@ -1,0 +1,32 @@
+{
+  "id": "hx03",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "limitOrder",
+      "defiDashboard",
+      "fusionSwap",
+      "chainSelector"
+    ],
+    "edges": [
+      [
+        "limitOrder",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "chainSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

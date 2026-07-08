@@ -1,0 +1,27 @@
+{
+  "id": "x10",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "portfolioAPI",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

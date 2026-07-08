@@ -1,0 +1,33 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Workflow and agentic generation benchmarks.} Recent work
+evaluates whether language models can generate multi-step workflows.
+WorFBench~\cite{worfbench2025} benchmarks agentic workflow generation and
+scores generated workflows largely at the level of graph structure and
+node/edge correctness. Our work is complementary but distinct: we argue
+that for a high-stakes execution domain such as DeFi, graph-level
+correctness is necessary but insufficient, and we add executable and
+on-chain safety layers on top of structural scoring.
+
+\paragraph{Tool-use and API evaluation.} A related line evaluates LLMs as
+tool users. ToolLLM~\cite{toolllm2024} and
+API-Bank~\cite{apibank2023} measure whether models can select and invoke
+external APIs to satisfy instructions. These benchmarks emphasize correct
+API selection and invocation; they do not model domain-specific safety
+predicates such as price-impact gating, nor do they execute the resulting
+plans against a stateful financial system. We adopt the tool-use framing
+but specialize the evaluation to safety-constrained on-chain execution.
+
+\paragraph{Decentralized finance and automated market makers.} Our
+execution layer builds on the constant-product automated market maker
+design introduced by Uniswap~\cite{uniswapv2}, whose $x\cdot y = k$
+invariant makes price impact an explicit, computable function of trade
+size. This is precisely the property that lets us distinguish a slippage
+bound from a price-impact gate and observe unsafe execution directly.
+
+\paragraph{No-code DeFi workflow systems.} We evaluate an existing no-code
+DeFi platform (Koan) as a first-class baseline rather than a strawman,
+using its real intent parser and workflow generator. To our knowledge,
+prior no-code DeFi tooling has not been evaluated against an executable
+safety benchmark, which is the gap this paper addresses.

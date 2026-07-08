@@ -1,0 +1,39 @@
+{
+  "id": "l09",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "fusionPlus",
+      "oneInchSwap",
+      "oneInchQuote",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

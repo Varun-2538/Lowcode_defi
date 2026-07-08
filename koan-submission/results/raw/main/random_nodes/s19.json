@@ -1,0 +1,32 @@
+{
+  "id": "s19",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "oneInchSwap",
+      "fusionPlus",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

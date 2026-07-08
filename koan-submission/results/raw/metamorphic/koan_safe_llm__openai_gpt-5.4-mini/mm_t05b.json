@@ -1,0 +1,77 @@
+{
+  "id": "mm_t05b",
+  "baseline": "koan_safe_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "llm",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"tokenSelector\",\"tokenSelector\",\"priceImpactCalculator\",\"oneInchQuote\",\"oneInchSwap\"],\"edges\":[[\"tokenSelector\",\"priceImpactCalculator\"],[\"tokenSelector\",\"priceImpactCalculator\"],[\"tokenSelector\",\"oneInchQuote\"],[\"tokenSelector\",\"oneInchQuote\"],[\"oneInchQuote\",\"priceImpactCalculator\"],[\"priceImpactCalculator\",\"oneInchSwap\"]],\"config\":{\"fromToken\":\"WETH\",\"toToken\":\"USDT\",\"amount\":\"100\",\"warning_threshold\":\"1%\"},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "priceImpactCalculator",
+      "oneInchQuote",
+      "oneInchSwap",
+      "walletConnector",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "WETH",
+      "toToken": "USDT",
+      "amount": "100",
+      "warning_threshold": "1%",
+      "slippage": "1%"
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "koan_safe_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

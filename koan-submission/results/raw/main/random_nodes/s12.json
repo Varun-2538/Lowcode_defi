@@ -1,0 +1,29 @@
+{
+  "id": "s12",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "transactionMonitor",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

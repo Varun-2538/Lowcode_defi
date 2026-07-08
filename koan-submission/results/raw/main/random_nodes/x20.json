@@ -1,0 +1,49 @@
+{
+  "id": "x20",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionPlus",
+      "oneInchSwap",
+      "priceImpactCalculator",
+      "transactionMonitor",
+      "oneInchQuote",
+      "portfolioAPI",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "fusionPlus",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "limitOrder"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

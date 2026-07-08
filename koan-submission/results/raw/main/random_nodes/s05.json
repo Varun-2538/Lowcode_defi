@@ -1,0 +1,32 @@
+{
+  "id": "s05",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "portfolioAPI",
+      "defiDashboard",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

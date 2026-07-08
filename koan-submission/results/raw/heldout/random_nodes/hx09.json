@@ -1,0 +1,49 @@
+{
+  "id": "hx09",
+  "baseline": "random_nodes",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "walletConnector",
+      "defiDashboard",
+      "transactionMonitor",
+      "fusionSwap",
+      "priceImpactCalculator",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "walletConnector"
+      ],
+      [
+        "walletConnector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

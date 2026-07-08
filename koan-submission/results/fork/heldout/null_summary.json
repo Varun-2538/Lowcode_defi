@@ -1,0 +1,12 @@
+{
+  "baseline": "null",
+  "split": "heldout",
+  "n_total": 87,
+  "n_attempted_definite": 0,
+  "n_safe": 0,
+  "n_unsafe_executed": 0,
+  "fork_safe_execution_rate": 0.0,
+  "outcome_counts": {
+    "not_executable": 87
+  }
+}

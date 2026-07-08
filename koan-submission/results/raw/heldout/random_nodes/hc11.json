@@ -1,0 +1,39 @@
+{
+  "id": "hc11",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "fusionPlus",
+      "oneInchSwap",
+      "limitOrder",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

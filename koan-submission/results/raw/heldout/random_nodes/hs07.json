@@ -1,0 +1,29 @@
+{
+  "id": "hs07",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "transactionMonitor",
+      "oneInchQuote",
+      "oneInchSwap"
+    ],
+    "edges": [
+      [
+        "transactionMonitor",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

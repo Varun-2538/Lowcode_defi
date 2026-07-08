@@ -1,0 +1,34 @@
+{
+  "id": "hs24",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "chainSelector",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

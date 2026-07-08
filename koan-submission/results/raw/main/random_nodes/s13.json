@@ -1,0 +1,27 @@
+{
+  "id": "s13",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "oneInchQuote",
+      "chainSelector"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "chainSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

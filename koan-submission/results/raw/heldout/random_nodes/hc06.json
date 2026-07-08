@@ -1,0 +1,39 @@
+{
+  "id": "hc06",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "oneInchSwap",
+      "tokenSelector",
+      "portfolioAPI",
+      "transactionMonitor",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "oneInchSwap",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "l19",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "fusionSwap",
+      "tokenSelector",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "fusionSwap",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

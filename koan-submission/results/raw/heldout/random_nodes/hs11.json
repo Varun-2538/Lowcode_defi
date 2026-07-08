@@ -1,0 +1,32 @@
+{
+  "id": "hs11",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "priceImpactCalculator",
+      "limitOrder",
+      "defiDashboard",
+      "tokenSelector"
+    ],
+    "edges": [
+      [
+        "priceImpactCalculator",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "tokenSelector"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

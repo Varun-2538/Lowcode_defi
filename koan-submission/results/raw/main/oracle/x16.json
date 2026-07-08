@@ -1,0 +1,60 @@
+{
+  "id": "x16",
+  "baseline": "oracle",
+  "category": "compositional",
+  "error": null,
+  "status": "ok",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "limitOrder",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "toToken": "ETH",
+      "amount": "100",
+      "slippage": "1%",
+      "targetPrice": "3000",
+      "warning_threshold": 3.0,
+      "destinationChain": "polygon"
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring",
+      "price_bound"
+    ]
+  },
+  "run_id": "oracle"
+}

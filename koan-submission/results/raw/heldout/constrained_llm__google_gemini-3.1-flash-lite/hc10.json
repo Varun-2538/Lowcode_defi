@@ -1,0 +1,62 @@
+{
+  "id": "hc10",
+  "baseline": "constrained_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\": [\"walletConnector\", \"tokenSelector\", \"chainSelector\", \"oneInchSwap\", \"priceImpactCalculator\", \"transactionMonitor\", \"defiDashboard\"], \"edges\": [[\"walletConnector\", \"tokenSelector\"], [\"tokenSelector\", \"chainSelector\"], [\"chainSelector\", \"oneInchSwap\"], [\"oneInchSwap\", \"priceImpactCalculator\"], [\"priceImpactCalculator\", \"transactionMonitor\"], [\"transactionMonitor\", \"defiDashboard\"]], \"config\": {\"amount\": 300, \"fromToken\": \"USDC\", \"sourceChain\": \"Ethereum\", \"destinationChain\": \"Arbitrum\"}, \"needs_clarification\": false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "chainSelector",
+      "oneInchSwap",
+      "priceImpactCalculator",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "amount": 300,
+      "fromToken": "USDC",
+      "sourceChain": "Ethereum",
+      "destinationChain": "Arbitrum"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "constrained_llm__google_gemini-3.1-flash-lite",
+  "model_tag": "google_gemini-3.1-flash-lite"
+}

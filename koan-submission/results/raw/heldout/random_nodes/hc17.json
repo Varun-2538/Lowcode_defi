@@ -1,0 +1,27 @@
+{
+  "id": "hc17",
+  "baseline": "random_nodes",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "defiDashboard",
+      "oneInchQuote",
+      "fusionPlus"
+    ],
+    "edges": [
+      [
+        "defiDashboard",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "fusionPlus"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,57 @@
+\section{Discussion}
+\label{sec:discussion}
+
+The benchmark exposes a consistent division of labor among failure modes.
+Deterministic template instantiation guarantees structure but cannot bind
+trade-specific parameters, so its outputs are inert. The deployed Koan
+generator, driven by pattern templates, over-generates and mis-routes,
+which breaks structural validity even where its intent classification is
+correct. Language models invert this trade-off: they parse the request
+well enough to fill in concrete amounts, tokens, and prices, but they do
+not reliably reproduce the required graph structure, and, most
+importantly, they do not wire the safety machinery that would make an
+executable trade safe.
+
+The ablations refine rather than overturn this picture. Structural
+constraints and few-shot examples improve graph validity but leave the
+on-chain unsafe executions intact; only an explicit safety instruction
+induces the missing price-impact gate and drives on-chain unsafe execution
+to zero. Yet even that intervention leaves most workflows structurally
+incomplete, so no single prompt-level fix closes both halves of the gap.
+This asymmetry---safety parameterization is promptable, but robust
+structure is not---is itself a finding about where the difficulty lies.
+
+The on-chain result sharpens the practical stakes. A workflow that a
+graph-only or even a configuration-level evaluator would accept as
+``executable'' can, when actually run, mine a trade at severe self-inflicted
+price impact. This happens precisely because the systems conflate two
+different protections: a slippage bound, which guards against price
+movement between quote and execution, and a price-impact gate, which
+guards against the cost of one's own order. Templates encode a static
+threshold but have no live trade to protect; language models supply the
+live trade but omit the gate. Neither composition is safe.
+
+These observations suggest that safe DeFi workflow synthesis should be
+evaluated, and built, as a constraint-satisfaction problem over executable
+state rather than as graph generation. A generator that emits a
+structurally plausible, parameter-complete workflow is not done: the
+workflow must additionally carry, and enforce, the safety predicates that
+the target protocols require. Our benchmark operationalizes exactly this
+requirement and makes the gap measurable.
+
+Koan-Safe is a direct consequence of this framing, and its results support it.
+Treating safety as an enforcement pass over a candidate workflow---rather than
+as an emergent property of the generator---doubles safe-executability over the
+best baseline on a held-out split and eliminates on-chain unsafe execution
+across three different generators and two model families. The enforcement
+on/off ablation shows the layer, not the generator, is responsible. Two
+qualifications keep the claim honest. First, the layer improves safety but not
+intent: it never invents a missing amount or price, so a request that omits
+them still yields a non-executable workflow, which is the correct conservative
+behavior but caps the achievable rate. Second, the split between generators is
+informative: the frozen rule-based presets do not cover novel workflow
+structures and lose structural validity on the held-out variants, whereas a
+language-model generator under the same enforcement layer recovers most of that
+loss. The practical recommendation is therefore a hybrid: use a flexible
+generator for structure and a deterministic enforcement layer for safety, and
+evaluate the composition on executable ground truth rather than graph shape.

@@ -1,0 +1,37 @@
+{
+  "id": "hc11",
+  "baseline": "koan_current",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Portfolio Dashboard",
+    "tokens": [
+      "ETH"
+    ],
+    "features": [],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Move 2 ETH from Polygon to Optimism with a live dashboard of the transfer.",
+    "suggested_nodes": [
+      "walletConnector",
+      "portfolioAPI"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "hs24",
+  "baseline": "fewshot_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"portfolioAPI\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"portfolioAPI\"]],\"config\":{\"fromToken\":\"USDC\",\"toToken\":\"WBTC\",\"amount\":\"600\",\"slippage\":\"1%\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "toToken": "WBTC",
+      "amount": "600",
+      "slippage": "1%"
+    },
+    "safety": [
+      "slippage_bound"
+    ]
+  },
+  "run_id": "fewshot_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

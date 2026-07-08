@@ -1,0 +1,42 @@
+{
+  "id": "s39",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "limitOrder",
+      "oneInchSwap",
+      "portfolioAPI",
+      "defiDashboard",
+      "fusionSwap"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "fusionSwap"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "mm_w07b",
+  "baseline": "direct_llm",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"oneInchSwap\",\"limitOrder\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"oneInchSwap\"],[\"walletConnector\",\"limitOrder\"]],\"config\":{\"fromToken\":\"DAI\",\"toToken\":\"ETH\",\"amount\":\"500\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchSwap",
+      "limitOrder"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchSwap"
+      ],
+      [
+        "walletConnector",
+        "limitOrder"
+      ]
+    ],
+    "config": {
+      "fromToken": "DAI",
+      "toToken": "ETH",
+      "amount": "500"
+    },
+    "safety": []
+  },
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

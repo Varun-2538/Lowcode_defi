@@ -1,0 +1,66 @@
+{
+  "id": "hs28",
+  "baseline": "direct_llm",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"tokenSelector\",\"chainSelector\",\"priceImpactCalculator\",\"oneInchQuote\",\"oneInchSwap\",\"portfolioAPI\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"tokenSelector\"],[\"tokenSelector\",\"chainSelector\"],[\"chainSelector\",\"priceImpactCalculator\"],[\"priceImpactCalculator\",\"oneInchQuote\"],[\"oneInchQuote\",\"oneInchSwap\"],[\"oneInchSwap\",\"portfolioAPI\"]],\"config\":{\"amount\":\"150\",\"slippage\":\"slippage protection\",\"fromToken\":\"MATIC\",\"toToken\":\"USDC\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "tokenSelector",
+      "chainSelector",
+      "priceImpactCalculator",
+      "oneInchQuote",
+      "oneInchSwap",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {
+      "amount": "150",
+      "slippage": "slippage protection",
+      "fromToken": "MATIC",
+      "toToken": "USDC"
+    },
+    "safety": [
+      "slippage_bound"
+    ]
+  },
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

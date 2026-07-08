@@ -1,0 +1,42 @@
+{
+  "id": "hl10",
+  "baseline": "random_nodes",
+  "category": "limit_order",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "chainSelector",
+      "oneInchSwap",
+      "tokenSelector",
+      "defiDashboard",
+      "portfolioAPI",
+      "oneInchQuote"
+    ],
+    "edges": [
+      [
+        "chainSelector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "defiDashboard"
+      ],
+      [
+        "defiDashboard",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "oneInchQuote"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "random_nodes"
+}

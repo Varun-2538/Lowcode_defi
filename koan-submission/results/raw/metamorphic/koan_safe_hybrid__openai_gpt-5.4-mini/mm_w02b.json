@@ -1,0 +1,73 @@
+{
+  "id": "mm_w02b",
+  "baseline": "koan_safe_hybrid",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"tokenSelector\",\"oneInchSwap\",\"transactionMonitor\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"tokenSelector\"],[\"tokenSelector\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"]],\"config\":{\"fromToken\":\"USDC\",\"toToken\":\"WBTC\",\"amount\":\"300\"},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchSwap",
+      "transactionMonitor",
+      "oneInchQuote",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ]
+    ],
+    "config": {
+      "fromToken": "USDC",
+      "toToken": "WBTC",
+      "amount": "300",
+      "slippage": "1%",
+      "warning_threshold": 3
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

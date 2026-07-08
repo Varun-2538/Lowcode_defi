@@ -1,0 +1,64 @@
+{
+  "id": "c24",
+  "baseline": "koan_safe_hybrid",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "koan_safe": {
+    "decision": "build",
+    "reason": "",
+    "enforced": true,
+    "generator": "hybrid",
+    "model": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "temperature": 0.0,
+      "raw_output": "{\"nodes\":[\"tokenSelector\",\"chainSelector\",\"fusionPlus\"],\"edges\":[[\"tokenSelector\",\"fusionPlus\"],[\"chainSelector\",\"fusionPlus\"]],\"config\":{\"fromToken\":\"WBTC\",\"sourceChain\":\"Avalanche\",\"destinationChain\":\"Arbitrum\"},\"needs_clarification\":false}"
+    }
+  },
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "chainSelector",
+      "fusionPlus",
+      "walletConnector",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "fusionPlus"
+      ],
+      [
+        "chainSelector",
+        "fusionPlus"
+      ],
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "fromToken": "WBTC",
+      "sourceChain": "Avalanche",
+      "destinationChain": "Arbitrum",
+      "default_confirmations": 12,
+      "destinationAddress": "self"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "koan_safe_hybrid__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

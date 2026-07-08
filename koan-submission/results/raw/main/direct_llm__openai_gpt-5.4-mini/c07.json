@@ -1,0 +1,52 @@
+{
+  "id": "c07",
+  "baseline": "direct_llm",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"chainSelector\",\"tokenSelector\",\"fusionSwap\",\"transactionMonitor\"],\"edges\":[[\"walletConnector\",\"chainSelector\"],[\"chainSelector\",\"tokenSelector\"],[\"tokenSelector\",\"fusionSwap\"],[\"fusionSwap\",\"transactionMonitor\"]],\"config\":{\"amount\":\"250\",\"fromToken\":\"DAI\",\"sourceChain\":\"Polygon\",\"destinationChain\":\"Arbitrum\"},\"needs_clarification\":false}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "fusionSwap",
+      "transactionMonitor"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "fusionSwap"
+      ],
+      [
+        "fusionSwap",
+        "transactionMonitor"
+      ]
+    ],
+    "config": {
+      "amount": "250",
+      "fromToken": "DAI",
+      "sourceChain": "Polygon",
+      "destinationChain": "Arbitrum"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "destination_chain_check"
+    ]
+  },
+  "run_id": "direct_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

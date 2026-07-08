@@ -1,0 +1,49 @@
+{
+  "id": "s32",
+  "baseline": "random_nodes",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "workflow": {
+    "nodes": [
+      "transactionMonitor",
+      "oneInchSwap",
+      "tokenSelector",
+      "oneInchQuote",
+      "portfolioAPI",
+      "fusionPlus",
+      "priceImpactCalculator"
+    ],
+    "edges": [
+      [
+        "transactionMonitor",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "portfolioAPI"
+      ],
+      [
+        "portfolioAPI",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "priceImpactCalculator"
+      ]
+    ],
+    "config": {},
+    "safety": [
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "random_nodes"
+}

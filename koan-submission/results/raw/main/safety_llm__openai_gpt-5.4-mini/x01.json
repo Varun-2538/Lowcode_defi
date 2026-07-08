@@ -1,0 +1,84 @@
+{
+  "id": "x01",
+  "baseline": "safety_llm",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"walletConnector\",\"tokenSelector\",\"oneInchQuote\",\"priceImpactCalculator\",\"oneInchSwap\",\"limitOrder\",\"transactionMonitor\",\"defiDashboard\"],\"edges\":[[\"walletConnector\",\"tokenSelector\"],[\"tokenSelector\",\"oneInchQuote\"],[\"tokenSelector\",\"priceImpactCalculator\"],[\"priceImpactCalculator\",\"oneInchSwap\"],[\"oneInchQuote\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"],[\"tokenSelector\",\"limitOrder\"],[\"limitOrder\",\"transactionMonitor\"],[\"walletConnector\",\"defiDashboard\"],[\"transactionMonitor\",\"defiDashboard\"]],\"config\":{\"fromToken\":\"ETH\",\"toToken\":\"USDC\",\"slippage\":\"0.5%\",\"warning_threshold\":\"1%\",\"targetPrice\":\"not_provided\",\"expiry\":\"not_provided\"},\"needs_clarification\":true}",
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "tokenSelector",
+      "oneInchQuote",
+      "priceImpactCalculator",
+      "oneInchSwap",
+      "limitOrder",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "tokenSelector"
+      ],
+      [
+        "tokenSelector",
+        "oneInchQuote"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "tokenSelector",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "transactionMonitor"
+      ],
+      [
+        "walletConnector",
+        "defiDashboard"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "fromToken": "ETH",
+      "toToken": "USDC",
+      "slippage": "0.5%",
+      "warning_threshold": "1%",
+      "targetPrice": "not_provided",
+      "expiry": "not_provided"
+    },
+    "safety": [
+      "slippage_bound",
+      "price_impact_gate",
+      "transaction_monitoring",
+      "price_bound",
+      "expiry_set"
+    ]
+  },
+  "run_id": "safety_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}

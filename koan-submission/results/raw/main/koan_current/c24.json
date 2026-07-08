@@ -1,0 +1,63 @@
+{
+  "id": "c24",
+  "baseline": "koan_current",
+  "category": "cross_chain",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Cross-Chain Bridge",
+    "tokens": [
+      "WBTC"
+    ],
+    "features": [],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Cross-chain transfer WBTC from Avalanche to Arbitrum.",
+    "suggested_nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "fusionPlus",
+      "transactionMonitor"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "fusionPlus",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "default_confirmations": 3,
+      "min_confirmations": 3,
+      "sourceChain": "ethereum",
+      "destinationChain": "ethereum"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "koan_current"
+}

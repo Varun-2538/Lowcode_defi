@@ -1,0 +1,66 @@
+{
+  "id": "hx14",
+  "baseline": "koan_current",
+  "category": "compositional",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Cross-Chain Bridge",
+    "tokens": [
+      "USDC",
+      "USDT"
+    ],
+    "features": [
+      "slippage protection"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Cross-chain: convert 600 USDC on Avalanche to USDT on Polygon at 0.8% slippage.",
+    "suggested_nodes": [
+      "walletConnector",
+      "chainSelector",
+      "tokenSelector",
+      "fusionPlus",
+      "transactionMonitor"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "chainSelector",
+      "fusionPlus",
+      "transactionMonitor",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "chainSelector"
+      ],
+      [
+        "chainSelector",
+        "fusionPlus"
+      ],
+      [
+        "fusionPlus",
+        "transactionMonitor"
+      ],
+      [
+        "transactionMonitor",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "default_confirmations": 3,
+      "min_confirmations": 3,
+      "sourceChain": "ethereum",
+      "destinationChain": "ethereum"
+    },
+    "safety": [
+      "transaction_monitoring",
+      "bridge_confirmation"
+    ]
+  },
+  "run_id": "koan_current"
+}

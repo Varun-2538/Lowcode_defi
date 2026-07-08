@@ -1,0 +1,41 @@
+{
+  "id": "hs26",
+  "baseline": "koan_current",
+  "category": "swap",
+  "status": "ok",
+  "error": null,
+  "requirements": {
+    "pattern": "Portfolio Dashboard",
+    "tokens": [
+      "ETH",
+      "DAI"
+    ],
+    "features": [
+      "slippage protection",
+      "transaction monitoring"
+    ],
+    "chains": [
+      "ethereum"
+    ],
+    "user_intent": "Convert 350 DAI to WETH at 0.5% slippage and monitor my portfolio afterwards.",
+    "suggested_nodes": [
+      "walletConnector",
+      "portfolioAPI"
+    ]
+  },
+  "workflow": {
+    "nodes": [
+      "walletConnector",
+      "portfolioAPI"
+    ],
+    "edges": [
+      [
+        "walletConnector",
+        "portfolioAPI"
+      ]
+    ],
+    "config": {},
+    "safety": []
+  },
+  "run_id": "koan_current"
+}

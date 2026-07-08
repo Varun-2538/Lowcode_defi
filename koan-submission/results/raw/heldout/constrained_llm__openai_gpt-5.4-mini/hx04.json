@@ -1,0 +1,64 @@
+{
+  "id": "hx04",
+  "baseline": "constrained_llm",
+  "category": "compositional",
+  "status": "needs_clarification",
+  "error": null,
+  "model": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "temperature": 0.0
+  },
+  "raw_output": "{\"nodes\":[\"tokenSelector\",\"tokenSelector\",\"priceImpactCalculator\",\"oneInchQuote\",\"oneInchSwap\",\"transactionMonitor\",\"limitOrder\",\"defiDashboard\"],\"edges\":[[\"tokenSelector\",\"priceImpactCalculator\"],[\"tokenSelector\",\"priceImpactCalculator\"],[\"priceImpactCalculator\",\"oneInchQuote\"],[\"oneInchQuote\",\"oneInchSwap\"],[\"oneInchSwap\",\"transactionMonitor\"],[\"priceImpactCalculator\",\"limitOrder\"],[\"limitOrder\",\"defiDashboard\"]],\"config\":{\"warning_threshold\":\"price impact warnings\"},\"needs_clarification\":true}",
+  "workflow": {
+    "nodes": [
+      "tokenSelector",
+      "tokenSelector",
+      "priceImpactCalculator",
+      "oneInchQuote",
+      "oneInchSwap",
+      "transactionMonitor",
+      "limitOrder",
+      "defiDashboard"
+    ],
+    "edges": [
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "tokenSelector",
+        "priceImpactCalculator"
+      ],
+      [
+        "priceImpactCalculator",
+        "oneInchQuote"
+      ],
+      [
+        "oneInchQuote",
+        "oneInchSwap"
+      ],
+      [
+        "oneInchSwap",
+        "transactionMonitor"
+      ],
+      [
+        "priceImpactCalculator",
+        "limitOrder"
+      ],
+      [
+        "limitOrder",
+        "defiDashboard"
+      ]
+    ],
+    "config": {
+      "warning_threshold": "price impact warnings"
+    },
+    "safety": [
+      "price_impact_gate",
+      "transaction_monitoring"
+    ]
+  },
+  "run_id": "constrained_llm__openai_gpt-5.4-mini",
+  "model_tag": "openai_gpt-5.4-mini"
+}
