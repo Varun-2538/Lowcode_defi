@@ -1,33 +1,50 @@
 \section{Related Work}
 \label{sec:related}
 
-\paragraph{Workflow and agentic generation benchmarks.} Recent work
-evaluates whether language models can generate multi-step workflows.
-WorFBench~\cite{worfbench2025} benchmarks agentic workflow generation and
-scores generated workflows largely at the level of graph structure and
-node/edge correctness. Our work is complementary but distinct: we argue
-that for a high-stakes execution domain such as DeFi, graph-level
-correctness is necessary but insufficient, and we add executable and
-on-chain safety layers on top of structural scoring.
+\paragraph{Workflow-generation benchmarks.} One line of work evaluates
+whether language models can emit multi-step workflows from natural
+language. WorFBench~\cite{worfbench2025} scores agentic workflow
+generation at the level of graph structure and node/edge correctness;
+Chat2Workflow~\cite{chat2workflow2026} targets deployable visual
+workflows for platforms such as Dify and Coze and finds models capture
+intent but produce unstable structure; FlowBench~\cite{flowbench2024}
+benchmarks workflow-\emph{guided} planning across knowledge formats; and
+FlowMind~\cite{flowmind2023} generates finance workflows grounded in
+vetted APIs. These benchmarks establish that structural workflow
+generation is hard, but their evaluation stops at our ladder's levels
+1--2: none models domain safety predicates, and none executes the
+generated plan against a stateful system to observe whether declared
+protections actually fire. \textsc{DeFiFlowBench} adds those two layers
+and shows they are where systems fail.
 
-\paragraph{Tool-use and API evaluation.} A related line evaluates LLMs as
-tool users. ToolLLM~\cite{toolllm2024} and
-API-Bank~\cite{apibank2023} measure whether models can select and invoke
-external APIs to satisfy instructions. These benchmarks emphasize correct
-API selection and invocation; they do not model domain-specific safety
-predicates such as price-impact gating, nor do they execute the resulting
-plans against a stateful financial system. We adopt the tool-use framing
-but specialize the evaluation to safety-constrained on-chain execution.
+\paragraph{Tool-use and API evaluation.} ToolLLM~\cite{toolllm2024} and
+API-Bank~\cite{apibank2023} measure whether models select and invoke
+external APIs correctly. We adopt the tool-use framing but specialize it
+to a domain where a correct-looking invocation can be financially unsafe:
+the property of interest is not call validity but the presence and
+enforcement of safety predicates such as price-impact gating.
 
-\paragraph{Decentralized finance and automated market makers.} Our
-execution layer builds on the constant-product automated market maker
-design introduced by Uniswap~\cite{uniswapv2}, whose $x\cdot y = k$
-invariant makes price impact an explicit, computable function of trade
-size. This is precisely the property that lets us distinguish a slippage
-bound from a price-impact gate and observe unsafe execution directly.
+\paragraph{Natural language to on-chain transactions.} Closest to our
+domain, Intent2Tx~\cite{intent2tx2026} benchmarks LLMs translating
+intents into Ethereum transactions with execution-aware scoring on forked
+state, and finds syntactically valid outputs often fail to achieve the
+intended state transition. \textsc{Intent-Tx-18K}~\cite{intenttx18k2026}
+validates whether a \emph{proposed} transaction matches a stated intent,
+including adversarial violations. These efforts operate at
+the granularity of a single transaction or contract. Our unit of
+evaluation is the multi-step workflow, where the failure mode we isolate
+(a wired slippage bound with no price-impact gate) emerges from the
+composition of nodes rather than from any single call. To our knowledge,
+we are also the first to pair a workflow-level DeFi benchmark with a
+generator-agnostic enforcement layer and an ablation isolating it.
 
-\paragraph{No-code DeFi workflow systems.} We evaluate an existing no-code
-DeFi platform (Koan) as a first-class baseline rather than a strawman,
-using its real intent parser and workflow generator. To our knowledge,
-prior no-code DeFi tooling has not been evaluated against an executable
-safety benchmark, which is the gap this paper addresses.
+\paragraph{DeFi execution and safety.} Our execution layer builds on the
+constant-product AMM of Uniswap~V2~\cite{uniswapv2}, whose
+$x \cdot y = k$ invariant makes own-trade price impact an explicit,
+computable function of trade size. The broader DeFi literature documents why
+execution-time protections matter, from systemic risk
+taxonomies~\cite{sokdefi2022} to front-running and MEV~\cite{flashboys2020}.
+No-code DeFi workflow platforms exist in deployment; we evaluate the
+intent parser and workflow generator of one such deployed system (Koan) as
+a first-class baseline. Prior to this work such systems had not been
+evaluated against an executable safety benchmark.

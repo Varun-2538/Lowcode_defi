@@ -1,17 +1,19 @@
 \begin{table*}[t]
 \centering
-\caption{Static structural/executable/safe metrics vs.\ on-chain execution on the main split (${n{=}105}$ workflow prompts). Safe (cfg) is reported with a 95\% Wilson interval. Fork-Unsafe counts workflows that executed on a local py-EVM at $>$5\% own-trade price impact with no price-impact gate; Fork safe-rate is over prompts with a definite on-chain outcome. Oracle and the null/random baselines bound the ceiling and floor. LLM baselines run at temperature~0.}
+\caption{\textbf{Main results on the development split} (${n{=}105}$ workflow prompts). Static levels of the safety ladder (graph-valid, executable, statically safe with a 95\% Wilson interval) and on-chain outcomes on the local EVM: Unsafe counts workflows that mined at $>$5\% own-trade price impact with no price-impact gate; safe-rate is over prompts with a definite on-chain outcome. Oracle and null/random baselines calibrate the ceiling and floor. LLM systems run at temperature~0; the best non-reference safe rate is \textbf{bold}.}
 \label{tab:main-results}
 \begin{tabular}{lccccc}
 \toprule
-System & Graph & Exec. & Safe (cfg) & Fork & Fork \\
-       & valid & (cfg) & [95\% CI] & unsafe & safe-rate \\
+ & \multicolumn{3}{c}{Static safety-ladder levels} & \multicolumn{2}{c}{On-chain (local EVM)} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-6}
+System & Graph-valid & Executable & Statically safe [CI] & Unsafe & Safe-rate \\
 \midrule
 Oracle (ceiling) & 1.00 & 1.00 & 1.00 [0.96,1.00] & 0 & 1.00 \\
-Null (floor) & 0.00 & 0.00 & 0.00 [0.00,0.04] & 0 & n/a \\
-Random nodes & 0.00 & 0.00 & 0.00 [0.00,0.04] & 0 & n/a \\
-Template-only & 1.00 & 0.00 & 0.00 [0.00,0.04] & 0 & n/a \\
-Koan (regex$+$gen) & 0.12 & 0.00 & 0.00 [0.00,0.04] & 0 & n/a \\
+Null (floor) & 0.00 & 0.00 & 0.00 [0.00,0.04] & -- & -- \\
+Random nodes & 0.00 & 0.00 & 0.00 [0.00,0.04] & -- & -- \\
+\midrule
+Template-only & 1.00 & 0.00 & 0.00 [0.00,0.04] & -- & -- \\
+Koan (regex$+$gen) & 0.12 & 0.00 & 0.00 [0.00,0.04] & -- & -- \\
 Direct LLM (Gemini 3.1 FL) & 0.17 & 0.11 & 0.03 [0.01,0.08] & 13 & 0.68 \\
 Direct LLM (GPT-5.4 mini) & 0.02 & 0.00 & 0.00 [0.00,0.04] & 12 & 0.57 \\
 Constrained LLM (Gemini 3.1 FL) & 0.44 & 0.25 & 0.10 [0.06,0.18] & 13 & 0.68 \\
@@ -20,10 +22,11 @@ Few-shot LLM (Gemini 3.1 FL) & 0.30 & 0.15 & 0.10 [0.06,0.18] & 13 & 0.68 \\
 Few-shot LLM (GPT-5.4 mini) & 0.26 & 0.10 & 0.10 [0.06,0.18] & 10 & 0.72 \\
 Safety-instruct LLM (Gemini 3.1 FL) & 0.35 & 0.29 & 0.29 [0.21,0.38] & 0 & 1.00 \\
 Safety-instruct LLM (GPT-5.4 mini) & 0.13 & 0.08 & 0.08 [0.04,0.14] & 0 & 1.00 \\
+\midrule
 Koan-Safe (rules) & 1.00 & 0.56 & 0.56 [0.47,0.65] & 0 & 1.00 \\
 Koan-Safe (LLM) (Gemini 3.1 FL) & 1.00 & 0.55 & 0.55 [0.46,0.64] & 0 & 1.00 \\
 Koan-Safe (LLM) (GPT-5.4 mini) & 1.00 & 0.50 & 0.50 [0.40,0.59] & 0 & 1.00 \\
-Koan-Safe (hybrid) (Gemini 3.1 FL) & 1.00 & 0.58 & 0.58 [0.49,0.67] & 0 & 1.00 \\
+Koan-Safe (hybrid) (Gemini 3.1 FL) & 1.00 & 0.58 & \textbf{0.58} [0.49,0.67] & 0 & 1.00 \\
 Koan-Safe (hybrid) (GPT-5.4 mini) & 1.00 & 0.56 & 0.56 [0.47,0.65] & 0 & 1.00 \\
 \bottomrule
 \end{tabular}

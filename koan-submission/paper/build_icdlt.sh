@@ -44,22 +44,15 @@ uv run --no-project python koan-submission/code/analysis/cost.py \
   --results-root "$RESULTS" --split "$MM_SPLIT" --price-per-mtok 0.30 || true
 
 echo "== copy paper-facing assets =="
-# Primary results = the held-out TEST split.
+# Primary results = the held-out TEST split. The per-category, cost, and
+# mainnet-fidelity tables are summarized in prose; their data stays in
+# results/ and ships with the artifact.
 cp "$RESULTS/tables/$TEST_SPLIT/main_results.tex" "$PAPER/tables/main_results.tex"
-cp "$RESULTS/tables/$TEST_SPLIT/per_category.tex" "$PAPER/tables/per_category.tex"
 cp "$RESULTS/tables/$TEST_SPLIT/enforcement_ablation.tex" "$PAPER/tables/enforcement_ablation.tex"
-cp "$RESULTS/figures/$TEST_SPLIT/structural_vs_safe.png" "$PAPER/figures/structural_vs_safe.png"
-# Development-split results, referenced in the text and shown in an appendix-style table.
-cp "$RESULTS/tables/$DEV_SPLIT/main_results.tex" "$PAPER/tables/main_results_dev.tex"
-cp "$RESULTS/tables/$DEV_SPLIT/enforcement_ablation.tex" "$PAPER/tables/enforcement_ablation_dev.tex"
-# Metamorphic safety suite and cost/latency tables.
+cp "$RESULTS/figures/$TEST_SPLIT/onchain_fates.pdf" "$PAPER/figures/onchain_fates.pdf"
+cp "$RESULTS/figures/$TEST_SPLIT/safety_ladder.pdf" "$PAPER/figures/safety_ladder.pdf"
+# Metamorphic safety suite table.
 cp "$RESULTS/tables/$MM_SPLIT/metamorphic.tex" "$PAPER/tables/metamorphic.tex"
-cp "$RESULTS/tables/$MM_SPLIT/cost.tex" "$PAPER/tables/cost.tex"
-# Mainnet-fidelity table (generated out-of-band by code/safety/fork_fidelity.py,
-# which needs an RPC endpoint; copied if present so the build stays offline).
-if [ -f "$RESULTS/tables/mainnet/fidelity.tex" ]; then
-  cp "$RESULTS/tables/mainnet/fidelity.tex" "$PAPER/tables/fidelity.tex"
-fi
 
 echo "== build PDF =="
 ( cd "$PAPER" && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex >/dev/null )

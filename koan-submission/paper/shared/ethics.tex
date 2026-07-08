@@ -1,15 +1,11 @@
 \section{Ethics and Responsible Disclosure}
 \label{sec:ethics}
 
-This work is an offline evaluation. All experiments run against a local,
-in-process EVM with mock tokens and seeded liquidity; no transaction in
-this paper touches a live network or real funds. The benchmark is intended
-to help identify unsafe generated workflows before execution, not to
-encourage users to execute generated DeFi workflows with real assets. Any
-future extension to a mainnet-fork or live setting must keep simulation
-strictly separated from real execution, use test settings, and disclose
-residual risks. The evaluated no-code system and the language models are
-used as-is through their public interfaces; we report their failures to
-motivate safer synthesis, not to single out any implementation. Model
-outputs and derived metrics are released so that the results can be
-independently reproduced and audited.
+This work is an offline evaluation: no transaction in this paper touches
+a live network or real funds. The benchmark is intended to help identify
+unsafe generated workflows before execution, not to encourage executing
+generated DeFi workflows with real assets. The evaluated no-code system
+and the language models are used as-is through their public interfaces;
+we report their failures to motivate safer synthesis, not to single out
+any implementation. Model outputs and derived metrics are released so
+the results can be independently reproduced and audited.

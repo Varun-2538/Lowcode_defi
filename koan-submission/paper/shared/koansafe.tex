@@ -1,0 +1,50 @@
+\section{Koan-Safe: Safety as Enforcement}
+\label{sec:koansafe}
+
+If the dominant failure is omitted safety machinery rather than misread
+intent, safety should be an enforcement step applied to a candidate
+workflow, not a property a generator is trusted to produce. Koan-Safe
+factors synthesis into three replaceable stages: an intent parser, a
+candidate generator, and a generator-agnostic safety-enforcement layer.
+The factoring lets the enforcement layer be toggled and measured in
+isolation.
+
+A note on naming: \emph{Koan} is the existing deployed platform we
+evaluate as a baseline; \emph{Koan-Safe} is the method proposed here;
+\textsc{DeFiFlowBench} is the benchmark.
+
+\paragraph{Intent parser.} A deterministic, prompt-only parser maps the
+request text to a typed intent: task category, the trade-intent fields it
+can extract (tokens, amount, slippage, target price, chains), and a
+decision to build or ask for clarification. It reads only the prompt
+string, never the gold annotation or category label, so it has exactly
+the information available to the LLM baselines. Clarification fires only
+when acting would require guessing trade intent: no recognizable token,
+identical source and destination, or a bridge with no destination.
+
+\paragraph{Candidate generator.} Three interchangeable generators feed
+the same enforcement layer. \emph{Rules} emits a category-appropriate
+node graph and fills configuration from the parsed intent. \emph{LLM}
+uses the same neural backend as the direct baseline. \emph{Hybrid} takes
+the LLM's structure but backfills trade-intent configuration that the
+parser read from the prompt and the model dropped.
+
+\paragraph{Safety-enforcement layer.} Given any candidate workflow and
+the parsed intent, the layer repairs structure by adding the category's
+required safety nodes and reconnecting the required spine, then injects
+conservative safety policy the request did not pin down: a default
+slippage bound, a price-impact gate with a concrete threshold, a bridge
+confirmation count, a default order expiry, and a self-recipient for
+bridges. The layer never fabricates trade intent. It adds no token,
+amount, target price, or chain absent from the request, so a prompt that
+omits an amount yields a structurally valid but non-executable workflow
+rather than an invented trade. A safety waiver in the prompt (``I don't
+care about slippage'') is deliberately overridden: a safe system must
+refuse to ship an unsafe trade even when asked.
+
+\paragraph{Integrity of the comparison.} Koan-Safe encodes engineered
+domain knowledge (a token dictionary, per-category node presets,
+conservative safety defaults) but has no access to gold annotations.
+Because its structural presets are fixed, the held-out split deliberately
+requires workflow structures outside those presets, so generalization is
+tested rather than assumed.

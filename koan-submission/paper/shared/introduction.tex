@@ -1,85 +1,83 @@
 \section{Introduction}
 \label{sec:intro}
 
-Natural-language workflow generation is attractive for decentralized
-finance (DeFi) because common user goals---token swaps, limit orders, and
-cross-chain transfers---require coordinating multiple protocols and many
-configuration choices. A system that turns ``swap 1 ETH to USDC with at
-most 1\% slippage'' into an executable workflow could make DeFi accessible
-to users who cannot write contract calls by hand.
+A user who types ``swap 1 ETH to USDC with at most 1\% slippage'' into a
+natural-language DeFi interface expects the system to build the right
+sequence of protocol calls, fill in the trade parameters, and refuse to
+execute if the trade would be ruinously expensive. A growing line of work
+generates such workflows from natural
+language~\cite{worfbench2025,chat2workflow2026,flowmind2023} and
+evaluates them by checking whether the output, viewed as a graph of typed
+nodes and edges, matches a reference structure. In most domains that is a
+reasonable proxy. In DeFi it is not: a single mined transaction moves
+real funds irreversibly, so what matters is not whether the workflow
+looks correct but whether it is safe to run.
 
-Evaluations of such systems, however, typically stop at whether the
-generated workflow, viewed as a directed graph of nodes and edges, is
-structurally valid. We argue that this is the wrong bar for DeFi. A graph
-that looks correct may still be unsafe or non-executable if it omits the
-concrete trade parameters needed to run, ignores price-impact limits, uses
-unsupported chains or tokens, or fails to gate execution against the cost
-of the user's own order. In a domain where a single transaction can move
-real funds irreversibly, structural validity is necessary but far from
-sufficient.
+We therefore evaluate DeFi workflow synthesis on a \emph{safety ladder}
+of four nested levels. A workflow is (1)~\emph{graph-valid} if it has the
+required nodes and edges; (2)~\emph{executable} if it also carries
+concrete values for every required parameter; (3)~\emph{statically safe}
+if it also declares and parameterizes the required safety predicates,
+such as a price-impact gate; and (4)~\emph{execution-safe} if, when run
+against an EVM, it completes without violating those predicates.
+Existing evaluations stop at level~1.
 
-This paper reframes DeFi workflow synthesis as a benchmark and measurement
-problem centered on \emph{safe executability}. We evaluate generated
-workflows on three nested static layers---structural validity, executable
-configuration completeness, and declared safety---and, crucially, add an
-execution layer that runs each generated swap on a real EVM and observes
-the on-chain outcome. This lets us separate three questions that prior
-evaluations conflate: does the graph have the right shape, does it carry
-the parameters needed to execute, and, when executed, does it actually
-behave safely?
+To measure the distance from level 1 to level 4 we introduce
+\textsc{DeFiFlowBench}: 207 expert-annotated prompts (a 120-prompt
+development split and an 87-prompt held-out test split) spanning swaps,
+limit orders, cross-chain transfers, and compositional tasks. Each prompt
+carries gold nodes, edges, configuration keys, and safety predicates. The
+top of the ladder is scored by executing each generated swap on a local
+EVM with deployed constant-product AMM and ERC20 contracts. The scale is
+calibrated: an oracle scores $1.00$ on every level, null and random
+baselines score $0.00$, and the static safety proxy never certifies a
+workflow that then executes unsafely (precision $1.00$ on both splits).
 
-Our first finding is that structural validity does not imply safe
-executability, and the gap is large and consistent. Across the benchmark and
-a range of systems---a deterministic template baseline, a deployed no-code
-DeFi generator, and direct, constrained, few-shot, and safety-instructed
-language-model baselines on two model families---no baseline exceeds $0.33$
-safe-executability. On-chain, the direct, constrained, and few-shot
-configurations each execute $15$--$19$ large swaps at roughly $33\%$
-self-inflicted price impact because they set a slippage bound but no
-price-impact gate.
+Every baseline we test falls off the ladder. Across a deterministic
+template, the deployed generator of an existing no-code DeFi platform,
+and direct, constrained, few-shot, and safety-instructed prompting on two
+model families, no system exceeds $0.33$ safe-executability on the
+held-out split. The failures are complementary. Templates are graph-valid
+but carry no trade parameters, so nothing executes. Language models parse
+the request well enough to fill in amounts and tokens but omit the safety
+machinery, and the omission is costly: direct, constrained, and few-shot
+configurations each mine $15$--$19$ swaps at roughly $33\%$
+self-inflicted price impact. The root cause is a confusion between two
+protections: a slippage bound, which the models set, guards only against
+price movement between quote and execution, while a price-impact gate,
+which they omit, is what guards against the cost of the user's own order.
 
-The benchmark's failure taxonomy points to a fix. Because the dominant failure
-is \emph{omitted safety machinery} rather than misread intent, safety should
-be enforced on a candidate workflow rather than left to the generator. We
-therefore build \textbf{Koan-Safe}, a system that factors synthesis into a
-prompt-only intent parser, a replaceable candidate generator (rule-based, a
-language model, or a hybrid), and a generator-agnostic safety-enforcement
-layer that repairs structure and injects conservative safety policy---a
-slippage bound, a parameterized price-impact gate, bridge confirmations---while
-never fabricating trade intent it cannot read from the prompt. To test
-generalization rather than memorization, we freeze the method and evaluate it
-once on a held-out split authored afterward, which deliberately includes
-workflow structures outside the method's presets. On that split Koan-Safe
-reaches $0.67$ safe-executability---double the best baseline---and, across all
-three generators and both model families, drives on-chain unsafe executions to
-zero. An ablation that toggles only the enforcement layer, holding the parser
-and generator fixed, moves unsafe executions from $16$--$17$ back to zero,
-identifying the layer as the cause.
+Because the dominant failure is omitted safety machinery rather than
+misread intent, safety should be enforced on a candidate workflow rather
+than expected from a generator. Our system \textbf{Koan-Safe} factors
+synthesis into a prompt-only intent parser, a replaceable candidate
+generator (rule-based, LLM, or hybrid), and a generator-agnostic
+enforcement layer that repairs structure and injects conservative safety
+policy while never fabricating trade intent absent from the prompt. We
+froze the method before authoring the held-out split, which deliberately
+includes workflow structures outside the method's presets. On that split
+Koan-Safe reaches $0.67$ safe-executability, double the best baseline,
+with zero on-chain unsafe executions across all three generators and both
+model families. Toggling only the enforcement layer collapses
+safe-executability and restores $16$--$17$ unsafe executions, so the
+layer, not the generator, is the cause.
 
-\paragraph{Contributions.} (1) We introduce \textsc{DeFiFlowBench}, an
-expert-authored benchmark over four DeFi task categories with difficulty
-tiers, paraphrase clusters, and adversarial cases, a three-layer static
-evaluation (structural, executable, safe) plus a clarification axis, and a
-separate held-out test split with novel workflow structures for measuring
-generalization. (2) We add an on-chain execution layer that runs generated
-swaps on a real EVM and distinguishes a slippage bound from a price-impact
-gate, turning ``declared safety'' into ``observed safety'', and we show the
-static safety proxy is sound against this on-chain ground truth on both splits
-(precision $1.00$, no false certifications); we further validate the harness
-against Ethereum mainnet, reproducing the real Uniswap~V2 router's quotes and
-executions with zero error when seeded with real reserves. (3) We present Koan-Safe, a
-generator-agnostic safety-enforcement layer, and show on the held-out split
-that it doubles safe-executability over the best baseline and eliminates
-on-chain unsafe execution across rule-based, language-model, and hybrid
-generators; an enforcement on/off ablation isolates the layer as the cause.
-(4) We add a label-free \emph{metamorphic} safety suite that checks robustness
-relations---safety monotonicity under larger trades, resistance to explicit
-safety waivers, invariance to paraphrase, and non-fabrication of dropped
-fields---and show Koan-Safe satisfies them where the baselines fail every
-larger-trade and most waiver pairs, at negligible enforcement cost
-($0.07$\,ms/workflow and no extra model calls). (5) We calibrate the scale
-with an oracle ceiling and null/random floors, report every rate with
-confidence intervals, and provide a quantified failure taxonomy and robustness
-analysis. (6) We release the prompts, gold annotations, baselines, the
-Koan-Safe reference system, the execution harness, and analysis code for
-reproducible evaluation.
+\paragraph{Contributions.}
+\begin{itemize}
+  \item \textbf{\textsc{DeFiFlowBench} and the safety ladder}: a
+        calibrated benchmark that scores DeFi workflow synthesis at four
+        nested levels, the top level grounded in on-chain execution
+        rather than graph shape.
+  \item \textbf{An empirical gap}: structural validity does not imply
+        safe executability for any of eight baseline families; the
+        dominant failure is a missing price-impact gate that lets
+        $15$--$19$ swaps per configuration mine at ${\sim}33\%$
+        self-inflicted impact.
+  \item \textbf{Koan-Safe}: a generator-agnostic enforcement layer that
+        doubles held-out safe-executability and eliminates observed
+        unsafe execution, with an on/off ablation isolating the layer as
+        the cause and a label-free metamorphic suite confirming
+        robustness at $0.07$\,ms overhead per workflow.
+\end{itemize}
+We release the prompts, gold annotations, baselines, execution harness,
+Koan-Safe reference system, and analysis code.

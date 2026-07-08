@@ -1,197 +1,176 @@
-\section{Experiments}
-\label{sec:experiments}
+\section{Experimental Setup}
+\label{sec:setup}
 
-We use two splits. The \emph{development} split (\textsc{main}, 120 prompts;
-$n=105$ workflow prompts after removing the clarification subset)
-characterizes the structural-to-safe gap and is where Koan-Safe was built and
-tuned. The \emph{held-out test} split ($87$ prompts; $n=75$ workflow prompts)
-was authored \emph{after} Koan-Safe was frozen and evaluated exactly once, so
-no system was tuned against it; it deliberately mixes canonical-structure
-prompts (harder parsing, fresh and out-of-vocabulary tokens) with new
-structural variants---a gasless/Fusion swap, a quote-first limit order, a
-dashboard bridge, and a genuine cross-chain swap---whose gold structures lie
-outside Koan-Safe's four category presets. Unless noted, results and tables
-report the held-out split. LLM baselines run at temperature $0$ on two model
-families, Gemini~3.1~Flash~Lite and GPT-5.4~mini, through a common OpenRouter
-endpoint. Temperature-$0$ API calls still show minor run-to-run variation, so
+Our experiments answer three research questions:
+\begin{itemize}
+  \item \textbf{RQ1}: Do graph-valid DeFi workflows fail to be safely
+        executable, and how does the failure manifest on-chain?
+  \item \textbf{RQ2}: Does Koan-Safe improve safe executability on a
+        held-out split with novel workflow structures?
+  \item \textbf{RQ3}: Is the enforcement layer, rather than the parser or
+        generator, causally responsible?
+\end{itemize}
+
+\paragraph{Splits.} The development split (120 prompts; $n=105$ workflow
+prompts after removing the clarification subset) is where Koan-Safe was
+built and tuned. The held-out test split (87 prompts; $n=75$) was
+authored after Koan-Safe was frozen and evaluated exactly once. Unless
+noted, all results report the held-out split.
+
+\paragraph{Models and reproducibility.} LLM systems run at temperature
+$0$ on Gemini~3.1~Flash~Lite and GPT-5.4~mini through a common OpenRouter
+endpoint. Temperature-$0$ API calls still vary slightly across runs, so
 exact decimals may shift on re-run; all tables are generated from saved
-outputs, and every raw model response is stored so metrics can be re-derived
-without re-querying.
+outputs, and every raw model response is stored. Every rate carries a
+95\% Wilson confidence interval; mean-valued metrics carry a bootstrap
+interval.
 
-\subsection{The scale is calibrated by reference baselines}
+\paragraph{Calibration.} The oracle scores $1.00$ on every static level
+and is safe on every executed swap on both splits, so the tasks,
+including the held-out structural variants, are solvable and the scorer
+rewards a correct solution. The null and random-node floors score $0.00$
+on every level, so the metric cannot be gamed by degenerate or padded
+graphs (Table~\ref{tab:main-results}).
 
-Before comparing systems we fix the meaning of the scores
-(Table~\ref{tab:main-results}). The \emph{oracle}, which reconstructs a
-correct workflow from the gold annotation, scores $1.00$ on all three static
-layers and is safe on every executed swap on both splits, confirming that the
-tasks---including the held-out structural variants---are solvable and that the
-scorer rewards a genuinely correct solution. The \emph{null} (empty output)
-and \emph{random-node} baselines score $0.00$ on every layer, so the metric
-cannot be gamed by degenerate or padded graphs. Real systems are therefore
-compared against a demonstrated ceiling of $1.00$ and a floor of $0.00$.
+\section{Results}
+\label{sec:results}
 
 \input{tables/main_results}
 
-\subsection{Baselines: structural validity does not imply safe executability}
-
-Across baselines the gap between structural validity and safe executability is
-large and consistent. On the held-out split \textbf{no baseline exceeds $0.33$
-safe-executability} (safety-instructed Gemini, 95\% Wilson CI $[0.24,0.45]$),
-and most sit near the floor. The layers fail for structurally different,
-quantified reasons (Section~\ref{sec:analysis}). The template-only baseline is
-graph-valid on the canonical prompts but has zero configuration completeness:
-well-formed graphs with no executable trade parameters. The deployed Koan
-generator is graph-valid on only $0.05$ of held-out prompts, over-generating
-into a fixed suite that breaks required structure. The LLM baselines extract
-concrete configuration but omit safety machinery, discussed next.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{onchain_fates.pdf}
+\caption{\textbf{Two ways to be ``safe'': gated, or inert.} On-chain fate
+of every in-scope prompt on the local EVM (cross-chain prompts, which a
+single local chain cannot bridge, are excluded). The template and
+deployed-Koan baselines are harmless only because they are inert: nothing
+they emit can execute. The direct, constrained, and few-shot LLMs execute
+readily and mine $18$--$19$ swaps unsafely (orange). Koan-Safe executes
+just as often, but its injected price-impact gate blocks the $20$
+dangerous trades (blue) instead of mining them. LLM systems shown on
+Gemini~3.1~FL; GPT-5.4~mini rows appear in Table~\ref{tab:main-results}.}
+\label{fig:fates}
+\end{figure*}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{structural_vs_safe.png}
-\caption{Static structural, executable, and safe rates per system on the
-held-out test split ($n=75$; reference floor/ceiling baselines omitted).
-Annotations mark workflows that executed unsafely on the local EVM.}
-\label{fig:structural-vs-safe}
+\includegraphics[width=\columnwidth]{safety_ladder.pdf}
+\caption{Survival across the static safety-ladder levels on the held-out
+test split ($n{=}75$). Baselines (grey/warm) collapse between levels;
+Koan-Safe (blue) starts high and loses nothing at the safety step.}
+\label{fig:ladder}
 \end{figure}
 
-\subsection{On-chain evidence of unsafe execution}
+\subsection{RQ1: Structural validity does not imply safe executability}
+\label{sec:rq1}
 
-The static safe rate treats a declared-but-unparameterized safety node as a
-failure, but it cannot show that an ``executable'' workflow is actually
-dangerous. The execution layer does. Under direct, constrained, and few-shot
-prompting, both models emit swaps with a concrete amount but no wired
-price-impact gate; on the local EVM these \textbf{mine successfully at roughly
-$33\%$ self-inflicted price impact}, and the harness labels them
-\texttt{unsafe\_executed}---$15$ to $19$ such executions per configuration on
-the held-out split (Table~\ref{tab:main-results}). This is the thesis made
-concrete: a slippage bound, which the models often set, computes its minimum
-output from the already impact-adjusted quote and so does not prevent a large
-order from executing at severe self-inflicted impact; only a separate
-price-impact gate does. The template and Koan baselines never reach this
-failure because they never populate a concrete amount, so nothing executes.
+On the held-out split \textbf{no baseline exceeds $0.33$
+safe-executability} (safety-instructed Gemini, 95\% CI $[0.24,0.45]$),
+and most sit near the floor (Table~\ref{tab:main-results},
+Figure~\ref{fig:ladder}). Each system falls off the ladder at a
+diagnostic rung. The template baseline is graph-valid on canonical
+prompts ($0.52$) but has zero configuration completeness: well-formed
+graphs with no executable trade. The deployed Koan generator is
+graph-valid on only $0.05$ of prompts, over-generating into a fixed suite
+that breaks required structure. The LLM baselines invert the trade-off:
+they extract concrete configuration but omit safety machinery.
 
-\subsection{Prompting alone does not close the gap}
+On-chain, these failure modes produce two very different kinds of
+``zero unsafe executions'' (Figure~\ref{fig:fates}). The
+template and Koan baselines are harmless only because they are inert;
+nothing they emit can execute. The LLM baselines are the opposite. Under
+direct, constrained, and few-shot prompting, both model families emit
+swaps with a concrete amount but no wired price-impact gate, and these
+\textbf{mine at roughly $33\%$ self-inflicted price impact}: $15$ to
+$19$ \texttt{unsafe\_executed} outcomes per configuration. The slippage
+bound the models do set never fires, because its minimum output is
+computed from the already impact-adjusted quote. A useful system must be
+neither inert nor ungated, and no baseline manages both.
 
-We ablate two mitigations on both models. Per-category structural
-\emph{constraints} and a single \emph{few-shot} example improve structural
-validity somewhat but leave $17$--$19$ on-chain unsafe executions. Only an
-explicit \emph{safety instruction} eliminates on-chain unsafe execution for
-both models (fork safe-rate $1.00$) by inducing a parameterized price-impact
-gate---yet it still leaves most workflows structurally incomplete
-(safe-executability $0.33$ for Gemini, $0.07$ for GPT). No single prompt-level
-intervention closes both the structural and the safety half of the gap, which
-motivates enforcing safety outside the generator.
+Prompting alone does not close the gap. Structural constraints and a
+few-shot example raise graph validity but leave $17$--$19$ unsafe
+executions intact. An explicit safety instruction eliminates unsafe
+execution on both models by inducing a parameterized gate, yet leaves
+most workflows structurally incomplete ($0.33$ Gemini, $0.07$ GPT).
+Safety parameterization is promptable; robust structure is not.
 
-\subsection{Koan-Safe closes the gap and generalizes}
+\subsection{RQ2: Koan-Safe doubles held-out safe executability}
+\label{sec:rq2}
 
-Table~\ref{tab:main-results} shows that all three Koan-Safe generators lead
-the held-out split. The hybrid generator on Gemini reaches
-$0.67$ safe-executability (95\% CI $[0.55,0.76]$)---\textbf{double the best
-baseline ($0.33$)}---with the LLM generator at $0.64$ and the rule-based
-generator at $0.43$; crucially, \emph{every} Koan-Safe configuration, on both
-model families, records \textbf{zero on-chain unsafe executions} (fork
-safe-rate $1.00$) versus $15$--$19$ for the direct, constrained, and few-shot
-LLMs.
+All three Koan-Safe generators lead the held-out split. The hybrid
+generator on Gemini reaches $0.67$ safe-executability (95\% CI
+$[0.55,0.76]$), \textbf{double the best baseline}, with the LLM generator
+at $0.64$ and rules at $0.43$. Its zero unsafe executions are of the
+useful kind: Koan-Safe executes about as often as the plain LLM baselines
+($26$ safe executions vs.\ their $30$--$31$), but the $20$ trades that
+would have mined at high impact are blocked by the injected price-impact
+gate (Figure~\ref{fig:fates}). Every Koan-Safe configuration, on both
+model families, records zero on-chain unsafe executions.
 
-The three generators also expose an honest limitation and its remedy. The
-frozen rule-based generator's presets do not cover the held-out structural
-variants, so its structural validity falls from $1.00$ on development to $0.52$
-on held-out. The language-model generator, unconstrained by fixed presets,
-generalizes to those variants (graph-valid $0.71$), and the hybrid---LLM
-structure with parser-grounded configuration backfill---does best ($0.73$).
-The enforcement layer is what converts this structure into on-chain safety
-regardless of which generator produced it. On the development split, where the
-presets match, all three generators instead reach $1.00$ structural validity
-and $0.55$--$0.58$ safe-executability, again with zero unsafe executions.
+The generator split exposes a limitation and its remedy. The frozen
+rule-based presets do not cover the held-out structural variants, so
+rules falls from $1.00$ structural validity on development to $0.52$.
+The LLM generator, unconstrained by presets, generalizes to the variants
+(graph-valid $0.71$); the hybrid does best ($0.73$). On development,
+where presets match, all three generators reach $1.00$ structural
+validity and $0.55$--$0.58$ safe-executability. In every case the
+enforcement layer converts whatever structure it is given into on-chain
+safety.
 
-\subsection{The enforcement layer is the cause}
+On the clarification axis, Koan-Safe correctly handles $9$ of $12$
+underspecified or contradictory prompts; the three misses are terse
+requests (``I want a limit order'') that its frozen decision rule builds
+instead of questioning. Per category, the hybrid's advantage is largest
+where the baselines collapse entirely: on cross-chain and compositional
+prompts the best baseline reaches $0.07$ safe-executability while the
+hybrid reaches $0.72$ and $0.42$; on limit orders it is perfect
+($1.00$ vs.\ $0.53$). Swaps are the one category where the
+safety-instructed baseline is competitive ($0.61$ vs.\ $0.54$).
 
-To attribute the effect we toggle only the enforcement layer, holding the
-parser and generator fixed (Table~\ref{tab:enforcement-ablation}). Disabling
-enforcement collapses safe-executability for every generator---on held-out,
-rule-based $0.43\to0.12$, LLM $0.64\to0.00$, hybrid $0.67\to0.01$---and returns
-$16$--$17$ on-chain unsafe executions, matching the plain LLM baselines. The
-same pattern holds on development ($13\to0$ unsafe for every generator). Since
-nothing but the enforcement layer changes between the on and off conditions,
-it, rather than the choice of generator, is what drives on-chain unsafe
-execution to zero.
+\subsection{RQ3: The enforcement layer is the cause}
+\label{sec:rq3}
+
+Toggling only the enforcement layer, with parser and generator fixed,
+collapses safe-executability for every generator: rules $0.43 \to 0.12$,
+LLM $0.64 \to 0.00$, hybrid $0.67 \to 0.01$
+(Table~\ref{tab:enforcement-ablation}). It also restores $16$--$17$
+on-chain unsafe executions, matching the plain LLM baselines. The same
+pattern holds on development ($13 \to 0$ unsafe for every generator).
+Nothing but the layer changes between conditions, so the layer, not the
+generator, drives unsafe execution to zero.
 
 \input{tables/enforcement_ablation}
 
-\subsection{Metamorphic safety: robustness without per-prompt labels}
+\subsection{Robustness: metamorphic safety without labels}
 \label{sec:metamorphic}
 
-Static and on-chain metrics both compare an output to a fixed target. They do
-not test whether a system's declared safety is \emph{robust} when the risk of
-the request changes. We therefore add a label-free \emph{metamorphic} suite of
-$34$ base/variant prompt pairs (Section~\ref{sec:benchmark}) and check, for
-each pair, a relation the two outputs must satisfy rather than a per-prompt
-gold label: \textbf{amount monotonicity} (a $100\times$ larger trade must not
-weaken the declared safety set nor newly execute unsafely on-chain),
-\textbf{threshold tightening} (asking for a stricter price-impact tolerance
-must keep the gate and not loosen the number), \textbf{waiver resistance} (an
-explicit instruction to skip checks or ``accept all risk'' must not remove a
-mandatory safety predicate), \textbf{paraphrase invariance} (a reworded
-request must keep the workflow class and safety policy), and
-\textbf{drop-field non-fabrication} (removing a critical field such as the
-amount or bridge destination must trigger a clarification or an empty field,
-never an invented value). Pairs whose base prompt a system fails to build are
-not applicable and are excluded from that system's denominator.
-
-Table~\ref{tab:metamorphic} reports the results. The direct LLMs violate
-$14$--$16$ of $\sim\!32$ applicable relations, concentrated exactly where the
-core thesis predicts: they fail \emph{every} amount-monotonicity pair
-($7$--$8$ of $8$), silently executing the enlarged trade at severe price impact
-because no gate is wired, and they comply with $6$--$7$ of $8$ waivers by
-dropping the slippage bound, monitoring, or expiry the base request had
-included. A safety instruction sharply reduces these ($2$--$3$ violations
-total) but does not eliminate them: it still drops a mandatory gate under one
-waiver and flips a workflow class or policy under paraphrase. \textbf{Every
-Koan-Safe configuration satisfies all amount, threshold, waiver, and drop-field
-relations across both models}; the only residual is a single paraphrase pair
-for the hybrid generator on Gemini, where the LLM structure step emits a
-different class for a cross-chain rewording---an imperfection we report rather
-than patch. Because the enforcement layer injects mandatory safety from the
-parsed intent regardless of the surface form or any waiver text, safety
-monotonicity and waiver resistance hold by construction, which the suite
-confirms empirically.
+The metamorphic suite tests whether safety survives risk-relevant
+rewrites of the request. The direct LLMs violate $14$--$16$ of
+${\sim}32$ applicable relations (Table~\ref{tab:metamorphic}),
+concentrated where RQ1 predicts: they fail every amount-monotonicity
+pair, silently executing the $100\times$ larger trade at severe impact,
+and comply with $6$--$7$ of $8$ waivers by dropping the protections the
+base request had. A safety instruction reduces violations to $2$--$3$
+but still drops a mandatory gate under one waiver. \textbf{Every
+Koan-Safe configuration satisfies all amount, threshold, waiver, and
+drop-field relations on both models}; the single residual is one
+paraphrase pair where the hybrid's LLM structure step emits a different
+class for a cross-chain rewording. Because enforcement injects mandatory
+safety from the parsed intent regardless of surface form or waiver text,
+monotonicity and waiver resistance hold by construction; the suite
+confirms it empirically.
 
 \input{tables/metamorphic}
 
 \subsection{Cost and latency}
 \label{sec:cost}
 
-Enforcement is cheap. Table~\ref{tab:cost} reports the two reproducible cost
-drivers per workflow. The rule-based generator makes \emph{zero} LLM calls and
-runs fully offline; the LLM and hybrid generators make one call per built
-workflow---and \emph{fewer} than the plain baselines, because Koan-Safe's
-clarification gate fires before generation and skips the model call on
-underspecified prompts ($0.99$ vs.\ $1.00$ calls/workflow here). End-to-end
-latency for all LLM systems is dominated by provider round-trip
-($\sim\!1.7$--$2.0$\,s/workflow) and is statistically indistinguishable between
-Koan-Safe and the baselines, since the safety layer adds only structural
-manipulation. Measured in isolation, that manipulation---the enforcement
-layer's own overhead on top of a fixed generator---is $0.07$\,ms per workflow,
-four orders of magnitude below the network cost. At an assumed
-\$0.30 per million output tokens the estimated spend is under
-\$0.005 per $100$ workflows for every system. Koan-Safe thus removes on-chain
-unsafe execution (Tables~\ref{tab:main-results},~\ref{tab:enforcement-ablation})
-and restores safety robustness (Table~\ref{tab:metamorphic}) at no measurable
-cost or latency penalty, and at zero marginal cost in its offline rule-based
-form.
-
-\input{tables/cost}
-
-\subsection{Clarification and per-category behavior}
-
-On the clarification axis, Koan-Safe correctly handles $9$ of $12$ held-out
-underspecified or contradictory prompts; the three misses are terse requests
-(``I want a limit order'') that its frozen decision rule builds instead of
-questioning---an error we report rather than patch, since the method was frozen
-before the split existed. Per-category structural and safe rates
-(Table~\ref{tab:per-category}) confirm the pattern: Koan-Safe's advantage is
-uniform across categories on development, and on held-out its rule-based
-generator retains the canonical categories while the LLM and hybrid generators
-recover much of the structural-variant loss.
-
-\input{tables/per_category}
+Enforcement is effectively free. The rule-based generator makes zero LLM
+calls; the LLM and hybrid generators make one call per built workflow,
+slightly fewer than the baselines because the clarification gate fires
+before generation ($0.99$ vs.\ $1.00$ calls/workflow). End-to-end latency
+is dominated by provider round-trip (${\sim}1.7$--$2.0$\,s) and
+indistinguishable between Koan-Safe and the baselines; the enforcement
+layer's own overhead is $0.07$\,ms per workflow. At \$0.30 per million
+output tokens the spend is under \$0.005 per 100 workflows for every
+system.

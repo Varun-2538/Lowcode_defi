@@ -1,0 +1,70 @@
+\section{Problem Statement and the Safety Ladder}
+\label{sec:method}
+
+\subsection{Task}
+
+DeFi workflow synthesis maps a natural-language intent $p$ to a workflow
+specification $W = (N, E, C)$: a set $N$ of typed nodes drawn from a fixed
+executable DeFi node vocabulary (e.g.\ \texttt{tokenSelector},
+\texttt{oneInchQuote}, \texttt{priceImpact\-Calculator},
+\texttt{oneInchSwap}, \texttt{limitOrder}, \texttt{fusionPlus},
+\texttt{transactionMonitor}), a set $E \subseteq N \times N$ of type-level
+data-flow edges, and an execution configuration $C$ mapping keys such as
+\texttt{fromToken}, \texttt{amount}, \texttt{slippage}, and
+\texttt{targetPrice} to concrete values.
+
+Each benchmark item pairs a prompt with an expert-authored gold annotation
+$(N^{\star}, E^{\star}, C^{\star}, S^{\star})$, where $S^{\star}$ is a set
+of \emph{safety predicates} the workflow must satisfy to be safely
+executable: a slippage bound, a price-impact gate, transaction monitoring,
+a distinct bridge destination. The annotation also marks underspecified
+prompts, for which the correct response is a clarification request rather
+than a workflow.
+
+\subsection{The safety ladder}
+\label{sec:ladder}
+
+We score every generated workflow on four strictly nested levels. Each
+level subsumes the ones below it, so a system's position on the ladder
+identifies which capability it lacks.
+
+\paragraph{Level 1: graph-valid.} The workflow recalls every required node
+type and required type-level edge, and the generator did not error. This
+level is deliberately lenient: extra nodes are ignored unless they break a
+required edge, matching the weak notion of ``valid'' that graph-only
+evaluations reward.
+
+\paragraph{Level 2: executable.} The workflow is graph-valid \emph{and}
+every required configuration key in $C^{\star}$ holds a concrete,
+non-placeholder value. A node that exists only in template mode, with no
+trade amount or target price, is not executable.
+
+\paragraph{Level 3: statically safe.} The workflow is executable
+\emph{and} every required safety predicate in $S^{\star}$ is declared and
+parameterized. Predicates are derived uniformly from the normalized
+workflow for all systems, so no system benefits from self-reported safety.
+
+\paragraph{Level 4: execution-safe.} Declaring a predicate does not prove
+it gates execution, so the top level is measured by running the workflow.
+We deploy a constant-product AMM (Uniswap-V2-style $x \cdot y = k$ with a
+$0.3\%$ fee) and ERC20 tokens on an in-process EVM, seed deterministic
+reserves, and submit each generated swap as a real transaction. The
+harness observes the mined receipt, gas, or revert and labels the outcome
+(\texttt{executed\_safe}, \texttt{reverted\_slippage},
+\texttt{aborted\_price\_impact}, \texttt{unsafe\_executed},
+\texttt{pending\_not\_filled}, or \texttt{not\_executable}). Execution
+semantics are real (\texttt{transferFrom} calls, \texttt{require}
+reverts, gas accounting); only the reserves are synthetic, a choice we
+validate against mainnet in Section~\ref{sec:fidelity}.
+
+A separate \emph{clarification axis} scores underspecified prompts, where
+emitting a confidently wrong workflow is the failure mode.
+
+\paragraph{Slippage is not price impact.} The distinction that drives our
+headline result is between two protections that generators routinely
+conflate. A \emph{slippage bound} sets a minimum output computed from the
+already impact-adjusted quote; it protects against price movement between
+quote and execution. It does nothing to stop a large order from executing
+at severe \emph{self-inflicted} price impact. Only a separate
+\emph{price-impact gate} does. A workflow that mines a high-impact trade
+with no such gate is labeled \texttt{unsafe\_executed}.

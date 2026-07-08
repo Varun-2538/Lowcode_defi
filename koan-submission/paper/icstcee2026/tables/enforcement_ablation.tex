@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Enforcement-layer ablation on the held-out test split: each Koan-Safe generator with the safety-enforcement layer on vs.\ off (same parser and generator; LLM and hybrid use Gemini~3.1~FL). The layer is what drives on-chain unsafe executions to zero.}
+\label{tab:enforcement-ablation}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Statically safe} & \multicolumn{2}{c}{On-chain unsafe} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+System & off & on & off & on \\
+\midrule
+Koan-Safe (rules) & 0.12 & 0.43 & 17 & 0 \\
+Koan-Safe (LLM) & 0.00 & 0.64 & 17 & 0 \\
+Koan-Safe (hybrid) & 0.01 & 0.67 & 16 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}

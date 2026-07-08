@@ -1,39 +1,18 @@
-Natural-language interfaces for decentralized finance (DeFi) promise to
-make multi-step protocol interactions accessible to non-expert users, but
-they are typically evaluated only on whether the generated workflow graph
-looks structurally valid. We argue that this is the wrong bar for a
-high-stakes execution domain, and we study a stricter question: are
-generated DeFi workflows \emph{safely executable}? We introduce
-\textsc{DeFiFlowBench}, a benchmark of expert-authored prompts spanning
-swaps, limit orders, cross-chain transfers, and compositional tasks, with
-difficulty tiers, paraphrase clusters, and adversarial cases. Each generated
-workflow is scored on three nested static layers---structural validity,
-executable configuration completeness, and declared safety---and on an
-execution layer that runs each generated swap on a real EVM. We bound the
-scale with an oracle solver (which scores $1.00$ and is on-chain safe) and
-null and random-node floors (which score $0.00$), and we validate the static
-safety proxy against on-chain outcomes: across both splits the proxy never
-certifies a workflow that then executes unsafely (precision $1.00$).
-Evaluating a deterministic template, a deployed no-code DeFi generator, and
-direct, constrained, few-shot, and safety-instructed language-model baselines
-across two model families, we find a large and consistent structural-to-safe
-gap: no baseline exceeds $0.33$ safe-executability, and direct, constrained,
-and few-shot configurations each execute $15$--$19$ swaps at roughly $33\%$
-self-inflicted price impact because they wire a slippage bound but no
-price-impact gate. Motivated by this taxonomy, we build \textbf{Koan-Safe}, a
-generator-agnostic safety-enforcement layer that repairs workflow structure
-and injects conservative safety policy without fabricating trade intent. On a
-held-out test split---authored after the method was frozen, and deliberately
-including workflow structures outside the method's presets---Koan-Safe raises
-safe-executability to $0.67$ and, across rule-based, language-model, and
-hybrid generators, drives on-chain unsafe executions to \emph{zero}. An
-ablation that toggles only the enforcement layer moves unsafe executions from
-$16$--$17$ back to $0$, isolating the layer as the cause. A label-free
-metamorphic suite corroborates this: Koan-Safe preserves safety under
-$100\times$ larger trades and explicit safety waivers---transforms on which
-the direct baselines fail every larger-trade pair and most waiver pairs---at
-an enforcement cost of $0.07$\,ms per workflow. We validate the execution
-harness against Ethereum mainnet: seeded with each benchmark pair's real
-Uniswap~V2 reserves, it reproduces the live router's quotes and on-chain
-executions with zero error. We release the benchmark, baselines, the Koan-Safe
-reference system, the execution harness, and analysis code.
+Natural-language DeFi workflow generators are typically judged by whether
+the output graph is structurally valid. This bar is dangerously low: a
+workflow whose graph is correct can still execute at ruinous cost. We
+introduce \textsc{DeFiFlowBench}, a benchmark of 207 expert-annotated
+prompts scored on a four-level \emph{safety ladder} (graph-valid,
+executable, statically safe, execution-safe) whose top level runs each
+generated swap on a local EVM. No baseline exceeds $0.33$
+safe-executability, and standard prompting strategies mine $15$--$19$
+swaps at ${\sim}33\%$ self-inflicted price impact: they set a slippage
+bound but omit a price-impact gate. Since the dominant failure is omitted
+safety machinery rather than misread intent, we build \textbf{Koan-Safe},
+a generator-agnostic enforcement layer that repairs structure and injects
+conservative safety policy without fabricating trade intent. On a
+held-out split authored after the method was frozen, Koan-Safe doubles
+safe-executability ($0.67$ vs.\ $0.33$) and eliminates unsafe execution
+across three generators and two model families; an ablation isolates the
+enforcement layer as the cause. We release the benchmark, harness, and
+reference system.

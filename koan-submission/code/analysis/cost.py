@@ -144,7 +144,7 @@ def to_tex(analysis: dict[str, Any]) -> str:
         f"\\${price:.2f}/1M output tokens.}}",
         r"\label{tab:cost}",
         r"\small",
-        r"\setlength{\tabcolsep}{4pt}",
+        r"\setlength{\tabcolsep}{2.5pt}",
         r"\begin{tabular}{lccc}",
         r"\toprule",
         r"System & Calls/wf & Lat.\ (s) & \$/100 wf \\",

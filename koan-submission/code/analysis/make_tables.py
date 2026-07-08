@@ -173,39 +173,71 @@ def _tex_escape(text: str) -> str:
     return text.replace("_", r"\_").replace("+", r"$+$").replace("%", r"\%")
 
 
+SPLIT_DISPLAY = {
+    "main": "development",
+    "heldout": "held-out test",
+    "pilot": "pilot",
+}
+
+# Row groups for the main table, separated by midrules.
+REFERENCE_BASES = {"oracle", "null", "random_nodes"}
+PROPOSED_BASES = set(KOAN_SAFE_SYSTEMS)
+
+
 def main_results_tex(rows: list[dict[str, Any]], split: str) -> str:
     n_wf = max((r["n_workflow"] for r in rows), default=0)
+    split_name = SPLIT_DISPLAY.get(split, split)
+    # bold the best non-reference safe-executability
+    non_ref = [r for r in rows
+               if _split_run_id(r["run_id"])[0] not in REFERENCE_BASES]
+    best_safe = max((r["safe_executable"] for r in non_ref), default=None)
     lines = [
         r"\begin{table*}[t]",
         r"\centering",
-        r"\caption{Static structural/executable/safe metrics vs.\ on-chain "
-        f"execution on the {split} split (${{n{{=}}{n_wf}}}$ workflow prompts). "
-        r"Safe (cfg) is reported with a 95\% Wilson interval. Fork-Unsafe "
-        r"counts workflows that executed on a local py-EVM at $>$5\% own-trade "
-        r"price impact with no price-impact gate; Fork safe-rate is over "
-        r"prompts with a definite on-chain outcome. Oracle and the "
-        r"null/random baselines bound the ceiling and floor. LLM baselines run "
-        r"at temperature~0.}",
+        r"\caption{\textbf{Main results on the " + split_name + " split} "
+        f"(${{n{{=}}{n_wf}}}$ workflow prompts). Static levels of the safety "
+        r"ladder (graph-valid, executable, statically safe with a 95\% Wilson "
+        r"interval) and on-chain outcomes on the local EVM: Unsafe counts "
+        r"workflows that mined at $>$5\% own-trade price impact with no "
+        r"price-impact gate; safe-rate is over prompts with a definite "
+        r"on-chain outcome. Oracle and null/random baselines calibrate the "
+        r"ceiling and floor. LLM systems run at temperature~0; the best "
+        r"non-reference safe rate is \textbf{bold}.}",
         r"\label{tab:main-results}",
         r"\begin{tabular}{lccccc}",
         r"\toprule",
-        r"System & Graph & Exec. & Safe (cfg) & Fork & Fork \\",
-        r"       & valid & (cfg) & [95\% CI] & unsafe & safe-rate \\",
+        r" & \multicolumn{3}{c}{Static safety-ladder levels} & "
+        r"\multicolumn{2}{c}{On-chain (local EVM)} \\",
+        r"\cmidrule(lr){2-4}\cmidrule(lr){5-6}",
+        r"System & Graph-valid & Executable & Statically safe [CI] "
+        r"& Unsafe & Safe-rate \\",
         r"\midrule",
     ]
+    prev_group = None
     for r in rows:
+        base, _ = _split_run_id(r["run_id"])
+        group = ("ref" if base in REFERENCE_BASES
+                 else "proposed" if base in PROPOSED_BASES else "baseline")
+        if prev_group is not None and group != prev_group:
+            lines.append(r"\midrule")
+        prev_group = group
         if r["n_skipped"] and r["graph_valid"] == 0.0:
             lines.append(
                 f"{_tex_escape(r['label'])} & \\multicolumn{{5}}{{c}}{{skipped (no API key)}} \\\\"
             )
             continue
         # fork safe-rate is only meaningful when something executed on-chain
-        fork_rate = f"{r['fork_safe_rate']:.2f}" if r["fork_definite"] else r"n/a"
-        safe_ci = (f"{r['safe_executable']:.2f} "
+        fork_rate = f"{r['fork_safe_rate']:.2f}" if r["fork_definite"] else r"--"
+        safe_val = f"{r['safe_executable']:.2f}"
+        if group != "ref" and best_safe is not None and \
+                abs(r["safe_executable"] - best_safe) < 1e-9:
+            safe_val = rf"\textbf{{{safe_val}}}"
+        safe_ci = (f"{safe_val} "
                    f"[{r['safe_ci_low']:.2f},{r['safe_ci_high']:.2f}]")
+        unsafe = str(r["fork_unsafe_executed"]) if r["fork_definite"] else "--"
         lines.append(
             f"{_tex_escape(r['label'])} & {r['graph_valid']:.2f} & {r['executable']:.2f} "
-            f"& {safe_ci} & {r['fork_unsafe_executed']:d} "
+            f"& {safe_ci} & {unsafe} "
             f"& {fork_rate} \\\\"
         )
     lines += [r"\bottomrule", r"\end{tabular}", r"\end{table*}", ""]
@@ -238,11 +270,12 @@ def per_category_tex(rows: list[dict[str, Any]], split: str) -> str:
     header_cat = " & ".join(fr"\multicolumn{{2}}{{c}}{{{cat_short[c]}}}"
                             for c in CATEGORIES)
     subhdr = " & ".join(["G & S"] * len(CATEGORIES))
+    split_name = SPLIT_DISPLAY.get(split, split)
     lines = [
         r"\begin{table*}[t]",
         r"\centering",
-        r"\caption{Per-category graph-valid (G) and safe-executable (S) rate "
-        f"on the {split} split. Reference floor/ceiling baselines "
+        r"\caption{Per-category graph-valid (G) and statically-safe (S) rate "
+        f"on the {split_name} split. Reference floor/ceiling baselines "
         r"(all constant) are omitted; see Table~\ref{tab:main-results}.}",
         r"\label{tab:per-category}",
         r"\begin{tabular}{l" + "cc" * len(CATEGORIES) + "}",
@@ -296,24 +329,29 @@ def enforcement_ablation_rows(summary: list[dict[str, Any]]) -> list[dict[str, A
 
 
 def enforcement_ablation_tex(rows: list[dict[str, Any]], split: str) -> str:
+    split_name = SPLIT_DISPLAY.get(split, split)
     lines = [
         r"\begin{table}[t]",
         r"\centering",
         r"\caption{Enforcement-layer ablation on the "
-        f"{split} split: each Koan-Safe generator with the safety-enforcement "
-        r"layer on vs.\ off (same parser and generator). The layer is what "
-        r"drives on-chain unsafe executions to zero.}",
+        f"{split_name} split: each Koan-Safe generator with the "
+        r"safety-enforcement layer on vs.\ off (same parser and generator; "
+        r"LLM and hybrid use Gemini~3.1~FL). The layer is what drives "
+        r"on-chain unsafe executions to zero.}",
         r"\label{tab:enforcement-ablation}",
         r"\begin{tabular}{lcccc}",
         r"\toprule",
-        r"System & \multicolumn{2}{c}{Safe (cfg)} & "
-        r"\multicolumn{2}{c}{Fork unsafe} \\",
-        r" & off & on & off & on \\",
+        r" & \multicolumn{2}{c}{Statically safe} & "
+        r"\multicolumn{2}{c}{On-chain unsafe} \\",
+        r"\cmidrule(lr){2-3}\cmidrule(lr){4-5}",
+        r"System & off & on & off & on \\",
         r"\midrule",
     ]
     for r in rows:
+        # strip the model suffix; the caption states the model family
+        label = r["system"].split(" (Gemini")[0].split(" (GPT")[0]
         lines.append(
-            f"{_tex_escape(r['system'])} & {r['off_safe']:.2f} & {r['on_safe']:.2f} "
+            f"{_tex_escape(label)} & {r['off_safe']:.2f} & {r['on_safe']:.2f} "
             f"& {r['off_fork_unsafe']:d} & {r['on_fork_unsafe']:d} \\\\"
         )
     lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
