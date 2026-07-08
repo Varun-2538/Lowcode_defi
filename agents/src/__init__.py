@@ -1,3 +1,0 @@
-"""
-unite-defi core package
-"""
