@@ -103,6 +103,27 @@ uv run --no-project python koan-submission/code/benchmark/rescore_llm.py \
   Anvil/Alchemy fork RPC and route real router calls; the harness interface
   (`ForkChain` / `simulate`) is designed for that swap.
 
+## Mainnet-fidelity validation (read-only, needs an RPC)
+
+- `code/safety/fork_fidelity.py` validates that the local AMM is a faithful
+  reimplementation of Uniswap V2. It reads each benchmark pair's **real** V2
+  reserves at a pinned mainnet block over a read-only RPC, seeds the identical
+  harness AMM contract, and compares local quotes + real on-chain executions
+  to the live V2 router across trade sizes from 1e-6 to 0.5 of the pool.
+- Requires `ETH_RPC_URL` in `koan-submission/.env` (any mainnet HTTP RPC).
+  Run:
+  ```
+  uv run --no-project --with 'web3>=6' --with 'eth-tester[py-evm]>=0.9.0b1' \
+    --with py-solc-x python koan-submission/code/safety/fork_fidelity.py \
+    --results-root koan-submission/results
+  ```
+- Result (pinned block recorded in the output): worst relative error = 0
+  across 11 pairs x 7 sizes; every local quote equals the V2 integer formula
+  exactly. Writes `results/fork/mainnet/fidelity.json` +
+  `results/tables/mainnet/fidelity.tex` (paper Table VI).
+- This makes **read-only** mainnet state calls only; it never submits a
+  transaction or moves funds.
+
 ## Rules
 
 - Every results kind is split-scoped: raw -> `results/raw/<split>/`,

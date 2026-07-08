@@ -19,6 +19,35 @@ $156$ proxy-unsafe/on-chain-unsafe pairs are the concrete unsafe executions it
 correctly refuses to certify. This is the intended direction of error for a
 safety metric: it never certifies danger as safe.
 
+\subsection{Mainnet fidelity: is the local AMM a faithful proxy?}
+\label{sec:fidelity}
+
+The execution harness runs on a local EVM with an AMM seeded with synthetic
+reserves, which raises the question of whether its on-chain outcomes reflect
+real markets. We validate this directly against Ethereum mainnet. For every
+benchmark swap pair we read its \emph{real} Uniswap~V2 reserves at a pinned
+mainnet block over a read-only RPC, seed the identical harness AMM contract
+with those reserves, and compare the harness's quotes and \emph{actual on-chain
+executions} to the real Uniswap~V2 router across trade sizes from $10^{-6}$ to
+$0.5$ of the pool (Table~\ref{tab:fidelity}). Across all $11$ pairs---whose
+real reserves span several orders of magnitude, and including the held-out
+out-of-vocabulary tokens---and all seven trade sizes, the relative deviation of
+both the harness quote and the executed output from the real router is
+\emph{exactly zero}, and every harness quote equals the Uniswap~V2 integer
+formula bit-for-bit. This is expected but worth confirming: the harness is a
+faithful reimplementation of the constant-product AMM, not an approximation.
+The validation also clarifies why synthetic reserves suffice for the safety
+finding: under the $x{\cdot}y{=}k$ invariant, own-trade price impact is a
+function of the \emph{fraction} of reserves traded, so it is identical across
+pools of any absolute depth (e.g.\ $9.3\%$ impact at a tenth of the pool,
+$33.5\%$ at half). The unsafe-execution result is therefore a property of the
+missing price-impact gate and the AMM invariant, not of the particular reserves
+chosen; a large order is unsafe on a deep real pool at the same reserve
+fraction as on the harness. This is a read-only mainnet-state validation, not
+live-fund execution (Section~\ref{sec:limitations}).
+
+\input{tables/fidelity}
+
 \subsection{Failure taxonomy}
 
 Aggregating the per-prompt scores into named failure categories (released in

@@ -87,6 +87,27 @@ writes `results/analysis/metamorphic/metamorphic.json` + Table III.
 - Runner now writes `results/processed/<split>/<run>_timing.json` (per-prompt
   seconds + llm_called).
 
+## Mainnet-fidelity validation (user provided Infura RPC)
+
+Environment CAN reach mainnet (confirmed). `code/safety/fork_fidelity.py`
+seeds the identical local AMM contract with each benchmark pair's **real**
+Uniswap V2 reserves at a pinned block and compares local quotes + real
+on-chain executions to the live V2 router.
+
+- **Result: worst relative error = 0** across **11 pairs x 7 trade sizes**
+  (1e-6 to 0.5 of pool; incl. OOV MKR/SUSHI/GRT); every local quote equals the
+  V2 integer formula bit-for-bit. Impact span 0.30% (dust) -> 33.5% (half
+  pool), identical across pairs because x*y=k impact depends only on the
+  fraction of reserves traded.
+- Turns the "synthetic AMM" caveat into a mainnet-validated proxy: the
+  unsafe-execution finding is a property of the missing gate + AMM invariant,
+  not of the seeded reserves. **Read-only** state calls only; no tx, no funds.
+- Paper: new Analysis subsection VII-B "Mainnet fidelity" + Table VI; abstract/
+  intro/method/limitations updated (limitation reframed to "local EVM, not
+  live-fund execution"). PDF now 10 pages, clean.
+- Requires `ETH_RPC_URL` in `.env`. Table regenerated out-of-band (build stays
+  offline; `build_icdlt.sh` copies `fidelity.tex` if present).
+
 ## Main split (120 prompts) — benchmark-grade upgrade (now the DEV split)
 
 Scaled the pilot into **DeFiFlowBench** (120 prompts) following the Agentic

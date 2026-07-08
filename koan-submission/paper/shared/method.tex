@@ -67,10 +67,12 @@ price \emph{movement between quote and execution}; it does \emph{not}
 prevent a large order from executing at severe self-inflicted price
 impact. Only a separate price-impact gate does. A workflow that mines a
 high-impact trade with no such gate is labeled \texttt{unsafe\_executed}.
-This is a deterministic local EVM snapshot, not a mainnet fork: it
-provides real EVM execution semantics (real \texttt{transferFrom}, real
-\texttt{require} reverts, real gas) but synthetic prices and liquidity
-(Section~\ref{sec:limitations}).
+This is a deterministic local EVM snapshot: it provides real EVM execution
+semantics (real \texttt{transferFrom}, real \texttt{require} reverts, real
+gas) with reserves seeded deterministically. We validate the harness against
+real Ethereum mainnet liquidity in Section~\ref{sec:fidelity}, where seeding
+it with each benchmark pair's real Uniswap~V2 reserves reproduces the real
+router's quotes and executions with zero error.
 
 \section{Koan-Safe: a safety-enforcement layer}
 \label{sec:koansafe}

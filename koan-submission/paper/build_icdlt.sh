@@ -55,6 +55,11 @@ cp "$RESULTS/tables/$DEV_SPLIT/enforcement_ablation.tex" "$PAPER/tables/enforcem
 # Metamorphic safety suite and cost/latency tables.
 cp "$RESULTS/tables/$MM_SPLIT/metamorphic.tex" "$PAPER/tables/metamorphic.tex"
 cp "$RESULTS/tables/$MM_SPLIT/cost.tex" "$PAPER/tables/cost.tex"
+# Mainnet-fidelity table (generated out-of-band by code/safety/fork_fidelity.py,
+# which needs an RPC endpoint; copied if present so the build stays offline).
+if [ -f "$RESULTS/tables/mainnet/fidelity.tex" ]; then
+  cp "$RESULTS/tables/mainnet/fidelity.tex" "$PAPER/tables/fidelity.tex"
+fi
 
 echo "== build PDF =="
 ( cd "$PAPER" && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex >/dev/null )

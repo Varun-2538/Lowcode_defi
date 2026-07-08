@@ -204,3 +204,35 @@
   subset + `compute_iaa.py` + guides exist, but a real independent annotator
   must do the pass; will not invent a second annotator.
 
+## 2026-07-08 (mainnet-fidelity validation — user provided Infura RPC)
+
+- User supplied an Infura mainnet RPC and asked to focus on the mainnet-fork
+  item (#2). First verified the environment CAN reach mainnet (earlier notes
+  assumed no internet-to-chain — that was wrong for HTTP RPC): `eth_blockNumber`
+  and Uniswap V2 `getReserves`/`getAmountsOut` all succeed. Stored the key in
+  gitignored `koan-submission/.env` as `ETH_RPC_URL` (verified ignored).
+- Scope chosen WITH the user (AskUser): **fidelity-only** validation (not
+  re-driving workflows on-chain), using a **whale-scaled** trade-size sweep,
+  pinned to the **current head block**. Rationale surfaced to user: benchmark's
+  nominal trades are ~0% impact on deep real pools, so naive re-execution would
+  prove nothing; fidelity + size-sweep is the honest, strong claim.
+- Built `code/safety/fork_fidelity.py`: reuses the EXACT harness Solidity
+  (imported `SOLIDITY_SOURCE`), seeds the local AMM with each pair's real V2
+  reserves at the pinned block, and compares local `getAmountOut` + real
+  on-chain swaps to the live V2 router across 7 sizes (1e-6..0.5 of pool).
+  Read-only mainnet calls; no tx, no funds.
+- **Result: worst relative error = 0** across 11 pairs x 7 sizes (77 points);
+  every local quote == V2 integer formula exactly. Impact 0.30%->33.5% span,
+  identical across pools (x*y=k impact depends only on the traded fraction),
+  which is exactly why synthetic reserves are sufficient for the safety claim.
+- Paper: added Analysis VII-B "Mainnet fidelity" + Table VI; reframed the
+  Limitations item from "local EVM, not a mainnet fork / synthetic prices" to
+  "local EVM, not live-fund execution" citing the validation; updated abstract/
+  intro/method cross-refs. `build_icdlt.sh` copies `fidelity.tex` if present so
+  the paper build stays offline. `reproducibility.md` documents the RPC step.
+  PDF: 10 pages, clean, 0 undefined refs.
+- Integrity note: the claim is precisely "the local AMM is a bit-exact
+  reimplementation of real Uniswap V2, validated on real reserves" and
+  "read-only mainnet-state validation, not live-fund execution" — NOT a full
+  mainnet-fork tx replay. Stated as such in the paper.
+

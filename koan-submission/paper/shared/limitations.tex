@@ -1,16 +1,21 @@
 \section{Limitations}
 \label{sec:limitations}
 
-\paragraph{Local EVM, not a mainnet fork.} The execution layer deploys a
+\paragraph{Local EVM, not live-fund execution.} The execution layer deploys a
 constant-product AMM and mock tokens on an in-process EVM with
-deterministically seeded reserves. This yields real EVM execution
-semantics (real transfers, reverts, and gas) and byte-for-byte
-reproducibility, but the prices and liquidity are synthetic. It is a
-pinned local snapshot rather than a live mainnet fork; absolute
-price-impact magnitudes depend on the seeded reserves, though the
-qualitative unsafe-execution finding does not. Replacing the synthetic AMM
-with a mainnet-fork RPC is a natural extension and the harness interface
-is designed for that substitution.
+deterministically seeded reserves. This yields real EVM execution semantics
+(real transfers, reverts, and gas) and byte-for-byte reproducibility, but the
+default reserves are synthetic. We validate the harness against Ethereum
+mainnet (Section~\ref{sec:fidelity}): seeding it with the \emph{real}
+Uniswap~V2 reserves of every benchmark pair at a pinned block reproduces the
+real router's quotes and on-chain executions with exactly zero error, and
+because own-trade price impact depends only on the fraction of reserves traded,
+the unsafe-execution finding is invariant to absolute pool depth. What we do
+\emph{not} do is submit transactions to a live network or move real funds:
+all execution is against the local in-process chain, and the mainnet
+interaction is read-only state fetching. Extending the harness to submit
+against a full mainnet-fork node (e.g.\ replaying against forked state with
+real routing and multi-hop paths) is a natural next step.
 
 \paragraph{Scale, single annotator, and scoring strictness.} The development
 split uses 120 expert-authored prompts and the held-out split $87$, with
